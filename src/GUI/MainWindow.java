@@ -341,25 +341,25 @@ public class MainWindow extends Application {
 
         HBox botRow = new HBox();
 
-        Button testBtn = new Button("Test!");
-        testBtn.setOnAction(event -> {
+        Button BulkDelBtn = new Button("Delete Via File");
+        BulkDelBtn.setOnAction(event -> {
             FileParserMaster fpm = new FileParserMaster();
             ParserChooser pc = new ParserChooser();
             pc.run();
             String fpath = pc.getFilePath();
             File fil = new File(fpath);
             if(fil.exists()) {
-                ArrayList<SQLEntry> entriesTest = fpm.parseDHCPFile(fil);
-                for (SQLEntry e : entriesTest) {
-                    System.out.println(e);
-                }
+                System.out.println("File exists, deleting all relevant entries...");
+                ArrayList<SQLEntry> entriesTBD = this.fpm.parseGeneric(fil, pc.getFileParserType());
+                this.dbw.deleteAllEntries(entriesTBD);
+                Notifications.create().title("Entries Deleted").text("All inputted entries deleted.").showInformation();
             }else{
-                System.err.println("error selecting input file!");
+                System.err.println("error selecting input entries for deletion!");
             }
         });
 
-        Button compareCSV = new Button("Compare CSV files");
-        compareCSV.setOnAction(event -> {
+        Button compareCsvBtn = new Button("Compare CSV files");
+        compareCsvBtn.setOnAction(event -> {
             DhcpChooser dhcpc = new DhcpChooser();
             dhcpc.run();
             File inp = new File(dhcpc.getInputFilePath());
@@ -376,7 +376,7 @@ public class MainWindow extends Application {
             }
         });
 
-        botRow.getChildren().addAll(/*testBtn, */compareCSV); // commented out test button
+        botRow.getChildren().addAll(BulkDelBtn, compareCsvBtn); // commented out test button
         return botRow;
     }
 
@@ -412,15 +412,15 @@ public class MainWindow extends Application {
 
     private void handleFilterEvent() {
         if (this.columnFilterCombo.getItems().size() > 0 && !this.filterField.getText().isEmpty()) {
-            String comboBoxChosenColumn = this.columnFilterCombo.getItems().get(0);
+            String comboBoxChosenColumn = this.columnFilterCombo.getSelectionModel().getSelectedItem();
             String filterStatement = comboBoxChosenColumn + " LIKE '%" + this.filterField.getText() + "%'";
             this.dbr.sortQuery(DatabaseTags.getTagArray()[2], filterStatement);
             /*
             for(SQLEntry sq : this.dbr.getSQLEntries()){
                 System.out.println(sq);
-            } */
-            //refreshTable(this.dbr.getSQLEntries());
-            System.err.println("Not set up yet, line 302 MainWindow class.");
+            }
+            */
+            //System.err.println("Not set up yet, line 302 MainWindow class.");
             this.refreshTableList(this.dbr.getSQLEntries()); // get latest values populated into the table
         }
     }

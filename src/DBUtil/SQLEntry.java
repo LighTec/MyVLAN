@@ -440,6 +440,28 @@ public class SQLEntry{
                 Objects.equals(getId(), sqlEntry.getId());
     }
 
+    public boolean equalsIgnoreID(SQLEntry sqlEntry) {
+        if (this == sqlEntry) return true;
+        if (sqlEntry == null) return false;
+        boolean nme = getName().equals(sqlEntry.getName());
+        boolean ownr = getOwner().equals(sqlEntry.getOwner());
+        boolean ipad = getIPAddr().equals(sqlEntry.getIPAddr());
+        boolean mask = getNetmask().equals(sqlEntry.getNetmask());
+        boolean vtag = getVlanTag().equals(sqlEntry.getVlanTag());
+        boolean zne = getZone().equals(sqlEntry.getZone());
+        boolean zntp = getZoneType().equals(sqlEntry.getZoneType());
+        boolean veerf = getVRF().equals(sqlEntry.getVRF());
+        boolean locn = getLocation().equals(sqlEntry.getLocation());
+        /*
+        System.out.println("Comparison:");
+        System.out.println("Name: " + nme + "\tOwner: " + ownr);
+        System.out.println("IPaddr: " + ipad + "\tNetmask: " + mask);
+        System.out.println("VlanTag: " + vtag + "\t Zone, ZoneType: " + zne + " " + zntp);
+        System.out.println("VRF: " + veerf + "\tLocation: " + locn);
+        */
+        return nme && ownr && ipad && mask && vtag && zne && zntp && veerf && locn;
+    }
+
     @Override
     public int hashCode() {
 

@@ -144,7 +144,9 @@ public class SQLWriter {
      * @param idToDelete the id integer, in a String. If a non-parsable String is passed, an exception will occur.
      */
     private void deleteEntry(String idToDelete) {
+        this.connect();
         int iter = this.dbs.getNextAvailableID();
+
         // Writes error message if write fails
         try {
             Integer.parseInt(idToDelete);
@@ -156,12 +158,90 @@ public class SQLWriter {
                     .prepareStatement("delete from " + this.targetTable + " where id=" + idToDelete);
             preparedStatement.executeUpdate();
 
+            if(connect != null){
+                connect.close();
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (NumberFormatException e) {
             System.err.println("Improper ID number passed when delete attempt executed. ID: " + idToDelete);
             System.err.println("Note: If this is caused by using a user created entry when fixing conflicts, this is normal, and ignore this warning.");
             //e.printStackTrace();
+        }
+    }
+
+    private void connect(){
+        try {
+            // This will load the MySQL driver, each DB has its own driver
+            Class.forName("com.mysql.jdbc.Driver");
+            // Setup the connection with the DB
+            // uses url, and account username + password.
+            this.connect = DriverManager.getConnection("jdbc:" + this.sqlDatabaseURL
+                    + "user=" + this.SQLUsername + "&password=" + this.SQLpassword);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Any entries passed will be checked if they are in the database. If they are, they will get deleted.
+     * @param entries
+     */
+    public void deleteAllEntries(ArrayList<SQLEntry> entries){
+        this.connect();
+        ArrayList<SQLEntry> fixedEntries = new ArrayList<>();
+        for(SQLEntry e : entries){
+            if(e.getNetmask().equals("")){
+                e.setNetmask("-1");
+            }
+            if(e.getVlanTag().equals("")){
+                e.setVlanTag("-1");
+            }
+            fixedEntries.add(e);
+        }
+        this.dbs.sortQuery();
+        ArrayList<SQLEntry> db = this.dbs.getSQLEntries();
+        System.out.println("######################################################");
+        for(SQLEntry entry : fixedEntries){
+            //System.out.println("Searching for match for " + entry);
+            for(SQLEntry dbEntry : db){
+                //System.out.println(entry);
+                //System.out.println(dbEntry);
+                if(entry.equalsIgnoreID(dbEntry)){
+                    System.out.println("Deleting Entry:\n" + dbEntry);
+
+                    // Writes error message if write fails
+                    String idToDelete = dbEntry.getId();
+                    try {
+                        Integer.parseInt(idToDelete);
+                        System.out.println("ID to be deleted: " + idToDelete);
+                        statement = connect.createStatement();
+                        //System.out.println(sqlEntry);
+                        // PreparedStatements can use variables and are more efficient
+                        preparedStatement = connect
+                                .prepareStatement("delete from " + this.targetTable + " where id=" + idToDelete);
+                        preparedStatement.executeUpdate();
+
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    } catch (NumberFormatException e) {
+                        System.err.println("Improper ID number passed when delete attempt executed. ID: " + idToDelete);
+                        System.err.println("Note: If this is caused by using a user created entry when fixing conflicts, this is normal, and ignore this warning.");
+                        //e.printStackTrace();
+                    }
+                    System.out.println("######################################################");
+                }
+            }
+        }
+        if(connect != null){
+            try {
+                connect.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -291,6 +371,7 @@ public class SQLWriter {
      * @param sqe entries to be written to the database
      */
     public void writeDataNoConflictCheck(ArrayList<SQLEntry> sqe) {
+        this.connect();
         int iter = this.dbs.getNextAvailableID();
         // Writes error message if write fails
         try {
@@ -358,6 +439,7 @@ public class SQLWriter {
      * @return if the write was a success
      */
     public boolean writeEdit(SQLEntry entry) {
+        this.connect();
         try {
 
             // gets all database column headers, adds them to a string with ? between to allow a prepared
