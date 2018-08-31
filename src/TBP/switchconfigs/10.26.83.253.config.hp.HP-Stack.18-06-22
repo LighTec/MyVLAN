@@ -1,0 +1,559 @@
+; hpStack Configuration Editor; Created on release #KA.15.18.0007
+; Ver #09:34.6b.fb.ff.fd.ff.ff.3f.ef:7f
+
+stacking
+   member 1 type "J9574A" mac-address 3ca82a-486200
+   member 1 priority 255
+   member 2 type "J9574A" mac-address 3ca82a-47ae00
+   member 2 priority 254
+   exit
+hostname "CR135V-01-MSW-3978"
+console baud-rate 9600
+console flow-control none
+console idle-timeout 300
+console idle-timeout serial-usb 300
+trunk 1/49,2/49 trk1 lacp
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this systeshm is strictly prohibited, *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server dead-time 5
+radius-server timeout 3
+radius-server retransmit 2
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+telnet-server listen data
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+web-management ssl
+web-management listen data
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.26.83.1
+ip ssh listen data
+interface 1/1
+   broadcast-limit 10
+   name "Rm.231_JK.A-2"
+   exit
+interface 1/2
+   broadcast-limit 10
+   name "Rm.232A_JK.A-4"
+   exit
+interface 1/3
+   broadcast-limit 10
+   name "Rm.232_JK.A-6"
+   exit
+interface 1/4
+   broadcast-limit 10
+   name "Rm.232B_JK.A-8"
+   exit
+interface 1/5
+   broadcast-limit 10
+   name "Rm.233_JK.A-10"
+   exit
+interface 1/6
+   broadcast-limit 10
+   name "Rm.233A_JK.A-12"
+   exit
+interface 1/7
+   broadcast-limit 10
+   name "Rm.237_JK.B-26"
+   exit
+interface 1/8
+   broadcast-limit 10
+   name "Rm.238A_JK.B-28"
+   exit
+interface 1/9
+   broadcast-limit 10
+   name "Rm.238_JK.B-30"
+   exit
+interface 1/10
+   broadcast-limit 10
+   name "Rm.238B_JK.B-32"
+   exit
+interface 1/11
+   broadcast-limit 10
+   name "Rm.239_JK.B-34"
+   exit
+interface 1/12
+   broadcast-limit 10
+   name "Rm.240A_JK.B-36"
+   exit
+interface 1/13
+   broadcast-limit 10
+   name "Rm.243_JK.C-50"
+   exit
+interface 1/14
+   broadcast-limit 10
+   name "Rm.243A_JK.C-52"
+   exit
+interface 1/15
+   broadcast-limit 10
+   name "Rm.244_JK.C-54"
+   exit
+interface 1/16
+   broadcast-limit 10
+   name "Rm.245B_JK.C-56"
+   exit
+interface 1/17
+   broadcast-limit 10
+   name "Rm.245_JK.C-58"
+   exit
+interface 1/18
+   broadcast-limit 10
+   name "Rm.245A_JK.C-60"
+   exit
+interface 1/19
+   broadcast-limit 10
+   name "JK.D-73_WAP3"
+   exit
+interface 1/20
+   broadcast-limit 10
+   name "JK.D-74_WAP4"
+   exit
+interface 1/21
+   broadcast-limit 10
+   name "JK.D-75_WAP5"
+   exit
+interface 1/22
+   broadcast-limit 10
+   name "JK.D-76_WAP6"
+   exit
+interface 1/23
+   broadcast-limit 10
+   name "JK.D-77_WAP7"
+   exit
+interface 1/24
+   broadcast-limit 10
+   name "JK.D-78_WAP8"
+   exit
+interface 1/25
+   broadcast-limit 10
+   name "Rm.234A_JK.A-14"
+   exit
+interface 1/26
+   broadcast-limit 10
+   name "Rm.234_JK.A-16"
+   exit
+interface 1/27
+   broadcast-limit 10
+   name "Rm.235_JK.A-18"
+   exit
+interface 1/28
+   broadcast-limit 10
+   name "Rm.235B_JK.A-20"
+   exit
+interface 1/29
+   broadcast-limit 10
+   name "Rm.236A_JK.A-22"
+   exit
+interface 1/30
+   broadcast-limit 10
+   name "Rm.236_JK.A-24"
+   exit
+interface 1/31
+   broadcast-limit 10
+   name "Rm.240_JK.B-38"
+   exit
+interface 1/32
+   broadcast-limit 10
+   name "Rm.240B_JK.B-40"
+   exit
+interface 1/33
+   broadcast-limit 10
+   name "Rm.242A_JK.B-42"
+   exit
+interface 1/34
+   broadcast-limit 10
+   name "Rm.242_JK.B-44"
+   exit
+interface 1/35
+   broadcast-limit 10
+   name "Rm.242B_JK.B46"
+   exit
+interface 1/36
+   broadcast-limit 10
+   name "Rm.243B_JK.B-48"
+   exit
+interface 1/37
+   broadcast-limit 10
+   name "Rm.246_JK.C-62"
+   exit
+interface 1/38
+   broadcast-limit 10
+   name "Rm.237B_JK.C-64"
+   exit
+interface 1/39
+   broadcast-limit 10
+   name "Rm.247_JK.C-66"
+   exit
+interface 1/40
+   broadcast-limit 10
+   name "Rm.247A_JK.C-68"
+   exit
+interface 1/41
+   broadcast-limit 10
+   name "Rm.248_JK.C-70"
+   exit
+interface 1/42
+   broadcast-limit 10
+   name "JK.C-71_WAP1"
+   exit
+interface 1/43
+   broadcast-limit 10
+   name "JK.C-72_WAP2"
+   exit
+interface 1/44
+   broadcast-limit 10
+   name "JK.E-13_WAP5"
+   exit
+interface 1/45
+   broadcast-limit 10
+   name "JK.E-14_WAP6"
+   exit
+interface 1/46
+   broadcast-limit 10
+   name "JK.E-15_WAP7"
+   exit
+interface 1/47
+   broadcast-limit 10
+   name "JK.E-16_WAP8"
+   exit
+interface 1/48
+   broadcast-limit 10
+   exit
+interface 1/49
+   broadcast-limit 40
+   name "TRK1-X1/49U-10.26.83.254-E02D-TRK2_CH135V"
+   exit
+interface 1/50
+   broadcast-limit 10
+   disable
+   exit
+interface 1/51
+   broadcast-limit 10
+   disable
+   exit
+interface 1/52
+   broadcast-limit 10
+   name "IrrigationController_SW-Starbucks(Outside)"
+   exit
+interface 2/1
+   broadcast-limit 10
+   name "JK.D-79_CCTV1"
+   exit
+interface 2/2
+   broadcast-limit 10
+   name "JK.D-80_CCTV2"
+   exit
+interface 2/3
+   broadcast-limit 10
+   name "JK.D-81_CCTV3"
+   exit
+interface 2/4
+   broadcast-limit 10
+   name "JK.D-81_CRTPH"
+   exit
+interface 2/5
+   broadcast-limit 10
+   name "Rm.125_JK.E-2"
+   exit
+interface 2/6
+   broadcast-limit 10
+   name "Rm.126_JK.E-4"
+   exit
+interface 2/7
+   broadcast-limit 10
+   name "Rm.126_JK.E-6"
+   exit
+interface 2/8
+   broadcast-limit 10
+   name "Rm.126_JK.E-8"
+   exit
+interface 2/9
+   broadcast-limit 10
+   name "JK.E-9_WAP1"
+   exit
+interface 2/10
+   broadcast-limit 10
+   name "JK.E-10_WAP2"
+   exit
+interface 2/11
+   broadcast-limit 10
+   name "JK.E-11_WAP3"
+   exit
+interface 2/12
+   broadcast-limit 10
+   name "JK.E-12_WAP4"
+   exit
+interface 2/13
+   broadcast-limit 10
+   name "Rm.131_JK.F-2"
+   exit
+interface 2/14
+   broadcast-limit 10
+   name "Rm.131A_JK.F-4"
+   exit
+interface 2/15
+   broadcast-limit 10
+   name "Rm.131B_JK.F-6"
+   exit
+interface 2/16
+   broadcast-limit 10
+   name "Rm.46_JK.G-2"
+   exit
+interface 2/17
+   broadcast-limit 10
+   name "Rm.46_JK.G-4"
+   exit
+interface 2/18
+   broadcast-limit 10
+   name "JK.G-5_WAP1"
+   exit
+interface 2/19
+   broadcast-limit 10
+   name "JK.G-6_WAP2"
+   exit
+interface 2/20
+   broadcast-limit 10
+   name "JK.G-7_WAP3"
+   exit
+interface 2/21
+   broadcast-limit 10
+   name "JK.G-8_WAP4"
+   exit
+interface 2/22
+   broadcast-limit 10
+   name "JK.G-9_WAP5"
+   exit
+interface 2/23
+   broadcast-limit 10
+   name "JK.G-10_WAP6"
+   exit
+interface 2/24
+   broadcast-limit 10
+   name "JK.G-11_CCTV1"
+   exit
+interface 2/25
+   broadcast-limit 10
+   name "JK.G-12_CCTV2"
+   exit
+interface 2/26
+   broadcast-limit 10
+   name "JK.E-17_CCTV1"
+   exit
+interface 2/27
+   broadcast-limit 10
+   name "JK.E-18_CCTV2"
+   exit
+interface 2/28
+   broadcast-limit 10
+   name "JK.E-19_CCTV3"
+   exit
+interface 2/29
+   broadcast-limit 10
+   name "JK.E-20_CCTV4"
+   exit
+interface 2/30
+   broadcast-limit 10
+   name "JK.E-22_CRTPH"
+   exit
+interface 2/31
+   broadcast-limit 10
+   name "JK.G-13_CCTV3"
+   exit
+interface 2/32
+   broadcast-limit 10
+   name "JK.G-14_CCTV4"
+   exit
+interface 2/33
+   broadcast-limit 10
+   name "JK.G-15_CCTV5"
+   exit
+interface 2/34
+   broadcast-limit 10
+   name "JK.G-16_CRTPH"
+   exit
+interface 2/35
+   broadcast-limit 10
+   name "Laundry"
+   exit
+interface 2/36
+   broadcast-limit 10
+   exit
+interface 2/37
+   broadcast-limit 10
+   disable
+   exit
+interface 2/38
+   broadcast-limit 10
+   disable
+   exit
+interface 2/39
+   broadcast-limit 10
+   disable
+   exit
+interface 2/40
+   broadcast-limit 10
+   disable
+   exit
+interface 2/41
+   broadcast-limit 10
+   disable
+   exit
+interface 2/42
+   broadcast-limit 10
+   disable
+   exit
+interface 2/43
+   broadcast-limit 10
+   disable
+   exit
+interface 2/44
+   broadcast-limit 10
+   name "Rm.045V_JK.G24"
+   exit
+interface 2/45
+   broadcast-limit 10
+   name "JK.G-21_BMS/PowerMeter"
+   exit
+interface 2/46
+   broadcast-limit 10
+   name "JK.G-23_BMS1"
+   exit
+interface 2/47
+   broadcast-limit 10
+   name "JK.G-24_BMS2"
+   exit
+interface 2/48
+   broadcast-limit 10
+   exit
+interface 2/49
+   broadcast-limit 40
+   name "TRK1-X2/49U-10.26.83.254-F02D-TRK2_CH135V"
+   exit
+interface 2/50
+   disable
+   exit
+interface 2/51
+   disable
+   exit
+interface 2/52
+   disable
+   exit
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 192.168.0.2 community "public"
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server listen data
+snmp-server contact "UCIT 220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   disable
+   no ip address
+   member 1
+      ip address dhcp-bootp
+      exit
+   member 2
+      ip address dhcp-bootp
+      exit
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1/1-1/48,1/50-1/52,2/1-2/48,2/50-2/52,Trk1
+   no ip address
+   exit
+vlan 999
+   name "CR_UNUSED_VLAN"
+   untagged 1/50-1/51,2/37-2/43,2/50-2/52
+   no ip address
+   exit
+vlan 2468
+   name "CR_IPCAMERA_10.135.66.0/23"
+   untagged 2/1-2/3,2/24-2/29,2/31-2/33
+   tagged Trk1
+   no ip address
+   exit
+vlan 2478
+   name "CR_WIRELESS_10.10.45.0/24"
+   untagged 1/19-1/24,1/42-1/47,2/9-2/12,2/18-2/23
+   tagged 2/36,Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2479
+   name "CR_MCZ_10.112.0.0/23"
+   untagged 2/5
+   tagged Trk1
+   no ip address
+   exit
+vlan 2480
+   name "CR_UMCZ_10.80.0.0/23"
+   untagged 1/52,2/35
+   tagged Trk1
+   no ip address
+   exit
+vlan 2481
+   name "CR_VOIP_10.6.129.0/24"
+   tagged 2/4-2/5,2/30,2/34,Trk1
+   no ip address
+   ip igmp
+   voice
+   exit
+vlan 2482
+   name "CR_NEZNET_136.159.143.0/24"
+   untagged 1/1-1/18,1/25-1/41,2/6-2/8,2/13-2/17
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2484
+   name "CR_BMS_10.132.204.0/23"
+   untagged 2/44-2/47
+   tagged Trk1
+   no ip address
+   exit
+vlan 2485
+   name "CR_MGMT_10.26.83.0/24"
+   untagged 1/48,2/48
+   tagged Trk1
+   ip address 10.26.83.253 255.255.255.0
+   ip igmp
+   exit
+spanning-tree
+no spanning-tree Trk1 auto-edge-port
+spanning-tree Trk1 priority 4
+spanning-tree config-name "ucalgary"
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600 priority 7
+no tftp server
+tftp server listen data
+loop-protect 1/1-1/48,2/1-2/48
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

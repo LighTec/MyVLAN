@@ -1,0 +1,314 @@
+; hpStack Configuration Editor; Created on release #KA.15.09.0009
+; Ver #03:01.1f.ef:f2
+
+stacking
+   member 1 type "J9573A" mac-address 10604b-38e5c0
+   member 1 priority 255
+   member 2 type "J9573A" mac-address 843497-0200c0
+   member 2 priority 254
+   exit
+hostname "MSB016-B1-SW-3363"
+console inactivity-timer 5
+trunk 1/25,2/25 trk1 lacp
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this system is strictly prohibited,   *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.17
+logging 10.31.1.18
+logging 10.31.1.21
+mac-age-time 180
+qos type-of-service diff-services
+radius-server host 10.31.1.51 oobm
+radius-server host 10.31.1.52 oobm
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69 oobm
+sntp server priority 2 136.159.34.24 oobm
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+web-management ssl
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+interface 1/1
+   broadcast-limit 1
+   exit
+interface 1/2
+   broadcast-limit 1
+   exit
+interface 1/3
+   broadcast-limit 1
+   exit
+interface 1/4
+   broadcast-limit 1
+   exit
+interface 1/5
+   broadcast-limit 1
+   exit
+interface 1/6
+   broadcast-limit 1
+   disable
+   exit
+interface 1/7
+   broadcast-limit 1
+   exit
+interface 1/8
+   broadcast-limit 1
+   disable
+   exit
+interface 1/9
+   broadcast-limit 1
+   disable
+   exit
+interface 1/10
+   broadcast-limit 1
+   disable
+   exit
+interface 1/11
+   broadcast-limit 1
+   disable
+   exit
+interface 1/12
+   broadcast-limit 1
+   disable
+   exit
+interface 1/13
+   broadcast-limit 1
+   disable
+   exit
+interface 1/14
+   broadcast-limit 1
+   disable
+   exit
+interface 1/15
+   broadcast-limit 1
+   disable
+   exit
+interface 1/16
+   broadcast-limit 1
+   disable
+   exit
+interface 1/17
+   broadcast-limit 1
+   disable
+   exit
+interface 1/18
+   broadcast-limit 1
+   disable
+   exit
+interface 1/19
+   broadcast-limit 1
+   disable
+   exit
+interface 1/20
+   broadcast-limit 1
+   disable
+   exit
+interface 1/21
+   broadcast-limit 1
+   disable
+   exit
+interface 1/22
+   broadcast-limit 1
+   disable
+   exit
+interface 1/23
+   broadcast-limit 1
+   disable
+   exit
+interface 1/24
+   broadcast-limit 1
+   disable
+   exit
+interface 1/25
+   broadcast-limit 1
+   exit
+interface 1/26
+   broadcast-limit 1
+   disable
+   exit
+interface 2/1
+   disable
+   exit
+interface 2/2
+   disable
+   exit
+interface 2/3
+   disable
+   exit
+interface 2/4
+   disable
+   exit
+interface 2/5
+   disable
+   exit
+interface 2/6
+   disable
+   exit
+interface 2/7
+   disable
+   exit
+interface 2/8
+   disable
+   exit
+interface 2/9
+   disable
+   exit
+interface 2/10
+   disable
+   exit
+interface 2/11
+   disable
+   exit
+interface 2/12
+   disable
+   exit
+interface 2/13
+   disable
+   exit
+interface 2/14
+   disable
+   exit
+interface 2/15
+   disable
+   exit
+interface 2/16
+   disable
+   exit
+interface 2/17
+   disable
+   exit
+interface 2/18
+   disable
+   exit
+interface 2/19
+   disable
+   exit
+interface 2/20
+   disable
+   exit
+interface 2/21
+   disable
+   exit
+interface 2/22
+   disable
+   exit
+interface 2/23
+   disable
+   exit
+interface 2/24
+   disable
+   exit
+interface 2/26
+   disable
+   exit
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.21 community "mecyou12" trap-level critical
+snmp-server host 10.31.1.21 community "mecyou" trap-level critical
+snmp-server contact "UCIT 220-5555" location "MSPDC"
+snmpv3 enable
+snmpv3 restricted-access
+snmpv3 group managerpriv user "manager" sec-model ver3
+snmpv3 group operatorauth user "operator" sec-model ver3
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication web login radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   ip address 10.31.0.241 255.255.254.0
+   ip default-gateway 10.31.0.1
+   member 1
+      ip address dhcp-bootp
+      exit
+   member 2
+      ip address dhcp-bootp
+      exit
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1/1-1/24,1/26,2/1-2/24,2/26,Trk1
+   no ip address
+   exit
+vlan 704
+   name "SSLVPN-HA"
+   tagged Trk1
+   no ip address
+   exit
+vlan 706
+   name "DHCP-HeartBeat"
+   untagged 1/1
+   tagged Trk1
+   no ip address
+   exit
+vlan 707
+   name "DHCPsrv_test"
+   untagged 1/3-1/5
+   tagged Trk1
+   no ip address
+   exit
+vlan 708
+   name "f53900_HeartBeat"
+   untagged 1/7
+   tagged Trk1
+   no ip address
+   exit
+vlan 709
+   name "FG-OOB-HeartBeat"
+   untagged 1/2
+   tagged Trk1
+   no ip address
+   exit
+vlan 999
+   name "unused-vlan"
+   untagged 1/6,1/8-1/24,1/26,2/1-2/24,2/26
+   no ip address
+   exit
+spanning-tree
+spanning-tree 1/1 bpdu-filter bpdu-protection
+spanning-tree 1/2 bpdu-filter bpdu-protection
+spanning-tree 1/3 bpdu-filter bpdu-protection
+spanning-tree 1/4 bpdu-filter bpdu-protection
+spanning-tree 1/5 bpdu-filter bpdu-protection
+spanning-tree 1/6 bpdu-filter bpdu-protection
+spanning-tree 1/7 bpdu-filter bpdu-protection
+spanning-tree 1/8 bpdu-filter bpdu-protection
+spanning-tree 1/9 bpdu-filter bpdu-protection
+spanning-tree 1/10 bpdu-filter bpdu-protection
+spanning-tree 1/11 bpdu-filter bpdu-protection
+spanning-tree 1/12 bpdu-filter bpdu-protection
+spanning-tree 1/13 bpdu-filter bpdu-protection
+spanning-tree 1/14 bpdu-filter bpdu-protection
+spanning-tree 1/15 bpdu-filter bpdu-protection
+spanning-tree 1/16 bpdu-filter bpdu-protection
+spanning-tree 1/17 bpdu-filter bpdu-protection
+spanning-tree 1/18 bpdu-filter bpdu-protection
+spanning-tree 1/19 bpdu-filter bpdu-protection
+spanning-tree 1/20 bpdu-filter bpdu-protection
+spanning-tree 1/21 bpdu-filter bpdu-protection
+spanning-tree 1/22 bpdu-filter bpdu-protection
+spanning-tree 1/23 bpdu-filter bpdu-protection
+spanning-tree 1/24 bpdu-filter bpdu-protection
+spanning-tree Trk1 priority 4
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree bpdu-protection-timeout 600
+loop-protect 1/1-1/24,2/1-2/24
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

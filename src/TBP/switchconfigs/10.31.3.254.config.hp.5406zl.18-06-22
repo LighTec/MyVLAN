@@ -1,0 +1,410 @@
+; J8697A Configuration Editor; Created on release #K.14.65
+
+hostname "HRICBAB09V-B1-ASW-1895" 
+no qos dscp-map 001000 
+no qos dscp-map 010000 
+no qos dscp-map 011000 
+no qos dscp-map 100000 
+no qos dscp-map 101000 
+no qos dscp-map 110000 
+no qos dscp-map 111000 
+module 1 type J9309A 
+module 2 type J8702A 
+module 3 type J8702A 
+module 4 type J8705A 
+interface B3 
+   name "Colon" 
+exit
+interface B4 
+   name "HRIChost5" 
+exit
+interface B8 
+   disable
+   name "Deltoid" 
+exit
+interface B9 
+   name "HRIChost7" 
+exit
+interface B11 
+   name "HRIChost6" 
+exit
+interface B15 
+   name "HRIChost9" 
+exit
+interface B16 
+   name "B16D-10.31.3.250-x1U_Rack5:U40" 
+   speed-duplex auto-1000 
+exit
+interface B18 
+   name "HRIChost3" 
+exit
+interface B19 
+   name "HRIChost4" 
+exit
+interface B21 
+   name "MARS-Database" 
+exit
+interface B22 
+   name "HRICHosts-B2P3" 
+exit
+interface B23 
+   name "Trans_firewall_1" 
+exit
+interface B24 
+   name "Trans_firewall_2" 
+exit
+trunk A1-A2 Trk1 LACP 
+interface C1 
+   name "HRIChost3" 
+exit
+interface C2 
+   name "HRIChost4" 
+exit
+interface C3 
+   name "Artery_NIC1" 
+exit
+interface C4 
+   name "Artery_NIC2" 
+exit
+interface C5 
+   name "AGMEDNET" 
+exit
+interface C6 
+   name "HRIChost6" 
+exit
+interface C7 
+   name "HRIChost7" 
+exit
+interface C9 
+   disable
+exit
+interface C10 
+   name "iDRAC_m1000e" 
+exit
+interface C11 
+   name "iDRAC2_m1000e" 
+exit
+interface C12 
+   disable
+exit
+interface C14 
+   name "ITADSLIMS01" 
+exit
+interface C15 
+   name "HRIChost5" 
+exit
+interface C16 
+   name "HRIChost9" 
+exit
+interface C17 
+   disable
+exit
+interface C19 
+   disable
+exit
+interface C20 
+   disable
+   name "Jugular" 
+exit
+interface C21 
+   disable
+   name "iDRAC_KH2161DS-2" 
+exit
+interface C22 
+   disable
+   name "CNDRDB" 
+exit
+interface C23 
+   name "IMS-4000-HRIC-HOST_10.138.20.16" 
+exit
+interface C24 
+   name "IMS-4000-HRIC-NODE1_10.138.20.17" 
+exit
+interface D10 
+   name "itsosc800004a" 
+exit
+interface D11 
+   name "itsosc800004a" 
+exit
+interface D12 
+   name "itsosc800004b" 
+exit
+interface D13 
+   name "itsosc800004b" 
+exit
+interface D14 
+   name "ITADSLIMS01" 
+exit
+interface D15 
+   name "ITADSLIMS01" 
+exit
+trunk C14,D14 Trk2 LACP 
+trunk B17,C17 Trk3 LACP 
+ip default-gateway 10.31.3.1 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   untagged A3-A4,B5-B7,B12-B14,D9,D16-D24 
+   no untagged B1-B4,B8-B11,B15-B16,B18-B24,C1-C13,C15-C16,C18-C24,D1-D8,D10-D13,D15,Trk1-Trk3 
+   no ip address 
+   exit 
+vlan 3643 
+   name "DMZ" 
+   tagged B4,B9,B11,B15,B18-B19,B22,C1-C2,C6-C7,C15-C16,Trk1 
+   no ip address 
+   jumbo 
+   exit 
+vlan 3668 
+   name "IDMZ" 
+   tagged Trk1 
+   no ip address 
+   jumbo 
+   exit 
+vlan 3667 
+   name "MSZ" 
+   tagged B4,B9,B11,B15,B18-B19,B22,C1-C2,C6-C7,C15-C16,Trk1 
+   no ip address 
+   jumbo 
+   exit 
+vlan 3627 
+   name "HKH_10.41.224.0/24" 
+   untagged B1,B3-B4,B9,B11,B15,B18-B20,B22,C1-C3,C5-C7,C10-C11,C15-C16,C18,C21 
+   ip address 10.41.224.14 255.255.255.0 
+   tagged Trk1 
+   jumbo 
+   exit 
+vlan 3603 
+   name "HRIC_DATA CENTER" 
+   ip address 10.31.3.254 255.255.255.0 
+   tagged B16,B23-B24,Trk1,Trk3 
+   jumbo 
+   exit 
+vlan 3105 
+   name "136.159.222.80/28 Transcription" 
+   ip address 136.159.222.199 255.255.255.240 
+   tagged B23-B24,Trk1 
+   jumbo 
+   exit 
+vlan 3584 
+   name "10.138.20.2/23" 
+   untagged C8,C23-C24,D1-D7 
+   tagged Trk1 
+   no ip address 
+   jumbo 
+   exit 
+vlan 3080 
+   name "idmz-4_10.253.69.0/24" 
+   tagged B4,B9,B11,B15,B18-B19,B22,C1-C2,C6-C7,C15-C16,Trk1-Trk2 
+   no ip address 
+   jumbo 
+   exit 
+vlan 3629 
+   name "msz-bubble3_10.41.228.0/24" 
+   untagged C13,D8 
+   tagged Trk1 
+   no ip address 
+   jumbo 
+   exit 
+vlan 2870 
+   name "net-136.159.78.0/27" 
+   tagged B23-B24,Trk1 
+   no ip address 
+   jumbo 
+   exit 
+vlan 3107 
+   name "localDataTrans_10.56.3.0/24" 
+   untagged B2,C4 
+   no ip address 
+   jumbo 
+   exit 
+vlan 2706 
+   name "LightsOut_10.60.76.0/24" 
+   untagged D10,D13,D15 
+   tagged Trk1 
+   no ip address 
+   jumbo 
+   exit 
+vlan 1794 
+   name "VDI-HKH" 
+   tagged Trk1 
+   no ip address 
+   jumbo 
+   exit 
+vlan 2629 
+   name "10.56.176.0_MCZ-HKH" 
+   untagged B10 
+   tagged B4,B9,B11,B15,B18-B19,B22,C1-C2,C6-C7,C15-C16,Trk1 
+   no ip address 
+   jumbo 
+   exit 
+vlan 2630 
+   name "10.56.168.0/24_UCZ-citrix" 
+   tagged B4,B9,B11,B15,B18-B19,B22,C1-C2,C6-C7,C15-C16,Trk1 
+   no ip address 
+   jumbo 
+   exit 
+vlan 999 
+   name "unused-vlan" 
+   untagged B8,B21,C9,C12,C19-C20,C22,Trk1 
+   no ip address 
+   exit 
+vlan 2889 
+   name "stor_mgmt_10.58.8.0/24" 
+   untagged D11-D12 
+   tagged Trk1 
+   no ip address 
+   jumbo 
+   exit 
+vlan 2351 
+   name "TSM2-Datacentre_10.60.148.0/23" 
+   tagged Trk1-Trk2 
+   no ip address 
+   jumbo 
+   exit 
+vlan 2524 
+   name "mstorage-secure1_10.59.32.0/24" 
+   tagged B4,B9,B11,B15,B18-B19,B22,C1-C2,C6-C7,C15-C16,Trk1 
+   no ip address 
+   jumbo 
+   exit 
+vlan 2525 
+   name "mstorage-secure2_10.59.33.0/24" 
+   tagged B4,B9,B11,B15,B18-B19,B22,C1-C2,C6-C7,C15-C16,Trk1 
+   no ip address 
+   jumbo 
+   exit 
+vlan 2742 
+   name "dc-vm-vmotion_10.60.0.0/24" 
+   tagged B4,B9,B11,B15,B18-B19,B22,C1-C2,C6-C7,C15-C16,Trk1 
+   no ip address 
+   jumbo 
+   exit 
+vlan 2747 
+   name "mstorage-stor-compa_10.58.41/24" 
+   tagged B4,B9,B11,B15,B18-B19,B22,C1-C2,C6-C7,C15-C16,Trk1 
+   no ip address 
+   jumbo 
+   exit 
+vlan 2748 
+   name "mstorage-stor-compb_10.58.40/24" 
+   tagged B4,B9,B11,B15,B18-B19,B22,C1-C2,C6-C7,C15-C16,Trk1 
+   no ip address 
+   jumbo 
+   exit 
+console inactivity-timer 5
+logging 10.31.1.21
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69 3
+sntp server priority 2 136.159.34.24 3
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access manager
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+no ip ssh
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree B1 bpdu-filter bpdu-protection
+spanning-tree B2 bpdu-filter bpdu-protection
+spanning-tree B3 bpdu-filter bpdu-protection
+spanning-tree B4 bpdu-filter bpdu-protection
+spanning-tree B5 bpdu-filter bpdu-protection
+spanning-tree B6 bpdu-filter bpdu-protection
+spanning-tree B7 bpdu-filter bpdu-protection
+spanning-tree B8 bpdu-filter bpdu-protection
+spanning-tree B9 bpdu-filter bpdu-protection
+spanning-tree B10 bpdu-filter bpdu-protection
+spanning-tree B11 bpdu-filter bpdu-protection
+spanning-tree B12 bpdu-filter bpdu-protection
+spanning-tree B13 bpdu-filter bpdu-protection
+spanning-tree B14 bpdu-filter bpdu-protection
+spanning-tree B15 bpdu-filter bpdu-protection
+no spanning-tree B16 auto-edge-port
+spanning-tree B16 root-guard
+spanning-tree B18 bpdu-filter bpdu-protection
+spanning-tree B19 bpdu-filter bpdu-protection
+spanning-tree B20 bpdu-filter bpdu-protection
+spanning-tree B21 bpdu-filter bpdu-protection
+spanning-tree B22 bpdu-filter
+spanning-tree B23 bpdu-filter bpdu-protection
+spanning-tree B24 bpdu-filter bpdu-protection
+spanning-tree C1 bpdu-filter bpdu-protection
+spanning-tree C2 bpdu-filter bpdu-protection
+spanning-tree C3 bpdu-filter bpdu-protection
+spanning-tree C4 bpdu-filter bpdu-protection
+spanning-tree C5 bpdu-filter bpdu-protection
+spanning-tree C6 bpdu-filter bpdu-protection
+spanning-tree C7 bpdu-filter bpdu-protection
+spanning-tree C8 bpdu-filter bpdu-protection
+spanning-tree C9 bpdu-filter bpdu-protection
+spanning-tree C10 bpdu-filter
+spanning-tree C11 bpdu-filter bpdu-protection
+spanning-tree C12 bpdu-filter bpdu-protection
+spanning-tree C13 bpdu-filter bpdu-protection
+spanning-tree C15 bpdu-filter bpdu-protection
+spanning-tree C16 bpdu-filter bpdu-protection
+spanning-tree C18 bpdu-filter bpdu-protection
+spanning-tree C19 bpdu-filter bpdu-protection
+spanning-tree C20 bpdu-filter bpdu-protection
+spanning-tree C21 bpdu-filter bpdu-protection
+spanning-tree C22 bpdu-filter bpdu-protection
+spanning-tree C23 bpdu-filter bpdu-protection
+spanning-tree C24 bpdu-filter bpdu-protection
+no spanning-tree Trk1 auto-edge-port
+spanning-tree Trk1 priority 4
+spanning-tree Trk2 priority 4
+spanning-tree Trk3 priority 4 root-guard
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree instance 1 vlan 1-1099 2000-4094
+spanning-tree instance 1 Trk1 priority 4
+spanning-tree instance 1 Trk2 priority 4
+spanning-tree instance 1 Trk3 priority 4
+spanning-tree instance 2 vlan 1100-1399
+spanning-tree instance 2 Trk1 priority 4
+spanning-tree instance 2 Trk2 priority 4
+spanning-tree instance 2 Trk3 priority 4
+spanning-tree instance 11 vlan 1700-1799
+spanning-tree instance 11 Trk1 priority 4
+spanning-tree instance 11 Trk2 priority 4
+spanning-tree instance 11 Trk3 priority 4
+spanning-tree instance 12 vlan 1800-1899
+spanning-tree instance 12 Trk1 priority 4
+spanning-tree instance 12 Trk2 priority 4
+spanning-tree instance 12 Trk3 priority 4
+spanning-tree instance 13 vlan 1900-1999
+spanning-tree instance 13 Trk1 priority 4
+spanning-tree instance 13 Trk2 priority 4
+spanning-tree instance 13 Trk3 priority 4
+spanning-tree instance 14 vlan 1400-1499
+spanning-tree instance 14 Trk1 priority 4
+spanning-tree instance 14 Trk2 priority 4
+spanning-tree instance 14 Trk3 priority 4
+spanning-tree instance 15 vlan 1500-1599
+spanning-tree instance 15 Trk1 priority 4
+spanning-tree instance 15 Trk2 priority 4
+spanning-tree instance 15 Trk3 priority 4
+spanning-tree instance 16 vlan 1600-1699
+spanning-tree instance 16 Trk1 priority 4
+spanning-tree instance 16 Trk2 priority 4
+spanning-tree instance 16 Trk3 priority 4
+spanning-tree bpdu-protection-timeout 600 priority 7
+no autorun
+password manager
+password operator
+

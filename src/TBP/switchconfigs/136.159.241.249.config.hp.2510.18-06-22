@@ -1,0 +1,178 @@
+; J9019B Configuration Editor; Created on release #Q.11.74
+
+hostname "SB1-1-301" 
+snmp-server contact "UCIT 220-5555" 
+mac-age-time 180 
+time timezone -420 
+time daylight-time-rule Continental-US-and-Canada 
+console inactivity-timer 5 
+web-management ssl 
+interface 1 
+   name "RM628D-2/Q4" 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 2 
+   name "RM116-2/Q4" 
+   broadcast-limit 10 
+   speed-duplex 100-full 
+exit
+interface 3 
+   name "SB6-1-201" 
+   broadcast-limit 10 
+   speed-duplex 100-full 
+exit
+interface 4 
+   name "SB5-1-301" 
+   broadcast-limit 10 
+   speed-duplex 100-full 
+exit
+interface 5 
+   name "RM117-1/Q4" 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 6 
+   name "RM118-1/Q4" 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 7 
+   name "RM118-1/Q3" 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 8 
+   name "RM116A-2/Q4" 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 9 
+   name "RM115A-1/Q4" 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 10 
+   name "RM117-1/Q3" 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 11 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 12 
+   disable
+   broadcast-limit 10 
+exit
+interface 13 
+   name "RM117A-1/Q3" 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 14 
+   name "RM115C-1/Q3" 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 15 
+   name "RM115A-1/Q3" 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 16 
+   name "RM115B-1/Q4" 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 17 
+   name "RM115B-1/Q3" 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 18 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 19 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 20 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 21 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 22 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 23 
+   broadcast-limit 10 
+   speed-duplex 10-half 
+exit
+interface 24 
+   broadcast-limit 40 
+   speed-duplex 100-full 
+exit
+interface 25 
+   name "Uplink to SB1-1-302" 
+   broadcast-limit 10 
+exit
+interface 26 
+   disable
+   broadcast-limit 10 
+exit
+ip default-gateway 136.159.241.1 
+sntp server 136.159.34.69 1 
+sntp server 136.159.34.24 2 
+timesync sntp 
+sntp unicast 
+sntp 60 
+snmp-server community "uofc2009" Operator 
+snmp-server community "mecyou12" Operator 
+snmp-server community "mecyou" Operator Unrestricted 
+snmp-server host 10.31.1.21 "uofc2009" Critical 
+snmp-server host 10.31.0.17 "uofc2009" Critical 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   untagged 1-25 
+   ip address 136.159.241.249 255.255.255.0 
+   no untagged 26 
+   exit 
+vlan 999 
+   name "ST_UNUSED" 
+   untagged 26 
+   exit 
+ip authorized-managers 136.159.254.0 255.255.255.0 
+ip authorized-managers 10.41.70.0 255.255.255.0 access Operator 
+ip authorized-managers 10.31.0.0 255.255.254.0 
+ip authorized-managers 10.31.4.0 255.255.255.0 
+ip authorized-managers 10.41.68.50 
+ip authorized-managers 10.41.68.58 
+ip authorized-managers 10.41.75.0 255.255.255.0 
+qos type-of-service diff-services 
+aaa authentication login privilege-mode 
+aaa authentication telnet login radius local 
+aaa authentication telnet enable radius local 
+aaa authentication ssh login radius 
+aaa authentication ssh enable radius 
+banner motd "************************************************************************"
+banner motd "* Warning - Private Electronic Device - UofC Authorized users only:    *"
+banner motd "************************************************************************"
+banner motd "~"
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+loop-protect 1-23
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no dhcp config-file-update
+password manager
+password operator
+

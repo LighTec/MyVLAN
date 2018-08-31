@@ -1,0 +1,1134 @@
+; hpStack Configuration Editor; Created on release #KA.16.02.0014
+; Ver #0f:01.81.f0.92.34.59.3c.6b.fb.ff.fd.ff.ff.3f.ef:fe
+
+stacking
+   member 1 type "J9574A" mac-address 5cb901-264740
+   member 1 priority 255
+   member 2 type "J9574A" mac-address 40a8f0-d172c0
+   member 2 priority 254
+   member 3 type "J9574A" mac-address 3863bb-e9d0c0
+   exit
+hostname "YA127V-M1-MSW-2614"
+console baud-rate 9600
+console flow-control none
+console idle-timeout 300
+console idle-timeout serial-usb 300
+no rest-interface
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by University of Calgary and for authorized purposes only.      *\n* Unauthorized access to or use of this system is strictly prohibited,   *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server dead-time 5
+radius-server timeout 3
+radius-server retransmit 2
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+telnet-server listen data
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+web-management ssl
+web-management listen data
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.26.71.1
+ip ssh listen data
+interface 1/1
+   broadcast-limit 10
+   name "Rm.134"
+   exit
+interface 1/2
+   broadcast-limit 10
+   name "Rm.135"
+   exit
+interface 1/3
+   broadcast-limit 10
+   name "Rm.202N"
+   exit
+interface 1/4
+   broadcast-limit 10
+   exit
+interface 1/5
+   broadcast-limit 10
+   name "Rm.221"
+   exit
+interface 1/6
+   broadcast-limit 10
+   name "Rm.223"
+   exit
+interface 1/7
+   broadcast-limit 10
+   name "Rm.226"
+   exit
+interface 1/8
+   broadcast-limit 10
+   name "Rm.228"
+   exit
+interface 1/9
+   broadcast-limit 10
+   name "Rm.229"
+   exit
+interface 1/10
+   broadcast-limit 10
+   name "Rm.234"
+   exit
+interface 1/11
+   broadcast-limit 10
+   name "Rm.235"
+   exit
+interface 1/12
+   broadcast-limit 10
+   name "Rm.120A"
+   speed-duplex auto-100
+   exit
+interface 1/13
+   broadcast-limit 10
+   name "Rm.120B"
+   speed-duplex auto-100
+   exit
+interface 1/14
+   broadcast-limit 10
+   name "Rm.120C"
+   speed-duplex auto-100
+   exit
+interface 1/15
+   broadcast-limit 10
+   name "Rm.121A"
+   speed-duplex auto-100
+   exit
+interface 1/16
+   broadcast-limit 10
+   disable
+   name "Rm.121B"
+   speed-duplex auto-100
+   exit
+interface 1/17
+   broadcast-limit 10
+   name "Rm.121C"
+   speed-duplex auto-100
+   exit
+interface 1/18
+   broadcast-limit 10
+   name "Rm.122A"
+   speed-duplex auto-100
+   exit
+interface 1/19
+   broadcast-limit 10
+   name "Rm.122B"
+   speed-duplex auto-100
+   exit
+interface 1/20
+   broadcast-limit 10
+   name "Rm.122C"
+   speed-duplex auto-100
+   exit
+interface 1/21
+   broadcast-limit 10
+   name "Rm.123A"
+   speed-duplex auto-100
+   exit
+interface 1/22
+   broadcast-limit 10
+   name "Rm.123B"
+   speed-duplex auto-100
+   exit
+interface 1/23
+   broadcast-limit 10
+   name "Rm.123C"
+   speed-duplex auto-100
+   exit
+interface 1/24
+   broadcast-limit 10
+   name "Rm.128A"
+   speed-duplex auto-100
+   exit
+interface 1/25
+   broadcast-limit 10
+   name "Rm.125B"
+   speed-duplex auto-100
+   exit
+interface 1/26
+   broadcast-limit 10
+   name "Rm.125C"
+   speed-duplex auto-10
+   exit
+interface 1/27
+   broadcast-limit 10
+   name "Rm.126A"
+   speed-duplex auto-100
+   exit
+interface 1/28
+   broadcast-limit 10
+   name "Rm.126B"
+   speed-duplex auto-100
+   exit
+interface 1/29
+   broadcast-limit 10
+   name "Rm.126C"
+   speed-duplex auto-100
+   exit
+interface 1/30
+   broadcast-limit 10
+   name "Rm.127A"
+   speed-duplex auto-100
+   exit
+interface 1/31
+   broadcast-limit 10
+   name "Rm.127B"
+   speed-duplex auto-100
+   exit
+interface 1/32
+   broadcast-limit 10
+   name "Rm.127C"
+   speed-duplex auto-100
+   exit
+interface 1/33
+   broadcast-limit 10
+   name "Rm.129SZ_IPCAMERA_01-10"
+   exit
+interface 1/34
+   broadcast-limit 10
+   name "Rm.205"
+   exit
+interface 1/35
+   broadcast-limit 10
+   name "Rm.221SZ_IPCAMERA_02-04"
+   exit
+interface 1/36
+   broadcast-limit 10
+   name "Rm.227SZ_IPCAMERA_02-05"
+   exit
+interface 1/37
+   broadcast-limit 10
+   name "Rm.208"
+   exit
+interface 1/38
+   broadcast-limit 10
+   name "Rm.101N"
+   exit
+interface 1/39
+   broadcast-limit 10
+   name "Rm.09KS"
+   exit
+interface 1/40
+   broadcast-limit 10
+   name "Rm.121"
+   exit
+interface 1/41
+   broadcast-limit 10
+   name "Rm.123"
+   exit
+interface 1/42
+   broadcast-limit 10
+   name "Rm.125"
+   exit
+interface 1/43
+   broadcast-limit 10
+   name "Rm.128"
+   exit
+interface 1/44
+   broadcast-limit 10
+   name "Rm.129"
+   exit
+interface 1/45
+   broadcast-limit 10
+   name "Rm.06Z_IPCAMERA_"
+   speed-duplex auto-100
+   exit
+interface 1/46
+   broadcast-limit 10
+   name "x1/46d-10.26.71.214-x24u_YA-005"
+   speed-duplex auto-1000
+   exit
+interface 1/47
+   broadcast-limit 10
+   disable
+   exit
+interface 1/48
+   broadcast-limit 10
+   name "YA127A-M1-UPS-4473_10.26.71.42"
+   exit
+interface 1/49
+   broadcast-limit 40
+   name "X1/49U-10.26.71.254-A10D_GL02V"
+   speed-duplex 1000-full
+   exit
+interface 1/50
+   broadcast-limit 10
+   disable
+   exit
+interface 1/51
+   broadcast-limit 10
+   disable
+   exit
+interface 1/52
+   broadcast-limit 10
+   disable
+   exit
+interface 2/1
+   broadcast-limit 10
+   name "Rm.227B"
+   speed-duplex auto-100
+   exit
+interface 2/2
+   broadcast-limit 10
+   name "Rm.227C"
+   speed-duplex auto-100
+   exit
+interface 2/3
+   broadcast-limit 10
+   name "Rm.228A"
+   speed-duplex auto-100
+   exit
+interface 2/4
+   broadcast-limit 10
+   name "Rm.228B"
+   speed-duplex auto-100
+   exit
+interface 2/5
+   broadcast-limit 10
+   name "Rm.228C"
+   speed-duplex auto-100
+   exit
+interface 2/6
+   broadcast-limit 10
+   name "Rm.229A"
+   speed-duplex auto-100
+   exit
+interface 2/7
+   broadcast-limit 10
+   name "Rm.229B"
+   speed-duplex auto-100
+   exit
+interface 2/8
+   broadcast-limit 10
+   name "Rm.229C"
+   speed-duplex auto-100
+   exit
+interface 2/9
+   broadcast-limit 10
+   name "Rm.230A"
+   speed-duplex auto-100
+   exit
+interface 2/10
+   broadcast-limit 10
+   name "Rm.230B"
+   speed-duplex auto-100
+   exit
+interface 2/11
+   broadcast-limit 10
+   name "Rm.230C"
+   speed-duplex auto-100
+   exit
+interface 2/12
+   broadcast-limit 10
+   name "Rm.235A"
+   speed-duplex auto-100
+   exit
+interface 2/13
+   broadcast-limit 10
+   name "Rm.235B"
+   speed-duplex auto-100
+   exit
+interface 2/14
+   broadcast-limit 10
+   name "Rm.236A"
+   speed-duplex auto-100
+   exit
+interface 2/15
+   broadcast-limit 10
+   name "Rm.236B"
+   speed-duplex auto-100
+   exit
+interface 2/16
+   broadcast-limit 10
+   name "Rm.238A"
+   speed-duplex auto-100
+   exit
+interface 2/17
+   broadcast-limit 10
+   name "Rm.238B"
+   speed-duplex auto-100
+   exit
+interface 2/18
+   broadcast-limit 10
+   name "Rm.102A"
+   speed-duplex auto-100
+   exit
+interface 2/19
+   broadcast-limit 10
+   name "Rm.202A"
+   speed-duplex auto-100
+   exit
+interface 2/20
+   broadcast-limit 10
+   name "Rm.109LZ_IPCAMERA_01-06"
+   exit
+interface 2/21
+   broadcast-limit 10
+   name "Rm.105"
+   exit
+interface 2/22
+   broadcast-limit 10
+   name "Rm.121SZ_IPCAMERA_01-08"
+   exit
+interface 2/23
+   broadcast-limit 10
+   name "Rm.121SZ_IPCAMERA_01-09"
+   exit
+interface 2/24
+   broadcast-limit 10
+   speed-duplex auto-100
+   exit
+interface 2/25
+   broadcast-limit 10
+   name "X25D-10.26.71.126-X10U"
+   speed-duplex auto-1000
+   exit
+interface 2/26
+   broadcast-limit 10
+   speed-duplex auto-100
+   exit
+interface 2/27
+   broadcast-limit 10
+   name "Rm.231A"
+   speed-duplex auto-100
+   exit
+interface 2/28
+   broadcast-limit 10
+   name "Rm.231B"
+   speed-duplex auto-100
+   exit
+interface 2/29
+   broadcast-limit 10
+   name "Rm.231C"
+   speed-duplex auto-100
+   exit
+interface 2/30
+   broadcast-limit 10
+   name "Rm.232A"
+   speed-duplex auto-100
+   exit
+interface 2/31
+   broadcast-limit 10
+   name "Rm.232B"
+   speed-duplex auto-100
+   exit
+interface 2/32
+   broadcast-limit 10
+   name "Rm.232C"
+   speed-duplex auto-100
+   exit
+interface 2/33
+   broadcast-limit 10
+   name "Rm.233A"
+   speed-duplex auto-100
+   exit
+interface 2/34
+   broadcast-limit 10
+   name "Rm.233B"
+   speed-duplex auto-100
+   exit
+interface 2/35
+   broadcast-limit 10
+   name "Rm.233C"
+   speed-duplex auto-100
+   exit
+interface 2/36
+   broadcast-limit 10
+   name "Rm.234A"
+   speed-duplex auto-100
+   exit
+interface 2/37
+   broadcast-limit 10
+   name "Rm.234B"
+   speed-duplex auto-100
+   exit
+interface 2/38
+   broadcast-limit 10
+   name "Rm.234C"
+   speed-duplex auto-100
+   exit
+interface 2/39
+   broadcast-limit 10
+   name "Rm.223A"
+   speed-duplex auto-100
+   exit
+interface 2/40
+   broadcast-limit 10
+   name "Rm.223B"
+   speed-duplex auto-100
+   exit
+interface 2/41
+   broadcast-limit 10
+   name "Rm.223C"
+   speed-duplex auto-100
+   exit
+interface 2/42
+   broadcast-limit 10
+   name "Rm.224A"
+   speed-duplex auto-100
+   exit
+interface 2/43
+   broadcast-limit 10
+   name "Rm.224B"
+   speed-duplex auto-100
+   exit
+interface 2/44
+   broadcast-limit 10
+   name "Rm.224C"
+   speed-duplex auto-100
+   exit
+interface 2/45
+   broadcast-limit 10
+   name "Rm.225A"
+   speed-duplex auto-100
+   exit
+interface 2/46
+   broadcast-limit 10
+   exit
+interface 2/47
+   broadcast-limit 10
+   speed-duplex auto-100
+   exit
+interface 2/48
+   broadcast-limit 10
+   disable
+   exit
+interface 2/49
+   broadcast-limit 10
+   disable
+   exit
+interface 2/50
+   broadcast-limit 10
+   disable
+   exit
+interface 2/51
+   broadcast-limit 10
+   disable
+   exit
+interface 2/52
+   broadcast-limit 10
+   disable
+   exit
+interface 3/1
+   broadcast-limit 10
+   name "Rm.316C"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/2
+   broadcast-limit 10
+   name "Rm.412A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/3
+   broadcast-limit 10
+   name "Rm.412B"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/4
+   broadcast-limit 10
+   name "Rm.412C"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/5
+   broadcast-limit 10
+   name "Rm.413A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/6
+   broadcast-limit 10
+   name "Rm.413B"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/7
+   broadcast-limit 10
+   name "Rm.413C"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/8
+   broadcast-limit 10
+   name "Rm.414A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/9
+   broadcast-limit 10
+   name "Rm.414B"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/10
+   broadcast-limit 10
+   name "Rm.414C"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/11
+   broadcast-limit 10
+   name "Rm.415A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/12
+   broadcast-limit 10
+   name "Rm.415B"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/13
+   broadcast-limit 10
+   name "Rm.416A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/14
+   broadcast-limit 10
+   name "Rm.512C"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/15
+   broadcast-limit 10
+   name "Rm.512B"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/16
+   broadcast-limit 10
+   name "Rm.512A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/17
+   broadcast-limit 10
+   name "Rm.513A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/18
+   broadcast-limit 10
+   name "Rm.513B"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/19
+   broadcast-limit 10
+   name "Rm.513C"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/20
+   broadcast-limit 10
+   name "Rm.514A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/21
+   broadcast-limit 10
+   name "Rm.514B"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/22
+   broadcast-limit 10
+   name "Rm.514C"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/23
+   broadcast-limit 10
+   name "Rm.515A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/24
+   broadcast-limit 10
+   name "Rm.515B"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/25
+   broadcast-limit 10
+   name "Rm.611C"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/26
+   broadcast-limit 10
+   name "Rm.416B"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/27
+   broadcast-limit 10
+   name "Rm.416C"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/28
+   broadcast-limit 10
+   name "Rm.417A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/29
+   broadcast-limit 10
+   name "Rm.417B"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/30
+   broadcast-limit 10
+   name "Rm.415C"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/31
+   broadcast-limit 10
+   name "Rm.418A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/32
+   broadcast-limit 10
+   name "Rm.418B"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/33
+   broadcast-limit 10
+   name "Rm.418C"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/34
+   broadcast-limit 10
+   name "Rm.419A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/35
+   broadcast-limit 10
+   name "Rm.511A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/36
+   broadcast-limit 10
+   name "Rm.511B"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/37
+   broadcast-limit 10
+   name "Rm.511C"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/38
+   broadcast-limit 10
+   name "Rm.317A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/39
+   broadcast-limit 10
+   name "Rm.317B"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/40
+   broadcast-limit 10
+   name "Rm.318A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/41
+   broadcast-limit 10
+   name "Rm.318B"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/42
+   broadcast-limit 10
+   name "Rm.318C"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/43
+   broadcast-limit 10
+   name "Rm.319A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/44
+   broadcast-limit 10
+   name "Rm.410A"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/45
+   broadcast-limit 10
+   name "Rm.410B"
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/46
+   broadcast-limit 10
+   no power-over-ethernet
+   exit
+interface 3/47
+   broadcast-limit 10
+   no power-over-ethernet
+   speed-duplex auto-100
+   exit
+interface 3/48
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 3/49
+   broadcast-limit 10
+   disable
+   exit
+interface 3/50
+   broadcast-limit 10
+   disable
+   exit
+interface 3/51
+   broadcast-limit 10
+   disable
+   exit
+interface 3/52
+   broadcast-limit 10
+   disable
+   exit
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server listen data
+snmp-server contact "UCIT_220-5555" location "YA-127V-M1"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   disable
+   no ip address
+   member 1
+      no ip address
+      exit
+   member 2
+      no ip address
+      exit
+   member 3
+      no ip address
+      exit
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1/1-1/52,2/1-2/52,3/1-3/52
+   no ip address
+   exit
+vlan 45
+   name "GL_WIRELESS_136.159.45.0/24"
+   untagged 1/12-1/32,2/1-2/17,2/19,2/25,2/27-2/45,3/1-3/45
+   tagged 1/49
+   no ip address
+   ip igmp
+   exit
+vlan 232
+   name "GL_RCZ_136.159.232.0/24"
+   untagged 1/46
+   tagged 1/49,2/25
+   no ip address
+   ip igmp
+   exit
+vlan 999
+   name "GL_UNUSED_VLAN"
+   untagged 1/47,1/50-1/52,2/48-2/52,3/48-3/52
+   no ip address
+   exit
+vlan 1336
+   name "GL_UMCZ1-10.89.192.0/21"
+   untagged 2/26,2/47
+   tagged 1/46,1/49,2/25
+   no ip address
+   ip igmp
+   exit
+vlan 1664
+   name "Yamnuska_Managed_Client_Zone"
+   untagged 2/18,3/47
+   tagged 1/49
+   no ip address
+   ip igmp
+   exit
+vlan 1680
+   name "Yamuska_Unmanaged_Client_Zone"
+   tagged 1/49,2/25
+   no ip address
+   ip igmp
+   exit
+vlan 2463
+   name "GL_IPCA_10.135.12.0/23"
+   untagged 1/33,1/35-1/37,1/45,2/20,2/22-2/23
+   tagged 1/49
+   no ip address
+   ip igmp
+   exit
+vlan 2507
+   name "GL_PRT_10.127.12.0/24"
+   tagged 1/46,1/49
+   no ip address
+   ip igmp
+   exit
+vlan 2671
+   name "GL_CAMPUS_10.26.71.0/24"
+   untagged 1/48,2/46,3/46
+   tagged 1/46,1/49,2/25
+   ip address 10.26.71.129 255.255.255.0
+   ip igmp
+   exit
+vlan 2817
+   name "1card-ya-10.128.76.0/23"
+   tagged 1/49,2/25
+   no ip address
+   ip igmp
+   exit
+vlan 2824
+   name "bookstore_10.136.76/23"
+   tagged 1/49,2/25
+   no ip address
+   ip igmp
+   exit
+vlan 3553
+   name "Rez_IP_Camera"
+   untagged 1/34,2/21
+   tagged 1/49
+   no ip address
+   ip igmp
+   exit
+vlan 3651
+   name "Ya_Wireless"
+   untagged 1/1-1/11,1/38-1/44,2/24
+   tagged 1/49,2/25
+   no ip address
+   ip igmp
+   exit
+vlan 3652
+   name "Ya_VoIP_Student"
+   tagged 1/12-1/32,1/49,2/1-2/19,2/24-2/25,2/27-2/45,3/1-3/45
+   no ip address
+   ip igmp
+   voice
+   exit
+vlan 3653
+   name "Ya_VoIP_Admin"
+   tagged 1/12-1/32,1/46,1/49,2/1-2/19,2/24-2/25,2/27-2/45,3/1-3/45
+   no ip address
+   ip igmp
+   voice
+   exit
+vlan 3957
+   name "Rez_VoIP"
+   tagged 1/12-1/32,1/49,2/1-2/19,2/24-2/25,2/27-2/45,3/1-3/45
+   no ip address
+   ip igmp
+   exit
+spanning-tree
+spanning-tree 1/1 bpdu-filter bpdu-protection
+spanning-tree 1/2 bpdu-filter bpdu-protection
+spanning-tree 1/3 bpdu-filter bpdu-protection
+spanning-tree 1/4 bpdu-filter bpdu-protection
+spanning-tree 1/5 bpdu-filter bpdu-protection
+spanning-tree 1/6 bpdu-filter bpdu-protection
+spanning-tree 1/7 bpdu-filter bpdu-protection
+spanning-tree 1/8 bpdu-filter bpdu-protection
+spanning-tree 1/9 bpdu-filter bpdu-protection
+spanning-tree 1/10 bpdu-filter bpdu-protection
+spanning-tree 1/11 bpdu-filter bpdu-protection
+spanning-tree 1/12 bpdu-filter bpdu-protection
+spanning-tree 1/13 bpdu-filter bpdu-protection
+spanning-tree 1/14 bpdu-filter bpdu-protection
+spanning-tree 1/15 bpdu-filter bpdu-protection
+spanning-tree 1/16 bpdu-filter bpdu-protection
+spanning-tree 1/17 bpdu-filter bpdu-protection
+spanning-tree 1/18 bpdu-filter bpdu-protection
+spanning-tree 1/19 bpdu-filter bpdu-protection
+spanning-tree 1/20 bpdu-filter bpdu-protection
+spanning-tree 1/21 bpdu-filter bpdu-protection
+spanning-tree 1/22 bpdu-filter bpdu-protection
+spanning-tree 1/23 bpdu-filter bpdu-protection
+spanning-tree 1/24 bpdu-filter bpdu-protection
+spanning-tree 1/25 bpdu-filter bpdu-protection
+spanning-tree 1/26 bpdu-filter bpdu-protection
+spanning-tree 1/27 bpdu-filter bpdu-protection
+spanning-tree 1/28 bpdu-filter bpdu-protection
+spanning-tree 1/29 bpdu-filter bpdu-protection
+spanning-tree 1/30 bpdu-filter bpdu-protection
+spanning-tree 1/31 bpdu-filter bpdu-protection
+spanning-tree 1/32 bpdu-filter bpdu-protection
+spanning-tree 1/33 bpdu-filter bpdu-protection
+spanning-tree 1/34 bpdu-filter bpdu-protection
+spanning-tree 1/35 bpdu-filter bpdu-protection
+spanning-tree 1/36 bpdu-filter bpdu-protection
+spanning-tree 1/37 bpdu-filter bpdu-protection
+spanning-tree 1/38 bpdu-filter bpdu-protection
+spanning-tree 1/39 bpdu-filter bpdu-protection
+spanning-tree 1/40 bpdu-filter bpdu-protection
+spanning-tree 1/41 bpdu-filter bpdu-protection
+spanning-tree 1/42 bpdu-filter bpdu-protection
+spanning-tree 1/43 bpdu-filter bpdu-protection
+spanning-tree 1/44 bpdu-filter bpdu-protection
+spanning-tree 1/45 bpdu-filter bpdu-protection
+spanning-tree 1/46 root-guard
+spanning-tree 1/47 bpdu-filter bpdu-protection
+spanning-tree 1/48 bpdu-filter bpdu-protection
+no spanning-tree 1/49 auto-edge-port
+spanning-tree 1/49 priority 4
+spanning-tree 1/50 bpdu-filter bpdu-protection
+spanning-tree 1/51 bpdu-filter bpdu-protection
+spanning-tree 1/52 bpdu-filter bpdu-protection
+spanning-tree 2/1 bpdu-filter bpdu-protection
+spanning-tree 2/2 bpdu-filter bpdu-protection
+spanning-tree 2/3 bpdu-filter bpdu-protection
+spanning-tree 2/4 bpdu-filter bpdu-protection
+spanning-tree 2/5 bpdu-filter bpdu-protection
+spanning-tree 2/6 bpdu-filter bpdu-protection
+spanning-tree 2/7 bpdu-filter bpdu-protection
+spanning-tree 2/8 bpdu-filter bpdu-protection
+spanning-tree 2/9 bpdu-filter bpdu-protection
+spanning-tree 2/10 bpdu-filter bpdu-protection
+spanning-tree 2/11 bpdu-filter bpdu-protection
+spanning-tree 2/12 bpdu-filter bpdu-protection
+spanning-tree 2/13 bpdu-filter bpdu-protection
+spanning-tree 2/14 bpdu-filter bpdu-protection
+spanning-tree 2/15 bpdu-filter bpdu-protection
+spanning-tree 2/16 bpdu-filter bpdu-protection
+spanning-tree 2/17 bpdu-filter bpdu-protection
+spanning-tree 2/18 bpdu-filter bpdu-protection
+spanning-tree 2/19 bpdu-filter bpdu-protection
+spanning-tree 2/20 bpdu-filter bpdu-protection
+spanning-tree 2/21 bpdu-filter bpdu-protection
+spanning-tree 2/22 bpdu-filter bpdu-protection
+spanning-tree 2/23 bpdu-filter bpdu-protection
+spanning-tree 2/24 bpdu-filter bpdu-protection
+spanning-tree 2/25 root-guard
+spanning-tree 2/26 bpdu-filter bpdu-protection
+spanning-tree 2/27 bpdu-filter bpdu-protection
+spanning-tree 2/28 bpdu-filter bpdu-protection
+spanning-tree 2/29 bpdu-filter bpdu-protection
+spanning-tree 2/30 bpdu-filter bpdu-protection
+spanning-tree 2/31 bpdu-filter bpdu-protection
+spanning-tree 2/32 bpdu-filter bpdu-protection
+spanning-tree 2/33 bpdu-filter bpdu-protection
+spanning-tree 2/34 bpdu-filter bpdu-protection
+spanning-tree 2/35 bpdu-filter bpdu-protection
+spanning-tree 2/36 bpdu-filter bpdu-protection
+spanning-tree 2/37 bpdu-filter bpdu-protection
+spanning-tree 2/38 bpdu-filter bpdu-protection
+spanning-tree 2/39 bpdu-filter bpdu-protection
+spanning-tree 2/40 bpdu-filter bpdu-protection
+spanning-tree 2/41 bpdu-filter bpdu-protection
+spanning-tree 2/42 bpdu-filter bpdu-protection
+spanning-tree 2/43 bpdu-filter bpdu-protection
+spanning-tree 2/44 bpdu-filter bpdu-protection
+spanning-tree 2/45 bpdu-filter bpdu-protection
+spanning-tree 2/46 bpdu-filter bpdu-protection
+spanning-tree 2/47 bpdu-filter bpdu-protection
+spanning-tree 2/48 bpdu-filter bpdu-protection
+spanning-tree 2/49 bpdu-filter bpdu-protection
+spanning-tree 2/50 bpdu-filter bpdu-protection
+spanning-tree 2/51 bpdu-filter bpdu-protection
+spanning-tree 2/52 bpdu-filter bpdu-protection
+spanning-tree 3/1 bpdu-filter bpdu-protection
+spanning-tree 3/2 bpdu-filter bpdu-protection
+spanning-tree 3/3 bpdu-filter bpdu-protection
+spanning-tree 3/4 bpdu-filter bpdu-protection
+spanning-tree 3/5 bpdu-filter bpdu-protection
+spanning-tree 3/6 bpdu-filter bpdu-protection
+spanning-tree 3/7 bpdu-filter bpdu-protection
+spanning-tree 3/8 bpdu-filter bpdu-protection
+spanning-tree 3/9 bpdu-filter bpdu-protection
+spanning-tree 3/10 bpdu-filter bpdu-protection
+spanning-tree 3/11 bpdu-filter bpdu-protection
+spanning-tree 3/12 bpdu-filter bpdu-protection
+spanning-tree 3/13 bpdu-filter bpdu-protection
+spanning-tree 3/14 bpdu-filter bpdu-protection
+spanning-tree 3/15 bpdu-filter bpdu-protection
+spanning-tree 3/16 bpdu-filter bpdu-protection
+spanning-tree 3/17 bpdu-filter bpdu-protection
+spanning-tree 3/18 bpdu-filter bpdu-protection
+spanning-tree 3/19 bpdu-filter bpdu-protection
+spanning-tree 3/20 bpdu-filter bpdu-protection
+spanning-tree 3/21 bpdu-filter bpdu-protection
+spanning-tree 3/22 bpdu-filter bpdu-protection
+spanning-tree 3/23 bpdu-filter bpdu-protection
+spanning-tree 3/24 bpdu-filter bpdu-protection
+spanning-tree 3/25 bpdu-filter bpdu-protection
+spanning-tree 3/26 bpdu-filter bpdu-protection
+spanning-tree 3/27 bpdu-filter bpdu-protection
+spanning-tree 3/28 bpdu-filter bpdu-protection
+spanning-tree 3/29 bpdu-filter bpdu-protection
+spanning-tree 3/30 bpdu-filter bpdu-protection
+spanning-tree 3/31 bpdu-filter bpdu-protection
+spanning-tree 3/32 bpdu-filter bpdu-protection
+spanning-tree 3/33 bpdu-filter bpdu-protection
+spanning-tree 3/34 bpdu-filter bpdu-protection
+spanning-tree 3/35 bpdu-filter bpdu-protection
+spanning-tree 3/36 bpdu-filter bpdu-protection
+spanning-tree 3/37 bpdu-filter bpdu-protection
+spanning-tree 3/38 bpdu-filter bpdu-protection
+spanning-tree 3/39 bpdu-filter bpdu-protection
+spanning-tree 3/40 bpdu-filter bpdu-protection
+spanning-tree 3/41 bpdu-filter bpdu-protection
+spanning-tree 3/42 bpdu-filter bpdu-protection
+spanning-tree 3/43 bpdu-filter bpdu-protection
+spanning-tree 3/44 bpdu-filter bpdu-protection
+spanning-tree 3/45 bpdu-filter bpdu-protection
+spanning-tree 3/46 bpdu-filter bpdu-protection
+spanning-tree 3/47 bpdu-filter bpdu-protection
+spanning-tree 3/48 bpdu-filter bpdu-protection
+spanning-tree 3/49 bpdu-filter bpdu-protection
+spanning-tree 3/50 bpdu-filter bpdu-protection
+spanning-tree 3/51 bpdu-filter bpdu-protection
+spanning-tree 3/52 bpdu-filter bpdu-protection
+spanning-tree config-name "ucalgary"
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600 priority 7
+no tftp server
+tftp server listen data
+loop-protect 1/1-1/45,1/47-1/48,1/50-1/52,2/1-2/24,2/26-2/52,3/1-3/52
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+device-profile name "default-ap-profile"
+   cos 0
+   exit
+activate provision disable
+password manager
+password operator
+

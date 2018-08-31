@@ -1,0 +1,218 @@
+; J9573A Configuration Editor; Created on release #KA.15.09.0009
+; Ver #03:01.1f.ef:f2
+
+hostname "WAN-EDU-SW-02"
+module 1 type j9573x
+console inactivity-timer 5
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this system is strictly prohibited,   *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.1.17
+logging 10.31.1.18
+logging 10.31.1.21
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+web-management ssl
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.31.129.1
+interface 1
+   broadcast-limit 20
+   exit
+interface 2
+   broadcast-limit 20
+   exit
+interface 3
+   broadcast-limit 20
+   disable
+   exit
+interface 4
+   broadcast-limit 20
+   disable
+   exit
+interface 5
+   broadcast-limit 20
+   disable
+   exit
+interface 6
+   broadcast-limit 20
+   disable
+   exit
+interface 7
+   broadcast-limit 20
+   disable
+   exit
+interface 8
+   broadcast-limit 20
+   disable
+   exit
+interface 9
+   broadcast-limit 20
+   disable
+   exit
+interface 10
+   broadcast-limit 20
+   disable
+   exit
+interface 11
+   broadcast-limit 20
+   disable
+   exit
+interface 12
+   broadcast-limit 20
+   disable
+   exit
+interface 13
+   broadcast-limit 20
+   disable
+   exit
+interface 14
+   broadcast-limit 20
+   disable
+   exit
+interface 15
+   broadcast-limit 20
+   disable
+   exit
+interface 16
+   broadcast-limit 20
+   disable
+   exit
+interface 17
+   broadcast-limit 20
+   disable
+   exit
+interface 18
+   broadcast-limit 20
+   disable
+   exit
+interface 19
+   broadcast-limit 20
+   disable
+   exit
+interface 20
+   broadcast-limit 20
+   disable
+   exit
+interface 21
+   broadcast-limit 20
+   disable
+   exit
+interface 22
+   broadcast-limit 20
+   disable
+   exit
+interface 23
+   broadcast-limit 20
+   disable
+   exit
+interface 24
+   broadcast-limit 20
+   disable
+   exit
+interface 25
+   broadcast-limit 20
+   exit
+interface 26
+   broadcast-limit 20
+   disable
+   exit
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server contact "UCIT 220-5555" location "EDU"
+snmpv3 enable
+snmpv3 restricted-access
+snmpv3 group managerpriv user "manager" sec-model ver3
+snmpv3 group operatorauth user "operator" sec-model ver3
+snmpv3 user "initial"
+snmpv3 user "manager"
+snmpv3 user "operator"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication web login radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   no ip address
+   exit
+vlan 1
+   name "Wireless_Mgmt_VLAN"
+   no untagged 2-24,26
+   untagged 1,25
+   ip address 10.31.129.254 255.255.255.0
+   ip igmp
+   exit
+vlan 100
+   name "MPLS"
+   tagged 1,25
+   no ip address
+   ip igmp
+   jumbo
+   exit
+vlan 249
+   name "Tu_Test"
+   untagged 2
+   tagged 1
+   no ip address
+   exit
+vlan 999
+   name "unused-vlan"
+   untagged 3-24,26
+   no ip address
+   exit
+spanning-tree
+spanning-tree 1 root-guard
+spanning-tree 2 bpdu-filter bpdu-protection
+spanning-tree 3 bpdu-filter bpdu-protection
+spanning-tree 4 bpdu-filter bpdu-protection
+spanning-tree 5 bpdu-filter bpdu-protection
+spanning-tree 6 bpdu-filter bpdu-protection
+spanning-tree 7 bpdu-filter bpdu-protection
+spanning-tree 8 bpdu-filter bpdu-protection
+spanning-tree 9 bpdu-filter bpdu-protection
+spanning-tree 10 bpdu-filter bpdu-protection
+spanning-tree 11 bpdu-filter bpdu-protection
+spanning-tree 12 bpdu-filter bpdu-protection
+spanning-tree 13 bpdu-filter bpdu-protection
+spanning-tree 14 bpdu-filter bpdu-protection
+spanning-tree 15 bpdu-filter bpdu-protection
+spanning-tree 16 bpdu-filter bpdu-protection
+spanning-tree 17 bpdu-filter bpdu-protection
+spanning-tree 18 bpdu-filter bpdu-protection
+spanning-tree 19 bpdu-filter bpdu-protection
+spanning-tree 20 bpdu-filter bpdu-protection
+spanning-tree 21 bpdu-filter bpdu-protection
+spanning-tree 22 bpdu-filter bpdu-protection
+spanning-tree 23 bpdu-filter bpdu-protection
+spanning-tree 24 bpdu-filter bpdu-protection
+spanning-tree 26 bpdu-filter bpdu-protection
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree instance ist 1 path-cost 20000
+spanning-tree bpdu-protection-timeout 600 priority 6
+loop-protect 2-24,26
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

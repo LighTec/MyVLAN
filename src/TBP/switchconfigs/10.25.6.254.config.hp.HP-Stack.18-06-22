@@ -1,0 +1,328 @@
+; hpStack Configuration Editor; Created on release #KA.15.09.0012
+; Ver #03:01.1f.ef:f2
+
+stacking
+   member 1 type "J9574A" mac-address 8851fb-7a4600
+   exit
+hostname "A10E-1-HSW-3793"
+mirror 1 port 1/1
+console inactivity-timer 5
+banner motd "**************************************************************************\n* Important Notice:\n* Authorized users only:\n* This computer system (including all related equipment, networks,\n* systems and services) is provided for use only by authorized\n* Individuals with valid and subsisting usernames and passwords\n* issued by University of Calgary and for authorized purposes only.\n* Unauthorized access to or use of this system is strictly prohibited,\n* and may result in criminal, civil and administrative penalties \n* and other adverse action.\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+telnet-server listen data
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+web-management listen data
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.25.6.1
+ip ssh listen data
+interface 1/1
+   broadcast-limit 10
+   exit
+interface 1/2
+   broadcast-limit 10
+   exit
+interface 1/3
+   broadcast-limit 10
+   exit
+interface 1/4
+   broadcast-limit 10
+   exit
+interface 1/5
+   broadcast-limit 10
+   exit
+interface 1/6
+   broadcast-limit 10
+   exit
+interface 1/7
+   broadcast-limit 10
+   exit
+interface 1/8
+   broadcast-limit 10
+   exit
+interface 1/9
+   broadcast-limit 10
+   exit
+interface 1/10
+   broadcast-limit 10
+   exit
+interface 1/11
+   broadcast-limit 10
+   exit
+interface 1/12
+   broadcast-limit 10
+   exit
+interface 1/13
+   broadcast-limit 10
+   exit
+interface 1/14
+   broadcast-limit 10
+   exit
+interface 1/15
+   broadcast-limit 10
+   exit
+interface 1/16
+   broadcast-limit 10
+   exit
+interface 1/17
+   broadcast-limit 10
+   exit
+interface 1/18
+   broadcast-limit 10
+   exit
+interface 1/19
+   broadcast-limit 10
+   exit
+interface 1/20
+   broadcast-limit 10
+   exit
+interface 1/21
+   broadcast-limit 10
+   exit
+interface 1/22
+   broadcast-limit 10
+   exit
+interface 1/23
+   broadcast-limit 10
+   name "lync_router-10.1.1.13"
+   exit
+interface 1/24
+   broadcast-limit 10
+   exit
+interface 1/25
+   broadcast-limit 10
+   exit
+interface 1/26
+   broadcast-limit 10
+   exit
+interface 1/27
+   broadcast-limit 10
+   exit
+interface 1/28
+   broadcast-limit 10
+   exit
+interface 1/29
+   broadcast-limit 10
+   exit
+interface 1/30
+   broadcast-limit 10
+   exit
+interface 1/31
+   broadcast-limit 10
+   exit
+interface 1/32
+   broadcast-limit 10
+   exit
+interface 1/33
+   broadcast-limit 10
+   exit
+interface 1/34
+   broadcast-limit 10
+   exit
+interface 1/35
+   broadcast-limit 10
+   exit
+interface 1/36
+   broadcast-limit 10
+   exit
+interface 1/37
+   broadcast-limit 10
+   exit
+interface 1/38
+   broadcast-limit 10
+   exit
+interface 1/39
+   broadcast-limit 10
+   exit
+interface 1/40
+   broadcast-limit 10
+   exit
+interface 1/41
+   broadcast-limit 10
+   exit
+interface 1/42
+   broadcast-limit 10
+   exit
+interface 1/43
+   broadcast-limit 10
+   exit
+interface 1/44
+   broadcast-limit 10
+   exit
+interface 1/45
+   broadcast-limit 10
+   exit
+interface 1/46
+   broadcast-limit 10
+   exit
+interface 1/47
+   broadcast-limit 10
+   disable
+   name "X47D-10.25.6.249-X24U"
+   exit
+interface 1/48
+   broadcast-limit 10
+   disable
+   name "X48D-10.25.6.253-X25U"
+   exit
+interface 1/49
+   broadcast-limit 10
+   name "1/49u-10.31.0.53-z9-pe-2/3d"
+   exit
+interface 1/50
+   broadcast-limit 10
+   name "1/50u-10.31.0.54-z9-pe-2/3d"
+   exit
+interface 1/51
+   broadcast-limit 10
+   exit
+interface 1/52
+   broadcast-limit 10
+   exit
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server listen data
+snmp-server contact "UCIT 220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   disable
+   no ip address
+   member 1
+      ip address dhcp-bootp
+      exit
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1/1-1/48,1/51-1/52
+   untagged 1/49-1/50
+   no ip address
+   exit
+vlan 999
+   name "V999_Unused"
+   untagged 1/2-1/22,1/24-1/46,1/51-1/52
+   no ip address
+   exit
+vlan 2001
+   name "SIP_Net"
+   untagged 1/23
+   tagged 1/47-1/50
+   no ip address
+   monitor all both mirror 1
+   exit
+vlan 2098
+   name "voice-drac_10.60.92.0/24"
+   tagged 1/47-1/50
+   no ip address
+   exit
+vlan 2099
+   name "voice-tsm_10.60.150.0/24"
+   tagged 1/47-1/50
+   no ip address
+   exit
+vlan 2222
+   name "UofC_Public"
+   untagged 1/1
+   tagged 1/47-1/50
+   no ip address
+   exit
+vlan 2250
+   name "Data_Net"
+   tagged 1/47-1/48
+   no ip address
+   exit
+vlan 2506
+   name "MGMT"
+   tagged 1/47-1/50
+   ip address 10.25.6.254 255.255.255.0
+   exit
+spanning-tree
+spanning-tree 1/1 root-guard
+spanning-tree 1/2 root-guard
+spanning-tree 1/3 root-guard
+spanning-tree 1/4 root-guard
+spanning-tree 1/5 root-guard
+spanning-tree 1/6 root-guard
+spanning-tree 1/7 root-guard
+spanning-tree 1/8 root-guard
+spanning-tree 1/9 root-guard
+spanning-tree 1/10 root-guard
+spanning-tree 1/11 root-guard
+spanning-tree 1/12 root-guard
+spanning-tree 1/13 root-guard
+spanning-tree 1/14 root-guard
+spanning-tree 1/15 root-guard
+spanning-tree 1/16 root-guard
+spanning-tree 1/17 root-guard
+spanning-tree 1/18 root-guard
+spanning-tree 1/19 root-guard
+spanning-tree 1/20 root-guard
+spanning-tree 1/21 root-guard
+spanning-tree 1/22 root-guard
+spanning-tree 1/23 root-guard
+spanning-tree 1/24 root-guard
+spanning-tree 1/25 root-guard
+spanning-tree 1/26 root-guard
+spanning-tree 1/27 root-guard
+spanning-tree 1/28 root-guard
+spanning-tree 1/29 root-guard
+spanning-tree 1/30 root-guard
+spanning-tree 1/31 root-guard
+spanning-tree 1/32 root-guard
+spanning-tree 1/33 root-guard
+spanning-tree 1/34 root-guard
+spanning-tree 1/35 root-guard
+spanning-tree 1/36 root-guard
+spanning-tree 1/37 root-guard
+spanning-tree 1/38 root-guard
+spanning-tree 1/39 root-guard
+spanning-tree 1/40 root-guard
+spanning-tree 1/41 root-guard
+spanning-tree 1/42 root-guard
+spanning-tree 1/43 root-guard
+spanning-tree 1/44 root-guard
+spanning-tree 1/45 root-guard
+spanning-tree 1/46 root-guard
+no spanning-tree 1/47 auto-edge-port
+spanning-tree 1/47 root-guard
+no spanning-tree 1/48 auto-edge-port
+spanning-tree 1/48 root-guard
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree bpdu-protection-timeout 600 priority 6
+tftp server listen data
+loop-protect 1/1-1/48,1/51-1/52
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

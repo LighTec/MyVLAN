@@ -1,0 +1,296 @@
+; J8697A Configuration Editor; Created on release #K.15.08.0013
+; Ver #02:1b.ef:f6
+hostname "BI471V-04-MSW-3708"
+module 1 type j9538a
+module 2 type j9538a
+module 3 type j9538a
+module 4 type j9538a
+module 5 type j9538a
+module 6 type j9538a
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+trunk E1,F1 trk1 lacp
+trunk E2-E3,F2-F3 trk2 lacp
+banner motd "**************************************************************************\n* Important Notice:\n* Authorized users only:\n* This computer system (including all related equipment, networks,\n* systems and services) is provided for use only by authorized\n* Individuals with valid and subsisting usernames and passwords\n* issued by University of Calgary and for authorized purposes only.\n* Unauthorized access to or use of this system is strictly prohibited,\n* and may result in criminal, civil and administrative penalties \n* and other adverse action.\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 180
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+web-management ssl
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.27.3.1
+interface A1
+   broadcast-limit 10
+   exit
+interface A2
+   broadcast-limit 10
+   exit
+interface A3
+   broadcast-limit 10
+   exit
+interface A4
+   broadcast-limit 10
+   exit
+interface A5
+   broadcast-limit 10
+   exit
+interface A6
+   broadcast-limit 10
+   exit
+interface A7
+   broadcast-limit 10
+   exit
+interface A8
+   broadcast-limit 10
+   exit
+interface B1
+   broadcast-limit 10
+   exit
+interface B2
+   broadcast-limit 10
+   exit
+interface B3
+   broadcast-limit 10
+   exit
+interface B4
+   broadcast-limit 10
+   exit
+interface B5
+   broadcast-limit 10
+   exit
+interface B6
+   broadcast-limit 10
+   exit
+interface B7
+   broadcast-limit 10
+   exit
+interface B8
+   broadcast-limit 10
+   exit
+interface C1
+   broadcast-limit 10
+   exit
+interface C2
+   broadcast-limit 10
+   exit
+interface C3
+   broadcast-limit 10
+   exit
+interface C4
+   broadcast-limit 10
+   exit
+interface C5
+   broadcast-limit 10
+   exit
+interface C6
+   broadcast-limit 10
+   exit
+interface C7
+   broadcast-limit 10
+   exit
+interface C8
+   broadcast-limit 10
+   exit
+interface D1
+   broadcast-limit 10
+   exit
+interface D2
+   broadcast-limit 10
+   exit
+interface D3
+   broadcast-limit 10
+   exit
+interface D4
+   broadcast-limit 10
+   exit
+interface D5
+   broadcast-limit 10
+   exit
+interface D6
+   broadcast-limit 10
+   exit
+interface D7
+   broadcast-limit 10
+   exit
+interface D8
+   broadcast-limit 10
+   exit
+interface E1
+   broadcast-limit 40
+   name "E01U-10.27.3.254-E08D_TKR8_BI170v"
+   exit
+interface E2
+   broadcast-limit 10
+   name "10G_Uplink_to_IMB-RackSwitch_409"
+   exit
+interface E3
+   broadcast-limit 10
+   name "10G_Uplink_to_IMB-RackSwitch_409"
+   exit
+interface E4
+   broadcast-limit 10
+   exit
+interface E5
+   broadcast-limit 10
+   exit
+interface E6
+   broadcast-limit 10
+   exit
+interface E7
+   broadcast-limit 10
+   exit
+interface E8
+   broadcast-limit 10
+   exit
+interface F1
+   broadcast-limit 40
+   name "F01U-10.27.3.254-F08D_TKR8_BI170v"
+   exit
+interface F2
+   broadcast-limit 10
+   name "10G_Uplink_to_IMB-RackSwitch_409"
+   exit
+interface F3
+   broadcast-limit 10
+   name "10G_Uplink_to_IMB-RackSwitch_409"
+   exit
+interface F4
+   broadcast-limit 10
+   exit
+interface F5
+   broadcast-limit 10
+   exit
+interface F6
+   broadcast-limit 10
+   exit
+interface F7
+   broadcast-limit 10
+   exit
+interface F8
+   broadcast-limit 40
+   name "F8D-10.27.3.180-X24U_BI450"
+   exit
+snmp-server community "uofc2009" operator unrestricted
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" operator unrestricted
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server contact "ucit_2205555" location "BI-471V-04"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree A1 bpdu-filter bpdu-protection
+spanning-tree A2 bpdu-filter bpdu-protection
+spanning-tree A3 bpdu-filter bpdu-protection
+spanning-tree A4 bpdu-filter bpdu-protection
+spanning-tree A5 bpdu-filter bpdu-protection
+spanning-tree A6 bpdu-filter bpdu-protection
+spanning-tree A7 bpdu-filter bpdu-protection
+spanning-tree A8 bpdu-filter bpdu-protection
+spanning-tree B1 bpdu-filter bpdu-protection
+spanning-tree B2 bpdu-filter bpdu-protection
+spanning-tree B3 bpdu-filter bpdu-protection
+spanning-tree B4 bpdu-filter bpdu-protection
+spanning-tree B5 bpdu-filter bpdu-protection
+spanning-tree B6 bpdu-filter bpdu-protection
+spanning-tree B7 bpdu-filter bpdu-protection
+spanning-tree B8 bpdu-filter bpdu-protection
+spanning-tree C1 bpdu-filter bpdu-protection
+spanning-tree C2 bpdu-filter bpdu-protection
+spanning-tree C3 bpdu-filter bpdu-protection
+spanning-tree C4 bpdu-filter bpdu-protection
+spanning-tree C5 bpdu-filter bpdu-protection
+spanning-tree C6 bpdu-filter bpdu-protection
+spanning-tree C7 bpdu-filter bpdu-protection
+spanning-tree C8 bpdu-filter bpdu-protection
+spanning-tree D1 bpdu-filter bpdu-protection
+spanning-tree D2 bpdu-filter bpdu-protection
+spanning-tree D3 bpdu-filter bpdu-protection
+spanning-tree D4 bpdu-filter bpdu-protection
+spanning-tree D5 bpdu-filter bpdu-protection
+spanning-tree D6 bpdu-filter bpdu-protection
+spanning-tree D7 bpdu-filter bpdu-protection
+spanning-tree D8 bpdu-filter bpdu-protection
+spanning-tree E4 bpdu-filter bpdu-protection
+spanning-tree E5 bpdu-filter bpdu-protection
+spanning-tree E6 bpdu-filter bpdu-protection
+spanning-tree E7 bpdu-filter bpdu-protection
+spanning-tree E8 bpdu-filter bpdu-protection
+spanning-tree F4 bpdu-filter bpdu-protection
+spanning-tree F5 bpdu-filter bpdu-protection
+spanning-tree F6 bpdu-filter bpdu-protection
+spanning-tree F7 bpdu-filter bpdu-protection
+spanning-tree F8 root-guard
+no spanning-tree Trk1 auto-edge-port
+spanning-tree Trk1 priority 4
+spanning-tree Trk2 priority 4 root-guard
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree instance ist F8 path-cost 20000
+spanning-tree bpdu-protection-timeout 600 priority 7
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged A1-A8,B1-B8,C1-C8,D1-D8,E4-E8,F4-F8,Trk1-Trk2
+   no ip address
+   exit
+vlan 234
+   name "BI_RCZ_136.159.234.0/24"
+   untagged C6-C7
+   tagged F7-F8,Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 999
+   name "BI_UNUSED_VLAN"
+   no ip address
+   exit
+vlan 2518
+   name "BI_PRT_10.127.68.0/24"
+   tagged F7-F8,Trk1
+   no ip address
+   exit
+vlan 2606
+   name "BI_RCZ_136.159.191.1"
+   untagged A1-A8,B1-B8,C1-C5,C8,D1-D8,E4-E8,F4-F6,Trk2
+   tagged F7-F8,Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2703
+   name "BI_CAMPUS_10.27.3.0/24"
+   tagged F7-F8,Trk1
+   ip address 10.27.3.190 255.255.255.0
+   ip igmp
+   exit
+loop-protect A1-A8,B1-B8,C1-C8,D1-D8,E4-E8,F4-F7
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

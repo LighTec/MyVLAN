@@ -1,0 +1,369 @@
+; hpStack Configuration Editor; Created on release #KA.16.02.0014
+; Ver #0f:01.81.f0.92.34.59.3c.6b.fb.ff.fd.ff.ff.3f.ef:fe
+
+stacking
+   member 1 type "J9574A" mac-address 3ca82a-479340
+   member 1 priority 255
+   exit
+hostname "PF3190V-3-MSW-1004"
+console idle-timeout 300
+console idle-timeout serial-usb 300
+no rest-interface
+trunk 1/49-1/50 trk1 lacp
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this systeshm is strictly prohibited, *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server dead-time 5
+radius-server timeout 3
+radius-server retransmit 2
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.25.47.1
+interface 1/1
+   broadcast-limit 10
+   name "Rm.3176A_23_Q438"
+   exit
+interface 1/2
+   broadcast-limit 10
+   name "Rm.3190__7_Q339"
+   exit
+interface 1/3
+   broadcast-limit 10
+   name "Rm.3191_40_6_Q3"
+   exit
+interface 1/4
+   broadcast-limit 10
+   name "Rm.3192_41_5_Q3"
+   exit
+interface 1/5
+   broadcast-limit 10
+   name "Rm.3194_42_3_Q4"
+   exit
+interface 1/6
+   broadcast-limit 10
+   name "Rm.3193_43_4_Q3"
+   exit
+interface 1/7
+   broadcast-limit 10
+   name "Rm.3181_44_20_Q3"
+   exit
+interface 1/8
+   broadcast-limit 10
+   name "Rm.3171_45_1_Q4"
+   exit
+interface 1/9
+   broadcast-limit 10
+   name "Rm.3172_46_1_Q4"
+   exit
+interface 1/10
+   broadcast-limit 10
+   name "Rm.3196_47_1_Q4"
+   speed-duplex auto-100
+   exit
+interface 1/11
+   broadcast-limit 10
+   name "Rm.3196_48_4-001_Q3"
+   speed-duplex auto-100
+   exit
+interface 1/12
+   broadcast-limit 40
+   name "X1/12D-10.25.47.218-X24U_PF3190V"
+   speed-duplex 100-full
+   exit
+interface 1/13
+   broadcast-limit 10
+   name "Rm.3193_50_4_Q3"
+   speed-duplex 10-half
+   exit
+interface 1/14
+   broadcast-limit 10
+   exit
+interface 1/15
+   broadcast-limit 10
+   exit
+interface 1/16
+   broadcast-limit 10
+   exit
+interface 1/17
+   broadcast-limit 10
+   exit
+interface 1/18
+   broadcast-limit 10
+   exit
+interface 1/19
+   broadcast-limit 10
+   exit
+interface 1/20
+   broadcast-limit 10
+   exit
+interface 1/21
+   broadcast-limit 10
+   exit
+interface 1/22
+   broadcast-limit 10
+   exit
+interface 1/23
+   broadcast-limit 10
+   exit
+interface 1/24
+   broadcast-limit 10
+   exit
+interface 1/25
+   broadcast-limit 10
+   exit
+interface 1/26
+   broadcast-limit 10
+   exit
+interface 1/27
+   broadcast-limit 10
+   exit
+interface 1/28
+   broadcast-limit 10
+   name "Rm.3151Z_PF-03-07_IPCAMERA"
+   exit
+interface 1/29
+   broadcast-limit 10
+   name "Rm.3196Z_PF-03-08_IPCAMERA"
+   exit
+interface 1/30
+   broadcast-limit 10
+   exit
+interface 1/31
+   broadcast-limit 10
+   exit
+interface 1/32
+   broadcast-limit 10
+   exit
+interface 1/33
+   broadcast-limit 10
+   exit
+interface 1/34
+   broadcast-limit 10
+   exit
+interface 1/35
+   broadcast-limit 10
+   exit
+interface 1/36
+   broadcast-limit 10
+   exit
+interface 1/37
+   broadcast-limit 10
+   exit
+interface 1/38
+   broadcast-limit 10
+   exit
+interface 1/39
+   broadcast-limit 10
+   disable
+   exit
+interface 1/40
+   broadcast-limit 10
+   disable
+   exit
+interface 1/41
+   broadcast-limit 10
+   disable
+   exit
+interface 1/42
+   broadcast-limit 10
+   disable
+   exit
+interface 1/43
+   broadcast-limit 10
+   disable
+   exit
+interface 1/44
+   broadcast-limit 10
+   disable
+   exit
+interface 1/45
+   broadcast-limit 10
+   disable
+   exit
+interface 1/46
+   broadcast-limit 10
+   disable
+   exit
+interface 1/47
+   broadcast-limit 10
+   name "Rm.3190_84_WL_WAP"
+   exit
+interface 1/48
+   broadcast-limit 10
+   name "Rm.1394_85_WL_WAP"
+   exit
+interface 1/49
+   broadcast-limit 40
+   name "X1/49U-10.25.47.254-I2D_PF12V"
+   exit
+interface 1/50
+   broadcast-limit 40
+   name "X1/50U-10.25.47.254-J2D_PF12V"
+   exit
+interface 1/51
+   broadcast-limit 10
+   disable
+   exit
+interface 1/52
+   broadcast-limit 10
+   disable
+   exit
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server contact "UCIT 220-5555" location "PF-3190V-03"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   no ip address
+   member 1
+      no ip address
+      exit
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1/1-1/48,1/51-1/52,Trk1
+   no ip address
+   exit
+vlan 40
+   name "PF_RCZ_136.159.40.0/24"
+   untagged 1/14-1/16,1/18-1/24,1/26,1/30-1/38
+   tagged 1/12,Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 68
+   name "PF_RCZ_136.159.68.0/24"
+   untagged 1/1-1/3,1/5-1/7,1/11,1/13
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 999
+   name "PF_UNUSED_VLAN"
+   untagged 1/39-1/46,1/51-1/52
+   no ip address
+   exit
+vlan 1394
+   name "PF_MCZ_10.104.64.0/23"
+   untagged 1/4,1/8-1/10,1/17,1/25,1/27
+   tagged 1/12,Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2285
+   name "PF_IT_Managed_Lab_10.158.22.0/24"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2458
+   name "PF_IPCAM_10.135.22.0/23"
+   untagged 1/28-1/29
+   tagged Trk1
+   no ip address
+   exit
+vlan 2547
+   name "PF_CAMPUS_10.25.47.0/24"
+   tagged 1/12,Trk1
+   ip address 10.25.47.220 255.255.255.0
+   ip igmp
+   exit
+vlan 3101
+   name "PF_WLAN_10.10.101.0/24"
+   untagged 1/47-1/48
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+spanning-tree
+spanning-tree 1/1 bpdu-filter bpdu-protection
+spanning-tree 1/2 bpdu-filter bpdu-protection
+spanning-tree 1/3 bpdu-filter bpdu-protection
+spanning-tree 1/4 bpdu-filter bpdu-protection
+spanning-tree 1/5 bpdu-filter bpdu-protection
+spanning-tree 1/6 bpdu-filter bpdu-protection
+spanning-tree 1/7 bpdu-filter bpdu-protection
+spanning-tree 1/8 bpdu-filter bpdu-protection
+spanning-tree 1/9 bpdu-filter bpdu-protection
+spanning-tree 1/10 bpdu-filter bpdu-protection
+spanning-tree 1/11 bpdu-filter bpdu-protection
+spanning-tree 1/12 root-guard
+spanning-tree 1/13 bpdu-filter bpdu-protection
+spanning-tree 1/14 bpdu-filter bpdu-protection
+spanning-tree 1/15 bpdu-filter bpdu-protection
+spanning-tree 1/16 bpdu-filter bpdu-protection
+spanning-tree 1/17 bpdu-filter bpdu-protection
+spanning-tree 1/18 bpdu-filter bpdu-protection
+spanning-tree 1/19 bpdu-filter bpdu-protection
+spanning-tree 1/20 bpdu-filter bpdu-protection
+spanning-tree 1/21 bpdu-filter bpdu-protection
+spanning-tree 1/22 bpdu-filter bpdu-protection
+spanning-tree 1/23 bpdu-filter bpdu-protection
+spanning-tree 1/24 bpdu-filter bpdu-protection
+spanning-tree 1/25 bpdu-filter bpdu-protection
+spanning-tree 1/26 bpdu-filter bpdu-protection
+spanning-tree 1/27 bpdu-filter bpdu-protection
+spanning-tree 1/28 bpdu-filter bpdu-protection
+spanning-tree 1/29 bpdu-filter bpdu-protection
+spanning-tree 1/30 bpdu-filter bpdu-protection
+spanning-tree 1/31 bpdu-filter bpdu-protection
+spanning-tree 1/32 bpdu-filter bpdu-protection
+spanning-tree 1/33 bpdu-filter bpdu-protection
+spanning-tree 1/34 bpdu-filter bpdu-protection
+spanning-tree 1/35 bpdu-filter bpdu-protection
+spanning-tree 1/36 bpdu-filter bpdu-protection
+spanning-tree 1/37 bpdu-filter bpdu-protection
+spanning-tree 1/38 bpdu-filter bpdu-protection
+spanning-tree 1/39 bpdu-filter bpdu-protection
+spanning-tree 1/40 bpdu-filter bpdu-protection
+spanning-tree 1/41 bpdu-filter bpdu-protection
+spanning-tree 1/42 bpdu-filter bpdu-protection
+spanning-tree 1/43 bpdu-filter bpdu-protection
+spanning-tree 1/44 bpdu-filter bpdu-protection
+spanning-tree 1/45 bpdu-filter bpdu-protection
+spanning-tree 1/46 bpdu-filter bpdu-protection
+spanning-tree 1/47 bpdu-filter bpdu-protection
+spanning-tree 1/48 bpdu-filter bpdu-protection
+spanning-tree 1/51 bpdu-filter bpdu-protection
+spanning-tree 1/52 bpdu-filter bpdu-protection
+spanning-tree Trk1 priority 4
+spanning-tree config-name "ucalgary"
+spanning-tree instance ist 1/12 path-cost 200000
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600 priority 7
+no tftp server
+loop-protect 1/1-1/11,1/13-1/48,1/51-1/52
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+device-profile name "default-ap-profile"
+   cos 0
+   exit
+activate provision disable
+password manager
+password operator
+

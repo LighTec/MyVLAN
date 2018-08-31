@@ -1,0 +1,509 @@
+; J9851A Configuration Editor; Created on release #KB.15.15.0008
+; Ver #05:18.7f.ff.3f.ef:4d
+hostname "PF12V-B1-HSW-3029"
+module A type j9535a
+module G type j9538a
+module H type j9538a
+module I type j9538a
+module J type j9538a
+module K type j9538a
+module L type j9538a
+console idle-timeout 300
+console idle-timeout serial-usb 300
+trunk K1,L1 trk1 lacp
+trunk K2,L2 trk2 lacp
+trunk K3,L3 trk3 lacp
+trunk K4,L4 trk4 lacp
+trunk K5,L5 trk5 lacp
+trunk K6,L6 trk6 lacp
+trunk K8,L8 trk8 lacp
+trunk I1,J1 trk9 lacp
+trunk I2,J2 trk10 lacp
+trunk I3,J3 trk11 lacp
+trunk I4,J4 trk12 lacp
+trunk I5,J5 trk13 lacp
+trunk I6,J6 trk14 lacp
+trunk I7,J7 trk15 lacp
+trunk I8,J8 trk16 lacp
+trunk G1,H1 trk17 lacp
+trunk G8,H8 trk18 lacp
+trunk G2,H2 trk19 lacp
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this systeshm is strictly prohibited, *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.25.47.1
+interface A1
+   broadcast-limit 10
+   name "AP"
+   exit
+interface A2
+   broadcast-limit 10
+   name "A20D-10.25.47.205-X26_PF12V"
+   exit
+interface A3
+   broadcast-limit 10
+   exit
+interface A4
+   broadcast-limit 10
+   exit
+interface A5
+   broadcast-limit 10
+   exit
+interface A6
+   broadcast-limit 10
+   exit
+interface A7
+   broadcast-limit 10
+   exit
+interface A8
+   broadcast-limit 10
+   exit
+interface A9
+   broadcast-limit 10
+   exit
+interface A10
+   broadcast-limit 10
+   exit
+interface A11
+   broadcast-limit 10
+   exit
+interface A12
+   broadcast-limit 10
+   exit
+interface A13
+   broadcast-limit 10
+   exit
+interface A14
+   broadcast-limit 10
+   exit
+interface A15
+   broadcast-limit 10
+   exit
+interface A16
+   broadcast-limit 10
+   exit
+interface A17
+   broadcast-limit 10
+   exit
+interface A18
+   broadcast-limit 10
+   exit
+interface A19
+   broadcast-limit 10
+   exit
+interface A20
+   broadcast-limit 10
+   name "UPS"
+   exit
+interface A21
+   broadcast-limit 10
+   name "A21D-10.25.47.200-X26"
+   exit
+interface A22
+   broadcast-limit 10
+   exit
+interface A23
+   broadcast-limit 10
+   exit
+interface A24
+   broadcast-limit 10
+   exit
+interface G1
+   broadcast-limit 10
+   name "G1D-10.25.47.206-X1/49U_PF4241V"
+   exit
+interface G2
+   broadcast-limit 10
+   name "G2D-10.25.47.195X1/49_PF1255V"
+   exit
+interface G3
+   broadcast-limit 10
+   exit
+interface G4
+   broadcast-limit 10
+   exit
+interface G5
+   broadcast-limit 10
+   exit
+interface G6
+   broadcast-limit 10
+   exit
+interface G7
+   broadcast-limit 10
+   exit
+interface G8
+   broadcast-limit 10
+   name "Temp_uplink_to_10.25.47.254"
+   exit
+interface H1
+   broadcast-limit 10
+   name "H1D-10.25.47.206-X1/50U_PF4241V"
+   exit
+interface H2
+   broadcast-limit 10
+   name "H2D-10.25.47.195X2/49_PF1255V"
+   exit
+interface H3
+   broadcast-limit 10
+   exit
+interface H4
+   broadcast-limit 10
+   exit
+interface H5
+   broadcast-limit 10
+   exit
+interface H6
+   broadcast-limit 10
+   exit
+interface H7
+   broadcast-limit 10
+   exit
+interface H8
+   broadcast-limit 10
+   name "Temp_uplink_to_10.25.47.254"
+   exit
+interface I1
+   broadcast-limit 10
+   name "I1D-10.25.47.232-X1/49U_PF4254V"
+   exit
+interface I2
+   broadcast-limit 10
+   name "I2D-10.25.47.220-X1/49U_PF3190V"
+   exit
+interface I3
+   broadcast-limit 10
+   name "I3D-10.25.47.208-X1/49U_PF3254V"
+   exit
+interface I4
+   broadcast-limit 10
+   name "I4D-10.25.47.244-X1/49U_PF3255V"
+   exit
+interface I5
+   broadcast-limit 10
+   name "I5D-10.25.47.251-X1/49U_PF3239V"
+   exit
+interface I6
+   broadcast-limit 10
+   name "I6D-10.25.47.221-X1/49U_PF4190V"
+   exit
+interface I7
+   broadcast-limit 10
+   name "I7D-10.25.47.232-X1/49U_PF4254V"
+   exit
+interface I8
+   broadcast-limit 10
+   name "I8D-10.25.47.246-X1/49U_PF4255V"
+   exit
+interface J1
+   broadcast-limit 10
+   name "J1D-10.25.47.232-X1/50U_PF4254V"
+   exit
+interface J2
+   broadcast-limit 10
+   name "J2D-10.25.47.220-X1/50U_PF3190V"
+   exit
+interface J3
+   broadcast-limit 10
+   name "J3D-10.25.47.208-X1/50U_PF3254V"
+   exit
+interface J4
+   broadcast-limit 10
+   name "J4D-10.25.47.244-X1/50U_PF3255V"
+   exit
+interface J5
+   broadcast-limit 10
+   name "J5D-10.25.47.251-X1/50U_PF3239V"
+   exit
+interface J6
+   broadcast-limit 10
+   name "J6D-10.25.47.221-X1/50U_PF4190V"
+   exit
+interface J7
+   broadcast-limit 10
+   name "J7D-10.25.47.232-X1/50U_PF4254V"
+   exit
+interface J8
+   broadcast-limit 10
+   name "J8D-10.25.47.246-X1/50U_PF4255V"
+   exit
+interface K1
+   broadcast-limit 10
+   name "Trk1-K1_L1_CN-EDC-Z1-PE-1_10.31.1.111-1/2/13"
+   exit
+interface K2
+   broadcast-limit 10
+   name "K2D-10.25.47.211-X1/49U_PF106V"
+   exit
+interface K3
+   broadcast-limit 10
+   name "K3D-10.25.47.226-X1/49U_PF1254V"
+   exit
+interface K4
+   broadcast-limit 10
+   name "K4D-10.25.47.170-X1/49U_PF2254V"
+   exit
+interface K5
+   broadcast-limit 10
+   name "K5D-10.25.47.248-X1/49U_PF4255V"
+   exit
+interface K6
+   broadcast-limit 10
+   name "K6D-10.25.47.190-1/49U_PF2181V"
+   exit
+interface K7
+   broadcast-limit 10
+   disable
+   exit
+interface K8
+   broadcast-limit 10
+   name "K8D-10.25.47.241-X1/49U_PF2255V"
+   exit
+interface L1
+   broadcast-limit 10
+   name "Trk1-K1_L1_CN-MSC-Z1-PE-2_10.31.1.111-2/2/13"
+   exit
+interface L2
+   broadcast-limit 10
+   name "L2D-10.25.47.211-X1/50U_PF106V"
+   exit
+interface L3
+   broadcast-limit 10
+   name "L3D-10.25.47.226-X1/50U_PF1254V"
+   exit
+interface L4
+   broadcast-limit 10
+   name "L4D-10.25.47.170-X1/40U_PF2254V"
+   exit
+interface L5
+   broadcast-limit 10
+   name "L5D-10.25.47.248-X1/50U_PF4255V"
+   exit
+interface L6
+   broadcast-limit 10
+   name "L6D-10.25.47.190-1/50U_PF2181V"
+   exit
+interface L7
+   broadcast-limit 10
+   disable
+   exit
+interface L8
+   broadcast-limit 10
+   name "L8D-10.25.47.241-X1/50U_PF2255V"
+   exit
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server contact "UCIT 220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   ip address dhcp-bootp
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged A1-A24,G3-G7,H3-H7,K7,L7,Trk1-Trk6,Trk8-Trk19
+   no ip address
+   exit
+vlan 40
+   name "PF_RCZ_136.159.40.0/24"
+   tagged A7,A19,Trk1,Trk3-Trk4,Trk6,Trk10-Trk11,Trk14-Trk15,Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 66
+   name "PF_RCZ_136.159.66.0/25"
+   tagged A19,A21,Trk1,Trk5,Trk12-Trk13,Trk16-Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 68
+   name "PF_RCZ_136.159.68.0/24"
+   tagged A7,A19,Trk1-Trk4,Trk6,Trk10-Trk11,Trk14,Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 999
+   name "PF_UNUSED_VLAN"
+   untagged A3-A6,A8-A18,A22-A24,G3-G7,H3-H7,K7,L7,Trk1
+   tagged A19
+   no ip address
+   exit
+vlan 1348
+   name "PF_UCZ_10.93.64.0/23"
+   tagged A2,A7,A19,A21,Trk1-Trk6,Trk8-Trk9,Trk11,Trk13-Trk16,Trk18-Trk19
+   no ip address
+   ip igmp
+   exit
+vlan 1349
+   name "PF_UCZ_10.93.72.0/23"
+   tagged A19,Trk1,Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 1394
+   name "PF_MCZ_10.104.64.0/23"
+   tagged A2,A19,A21,Trk1-Trk6,Trk8-Trk19
+   no ip address
+   ip igmp
+   exit
+vlan 1395
+   name "PF_MCZ_10.104.72.0/23"
+   tagged A19,Trk1,Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 1979
+   name "TPZ_PF_136.159.94.48/28"
+   tagged Trk1,Trk16
+   no ip address
+   exit
+vlan 2099
+   name "PF_MCZ_HKH_10.57.22/23"
+   tagged A19,Trk1,Trk12-Trk13,Trk16
+   no ip address
+   exit
+vlan 2285
+   name "PF_IT_Managed_Lab_10.158.22.0/23"
+   tagged A19,Trk1-Trk3,Trk5-Trk6,Trk8-Trk13,Trk16-Trk17,Trk19
+   no ip address
+   exit
+vlan 2458
+   name "PF_IPCAM_10.135.22.0/23"
+   tagged A2,A19,Trk1-Trk6,Trk8-Trk17,Trk19
+   no ip address
+   exit
+vlan 2516
+   name "PF_PRT_10.127.22.0/24"
+   tagged A19,Trk1-Trk2,Trk6,Trk8-Trk9,Trk11-Trk13,Trk16,Trk19
+   no ip address
+   exit
+vlan 2547
+   name "PF_CAMPUS_10.25.47.0/24"
+   untagged A20
+   tagged A2,A7,A19,A21,Trk1-Trk6,Trk8-Trk19
+   ip address 10.25.47.254 255.255.255.0
+   ip igmp
+   exit
+vlan 2892
+   name "PF_VC_136.159.53.49/28"
+   tagged A19,Trk1,Trk8,Trk13,Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 2920
+   name "PF_AV_10.144.148.0/23"
+   tagged A7,A19,Trk1,Trk4-Trk6,Trk8,Trk11,Trk13,Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 2944
+   name "PF_LAB_10.146.148.0/23"
+   tagged A7,A19,Trk1,Trk4,Trk6,Trk11,Trk13,Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 2968
+   name "PF_RCZ_10.148.148.0/23"
+   tagged A19,Trk1,Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 2990
+   name "PF_1CARD_10.128.148.0/23"
+   tagged A2,A7,A19,Trk1,Trk3,Trk6,Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 3013
+   name "PF_EBB_10.130.148.0/23"
+   tagged A19,Trk1,Trk5,Trk16,Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 3038
+   name "PF_BMS_10.132.148.0/23"
+   tagged A19,Trk1-Trk2,Trk18-Trk19
+   no ip address
+   ip igmp
+   exit
+vlan 3066
+   name "PF_IPCAM_10.134.148.0/23"
+   tagged A19,Trk1,Trk4,Trk6,Trk11,Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 3101
+   name "PF_WLAN_10.10.101.0/24"
+   untagged A1
+   tagged A2,A7,A19,Trk1-Trk6,Trk8-Trk19
+   no ip address
+   ip igmp
+   exit
+spanning-tree
+no spanning-tree A2 auto-edge-port
+spanning-tree A2 root-guard
+no spanning-tree A7 auto-edge-port
+spanning-tree A7 root-guard
+no spanning-tree A21 auto-edge-port
+spanning-tree A21 root-guard
+spanning-tree Trk1 priority 4
+spanning-tree Trk2 priority 4 root-guard
+spanning-tree Trk3 priority 4 root-guard
+spanning-tree Trk4 priority 4 root-guard
+no spanning-tree Trk5 auto-edge-port
+spanning-tree Trk5 priority 4 root-guard
+spanning-tree Trk6 priority 4 root-guard
+spanning-tree Trk8 priority 4 root-guard
+spanning-tree Trk9 priority 4 root-guard
+spanning-tree Trk10 priority 4 root-guard
+spanning-tree Trk11 priority 4 root-guard
+spanning-tree Trk12 priority 4 root-guard
+spanning-tree Trk13 priority 4 root-guard
+spanning-tree Trk14 priority 4 root-guard
+spanning-tree Trk15 priority 4 root-guard
+spanning-tree Trk16 priority 4 root-guard
+spanning-tree Trk17 priority 4 root-guard
+spanning-tree Trk18 priority 4
+no spanning-tree Trk19 auto-edge-port
+spanning-tree Trk19 priority 4 root-guard
+spanning-tree config-name "ucalgary"
+spanning-tree ignore-pvid-inconsistency
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600 priority 6
+no tftp server
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

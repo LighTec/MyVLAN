@@ -1,0 +1,84 @@
+; J8762A Configuration Editor; Created on release #H.08.98
+
+hostname "RAO012A-B1-HSW-4224" 
+snmp-server contact "UCIT 220-5555" 
+snmp-server location "RAO (FileParse.FileParserMaster Observatory)"
+console inactivity-timer 5 
+web-management ssl 
+interface 1 
+   name "x1d-136.159.57.29-x9u_RAO-VisitorCenter" 
+   speed-duplex 100-full 
+exit
+interface 2 
+   disable
+exit
+interface 3 
+   disable
+exit
+interface 4 
+   disable
+exit
+interface 6 
+   name "x6u-136.159.57.129-ETH:03_FW-LAN(VLAN:20)" 
+exit
+interface 7 
+   name "x7d-136.159.57.2-ETH:00_FW-WAN" 
+exit
+interface 8 
+   name "x8d-D_LinkSwitch-x1U" 
+exit
+interface 9 
+   name "x9u-136.159.57.1-x2d_SED(SuperNetEdgeDevice)" 
+   speed-duplex 100-full 
+exit
+ip default-gateway 136.159.57.1 
+snmp-server community "public" Operator 
+snmp-server community "mecyou12" Operator 
+snmp-server community "zfsqpal" Unrestricted 
+snmp-server community "uofc2009" Unrestricted 
+snmp-server host 136.159.22.228 "public" Critical 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   no ip address 
+   no untagged 1-9 
+   exit 
+vlan 2 
+   name "RAO_Transit" 
+   ip address 136.159.57.30 255.255.255.224 
+   tagged 1,7,9 
+   exit 
+vlan 3 
+   name "RAO_VoIP" 
+   no ip address 
+   tagged 1,5,9 
+   exit 
+vlan 20 
+   name "RAO_LAN" 
+   untagged 5,8 
+   tagged 1,6 
+   exit 
+vlan 999 
+   name "unused_vlan" 
+   untagged 2-4 
+   exit 
+ip authorized-managers 136.159.254.0 255.255.255.0 
+ip authorized-managers 10.41.70.0 255.255.255.0 
+ip authorized-managers 10.31.0.0 255.255.254.0 
+ip authorized-managers 136.159.57.0 255.255.255.0 
+ip authorized-managers 10.59.152.0 255.255.254.0 
+ip authorized-managers 10.41.68.50 
+ip authorized-managers 10.41.68.58 
+ip authorized-managers 10.41.75.0 255.255.255.0 
+aaa authentication login privilege-mode 
+aaa authentication telnet login radius local 
+aaa authentication telnet enable radius local 
+aaa authentication ssh login radius 
+aaa authentication ssh enable radius 
+radius-server dead-time 5 
+radius-server timeout 3 
+radius-server retransmit 2 
+radius-server host 10.31.1.51 
+radius-server host 10.31.1.52 
+password manager
+password operator
+

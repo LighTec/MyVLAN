@@ -1,0 +1,575 @@
+; J9851A Configuration Editor; Created on release #KB.15.15.0008
+; Ver #05:18.7f.ff.3f.ef:4d
+hostname "ENG020V-B1-HSW-4217"
+module A type j9535a
+module E type j9538a
+module F type j9538a
+module G type j9538a
+module H type j9538a
+module I type j9538a
+module J type j9538a
+module K type j9538a
+module L type j9538a
+console baud-rate 9600
+console flow-control none
+console idle-timeout 600
+console idle-timeout serial-usb 600
+trunk K1,L1 trk1 lacp
+trunk K2,L2 trk2 lacp
+trunk K3,L3 trk3 lacp
+trunk K4,L4 trk4 lacp
+trunk K5,L5 trk5 lacp
+trunk K6,L6 trk6 lacp
+trunk K7,L7 trk7 lacp
+trunk K8,L8 trk8 lacp
+trunk I1,J1 trk9 lacp
+trunk I2,J2 trk10 lacp
+trunk I3,J3 trk11 lacp
+trunk I4,J4 trk12 lacp
+trunk I5,J5 trk13 lacp
+trunk I6,J6 trk14 lacp
+trunk I7,J7 trk15 lacp
+trunk I8,J8 trk16 lacp
+trunk G1,H1 trk17 lacp
+trunk G2,H2 trk18 lacp
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this system is strictly prohibited,   *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.28.7.1
+interface A20
+   name "A20D-10.28.7.28-X01U_ENG020V_UPS"
+   exit
+interface A24
+   name 'A24D-10.28.7.100-x10U_CCIT-Trailers"'
+   exit
+interface E1
+   disable
+   exit
+interface E2
+   disable
+   exit
+interface E3
+   disable
+   exit
+interface E4
+   disable
+   exit
+interface E5
+   disable
+   exit
+interface E6
+   disable
+   exit
+interface E7
+   disable
+   exit
+interface E8
+   disable
+   exit
+interface F1
+   disable
+   exit
+interface F2
+   disable
+   exit
+interface F3
+   disable
+   exit
+interface F4
+   disable
+   exit
+interface F5
+   disable
+   exit
+interface F6
+   disable
+   exit
+interface F7
+   disable
+   exit
+interface F8
+   disable
+   exit
+interface G1
+   broadcast-limit 40
+   name "TRK17-G01D-10.28.7.228-X1/49U-TRK1_ENG438V"
+   exit
+interface G2
+   broadcast-limit 40
+   name "TRK18-G02D-10.28.7.252-X1/49U-TRK1_END202V"
+   exit
+interface G3
+   broadcast-limit 40
+   disable
+   exit
+interface G4
+   broadcast-limit 40
+   disable
+   exit
+interface G5
+   broadcast-limit 40
+   disable
+   exit
+interface G6
+   broadcast-limit 40
+   disable
+   exit
+interface G7
+   broadcast-limit 40
+   disable
+   exit
+interface G8
+   broadcast-limit 40
+   disable
+   exit
+interface H1
+   broadcast-limit 40
+   name "TRK17-H01D-10.28.7.228-X2/49U-TRK1_ENG438V"
+   exit
+interface H2
+   broadcast-limit 40
+   name "TRK18-H02D-10.28.7.252-X3/49U-TRK1_END202V"
+   exit
+interface H3
+   broadcast-limit 40
+   disable
+   exit
+interface H4
+   broadcast-limit 40
+   disable
+   exit
+interface H5
+   broadcast-limit 40
+   disable
+   exit
+interface H6
+   broadcast-limit 40
+   disable
+   exit
+interface H7
+   broadcast-limit 40
+   disable
+   exit
+interface H8
+   broadcast-limit 40
+   disable
+   exit
+interface I1
+   broadcast-limit 40
+   name "TRK9-I01D-10.28.7.222-X1/49U-TRK1_ENA100V"
+   exit
+interface I2
+   broadcast-limit 40
+   name "TRK10-I02D-10.28.7.221-X1/49U-TRK1-ENA200V"
+   exit
+interface I3
+   broadcast-limit 40
+   name "TRK11-I03D-10.28.7.220-X2/49U-TRK1-ENG334V"
+   exit
+interface I4
+   broadcast-limit 40
+   name "TRK12-I04D-10.28.7.218-X2/49U-TRK1_ENG434V"
+   exit
+interface I5
+   broadcast-limit 40
+   name "TRK13-I05D-10.28.7.239-X1/49U-TRK1_ENG038V"
+   exit
+interface I6
+   broadcast-limit 40
+   name "TRK14-I06D-10.28.7.237-X1/49U-TRK1_ENG138V"
+   exit
+interface I7
+   broadcast-limit 40
+   name "TRK15-I07D-10.28.7.230-X1/49-TRK1_ENG238"
+   exit
+interface I8
+   broadcast-limit 40
+   name "TRK16-I08D-10.28.7.229-X1/49U-TRK1_ENG338V"
+   exit
+interface J1
+   broadcast-limit 40
+   name "TRK9-J01D-10.28.7.222-X2/49U-TRK1_ENA100V"
+   exit
+interface J2
+   broadcast-limit 40
+   name "TRK10-J02D-10.28.7.221-X2/49U-TRK1-ENA200V"
+   exit
+interface J3
+   broadcast-limit 40
+   name "TRK11-J03D-10.28.7.220-X2/49U-TRK1-ENG224V"
+   exit
+interface J4
+   broadcast-limit 40
+   name "TRK12-J04D-10.28.7.218-X2/49U-TRK1_ENG434V"
+   exit
+interface J5
+   broadcast-limit 40
+   name "TRK13-J05D-10.28.7.239-X1/50U-TRK1_ENG038V"
+   exit
+interface J6
+   broadcast-limit 40
+   name "TRK14-J06D-10.28.7.237-X2/49U-TRK1_ENG138V"
+   exit
+interface J7
+   broadcast-limit 40
+   name "TRK15-J07D-10.28.7.230-X2/49-TRK1_ENG238"
+   exit
+interface J8
+   broadcast-limit 40
+   name "TRK16-J08D-10.28.7.229-X1/50U-TRK1_ENG338V"
+   exit
+interface K1
+   broadcast-limit 30
+   name "TRK1-K01U-CN-ENC-Z2-PE-1-Te1/1/11"
+   exit
+interface K2
+   broadcast-limit 40
+   name "TRK2-K02D-10.28.7.245-1/49U-TRK1_ENG020V"
+   exit
+interface K3
+   broadcast-limit 40
+   name "TRK3-K03D-10.28.7.244-X1/49U-TRK1_ENG120V"
+   exit
+interface K4
+   broadcast-limit 40
+   name "TRK4-K04D-10.28.7.243-X1/49U-TRK1_ENG220V"
+   exit
+interface K5
+   broadcast-limit 40
+   name "TRK5-K05D-10.28.7.241-X1/49U-TRK1_ENG320V"
+   exit
+interface K6
+   broadcast-limit 40
+   name "TRK6-K06D-10.28.7.240-X1/49U-TRK1_ENG420V"
+   exit
+interface K7
+   broadcast-limit 40
+   name "TRK7-K07D-10.28.7.143-X1/49U-TRK1_ENC006"
+   exit
+interface K8
+   broadcast-limit 40
+   name "TRK8-K08D-10.28.7.227-X1/49U-TRK1_ENA03V"
+   exit
+interface L1
+   broadcast-limit 30
+   name "TRK1-L01U-CNMSC-Z2-PE-2-Te2/1/11"
+   exit
+interface L2
+   broadcast-limit 40
+   name "TRK2-l02D-10.28.7.245-2/49U-TRK1_ENG020V"
+   exit
+interface L3
+   broadcast-limit 40
+   name "TRK3-L03D-10.28.7.244-X2/49U-TRK1_ENG120V"
+   exit
+interface L4
+   broadcast-limit 40
+   name "TRK4-L04D-10.28.7.243-X2/49U-TRK1_ENG220V"
+   exit
+interface L5
+   broadcast-limit 40
+   name "TRK5-L05D-10.28.7.241-X2/49U-TRK1_ENG320V"
+   exit
+interface L6
+   broadcast-limit 40
+   name "TRK6-L06D-10.28.7.240-X2/49U-TRK1_ENG420V"
+   exit
+interface L7
+   broadcast-limit 40
+   name "TRK7-L07D-10.28.7.143-X1/50U-TRK1_ENC006"
+   exit
+interface L8
+   broadcast-limit 40
+   name "TRK8-L08D-10.28.7.227-X2/49U-TRK1_ENA03V"
+   exit
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server contact "UCIT 220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   ip address dhcp-bootp
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged A20,A24,Trk1-Trk18
+   untagged A1-A19,A21-A23,E1-E8,F1-F8,G3-G8,H3-H8
+   no ip address
+   exit
+vlan 99
+   name "VLAN_99-136.159.99.0/24"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 114
+   name "VLAN_114-136.159.114.0/24"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 115
+   name "VLAN_115-136.159.115.0/24"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 120
+   name "VLAN_120-136.159.120.0/24"
+   tagged Trk1,Trk9
+   no ip address
+   ip igmp
+   exit
+vlan 121
+   name "VLAN_121-136.159.121.0/24"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 122
+   name "VLAN_122-136.159.122.0/24"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 125
+   name "VLAN_125-136.159.125.0/24"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 233
+   name "VLAN_233-136.159.233.0/24"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 999
+   name "unused_VLAN"
+   untagged Trk1
+   no ip address
+   exit
+vlan 1639
+   name "EN_MCZ2-10.97.136.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 1640
+   name "EN_MCZ1-10.97.128.0/21"
+   tagged Trk1-Trk17
+   no ip address
+   ip igmp
+   exit
+vlan 1647
+   name "EN_UMCZ2-10.79.136.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 1648
+   name "EN_UMCZ1-10.79.128.0/21"
+   tagged Trk1-Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 2290
+   name "EN_MLABS_10.158.76.0/24"
+   tagged Trk1,Trk3,Trk14-Trk15
+   no ip address
+   exit
+vlan 2341
+   name "EN_VOIP-10.6.16.0/24_ENG_04"
+   tagged Trk1,Trk6,Trk12,Trk17
+   no ip address
+   ip igmp
+   exit
+vlan 2342
+   name "EN_VOIP-10.6.15.0/24_ENG_03"
+   tagged Trk1,Trk5,Trk11,Trk16,Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 2343
+   name "EN_VOIP-10.6.14.0/24_ENG_02"
+   tagged Trk1,Trk4,Trk10,Trk15
+   no ip address
+   ip igmp
+   exit
+vlan 2344
+   name "EN_VOIP-10.6.13.0/24_ENG_01"
+   tagged Trk1,Trk3,Trk9,Trk14
+   no ip address
+   ip igmp
+   exit
+vlan 2345
+   name "EN_VOIP-10.6.12.0/24_ENG_B1"
+   tagged Trk1-Trk2,Trk13
+   no ip address
+   ip igmp
+   exit
+vlan 2346
+   name "EN_VOIP-10.6.11.0/24_ENC_B2"
+   tagged Trk1,Trk7
+   no ip address
+   ip igmp
+   exit
+vlan 2347
+   name "EN_VOIP-10.6.10.0/24_ENA_B1"
+   tagged Trk1,Trk8-Trk9
+   no ip address
+   ip igmp
+   exit
+vlan 2463
+   name "EN_IPCA_10.135.76.0/23"
+   tagged Trk1-Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 2514
+   name "EN_PRT_10.127.76.0/24"
+   tagged Trk1-Trk4,Trk7-Trk10,Trk12,Trk14,Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 2579
+   name "eng_research_storage"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2717
+   name "EN_RCZ-136.159.84.32/28"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2807
+   name "EN_MGMT-10.28.7.0/24"
+   untagged A20
+   tagged A24,Trk1-Trk18
+   ip address 10.28.7.100 255.255.255.0
+   ip igmp
+   exit
+vlan 2855
+   name "EN_TPZ-136.159.117.224/23"
+   tagged A24,Trk1,Trk4,Trk6,Trk9
+   no ip address
+   ip igmp
+   exit
+vlan 2927
+   name "EN_AV-10.144.28.0/23"
+   tagged Trk1-Trk4,Trk7-Trk10,Trk13-Trk15,Trk17
+   no ip address
+   ip igmp
+   exit
+vlan 3021
+   name "EN_WIRELESS-10.10.20.0/22"
+   tagged Trk1-Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 3576
+   name "EN_IPCAM-10.134.28.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 3577
+   name "EN_BMS-10.132.28.0/23"
+   tagged Trk1-Trk17
+   no ip address
+   ip igmp
+   exit
+vlan 3578
+   name "EN_EBB-10.130.28.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 3579
+   name "EN_1CARD-10.128.28.0/23"
+   tagged Trk1-Trk2,Trk7-Trk8,Trk13,Trk18
+   no ip address
+   ip igmp
+   exit
+vlan 3580
+   name "EN_UMRCZ-10.148.28.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 3581
+   name "EN_LABS-10.146.28.0/23"
+   tagged Trk1-Trk4,Trk7,Trk10,Trk13-Trk15,Trk17
+   no ip address
+   ip igmp
+   exit
+vlan 3644
+   name "EN_VOIP-10.6.104.0/24"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+spanning-tree
+spanning-tree A24 root-guard
+spanning-tree Trk1 priority 4
+spanning-tree Trk2 priority 4 root-guard
+spanning-tree Trk3 priority 4 root-guard
+spanning-tree Trk4 priority 4 root-guard
+spanning-tree Trk5 priority 4 root-guard
+spanning-tree Trk6 priority 4 root-guard
+spanning-tree Trk7 priority 4 root-guard
+spanning-tree Trk8 priority 4 root-guard
+spanning-tree Trk9 priority 4 root-guard
+spanning-tree Trk10 priority 4 root-guard
+spanning-tree Trk11 priority 4 root-guard
+spanning-tree Trk12 priority 4 root-guard
+spanning-tree Trk13 priority 4 root-guard
+spanning-tree Trk14 priority 4 root-guard
+spanning-tree Trk15 priority 4 root-guard
+spanning-tree Trk16 priority 4 root-guard
+spanning-tree Trk17 priority 4 root-guard
+spanning-tree Trk18 priority 4 root-guard
+spanning-tree config-name "ucalgary"
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600 priority 6
+no tftp server
+loop-protect A1-A20
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

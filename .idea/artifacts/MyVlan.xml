@@ -1,0 +1,31 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" build-on-make="true" name="MyVlan">
+    <output-path>$PROJECT_DIR$/out/artifacts/MyVlan</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="alias" value="" />
+        <option name="appClass" value="GUI.MainWindow" />
+        <option name="description" value="" />
+        <option name="enabledSigning" value="true" />
+        <option name="height" value="550" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="keystore" value="" />
+        <option name="title" value="MyVLAN" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+        <option name="width" value="1400" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="SQLTesting.jar">
+        <element id="module-output" name="SQLTesting" />
+        <element id="library" level="project" name="controlsfx-8.40.14" />
+        <element id="library" level="project" name="mysql-connector-java-5.1.46-bin" />
+        <element id="library" level="project" name="org.apache.commons:commons-csv:1.5" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

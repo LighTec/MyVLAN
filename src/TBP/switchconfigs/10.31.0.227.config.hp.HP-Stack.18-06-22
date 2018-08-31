@@ -1,0 +1,381 @@
+; hpStack_KB Configuration Editor; Created on release #KB.16.02.0013
+; Ver #0e:01.b3.ff.7c.5f.fc.7b.ff.ff.fc.ff.ff.3f.ef:cb
+
+stacking
+   member 1 type "JL074A" mac-address 00fd45-3c3e80
+   member 1 priority 254
+   member 1 flexible-module A type JL083A
+   member 2 type "JL074A" mac-address 00fd45-3c0a00
+   member 2 flexible-module A type JL083A
+   exit
+hostname "DC-A10-3810M-R2R2-01-1"
+console baud-rate 9600
+console flow-control none
+console idle-timeout 300
+console idle-timeout serial-usb 300
+no rest-interface
+trunk 1/A1,2/A1 trk1 lacp
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51 oobm
+radius-server host 10.31.1.52 oobm
+radius-server dead-time 5
+radius-server timeout 3
+radius-server retransmit 2
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.31.0.1
+interface 1/1
+   broadcast-limit 40
+   name "ITNEGRIDP02-LAN1"
+   exit
+interface 1/2
+   broadcast-limit 40
+   name "ITNEDHCPP02-LAN1"
+   exit
+interface 1/3
+   broadcast-limit 40
+   name "ITNEDNSP02-LAN1"
+   exit
+interface 1/4
+   broadcast-limit 40
+   name "  "
+   exit
+interface 1/5
+   broadcast-limit 40
+   disable
+   exit
+interface 1/6
+   broadcast-limit 40
+   disable
+   exit
+interface 1/7
+   broadcast-limit 40
+   disable
+   exit
+interface 1/8
+   broadcast-limit 40
+   disable
+   exit
+interface 1/9
+   broadcast-limit 40
+   disable
+   exit
+interface 1/10
+   broadcast-limit 40
+   disable
+   exit
+interface 1/11
+   broadcast-limit 40
+   disable
+   exit
+interface 1/12
+   broadcast-limit 40
+   disable
+   exit
+interface 1/13
+   broadcast-limit 40
+   disable
+   exit
+interface 1/14
+   broadcast-limit 40
+   disable
+   exit
+interface 1/15
+   broadcast-limit 40
+   disable
+   exit
+interface 1/16
+   broadcast-limit 40
+   disable
+   exit
+interface 1/17
+   broadcast-limit 40
+   disable
+   exit
+interface 1/18
+   broadcast-limit 40
+   disable
+   exit
+interface 1/19
+   broadcast-limit 40
+   disable
+   exit
+interface 1/20
+   broadcast-limit 40
+   disable
+   exit
+interface 1/21
+   broadcast-limit 40
+   disable
+   exit
+interface 1/22
+   broadcast-limit 40
+   disable
+   exit
+interface 1/23
+   broadcast-limit 40
+   disable
+   exit
+interface 1/24
+   broadcast-limit 40
+   disable
+   exit
+interface 1/25
+   broadcast-limit 40
+   disable
+   exit
+interface 1/26
+   broadcast-limit 40
+   disable
+   exit
+interface 1/27
+   broadcast-limit 40
+   disable
+   exit
+interface 1/28
+   broadcast-limit 40
+   disable
+   exit
+interface 1/29
+   broadcast-limit 40
+   disable
+   exit
+interface 1/30
+   broadcast-limit 40
+   disable
+   exit
+interface 1/31
+   broadcast-limit 40
+   disable
+   exit
+interface 1/32
+   broadcast-limit 40
+   disable
+   exit
+interface 1/33
+   broadcast-limit 40
+   disable
+   exit
+interface 1/34
+   broadcast-limit 40
+   disable
+   exit
+interface 1/35
+   broadcast-limit 40
+   disable
+   exit
+interface 1/36
+   broadcast-limit 40
+   disable
+   exit
+interface 1/37
+   broadcast-limit 40
+   disable
+   exit
+interface 1/38
+   broadcast-limit 40
+   disable
+   exit
+interface 1/39
+   broadcast-limit 40
+   disable
+   exit
+interface 1/40
+   broadcast-limit 40
+   disable
+   exit
+interface 1/41
+   broadcast-limit 40
+   disable
+   exit
+interface 1/42
+   broadcast-limit 40
+   disable
+   exit
+interface 1/43
+   broadcast-limit 40
+   disable
+   exit
+interface 1/44
+   broadcast-limit 40
+   disable
+   exit
+interface 1/45
+   broadcast-limit 40
+   disable
+   exit
+interface 1/46
+   broadcast-limit 40
+   disable
+   exit
+interface 1/47
+   broadcast-limit 40
+   disable
+   exit
+interface 1/48
+   broadcast-limit 40
+   disable
+   exit
+interface 1/A1
+   broadcast-limit 40
+   name "xA1u-CN-HA-Z0-PE-2-te2/3/6"
+   exit
+interface 1/A2
+   broadcast-limit 40
+   exit
+interface 1/A3
+   broadcast-limit 40
+   disable
+   exit
+interface 1/A4
+   broadcast-limit 40
+   disable
+   exit
+interface 2/1
+   name "ITNEGRIDP02-LAN2"
+   exit
+interface 2/2
+   name "ITNEDHCPP02-LAN2"
+   exit
+interface 2/3
+   name "ITNEDNSP02-LAN2"
+   exit
+interface 2/A1
+   broadcast-limit 40
+   name "2/A1u-CN-MS-Z0-PE-1-te1/3/6"
+   exit
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" operator unrestricted
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server location "A10 R2R2"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   ip address 10.31.0.227 255.255.254.0
+   member 1
+      ip address dhcp-bootp
+      exit
+   member 2
+      ip address dhcp-bootp
+      exit
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1/1-1/48,1/A2-1/A3,2/1-2/3
+   untagged 1/A4,2/4-2/48,2/A2-2/A4,Trk1
+   no ip address
+   exit
+vlan 999
+   name "unused_VLAN"
+   untagged 1/4-1/48,1/A2-1/A3
+   no ip address
+   exit
+vlan 1985
+   name "wireless-u-dmz-z0_10.16.63.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1987
+   name "wireless-u-dmz-136.159.222.8/29"
+   untagged 1/3,2/3
+   tagged Trk1
+   no ip address
+   exit
+vlan 1990
+   name "VLAN1990"
+   untagged 1/1-1/2,2/1-2/2
+   tagged Trk1
+   no ip address
+   exit
+spanning-tree
+spanning-tree 1/1 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/2 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/3 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/4 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/5 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/6 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/7 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/8 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/9 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/10 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/11 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/12 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/13 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/14 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/15 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/16 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/17 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/18 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/19 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/20 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/21 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/22 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/23 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/24 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/25 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/26 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/27 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/28 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/29 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/30 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/31 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/32 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/33 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/34 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/35 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/36 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/37 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/38 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/39 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/40 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/41 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/42 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/43 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/44 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/45 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/46 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/47 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/48 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/A2 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/A3 root-guard bpdu-filter bpdu-protection
+spanning-tree 1/A4 root-guard bpdu-filter bpdu-protection
+no spanning-tree Trk1 auto-edge-port
+spanning-tree Trk1 priority 4
+spanning-tree config-name "ucalgary"
+spanning-tree mode rapid-pvst
+spanning-tree vlan 999 priority 10
+spanning-tree vlan 1985 priority 10
+spanning-tree vlan 1990 priority 10
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600 priority 6
+no tftp server
+loop-protect 1/1-1/48
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

@@ -1,0 +1,163 @@
+; J9019B Configuration Editor; Created on release #Q.11.74
+
+hostname "MSB016-B1-SW-2964" 
+snmp-server contact "UCIT 220-5555" 
+snmp-server location "ZK-NorthWall-BlackCabinet" 
+mac-age-time 180 
+max-vlans 64 
+time timezone -420 
+time daylight-time-rule Continental-US-and-Canada 
+console baud-rate 9600 
+console flow-control None 
+console inactivity-timer 5 
+no web-management 
+web-management ssl 
+interface 1 
+   name "sensaphone_exp_cntrl2" 
+exit
+interface 13 
+   disable
+exit
+interface 14 
+   disable
+exit
+interface 15 
+   disable
+exit
+interface 16 
+   disable
+exit
+interface 17 
+   disable
+exit
+interface 18 
+   disable
+exit
+interface 19 
+   disable
+exit
+interface 20 
+   disable
+exit
+interface 21 
+   disable
+exit
+interface 22 
+   disable
+exit
+interface 23 
+   disable
+exit
+interface 24 
+   disable
+exit
+interface 25 
+   disable
+exit
+interface 26 
+   name "x26u-10.27.16.186-xE1d" 
+exit
+ip default-gateway 10.27.16.1 
+sntp server 136.159.34.69 
+sntp server 136.159.34.24 
+timesync sntp 
+sntp unicast 
+sntp 60 
+logging 10.31.0.17 
+logging 10.31.1.21 
+snmp-server community "uofc2009" Operator Unrestricted 
+snmp-server community "mecyou12" Operator 
+snmp-server community "mecyou" Operator Unrestricted 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   no ip address 
+   no untagged 1-26 
+   exit 
+vlan 3586 
+   name "MIZ_DCMon" 
+   untagged 1-24 
+   no ip address 
+   tagged 26 
+   exit 
+vlan 2716 
+   name "MSPDC_MGMT" 
+   ip address 10.27.16.187 255.255.254.0 
+   tagged 26 
+   exit 
+vlan 999 
+   name "unused_vlan" 
+   untagged 25 
+   no ip address 
+   exit 
+ip authorized-managers 10.41.70.0 255.255.255.0 access Operator 
+ip authorized-managers 10.31.0.0 255.255.254.0 
+ip authorized-managers 10.31.4.0 255.255.255.0 
+ip authorized-managers 10.41.68.50 255.255.255.255 
+ip authorized-managers 10.41.68.58 255.255.255.255 
+ip authorized-managers 10.41.75.0 255.255.255.0 
+qos type-of-service diff-services 
+aaa authentication login privilege-mode 
+aaa authentication telnet login radius local 
+aaa authentication telnet enable radius local 
+aaa authentication ssh login radius 
+aaa authentication ssh enable radius 
+banner motd "**************************************************************************"
+banner motd "* Warning - Private Electronic Device  UofC Authorized users only:      *"
+banner motd "**************************************************************************"
+banner motd "~"
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+spanning-tree 1 root-guard bpdu-filter bpdu-protection
+spanning-tree 2 root-guard bpdu-filter bpdu-protection
+spanning-tree 3 root-guard bpdu-filter bpdu-protection
+spanning-tree 4 root-guard bpdu-filter bpdu-protection
+spanning-tree 5 root-guard bpdu-filter bpdu-protection
+spanning-tree 6 root-guard bpdu-filter bpdu-protection
+spanning-tree 7 root-guard bpdu-filter bpdu-protection
+spanning-tree 8 root-guard bpdu-filter bpdu-protection
+spanning-tree 9 root-guard bpdu-filter bpdu-protection
+spanning-tree 10 root-guard bpdu-filter bpdu-protection
+spanning-tree 11 root-guard bpdu-filter bpdu-protection
+spanning-tree 12 root-guard bpdu-filter bpdu-protection
+spanning-tree 13 root-guard bpdu-filter bpdu-protection
+spanning-tree 14 root-guard bpdu-filter bpdu-protection
+spanning-tree 15 root-guard bpdu-filter bpdu-protection
+spanning-tree 16 root-guard bpdu-filter bpdu-protection
+spanning-tree 17 root-guard bpdu-filter bpdu-protection
+spanning-tree 18 root-guard bpdu-filter bpdu-protection
+spanning-tree 19 root-guard bpdu-filter bpdu-protection
+spanning-tree 20 root-guard bpdu-filter bpdu-protection
+spanning-tree 21 root-guard bpdu-filter bpdu-protection
+spanning-tree 22 root-guard bpdu-filter bpdu-protection
+spanning-tree 23 root-guard bpdu-filter bpdu-protection
+spanning-tree 24 root-guard bpdu-filter bpdu-protection
+spanning-tree 25 root-guard bpdu-filter bpdu-protection
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree instance 1 vlan 1-1099 2000-2359 2361-2373 2377-2485 2488-2493 
+spanning-tree instance 1 vlan 2495-2531 2534-2536 2539 2541 2542 2546-2577 
+spanning-tree instance 1 vlan 2579 2583-2608 2610-2621 2623-2648 2651-2703 
+spanning-tree instance 1 vlan 2705-2748 2750-2810 2812 2815 2817-2864 
+spanning-tree instance 1 vlan 2866-3139 3141-3199 3400-3587 3589-3598 
+spanning-tree instance 1 vlan 3600-3880 3889-4094
+spanning-tree instance 2 vlan 1100-1399
+spanning-tree instance 3 vlan 2360 2374-2376 2486 2487 2494 2532 2533 
+spanning-tree instance 3 vlan 2537 2538 2540 2543-2545 2578 2580-2582 2609 
+spanning-tree instance 3 vlan 2622 2649 2650 2704 2749 2811 2813 2814 2816 
+spanning-tree instance 3 vlan 2865 3140 3200-3399 3588 3599 3881-3888
+spanning-tree instance 11 vlan 1700-1799
+spanning-tree instance 12 vlan 1800-1899
+spanning-tree instance 13 vlan 1900-1999
+spanning-tree instance 14 vlan 1400-1499
+spanning-tree instance 15 vlan 1500-1599
+spanning-tree instance 16 vlan 1600-1699
+spanning-tree bpdu-protection-timeout 600 priority 9
+ip ssh
+loop-protect 1-26
+no dhcp config-file-update
+password manager
+password operator
+

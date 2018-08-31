@@ -1,0 +1,1467 @@
+; hpStack_KB Configuration Editor; Created on release #KB.16.02.0014
+; Ver #0f:01.81.b3.ff.7c.59.fc.7b.ff.ff.fc.ff.ff.3f.ef:4d
+
+stacking
+   member 1 type "JL074A" mac-address 00fd45-3bb100
+   member 1 priority 255
+   member 1 flexible-module A type JL083A
+   member 2 type "JL074A" mac-address 1c98ec-a4f680
+   member 2 priority 254
+   member 3 type "JL074A" mac-address 9cdc71-a17580
+   member 4 type "JL074A" mac-address 1c98ec-a24b00
+   member 4 flexible-module A type JL083A
+   member 5 type "JL074A" mac-address 1c98ec-a2cc80
+   exit
+hostname "SMRT1E307-01-MSW-4325"
+console baud-rate 9600
+console flow-control none
+console idle-timeout 300
+console idle-timeout serial-usb 300
+no rest-interface
+trunk 1/A1,4/A1 trk1 lacp
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this system is strictly prohibited,   *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server dead-time 5
+radius-server timeout 3
+radius-server retransmit 2
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+telnet-server listen data
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+web-management ssl
+web-management listen data
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip authorized-managers 10.16.66.0 255.255.255.0 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access operator access-method snmp
+ip default-gateway 10.29.28.1
+ip ssh listen data
+interface 1/1
+   broadcast-limit 10
+   name "Rm.1EWAP01"
+   exit
+interface 1/2
+   broadcast-limit 10
+   name "Rm.1EWAP10"
+   exit
+interface 1/3
+   broadcast-limit 10
+   exit
+interface 1/4
+   broadcast-limit 10
+   exit
+interface 1/5
+   broadcast-limit 10
+   name "Rm.1E-104_1EA02"
+   exit
+interface 1/6
+   broadcast-limit 10
+   name "Rm.1E-105_1EA04"
+   exit
+interface 1/7
+   broadcast-limit 10
+   name "Rm.1E-106_1EA06"
+   exit
+interface 1/8
+   broadcast-limit 10
+   name "Rm.1E-107_1EA08"
+   exit
+interface 1/9
+   broadcast-limit 10
+   name "Rm.1E-108_1EA10"
+   exit
+interface 1/10
+   broadcast-limit 10
+   name "Rm.1E-109_1EA12"
+   exit
+interface 1/11
+   broadcast-limit 10
+   name "Rm.1E-101_1EA14"
+   exit
+interface 1/12
+   broadcast-limit 10
+   name "Rm.1E-102_1EA16"
+   exit
+interface 1/13
+   broadcast-limit 10
+   name "Rm.1E-103_1EA18"
+   exit
+interface 1/14
+   broadcast-limit 10
+   name "Rm.1E-222_1ED01"
+   exit
+interface 1/15
+   broadcast-limit 10
+   name "Rm.1E-222_1ED02"
+   exit
+interface 1/16
+   broadcast-limit 10
+   name "Rm.1E-223_1ED04"
+   exit
+interface 1/17
+   broadcast-limit 10
+   name "Rm.1E-224_1ED06"
+   exit
+interface 1/18
+   broadcast-limit 10
+   name "Rm.1E-219_1ED08"
+   exit
+interface 1/19
+   broadcast-limit 10
+   name "Rm.1E-220_1ED10"
+   exit
+interface 1/20
+   broadcast-limit 10
+   name "Rm.1E-221_1ED12"
+   exit
+interface 1/21
+   broadcast-limit 10
+   name "1ED30"
+   exit
+interface 1/22
+   broadcast-limit 10
+   name "1ED32"
+   exit
+interface 1/23
+   broadcast-limit 10
+   name "1ED34"
+   exit
+interface 1/24
+   broadcast-limit 10
+   name "Rm.1E-216_1EE02"
+   exit
+interface 1/25
+   broadcast-limit 10
+   name "Rm.1E-217_1EE04"
+   exit
+interface 1/26
+   broadcast-limit 10
+   name "Rm.1E-218_1EE06"
+   exit
+interface 1/27
+   broadcast-limit 10
+   name "Rm.1E-213_1EE08"
+   exit
+interface 1/28
+   broadcast-limit 10
+   name "Rm.1E-214_1EE10"
+   exit
+interface 1/29
+   broadcast-limit 10
+   name "Rm.1E-215_1EE12"
+   exit
+interface 1/30
+   broadcast-limit 10
+   name "Rm.1E-210_1EE14"
+   exit
+interface 1/31
+   broadcast-limit 10
+   name "Rm.1E-211_1EE16"
+   exit
+interface 1/32
+   broadcast-limit 10
+   name "Rm.1E-212_1EE18"
+   exit
+interface 1/33
+   broadcast-limit 10
+   name "Rm.1E-207_1EE20"
+   exit
+interface 1/34
+   broadcast-limit 10
+   name "Rm.1E-208_1EE22"
+   exit
+interface 1/35
+   broadcast-limit 10
+   name "Rm.1E-209_1EE24"
+   exit
+interface 1/36
+   broadcast-limit 10
+   name "Rm.1E-204_1EF02"
+   exit
+interface 1/37
+   broadcast-limit 10
+   name "Rm.1E-205_1EF04"
+   exit
+interface 1/38
+   broadcast-limit 10
+   name "Rm.1E-206_1EF06"
+   exit
+interface 1/39
+   broadcast-limit 10
+   name "Rm.1E-201_1EF08"
+   exit
+interface 1/40
+   broadcast-limit 10
+   name "Rm.1E-202_1EF10"
+   exit
+interface 1/41
+   broadcast-limit 10
+   name "Rm.1E-203_1EF12"
+   exit
+interface 1/42
+   broadcast-limit 10
+   name "Rm.1E-198_1EF14"
+   exit
+interface 1/43
+   broadcast-limit 10
+   name "Rm.1E-199_1EF16"
+   exit
+interface 1/44
+   broadcast-limit 10
+   name "Rm.1E-200_1EF18"
+   exit
+interface 1/45
+   broadcast-limit 10
+   name "Rm.1E-110_1EG02"
+   exit
+interface 1/46
+   broadcast-limit 10
+   name "Rm.1E-111_1EG04"
+   exit
+interface 1/47
+   broadcast-limit 10
+   name "Rm.1E-112_1EG06"
+   exit
+interface 1/48
+   broadcast-limit 10
+   exit
+interface 1/A1
+   broadcast-limit 40
+   name "TRK1-1/A1-10.29.28.254-E02-TRK2_2CW-302"
+   exit
+interface 1/A2
+   disable
+   exit
+interface 1/A3
+   disable
+   exit
+interface 1/A4
+   disable
+   exit
+interface 2/1
+   broadcast-limit 10
+   name "1EWAP03"
+   exit
+interface 2/2
+   broadcast-limit 10
+   name "1EWAP12"
+   exit
+interface 2/3
+   broadcast-limit 10
+   exit
+interface 2/4
+   broadcast-limit 10
+   exit
+interface 2/5
+   broadcast-limit 10
+   name "Rm.1E-113_1EG08"
+   exit
+interface 2/6
+   broadcast-limit 10
+   name "Rm.1E-114_1EG10"
+   exit
+interface 2/7
+   broadcast-limit 10
+   name "Rm.1E-115_1EG12"
+   exit
+interface 2/8
+   broadcast-limit 10
+   name "Rm.1E-119_1EG14"
+   exit
+interface 2/9
+   broadcast-limit 10
+   name "Rm.1E-117_1EG16"
+   exit
+interface 2/10
+   broadcast-limit 10
+   name "Rm.1E-118_1EG18"
+   exit
+interface 2/11
+   broadcast-limit 10
+   name "Rm.1E-116_1EG20"
+   exit
+interface 2/12
+   broadcast-limit 10
+   name "Rm.1E-188_1EL05"
+   exit
+interface 2/13
+   broadcast-limit 10
+   name "Rm.1E-120_1EG22"
+   exit
+interface 2/14
+   broadcast-limit 10
+   name "Rm.1E-185_1EK31"
+   exit
+interface 2/15
+   broadcast-limit 10
+   name "Rm.1E-121_1EG24"
+   exit
+interface 2/16
+   broadcast-limit 10
+   name "Rm.1E-122_1EH02"
+   exit
+interface 2/17
+   broadcast-limit 10
+   name "Rm.1E-123_1EH04"
+   exit
+interface 2/18
+   broadcast-limit 10
+   name "Rm.1E-124_1EH06"
+   exit
+interface 2/19
+   broadcast-limit 10
+   name "Rm.1E-125_1EH08"
+   exit
+interface 2/20
+   broadcast-limit 10
+   name "Rm.1E-126_1EH10"
+   exit
+interface 2/21
+   broadcast-limit 10
+   name "Rm.1E-127_1EH12"
+   exit
+interface 2/22
+   broadcast-limit 10
+   name "Rm.1E-128_1EH14"
+   exit
+interface 2/23
+   broadcast-limit 10
+   name "Rm.1E-129_1EH16"
+   exit
+interface 2/24
+   broadcast-limit 10
+   name "Rm.1E-130_1EH18"
+   exit
+interface 2/25
+   broadcast-limit 10
+   name "Rm.1E-131_1EH20"
+   exit
+interface 2/26
+   broadcast-limit 10
+   name "Rm.1E-181_1EK23"
+   exit
+interface 2/27
+   broadcast-limit 10
+   name "Rm.1E-132_1EH22"
+   exit
+interface 2/28
+   broadcast-limit 10
+   name "Rm.1E-133_1EH24"
+   exit
+interface 2/29
+   broadcast-limit 10
+   name "Rm.1E-134_1EH26"
+   exit
+interface 2/30
+   broadcast-limit 10
+   name "Rm.1E-135_1EH27"
+   exit
+interface 2/31
+   broadcast-limit 10
+   name "Rm.1E-135_1EH28"
+   exit
+interface 2/32
+   broadcast-limit 10
+   name "Rm.1E-136_1EH29"
+   exit
+interface 2/33
+   broadcast-limit 10
+   name "Rm.1E-136_1EH30"
+   exit
+interface 2/34
+   broadcast-limit 10
+   name "Rm.1E-137_1EH31"
+   exit
+interface 2/35
+   broadcast-limit 10
+   name "Rm.1E-137_1EH32"
+   exit
+interface 2/36
+   broadcast-limit 10
+   name "Rm.1E-138_1EI02"
+   exit
+interface 2/37
+   broadcast-limit 10
+   name "Rm.1E-139_1EI04"
+   exit
+interface 2/38
+   broadcast-limit 10
+   name "Rm.1E-140_1EI06"
+   exit
+interface 2/39
+   broadcast-limit 10
+   name "Rm.1E-141_1EI08"
+   exit
+interface 2/40
+   broadcast-limit 10
+   name "Rm.1E-142_1EI10"
+   exit
+interface 2/41
+   broadcast-limit 10
+   name "Rm.1E-143_1EI12"
+   exit
+interface 2/42
+   broadcast-limit 10
+   name "Rm.1E-144_1EI14"
+   exit
+interface 2/43
+   broadcast-limit 10
+   name "Rm.1E-145_1EI15"
+   exit
+interface 2/44
+   broadcast-limit 10
+   name "Rm.1E-145_1EI16"
+   exit
+interface 2/45
+   broadcast-limit 10
+   name "Rm.1E-146_1EI18"
+   exit
+interface 2/46
+   broadcast-limit 10
+   name "Rm.1E-147_1EI20"
+   exit
+interface 2/47
+   broadcast-limit 10
+   name "Rm.1E-148_1EI22"
+   exit
+interface 2/48
+   broadcast-limit 10
+   exit
+interface 3/1
+   broadcast-limit 10
+   name "1EWAP06"
+   exit
+interface 3/2
+   broadcast-limit 10
+   name "1EWAP14"
+   exit
+interface 3/3
+   broadcast-limit 10
+   exit
+interface 3/4
+   broadcast-limit 10
+   exit
+interface 3/5
+   broadcast-limit 10
+   name "Rm.1E-149_1EI24"
+   exit
+interface 3/6
+   broadcast-limit 10
+   name "Rm.1E-150_1EI26"
+   exit
+interface 3/7
+   broadcast-limit 10
+   name "Rm.1E-117_1EG15"
+   exit
+interface 3/8
+   broadcast-limit 10
+   name "Rm.1E-151_1EI28"
+   exit
+interface 3/9
+   broadcast-limit 10
+   name "Rm.1E-152_1EI30"
+   exit
+interface 3/10
+   broadcast-limit 10
+   name "Rm.1E-153_1EI32"
+   exit
+interface 3/11
+   broadcast-limit 10
+   name "Rm.1E-154_1EJ02"
+   exit
+interface 3/12
+   broadcast-limit 10
+   name "Rm.1E-155_1EJ04"
+   exit
+interface 3/13
+   broadcast-limit 10
+   name "Rm.1E-156_1EJ05"
+   exit
+interface 3/14
+   broadcast-limit 10
+   name "Rm.1E-112_1EG05"
+   exit
+interface 3/15
+   broadcast-limit 10
+   name "Rm.1E-157_1EJ08"
+   exit
+interface 3/16
+   broadcast-limit 10
+   name "Rm.1E-158_1EJ09"
+   exit
+interface 3/17
+   broadcast-limit 10
+   name "Rm.1E-158_1EJ10"
+   exit
+interface 3/18
+   broadcast-limit 10
+   name "Rm.1E-159_1EJ11"
+   exit
+interface 3/19
+   broadcast-limit 10
+   name "Rm.1E-159_1EJ12"
+   exit
+interface 3/20
+   broadcast-limit 10
+   name "Rm.1E-160_1EJ13"
+   exit
+interface 3/21
+   broadcast-limit 10
+   name "Rm.1E-160_1EJ14"
+   exit
+interface 3/22
+   broadcast-limit 10
+   name "Rm.1E-161_1EJ16"
+   exit
+interface 3/23
+   broadcast-limit 10
+   name "Rm.1E-162_1EJ17"
+   exit
+interface 3/24
+   broadcast-limit 10
+   name "Rm.1E-162_1EJ18"
+   exit
+interface 3/25
+   broadcast-limit 10
+   name "Rm.1E-163_1EJ19"
+   exit
+interface 3/26
+   broadcast-limit 10
+   name "Rm.1E-163_1EJ20"
+   exit
+interface 3/27
+   broadcast-limit 10
+   name "Rm.1E-164_1EJ21"
+   exit
+interface 3/28
+   broadcast-limit 10
+   name "Rm.1E-164_1EJ22"
+   exit
+interface 3/29
+   broadcast-limit 10
+   name "Rm.1E-165_1EJ23"
+   exit
+interface 3/30
+   broadcast-limit 10
+   name "Rm.1E-165_1EJ24"
+   exit
+interface 3/31
+   broadcast-limit 10
+   name "Rm.1E-166_1EJ26"
+   exit
+interface 3/32
+   broadcast-limit 10
+   name "Rm.1E-167_1EJ28"
+   exit
+interface 3/33
+   broadcast-limit 10
+   name "Rm.1E-168_1EJ30"
+   exit
+interface 3/34
+   broadcast-limit 10
+   name "Rm.1E-169_1EJ32"
+   exit
+interface 3/35
+   broadcast-limit 10
+   name "Rm.1E-170_1EK02"
+   exit
+interface 3/36
+   broadcast-limit 10
+   name "Rm.1E-171_1EK04"
+   exit
+interface 3/37
+   broadcast-limit 10
+   name "Rm.1E-172_1EK06"
+   exit
+interface 3/38
+   broadcast-limit 10
+   name "Rm.1E-173_1EK08"
+   exit
+interface 3/39
+   broadcast-limit 10
+   name "Rm.1E-174_1EK10"
+   exit
+interface 3/40
+   broadcast-limit 10
+   name "Rm.1E-175_1EK12"
+   exit
+interface 3/41
+   broadcast-limit 10
+   name "Rm.1E-176_1EK14"
+   exit
+interface 3/42
+   broadcast-limit 10
+   name "Rm.1E-177_1EK16"
+   exit
+interface 3/43
+   broadcast-limit 10
+   name "Rm.1E-178_1EK18"
+   exit
+interface 3/44
+   broadcast-limit 10
+   name "Rm.1E-179_1EK20"
+   exit
+interface 3/45
+   broadcast-limit 10
+   name "Rm.1E-180_1EK22"
+   exit
+interface 3/46
+   broadcast-limit 10
+   name "Rm.1E-181_1EK24"
+   exit
+interface 3/47
+   broadcast-limit 10
+   name "Rm.1E-182_1EK26"
+   exit
+interface 3/48
+   broadcast-limit 10
+   exit
+interface 4/1
+   broadcast-limit 10
+   name "1EWAP08"
+   exit
+interface 4/2
+   broadcast-limit 10
+   exit
+interface 4/3
+   broadcast-limit 10
+   exit
+interface 4/4
+   broadcast-limit 10
+   exit
+interface 4/5
+   broadcast-limit 10
+   name "Rm.1E-183_1EK28"
+   exit
+interface 4/6
+   broadcast-limit 10
+   name "Rm.1E-184_1EK30"
+   exit
+interface 4/7
+   broadcast-limit 10
+   name "Rm.1E-185_1EK32"
+   exit
+interface 4/8
+   broadcast-limit 10
+   name "Rm.1E-186_1EL02"
+   exit
+interface 4/9
+   broadcast-limit 10
+   name "Rm.1E-187_1EL04"
+   exit
+interface 4/10
+   broadcast-limit 10
+   name "Rm.1E-188_1EL06"
+   exit
+interface 4/11
+   broadcast-limit 10
+   name "Rm.1E-189_1EL08"
+   exit
+interface 4/12
+   broadcast-limit 10
+   name "Rm.1E-190_1EL10"
+   exit
+interface 4/13
+   broadcast-limit 10
+   name "Rm.1E-191_1EL12"
+   exit
+interface 4/14
+   broadcast-limit 10
+   name "Rm.1E-192_1EL14"
+   exit
+interface 4/15
+   broadcast-limit 10
+   name "Rm.1E-193_1EL16"
+   exit
+interface 4/16
+   broadcast-limit 10
+   name "Rm.1E-194_1EL18"
+   exit
+interface 4/17
+   broadcast-limit 10
+   name "Rm.1E-195_1EL20"
+   exit
+interface 4/18
+   broadcast-limit 10
+   name "Rm.1E-196_1EL22"
+   exit
+interface 4/19
+   broadcast-limit 10
+   name "Rm.1E-197_1EL24"
+   exit
+interface 4/20
+   broadcast-limit 10
+   name "Rm.1E-011_1EJ33"
+   exit
+interface 4/21
+   broadcast-limit 10
+   name "Rm.1E-011_1EJ34"
+   exit
+interface 4/22
+   broadcast-limit 10
+   name "Rm.1E-055_1EG26"
+   exit
+interface 4/23
+   broadcast-limit 10
+   name "Rm.1E-055_1EC16"
+   exit
+interface 4/24
+   broadcast-limit 10
+   name "Rm.1E-055_1ED18"
+   exit
+interface 4/25
+   broadcast-limit 10
+   name "1EE26"
+   exit
+interface 4/26
+   broadcast-limit 10
+   name "1EE35"
+   exit
+interface 4/27
+   broadcast-limit 10
+   name "Rm.1E-005_1EF20"
+   exit
+interface 4/28
+   broadcast-limit 10
+   name "Rm.1E-004_1EF24"
+   exit
+interface 4/29
+   broadcast-limit 10
+   name "Rm.1E-006_1EF30"
+   exit
+interface 4/30
+   broadcast-limit 10
+   name "Rm.1E-129_1EH15"
+   exit
+interface 4/31
+   broadcast-limit 10
+   name "Rm.1E-113_1EG07"
+   exit
+interface 4/32
+   broadcast-limit 10
+   name "Rm.1E-181_1EK24"
+   exit
+interface 4/33
+   broadcast-limit 10
+   name "Rm.1E-002_1EL26"
+   exit
+interface 4/34
+   broadcast-limit 10
+   name "Rm.1E-002_1EL25"
+   exit
+interface 4/35
+   broadcast-limit 10
+   name "Rm.1E-003_1EL30"
+   exit
+interface 4/36
+   broadcast-limit 10
+   name "Rm.1E-199_1EF15"
+   exit
+interface 4/37
+   broadcast-limit 10
+   name "1EA20"
+   exit
+interface 4/38
+   broadcast-limit 10
+   name "1EB05"
+   exit
+interface 4/39
+   broadcast-limit 10
+   name "Rm.1E-007_1EE28"
+   exit
+interface 4/40
+   broadcast-limit 10
+   name "Rm.1E-110_1EG01"
+   exit
+interface 4/41
+   broadcast-limit 10
+   name "Rm.1E-055_1ED20"
+   exit
+interface 4/42
+   broadcast-limit 10
+   name "Rm.1E-055_1EC34"
+   exit
+interface 4/43
+   broadcast-limit 10
+   name "Rm.1E-055_1EC35"
+   exit
+interface 4/44
+   broadcast-limit 10
+   exit
+interface 4/45
+   broadcast-limit 10
+   exit
+interface 4/46
+   broadcast-limit 10
+   name "Rm.1E-055_1ED19"
+   exit
+interface 4/47
+   broadcast-limit 10
+   exit
+interface 4/48
+   broadcast-limit 10
+   exit
+interface 4/A1
+   broadcast-limit 40
+   name "TRK1-4/A1-10.29.28.254-F02-TRK2_2CW-302"
+   exit
+interface 4/A2
+   disable
+   exit
+interface 4/A3
+   disable
+   exit
+interface 4/A4
+   disable
+   exit
+interface 5/5
+   name "Rm.1E-055_1EA31"
+   exit
+interface 5/6
+   name "Rm.1E-055_1EA32"
+   exit
+interface 5/7
+   name "Rm.1E-055_1EB13"
+   exit
+interface 5/8
+   name "Rm.1E-055_1EB14"
+   exit
+interface 5/9
+   name "Rm.1E-055_1EB15"
+   exit
+interface 5/10
+   name "Rm.1E-055_1EB16"
+   exit
+interface 5/11
+   name "Rm.1E-055_13D15"
+   exit
+interface 5/12
+   name "Rm.1E-055_1ED16"
+   exit
+interface 5/13
+   name "Rm.1E-055_1ED17"
+   exit
+interface 5/14
+   name "Rm.1E-055_1EI33"
+   exit
+interface 5/15
+   name "Rm.1E-055_1EI34"
+   exit
+interface 5/16
+   name "Rm.1E-055_1EI35"
+   exit
+interface 5/17
+   name "Rm.1E-055_1EI36"
+   exit
+interface 5/18
+   name "Rm.1E-006_1EF28"
+   exit
+interface 5/19
+   name "Rm.1E-009_1ED28"
+   exit
+interface 5/20
+   name "Rm.1E-174_1EK09"
+   exit
+snmp-server community "public" unrestricted
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" unrestricted
+snmp-server response-source dst-ip-of-request
+snmp-server listen data
+snmp-server contact "UCIT 220-5555" location "SMART_1E307"
+snmpv3 enable
+snmpv3 user "readv3"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   disable
+   no ip address
+   member 1
+      ip address dhcp-bootp
+      exit
+   member 2
+      ip address dhcp-bootp
+      exit
+   member 3
+      ip address dhcp-bootp
+      exit
+   member 4
+      ip address dhcp-bootp
+      exit
+   member 5
+      ip address dhcp-bootp
+      exit
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1/1-1/48,1/A2-1/A4,2/1-2/48,3/1-3/48,4/1-4/48,4/A2-4/A4,5/1-5/48,Trk1
+   no ip address
+   exit
+vlan 681
+   name "TUTEST_WLAN_User_10.11.129.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 682
+   name "TUTEST_WLAN_User_10.11.130.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 683
+   name "TUTEST_WLAN_User_10.11.131.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 684
+   name "TUTEST_WLAN_User_10.11.132.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 685
+   name "TUTEST_WLAN_User_10.11.133.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 686
+   name "TUTEST_WLAN_User_10.11.134.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 687
+   name "TUTEST_WLAN_User_10.11.135.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 688
+   name "TUTEST_WLAN_User_10.11.136.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 689
+   name "TUTEST_WLAN_User_10.11.137.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 690
+   name "TUTEST_WLAN_User_10.11.138.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 691
+   name "TUTEST_WLAN_User_10.11.139.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 692
+   name "TUTEST_WLAN_User_10.11.140.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 999
+   name "unused_VLAN"
+   untagged 1/A2-1/A4,4/A2-4/A4,5/21-5/47
+   no ip address
+   exit
+vlan 1151
+   name "SMRT_VOIP_10.6.144.0/24"
+   tagged 1/5-1/47,2/5-2/47,3/5-3/27,3/29-3/47,4/5-4/36,4/39-4/46,Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 1159
+   name "TUTESTT_VOIP_10.6.145.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1166
+   name "SMRT_MCZ_10.110.128.0/23"
+   untagged 1/5-1/47,2/5-2/47,3/5-3/13,3/15-3/23,3/25-3/27,3/29-3/47,4/5-4/19,4/22-4/36,4/39-4/46,5/5-5/20
+   tagged 3/28,Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 1177
+   name "SMRT_UCZ_10.90.128.0/23"
+   untagged 3/24,3/28,4/37
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 1188
+   name "SMRT_RCZ_10.145.202.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 1251
+   name "TUTEST_VOIP_10.6.146.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1259
+   name "TUTEST_VOIP_10.6.147.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1266
+   name "TUTEST_MCZ_10.110.130.0/23"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1277
+   name "TUTEST_UCZ_10.90.130.0/23"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1288
+   name "TUTEST_RCZ_10.145.204.0/23"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1351
+   name "TUTEST_VOIP_10.6.148.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1359
+   name "TUTEST_VOIP_10.6.149.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1366
+   name "TUTEST_MCZ_10.110.132.0/23"
+   untagged 3/14
+   tagged Trk1
+   no ip address
+   exit
+vlan 1377
+   name "TUTEST_UCZ_10.90.132.0/23"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1388
+   name "TUTEST_RCZ_10.145.206.0/23"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1451
+   name "TUTEST_VOIP_10.6.150.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1459
+   name "TUTEST_VOIP_10.6.151.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1466
+   name "TUTEST_MCZ_10.110.134.0/23"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1477
+   name "TUTEST_UCZ_10.90.134.0/23"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1488
+   name "TUTEST_RCZ_10.145.208.0/23"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1551
+   name "TUTEST_VOIP_10.6.152.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1559
+   name "TUTEST_VOIP_10.6.143.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1566
+   name "TUTEST_MCZ_10.110.136.0/23"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1577
+   name "TUTEST_UCZ_10.90.136.0/23"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1588
+   name "TUTEST_RCZ_10.145.210.0/23"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1921
+   name "SMRT_CAMPUS_10.29.28.0/24"
+   untagged 1/48,2/48,3/48,4/47-4/48,5/48
+   tagged Trk1
+   ip address 10.29.28.253 255.255.255.0
+   ip igmp
+   exit
+vlan 1931
+   name "SMRT_PRINTER_10.127.202.0/23"
+   untagged 4/20-4/21,4/38
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 1972
+   name "SMART-WIRELESS-TEST-01"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1973
+   name "SMART-WIRELESS-TEST-02"
+   tagged Trk1
+   no ip address
+   exit
+vlan 1991
+   name "SMRT_WLAN_10.11.128.0/24"
+   untagged 1/1-1/4,2/1-2/4,3/1-3/4,4/1-4/4,5/1-5/4
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2308
+   name "TUTEST_WLAN_MCZ_10.123.12.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2309
+   name "TUTEST_WLAN_MCZ_10.123.13.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2310
+   name "TUTEST_WLAN_MCZ_10.123.14.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2311
+   name "TUTEST_WLAN_MCZ_10.123.15.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2312
+   name "TUTEST_WLAN_MCZ_10.123.16.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2313
+   name "TUTEST_WLAN_MCZ_10.123.17.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2314
+   name "TUTEST_WLAN_MCZ_10.123.18.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2315
+   name "TUTEST_WLAN_MCZ_10.123.19.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2316
+   name "TUTEST_WLAN_MCZ_10.123.20.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2317
+   name "TUTEST_WLAN_MCZ_10.123.21.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2318
+   name "TUTEST_WLAN_MCZ_10.123.22.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2319
+   name "TUTEST_WLAN_MCZ_10.123.23.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2786
+   name "SMRT_VC_136.159.242.240/28"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+spanning-tree
+spanning-tree 1/1 bpdu-filter bpdu-protection
+spanning-tree 1/2 bpdu-filter bpdu-protection
+spanning-tree 1/3 bpdu-filter bpdu-protection
+spanning-tree 1/4 bpdu-filter bpdu-protection
+spanning-tree 1/5 bpdu-filter bpdu-protection
+spanning-tree 1/6 bpdu-filter bpdu-protection
+spanning-tree 1/7 bpdu-filter bpdu-protection
+spanning-tree 1/8 bpdu-filter bpdu-protection
+spanning-tree 1/9 bpdu-filter bpdu-protection
+spanning-tree 1/10 bpdu-filter bpdu-protection
+spanning-tree 1/11 bpdu-filter bpdu-protection
+spanning-tree 1/12 bpdu-filter bpdu-protection
+spanning-tree 1/13 bpdu-filter bpdu-protection
+spanning-tree 1/14 bpdu-filter bpdu-protection
+spanning-tree 1/15 bpdu-filter bpdu-protection
+spanning-tree 1/16 bpdu-filter bpdu-protection
+spanning-tree 1/17 bpdu-filter bpdu-protection
+spanning-tree 1/18 bpdu-filter bpdu-protection
+spanning-tree 1/19 bpdu-filter bpdu-protection
+spanning-tree 1/20 bpdu-filter bpdu-protection
+spanning-tree 1/21 bpdu-filter bpdu-protection
+spanning-tree 1/22 bpdu-filter bpdu-protection
+spanning-tree 1/23 bpdu-filter bpdu-protection
+spanning-tree 1/24 bpdu-filter bpdu-protection
+spanning-tree 1/25 bpdu-filter bpdu-protection
+spanning-tree 1/26 bpdu-filter bpdu-protection
+spanning-tree 1/27 bpdu-filter bpdu-protection
+spanning-tree 1/28 bpdu-filter bpdu-protection
+spanning-tree 1/29 bpdu-filter bpdu-protection
+spanning-tree 1/30 bpdu-filter bpdu-protection
+spanning-tree 1/31 bpdu-filter bpdu-protection
+spanning-tree 1/32 bpdu-filter bpdu-protection
+spanning-tree 1/33 bpdu-filter bpdu-protection
+spanning-tree 1/34 bpdu-filter bpdu-protection
+spanning-tree 1/35 bpdu-filter bpdu-protection
+spanning-tree 1/36 bpdu-filter bpdu-protection
+spanning-tree 1/37 bpdu-filter bpdu-protection
+spanning-tree 1/38 bpdu-filter bpdu-protection
+spanning-tree 1/39 bpdu-filter bpdu-protection
+spanning-tree 1/40 bpdu-filter bpdu-protection
+spanning-tree 1/41 bpdu-filter bpdu-protection
+spanning-tree 1/42 bpdu-filter bpdu-protection
+spanning-tree 1/43 bpdu-filter bpdu-protection
+spanning-tree 1/44 bpdu-filter bpdu-protection
+spanning-tree 1/45 bpdu-filter bpdu-protection
+spanning-tree 1/46 bpdu-filter bpdu-protection
+spanning-tree 1/47 bpdu-filter bpdu-protection
+spanning-tree 1/48 bpdu-filter bpdu-protection
+spanning-tree 2/1 bpdu-filter bpdu-protection
+spanning-tree 2/2 bpdu-filter bpdu-protection
+spanning-tree 2/3 bpdu-filter bpdu-protection
+spanning-tree 2/4 bpdu-filter bpdu-protection
+spanning-tree 2/5 bpdu-filter bpdu-protection
+spanning-tree 2/6 bpdu-filter bpdu-protection
+spanning-tree 2/7 bpdu-filter bpdu-protection
+spanning-tree 2/8 bpdu-filter bpdu-protection
+spanning-tree 2/9 bpdu-filter bpdu-protection
+spanning-tree 2/10 bpdu-filter bpdu-protection
+spanning-tree 2/11 bpdu-filter bpdu-protection
+spanning-tree 2/12 bpdu-filter bpdu-protection
+spanning-tree 2/13 bpdu-filter bpdu-protection
+spanning-tree 2/14 bpdu-filter bpdu-protection
+spanning-tree 2/15 bpdu-filter bpdu-protection
+spanning-tree 2/16 bpdu-filter bpdu-protection
+spanning-tree 2/17 bpdu-filter bpdu-protection
+spanning-tree 2/18 bpdu-filter bpdu-protection
+spanning-tree 2/19 bpdu-filter bpdu-protection
+spanning-tree 2/20 bpdu-filter bpdu-protection
+spanning-tree 2/21 bpdu-filter bpdu-protection
+spanning-tree 2/22 bpdu-filter bpdu-protection
+spanning-tree 2/23 bpdu-filter bpdu-protection
+spanning-tree 2/24 bpdu-filter bpdu-protection
+spanning-tree 2/25 bpdu-filter bpdu-protection
+spanning-tree 2/26 bpdu-filter bpdu-protection
+spanning-tree 2/27 bpdu-filter bpdu-protection
+spanning-tree 2/28 bpdu-filter bpdu-protection
+spanning-tree 2/29 bpdu-filter bpdu-protection
+spanning-tree 2/30 bpdu-filter bpdu-protection
+spanning-tree 2/31 bpdu-filter bpdu-protection
+spanning-tree 2/32 bpdu-filter bpdu-protection
+spanning-tree 2/33 bpdu-filter bpdu-protection
+spanning-tree 2/34 bpdu-filter bpdu-protection
+spanning-tree 2/35 bpdu-filter bpdu-protection
+spanning-tree 2/36 bpdu-filter bpdu-protection
+spanning-tree 2/37 bpdu-filter bpdu-protection
+spanning-tree 2/38 bpdu-filter bpdu-protection
+spanning-tree 2/39 bpdu-filter bpdu-protection
+spanning-tree 2/40 bpdu-filter bpdu-protection
+spanning-tree 2/41 bpdu-filter bpdu-protection
+spanning-tree 2/42 bpdu-filter bpdu-protection
+spanning-tree 2/43 bpdu-filter bpdu-protection
+spanning-tree 2/44 bpdu-filter bpdu-protection
+spanning-tree 2/45 bpdu-filter bpdu-protection
+spanning-tree 2/46 bpdu-filter bpdu-protection
+spanning-tree 2/47 bpdu-filter bpdu-protection
+spanning-tree 2/48 bpdu-filter bpdu-protection
+spanning-tree 3/1 bpdu-filter bpdu-protection
+spanning-tree 3/2 bpdu-filter bpdu-protection
+spanning-tree 3/3 bpdu-filter bpdu-protection
+spanning-tree 3/4 bpdu-filter bpdu-protection
+spanning-tree 3/5 bpdu-filter bpdu-protection
+spanning-tree 3/6 bpdu-filter bpdu-protection
+spanning-tree 3/7 bpdu-filter bpdu-protection
+spanning-tree 3/8 bpdu-filter bpdu-protection
+spanning-tree 3/9 bpdu-filter bpdu-protection
+spanning-tree 3/10 bpdu-filter bpdu-protection
+spanning-tree 3/11 bpdu-filter bpdu-protection
+spanning-tree 3/12 bpdu-filter bpdu-protection
+spanning-tree 3/13 bpdu-filter bpdu-protection
+spanning-tree 3/14 bpdu-filter bpdu-protection
+spanning-tree 3/15 bpdu-filter bpdu-protection
+spanning-tree 3/16 bpdu-filter bpdu-protection
+spanning-tree 3/17 bpdu-filter bpdu-protection
+spanning-tree 3/18 bpdu-filter bpdu-protection
+spanning-tree 3/19 bpdu-filter bpdu-protection
+spanning-tree 3/20 bpdu-filter bpdu-protection
+spanning-tree 3/21 bpdu-filter bpdu-protection
+spanning-tree 3/22 bpdu-filter bpdu-protection
+spanning-tree 3/23 bpdu-filter bpdu-protection
+spanning-tree 3/24 bpdu-filter bpdu-protection
+spanning-tree 3/25 bpdu-filter bpdu-protection
+spanning-tree 3/26 bpdu-filter bpdu-protection
+spanning-tree 3/27 bpdu-filter bpdu-protection
+spanning-tree 3/28 bpdu-filter bpdu-protection
+spanning-tree 3/29 bpdu-filter bpdu-protection
+spanning-tree 3/30 bpdu-filter bpdu-protection
+spanning-tree 3/31 bpdu-filter bpdu-protection
+spanning-tree 3/32 bpdu-filter bpdu-protection
+spanning-tree 3/33 bpdu-filter bpdu-protection
+spanning-tree 3/34 bpdu-filter bpdu-protection
+spanning-tree 3/35 bpdu-filter bpdu-protection
+spanning-tree 3/36 bpdu-filter bpdu-protection
+spanning-tree 3/37 bpdu-filter bpdu-protection
+spanning-tree 3/38 bpdu-filter bpdu-protection
+spanning-tree 3/39 bpdu-filter bpdu-protection
+spanning-tree 3/40 bpdu-filter bpdu-protection
+spanning-tree 3/41 bpdu-filter bpdu-protection
+spanning-tree 3/42 bpdu-filter bpdu-protection
+spanning-tree 3/43 bpdu-filter bpdu-protection
+spanning-tree 3/44 bpdu-filter bpdu-protection
+spanning-tree 3/45 bpdu-filter bpdu-protection
+spanning-tree 3/46 bpdu-filter bpdu-protection
+spanning-tree 3/47 bpdu-filter bpdu-protection
+spanning-tree 3/48 bpdu-filter bpdu-protection
+spanning-tree 4/1 bpdu-filter bpdu-protection
+spanning-tree 4/2 bpdu-filter bpdu-protection
+spanning-tree 4/3 bpdu-filter bpdu-protection
+spanning-tree 4/4 bpdu-filter bpdu-protection
+spanning-tree 4/5 bpdu-filter bpdu-protection
+spanning-tree 4/6 bpdu-filter bpdu-protection
+spanning-tree 4/7 bpdu-filter bpdu-protection
+spanning-tree 4/8 bpdu-filter bpdu-protection
+spanning-tree 4/9 bpdu-filter bpdu-protection
+spanning-tree 4/10 bpdu-filter bpdu-protection
+spanning-tree 4/11 bpdu-filter bpdu-protection
+spanning-tree 4/12 bpdu-filter bpdu-protection
+spanning-tree 4/13 bpdu-filter bpdu-protection
+spanning-tree 4/14 bpdu-filter bpdu-protection
+spanning-tree 4/15 bpdu-filter bpdu-protection
+spanning-tree 4/16 bpdu-filter bpdu-protection
+spanning-tree 4/17 bpdu-filter bpdu-protection
+spanning-tree 4/18 bpdu-filter bpdu-protection
+spanning-tree 4/19 bpdu-filter bpdu-protection
+spanning-tree 4/20 bpdu-filter bpdu-protection
+spanning-tree 4/21 bpdu-filter bpdu-protection
+spanning-tree 4/22 bpdu-filter bpdu-protection
+spanning-tree 4/23 bpdu-filter bpdu-protection
+spanning-tree 4/24 bpdu-filter bpdu-protection
+spanning-tree 4/25 bpdu-filter bpdu-protection
+spanning-tree 4/26 bpdu-filter bpdu-protection
+spanning-tree 4/27 bpdu-filter bpdu-protection
+spanning-tree 4/28 bpdu-filter bpdu-protection
+spanning-tree 4/29 bpdu-filter bpdu-protection
+spanning-tree 4/30 bpdu-filter bpdu-protection
+spanning-tree 4/31 bpdu-filter bpdu-protection
+spanning-tree 4/32 bpdu-filter bpdu-protection
+spanning-tree 4/33 bpdu-filter bpdu-protection
+spanning-tree 4/34 bpdu-filter bpdu-protection
+spanning-tree 4/35 bpdu-filter bpdu-protection
+spanning-tree 4/36 bpdu-filter bpdu-protection
+spanning-tree 4/37 root-guard bpdu-filter bpdu-protection
+spanning-tree 4/38 bpdu-filter bpdu-protection
+spanning-tree 4/39 bpdu-filter bpdu-protection
+spanning-tree 4/40 bpdu-filter bpdu-protection
+spanning-tree 4/41 bpdu-filter bpdu-protection
+spanning-tree 4/42 bpdu-filter bpdu-protection
+spanning-tree 4/43 bpdu-filter bpdu-protection
+spanning-tree 4/44 bpdu-filter bpdu-protection
+spanning-tree 4/45 bpdu-filter bpdu-protection
+spanning-tree 4/46 bpdu-filter bpdu-protection
+spanning-tree 4/47 bpdu-filter bpdu-protection
+spanning-tree 4/48 bpdu-filter bpdu-protection
+spanning-tree 5/1 bpdu-filter bpdu-protection
+spanning-tree 5/2 bpdu-filter bpdu-protection
+spanning-tree 5/3 bpdu-filter bpdu-protection
+spanning-tree 5/4 bpdu-filter bpdu-protection
+spanning-tree 5/5 bpdu-filter bpdu-protection
+spanning-tree 5/6 bpdu-filter bpdu-protection
+spanning-tree 5/7 bpdu-filter bpdu-protection
+spanning-tree 5/8 bpdu-filter bpdu-protection
+spanning-tree 5/9 bpdu-filter bpdu-protection
+spanning-tree 5/10 bpdu-filter bpdu-protection
+spanning-tree 5/11 bpdu-filter bpdu-protection
+spanning-tree 5/12 bpdu-filter bpdu-protection
+spanning-tree 5/13 bpdu-filter bpdu-protection
+spanning-tree 5/14 bpdu-filter bpdu-protection
+spanning-tree 5/15 bpdu-filter bpdu-protection
+spanning-tree 5/16 bpdu-filter bpdu-protection
+spanning-tree 5/17 bpdu-filter bpdu-protection
+spanning-tree 5/18 bpdu-filter bpdu-protection
+spanning-tree 5/19 bpdu-filter bpdu-protection
+spanning-tree 5/20 bpdu-filter bpdu-protection
+spanning-tree 5/21 bpdu-filter bpdu-protection
+spanning-tree 5/22 bpdu-filter bpdu-protection
+spanning-tree 5/23 bpdu-filter bpdu-protection
+spanning-tree 5/24 bpdu-filter bpdu-protection
+spanning-tree 5/25 bpdu-filter bpdu-protection
+spanning-tree 5/26 bpdu-filter bpdu-protection
+spanning-tree 5/27 bpdu-filter bpdu-protection
+spanning-tree 5/28 bpdu-filter bpdu-protection
+spanning-tree 5/29 bpdu-filter bpdu-protection
+spanning-tree 5/30 bpdu-filter bpdu-protection
+spanning-tree 5/31 bpdu-filter bpdu-protection
+spanning-tree 5/32 bpdu-filter bpdu-protection
+spanning-tree 5/33 bpdu-filter bpdu-protection
+spanning-tree 5/34 bpdu-filter bpdu-protection
+spanning-tree 5/35 bpdu-filter bpdu-protection
+spanning-tree 5/36 bpdu-filter bpdu-protection
+spanning-tree 5/37 bpdu-filter bpdu-protection
+spanning-tree 5/38 bpdu-filter bpdu-protection
+spanning-tree 5/39 bpdu-filter bpdu-protection
+spanning-tree 5/40 bpdu-filter bpdu-protection
+spanning-tree 5/41 bpdu-filter bpdu-protection
+spanning-tree 5/42 bpdu-filter bpdu-protection
+spanning-tree 5/43 bpdu-filter bpdu-protection
+spanning-tree 5/44 bpdu-filter bpdu-protection
+spanning-tree 5/45 bpdu-filter bpdu-protection
+spanning-tree 5/46 bpdu-filter bpdu-protection
+spanning-tree 5/47 bpdu-filter bpdu-protection
+spanning-tree 5/48 bpdu-filter bpdu-protection
+spanning-tree Trk1 priority 4
+spanning-tree config-name "00fd453bb145 "
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600 priority 7
+no tftp server
+tftp server listen data
+loop-protect 1/1-1/48,2/1-2/48,3/1-3/48,4/1-4/48,5/1-5/48
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

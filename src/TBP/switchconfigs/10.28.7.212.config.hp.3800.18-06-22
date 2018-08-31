@@ -1,0 +1,214 @@
+; J9573A Configuration Editor; Created on release #KA.15.09.0019
+; Ver #03:01.1f.ef:f2
+
+hostname "ENB201L-2-SW-3295"
+module 1 type j9573x
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+telnet-server listen data
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+web-management ssl
+web-management listen data
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.28.7.1
+ip ssh listen data
+interface 1
+   broadcast-limit 10
+   exit
+interface 2
+   broadcast-limit 10
+   exit
+interface 3
+   broadcast-limit 10
+   exit
+interface 4
+   broadcast-limit 10
+   exit
+interface 5
+   broadcast-limit 10
+   exit
+interface 6
+   broadcast-limit 10
+   exit
+interface 7
+   broadcast-limit 10
+   exit
+interface 8
+   broadcast-limit 10
+   exit
+interface 9
+   broadcast-limit 10
+   exit
+interface 10
+   broadcast-limit 10
+   exit
+interface 11
+   broadcast-limit 10
+   exit
+interface 12
+   broadcast-limit 10
+   exit
+interface 13
+   broadcast-limit 10
+   exit
+interface 14
+   broadcast-limit 10
+   exit
+interface 15
+   broadcast-limit 10
+   exit
+interface 16
+   broadcast-limit 10
+   exit
+interface 17
+   broadcast-limit 10
+   exit
+interface 18
+   broadcast-limit 10
+   exit
+interface 19
+   broadcast-limit 10
+   exit
+interface 20
+   broadcast-limit 10
+   exit
+interface 21
+   broadcast-limit 10
+   exit
+interface 22
+   broadcast-limit 10
+   exit
+interface 23
+   broadcast-limit 10
+   name "x23D-10.28.7.211-x24U-ENB201L"
+   exit
+interface 24
+   broadcast-limit 10
+   name "x24U-10.28.7.213.x23D-ENB201L"
+   exit
+interface 25
+   broadcast-limit 10
+   exit
+interface 26
+   broadcast-limit 10
+   exit
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server listen data
+snmp-server contact "UCIT 220-5555" location "ENB 201 Lab"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   disable
+   no ip address
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-26
+   no ip address
+   exit
+vlan 999
+   name "unused-vlan"
+   untagged 25-26
+   no ip address
+   exit
+vlan 1640
+   name "EN_MCZ"
+   tagged 24
+   no ip address
+   exit
+vlan 2290
+   name "EN_IT_Managed_Lab"
+   tagged 23-24
+   no ip address
+   ip igmp
+   exit
+vlan 2514
+   name "EN_PRT_10.127.76.0/24"
+   untagged 3
+   tagged 24
+   no ip address
+   exit
+vlan 2807
+   name "ENG_MGMT"
+   tagged 23-24
+   ip address 10.28.7.212 255.255.255.0
+   ip igmp
+   exit
+vlan 3581
+   name "LAB-ENC-10.146.28/23"
+   untagged 1-2,4-22
+   tagged 23-24
+   no ip address
+   ip igmp
+   exit
+spanning-tree
+spanning-tree 1 bpdu-filter bpdu-protection
+spanning-tree 2 bpdu-filter bpdu-protection
+spanning-tree 3 bpdu-filter bpdu-protection
+spanning-tree 4 bpdu-filter bpdu-protection
+spanning-tree 5 bpdu-filter bpdu-protection
+spanning-tree 6 bpdu-filter bpdu-protection
+spanning-tree 7 bpdu-filter bpdu-protection
+spanning-tree 8 bpdu-filter bpdu-protection
+spanning-tree 9 bpdu-filter bpdu-protection
+spanning-tree 10 bpdu-filter bpdu-protection
+spanning-tree 11 bpdu-filter bpdu-protection
+spanning-tree 12 bpdu-filter bpdu-protection
+spanning-tree 13 bpdu-filter bpdu-protection
+spanning-tree 14 bpdu-filter bpdu-protection
+spanning-tree 15 bpdu-filter bpdu-protection
+spanning-tree 16 bpdu-filter bpdu-protection
+spanning-tree 17 bpdu-filter bpdu-protection
+spanning-tree 18 bpdu-filter bpdu-protection
+spanning-tree 19 bpdu-filter bpdu-protection
+spanning-tree 20 bpdu-filter bpdu-protection
+spanning-tree 21 bpdu-filter bpdu-protection
+spanning-tree 22 bpdu-filter bpdu-protection
+no spanning-tree 23 auto-edge-port
+spanning-tree 23 root-guard
+no spanning-tree 24 auto-edge-port
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree instance ist 23 path-cost 20000
+spanning-tree bpdu-protection-timeout 600
+tftp server listen data
+loop-protect 1-22
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

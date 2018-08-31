@@ -1,0 +1,513 @@
+; J9091A Configuration Editor; Created on release #K.14.65
+
+hostname "CCIT362-03-SW-2860" 
+mac-age-time 180 
+time timezone -420 
+time daylight-time-rule Continental-US-and-Canada 
+no qos dscp-map 001000 
+no qos dscp-map 010000 
+no qos dscp-map 011000 
+no qos dscp-map 100000 
+no qos dscp-map 101000 
+no qos dscp-map 110000 
+no qos dscp-map 111000 
+module 1 type J8705A 
+module 2 type J9309A 
+module 3 type J8702A 
+module 4 type J8702A 
+module 7 type J8702A 
+module 12 type J8702A 
+interface A5 
+   name "Xenbase_Noggin" 
+exit
+interface A6 
+   name "Xenbase_Noggin" 
+exit
+interface A7 
+   name "Xenbase_Noggin" 
+exit
+interface A8 
+   name "Xenbase_Noggin" 
+exit
+interface A9 
+   name "Xenbase_Noggin" 
+exit
+interface A10 
+   name "Xenbase_DS3512" 
+exit
+interface A11 
+   name "Xenbase_DS3512" 
+exit
+interface A12 
+   name "Xenbase_DS3200" 
+exit
+interface A13 
+   name "Xenbase_DS3200" 
+exit
+interface A15 
+   name "Xenbase_Gastrula" 
+exit
+interface A16 
+   name "Xenbase_Gastrula" 
+exit
+interface A17 
+   name "Xenbase_Gastrula" 
+exit
+interface A18 
+   name "Xenbase_Gastrula" 
+exit
+interface A19 
+   name "Xenbase_Gastrula" 
+exit
+interface A23 
+   disable
+   name "A23D-10.28.1.253-X49U_ZER1" 
+exit
+interface A24 
+   disable
+   name "A24D-10.28.1.253-X50U_ZER1" 
+exit
+interface B1 
+   name "UB2-NX-9K-10.31.0.114-D1/4" 
+exit
+interface B2 
+   name "UB2-NX-9K-10.31.0.113-D1/4" 
+exit
+interface B3 
+   name "TRK6-B3D-10.28.1.252-1/0/33" 
+exit
+interface B4 
+   name "TRK6-B3D-10.28.1.252-1/0/34" 
+exit
+trunk B1-B2 Trk1 LACP 
+interface C1 
+   name "spare" 
+exit
+interface C2 
+   name "spare" 
+exit
+interface C3 
+   name "spare" 
+exit
+interface C4 
+   name "spare" 
+exit
+interface C5 
+   name "spare" 
+exit
+interface C6 
+   name "spare" 
+exit
+interface C7 
+   name "spare" 
+exit
+interface C8 
+   name "spare" 
+exit
+interface C9 
+   name "oilsands_IBMBL" 
+exit
+interface C10 
+   name "oilsands_res" 
+exit
+interface C11 
+   name "TNK_Cluster" 
+exit
+interface C12 
+   name "TNK_Cluster" 
+exit
+interface C13 
+   disable
+   name "ISPIA_01" 
+exit
+interface C14 
+   name "ISPIA_02" 
+exit
+interface C15 
+   name "IBM_CloudBurst" 
+exit
+interface C16 
+   name "HEAT_SRV" 
+exit
+interface C17 
+   name "HEAT_SRV" 
+exit
+interface C18 
+   name "Videa_Server" 
+exit
+interface C19 
+   name "Videa_Server" 
+exit
+interface C24 
+   name "TRK5-C24D-10.28.1.253-47U-TRK1_ZER1" 
+exit
+interface D1 
+   name "OGOOO1" 
+exit
+interface D2 
+   name "Sensen_SRV" 
+exit
+interface D3 
+   name "OGOOO2" 
+exit
+interface D4 
+   disable
+   name "spare" 
+exit
+interface D5 
+   name "spare" 
+exit
+interface D6 
+   name "spare" 
+exit
+interface D7 
+   name "TDM2" 
+exit
+interface D8 
+   name "XBACKUP" 
+exit
+interface D9 
+   name "XBACKUP" 
+exit
+interface D10 
+   name "Xenbase-tape-drive" 
+exit
+interface D11 
+   name "spare" 
+exit
+interface D14 
+   name "exas-smp1" 
+exit
+interface D17 
+   name "spare" 
+exit
+interface D18 
+   name "spare" 
+exit
+interface D19 
+   name "spare" 
+exit
+interface D20 
+   name "spare" 
+exit
+interface D21 
+   name "spare" 
+exit
+interface D22 
+   name "spare" 
+exit
+interface D23 
+   name "spare" 
+exit
+interface D24 
+   name "TRK5-D24D-10.28.1.253-48U-TRK1_ZER1" 
+exit
+interface L1 
+   name "spare" 
+exit
+interface L2 
+   name "spare" 
+exit
+interface L3 
+   name "spare" 
+exit
+interface L5 
+   name "Perfserver1" 
+exit
+interface L6 
+   name "Perfserver2" 
+exit
+interface L7 
+   name "Perfserver3" 
+exit
+interface L8 
+   name "CCIT_136.159.209.199" 
+exit
+interface L9 
+   name "Perf_Server4" 
+exit
+interface L24 
+   name "network_test_Port" 
+exit
+interface G1 
+   name "ISPIA_01" 
+exit
+interface G2 
+   name "ISPIA_02" 
+exit
+interface G3 
+   name "Perfserver1" 
+exit
+interface G4 
+   name "Perfserver2" 
+exit
+interface G5 
+   name "PERSERVER3" 
+exit
+interface G7 
+   name "exas-vm-p2" 
+exit
+interface G8 
+   name "exas-login2-p2" 
+exit
+interface G9 
+   name "exas-fs-p2" 
+exit
+interface G10 
+   name "exas-admin-p4" 
+exit
+interface G11 
+   name "exas-admin-mgmt" 
+exit
+interface G12 
+   name "exas-login-p2" 
+exit
+interface G13 
+   name "Xenbase_Cerberus" 
+exit
+interface G14 
+   name "Xenbase_Cerberus" 
+exit
+interface G15 
+   name "Xenbase_Cerberus" 
+exit
+interface G16 
+   name "Xenbase_Cerberus" 
+exit
+interface G17 
+   name "Xenbase_Cerberus" 
+exit
+interface G18 
+   name "Perf_Server4" 
+exit
+interface G19 
+   name "Xenbase_Tailbud" 
+exit
+interface G20 
+   name "Xenbase_Tailbud" 
+exit
+interface G21 
+   name "Xenbase_Tailbud" 
+exit
+interface G22 
+   name "Xenbase_Tailbud" 
+exit
+interface G23 
+   name "Xenbase_Tailbud" 
+exit
+trunk C13,G1 Trk2 LACP 
+trunk C14,G2 Trk3 LACP 
+trunk D4-D5 Trk4 LACP 
+trunk B3-B4 Trk6 LACP 
+trunk C24,D24 Trk5 LACP 
+ip default-gateway 10.28.1.1 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   untagged A23-A24 
+   no untagged A1-A22,C1-C12,C15-C23,D1-D3,D6-D23,G3-G24,L1-L24,Trk1-Trk6 
+   no ip address 
+   exit 
+vlan 3599 
+   name "Datacentre_research" 
+   untagged C10,C18,D1,D3,D16,G9-G11 
+   tagged A2,Trk1,Trk6 
+   no ip address 
+   exit 
+vlan 3588 
+   name "rcz-hpc-group" 
+   untagged C9,D14-D15,G7-G8,G12,G24 
+   tagged A2,Trk1,Trk6 
+   no ip address 
+   exit 
+vlan 3273 
+   name "rcz-tnk-cluster" 
+   untagged C11-C12,C15-C17,D2,G3-G5,G18,L5-L7,L9 
+   tagged C19,G6,L8,Trk1,Trk6 
+   no ip address 
+   exit 
+vlan 3140 
+   name "10.150.68/24_unmanaged_research" 
+   untagged A14,D6,D8,Trk3 
+   tagged Trk1,Trk6 
+   no ip address 
+   exit 
+vlan 2865 
+   name "136.159.155.0" 
+   untagged D7 
+   tagged Trk1,Trk6 
+   no ip address 
+   exit 
+vlan 2814 
+   name "rcz-public_136.159.155.112/28" 
+   untagged A5,A7,A15,A17,D9,G13,G15,G19,G21 
+   tagged Trk1,Trk5-Trk6 
+   no ip address 
+   exit 
+vlan 2813 
+   name "136.159.155.128/27_RCZ" 
+   untagged D10 
+   tagged A5,A7,A15,A17,G13,G15,G19,G21,Trk1,Trk5-Trk6 
+   no ip address 
+   exit 
+vlan 2544 
+   name "dc_ccit_mgmt_10.28.1.0/24" 
+   untagged A20,L24 
+   ip address 10.28.1.254 255.255.255.0 
+   tagged Trk1,Trk5 
+   exit 
+vlan 999 
+   name "unused_vlan" 
+   untagged A1,A21-A22,C1-C8,C20-C23,D11-D13,D17-D23,L1-L4,L10-L23,Trk1-Trk2,Trk4 
+   no ip address 
+   exit 
+vlan 2538 
+   name "rcz-vMGMG_10.150.14.128/25" 
+   untagged A6,A16,G14,G20 
+   tagged Trk1,Trk5-Trk6 
+   no ip address 
+   exit 
+vlan 2540 
+   name "rcz-vMotion_10.150.14.0/25" 
+   untagged A8,A18,G16,G22 
+   tagged Trk1,Trk5-Trk6 
+   no ip address 
+   exit 
+vlan 2536 
+   name "rcz-drac-CCIT_10.60.132.0/24" 
+   untagged A19,G23 
+   tagged Trk1,Trk5-Trk6 
+   no ip address 
+   exit 
+vlan 2532 
+   name "rcz_10.56.196.0/24" 
+   untagged A10-A13 
+   tagged Trk1,Trk6 
+   no ip address 
+   exit 
+vlan 3203 
+   name "umr-drac-10.60.100.0/24" 
+   untagged A3-A4,A9,G17 
+   tagged Trk1,Trk5 
+   no ip address 
+   exit 
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+banner motd "**************************************************************************\n*                                                                        *\n* Important Notice:                                                      *\n*                                                                        *\n* Authorized users only:                                                 *\n*                                                                        *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this system is strictly prohibited,   *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n*                                                                        *\n* Terms and Conditions:                                                  *\n*                                                                        *\n* Access to and use of this system is subject to certain terms and       *\n* conditions contained in various policies issued and amended from time  *\n* to time by University of Calgary, including Acceptable Use of Computing*\n* Resources, Acceptable Use of Internet and E-Mail and Remote Access.    *\n* Access to and use of this system constitutes unconditional acceptance  *\n* of and agreement to each of the applicable policies. If you do not     *\n* accept and agree to each of the applicable policies, you may           *\n* not access or use this system.                                         *\n*                                                                        *\n* Monitoring:                                                            *\n*                                                                        *\n* Use of this system is subject to monitoring at all times for all       *\n* lawful purposes, and is not subject to any expectation of privacy.     *\n* Information collected through monitoring may be used and disclosed     *\n* to third parties (including law enforcement officials).                *\n* Use of this system constitutes consent to such monitoring  and the     *\n* collection, use and disclosure of personal information.                *\n*                                                                        *\n**************************************************************************\n"
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69 3
+sntp server priority 2 136.159.34.24 3
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access manager
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+no ip ssh
+snmp-server community "uofc2009" unrestricted
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree Trk1 priority 4
+spanning-tree Trk2 priority 4
+spanning-tree Trk3 priority 4
+spanning-tree Trk4 priority 4
+spanning-tree Trk5 priority 4 root-guard
+spanning-tree Trk6 priority 4 root-guard
+spanning-tree instance 1 vlan 1-1099 2000-2359 2361-2373 2377-2485 2488-2493 
+spanning-tree instance 1 vlan 2495-2531 2534-2536 2539 2541 2542 2546-2577 
+spanning-tree instance 1 vlan 2579 2583-2608 2610-2621 2623-2648 2651-2703 
+spanning-tree instance 1 vlan 2705-2748 2750-2810 2812 2815 2817-2864 
+spanning-tree instance 1 vlan 2866-3139 3141-3199 3400-3587 3589-3598 
+spanning-tree instance 1 vlan 3600-3880 3889-4094
+spanning-tree instance 1 Trk1 path-cost 2000
+spanning-tree instance 1 Trk1 priority 4
+spanning-tree instance 1 Trk2 priority 4
+spanning-tree instance 1 Trk3 priority 4
+spanning-tree instance 1 Trk4 priority 4
+spanning-tree instance 1 Trk5 priority 4
+spanning-tree instance 1 Trk6 priority 4
+spanning-tree instance 2 vlan 1100-1399
+spanning-tree instance 2 Trk1 path-cost 2000
+spanning-tree instance 2 Trk1 priority 4
+spanning-tree instance 2 Trk2 priority 4
+spanning-tree instance 2 Trk3 priority 4
+spanning-tree instance 2 Trk4 priority 4
+spanning-tree instance 2 Trk5 priority 4
+spanning-tree instance 2 Trk6 priority 4
+spanning-tree instance 3 vlan 2360 2374-2376 2486 2487 2494 2532 2533 
+spanning-tree instance 3 vlan 2537 2538 2540 2543-2545 2578 2580-2582 2609 
+spanning-tree instance 3 vlan 2622 2649 2650 2704 2749 2811 2813 2814 2816 
+spanning-tree instance 3 vlan 2865 3140 3200-3399 3588 3599 3881-3888
+spanning-tree instance 3 Trk1 priority 4
+spanning-tree instance 3 Trk2 priority 4
+spanning-tree instance 3 Trk3 priority 4
+spanning-tree instance 3 Trk4 path-cost 2000
+spanning-tree instance 3 Trk4 priority 4
+spanning-tree instance 3 Trk5 priority 4
+spanning-tree instance 3 Trk6 priority 4
+spanning-tree instance 11 vlan 1700-1799
+spanning-tree instance 11 Trk1 path-cost 2000
+spanning-tree instance 11 Trk1 priority 4
+spanning-tree instance 11 Trk2 priority 4
+spanning-tree instance 11 Trk3 priority 4
+spanning-tree instance 11 Trk4 priority 4
+spanning-tree instance 11 Trk5 priority 4
+spanning-tree instance 11 Trk6 priority 4
+spanning-tree instance 12 vlan 1800-1899
+spanning-tree instance 12 Trk1 path-cost 2000
+spanning-tree instance 12 Trk1 priority 4
+spanning-tree instance 12 Trk2 priority 4
+spanning-tree instance 12 Trk3 priority 4
+spanning-tree instance 12 Trk4 priority 4
+spanning-tree instance 12 Trk5 priority 4
+spanning-tree instance 12 Trk6 priority 4
+spanning-tree instance 13 vlan 1900-1999
+spanning-tree instance 13 Trk1 path-cost 2000
+spanning-tree instance 13 Trk1 priority 4
+spanning-tree instance 13 Trk2 priority 4
+spanning-tree instance 13 Trk3 priority 4
+spanning-tree instance 13 Trk4 priority 4
+spanning-tree instance 13 Trk5 priority 4
+spanning-tree instance 13 Trk6 priority 4
+spanning-tree instance 14 vlan 1400-1499
+spanning-tree instance 14 Trk1 priority 4
+spanning-tree instance 14 Trk2 priority 4
+spanning-tree instance 14 Trk3 priority 4
+spanning-tree instance 14 Trk4 path-cost 2000
+spanning-tree instance 14 Trk4 priority 4
+spanning-tree instance 14 Trk5 priority 4
+spanning-tree instance 14 Trk6 priority 4
+spanning-tree instance 15 vlan 1500-1599
+spanning-tree instance 15 Trk1 path-cost 2000
+spanning-tree instance 15 Trk1 priority 4
+spanning-tree instance 15 Trk2 priority 4
+spanning-tree instance 15 Trk3 priority 4
+spanning-tree instance 15 Trk4 priority 4
+spanning-tree instance 15 Trk5 priority 4
+spanning-tree instance 15 Trk6 priority 4
+spanning-tree instance 16 vlan 1600-1699
+spanning-tree instance 16 Trk1 path-cost 2000
+spanning-tree instance 16 Trk1 priority 4
+spanning-tree instance 16 Trk2 priority 4
+spanning-tree instance 16 Trk3 priority 4
+spanning-tree instance 16 Trk4 priority 4
+spanning-tree instance 16 Trk5 priority 4
+spanning-tree instance 16 Trk6 priority 4
+spanning-tree priority 7
+no autorun
+password manager
+password operator
+

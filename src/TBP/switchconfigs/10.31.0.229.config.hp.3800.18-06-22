@@ -1,0 +1,349 @@
+; J9574A Configuration Editor; Created on release #KA.15.18.0007
+; Ver #09:34.6b.fb.ff.fd.ff.ff.3f.ef:7f
+
+hostname "OOB-A10-R2R2-01"
+module 1 type j9574y
+module 2 type j9574x
+console idle-timeout 300
+console idle-timeout serial-usb 300
+logging 10.31.1.17
+logging 10.31.1.18
+logging 10.31.1.21
+qos type-of-service diff-services
+radius-server host 10.31.1.51 oobm
+radius-server host 10.31.1.52 oobm
+radius-server dead-time 5
+radius-server timeout 3
+radius-server retransmit 2
+sflow 1 destination 10.31.0.12 9995
+sflow 1 polling 10 30
+sflow 1 polling 1-9,11-26 60
+sflow 1 sampling 10 50
+sflow 1 sampling 1-9,11-26 500
+timesync sntp
+sntp unicast
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.31.0.1
+interface 1
+   broadcast-limit 1
+   name "     "
+   exit
+interface 2
+   broadcast-limit 1
+   name "     "
+   exit
+interface 3
+   broadcast-limit 1
+   disable
+   name "     "
+   exit
+interface 4
+   broadcast-limit 1
+   disable
+   name "     "
+   exit
+interface 5
+   broadcast-limit 1
+   disable
+   name "     "
+   exit
+interface 6
+   broadcast-limit 1
+   disable
+   name "     "
+   exit
+interface 7
+   broadcast-limit 1
+   disable
+   name "      "
+   exit
+interface 8
+   broadcast-limit 1
+   disable
+   name "     "
+   exit
+interface 9
+   broadcast-limit 1
+   disable
+   name "     "
+   exit
+interface 10
+   broadcast-limit 1
+   disable
+   exit
+interface 11
+   broadcast-limit 1
+   disable
+   name "     "
+   exit
+interface 12
+   broadcast-limit 1
+   disable
+   name "     "
+   exit
+interface 13
+   broadcast-limit 1
+   disable
+   exit
+interface 14
+   broadcast-limit 1
+   disable
+   exit
+interface 15
+   broadcast-limit 1
+   disable
+   exit
+interface 16
+   broadcast-limit 1
+   disable
+   exit
+interface 17
+   broadcast-limit 1
+   disable
+   exit
+interface 18
+   broadcast-limit 1
+   disable
+   exit
+interface 19
+   broadcast-limit 1
+   disable
+   exit
+interface 20
+   broadcast-limit 1
+   disable
+   exit
+interface 21
+   broadcast-limit 1
+   disable
+   exit
+interface 22
+   broadcast-limit 1
+   disable
+   exit
+interface 23
+   broadcast-limit 1
+   disable
+   exit
+interface 24
+   broadcast-limit 1
+   disable
+   exit
+interface 25
+   broadcast-limit 1
+   disable
+   exit
+interface 26
+   broadcast-limit 1
+   disable
+   exit
+interface 27
+   broadcast-limit 1
+   disable
+   exit
+interface 28
+   broadcast-limit 1
+   disable
+   exit
+interface 29
+   broadcast-limit 1
+   disable
+   exit
+interface 30
+   broadcast-limit 1
+   disable
+   exit
+interface 31
+   broadcast-limit 1
+   disable
+   exit
+interface 32
+   broadcast-limit 1
+   disable
+   exit
+interface 33
+   broadcast-limit 1
+   disable
+   exit
+interface 34
+   broadcast-limit 1
+   disable
+   exit
+interface 35
+   broadcast-limit 1
+   disable
+   exit
+interface 36
+   broadcast-limit 1
+   disable
+   exit
+interface 37
+   broadcast-limit 1
+   disable
+   exit
+interface 38
+   broadcast-limit 1
+   disable
+   exit
+interface 39
+   broadcast-limit 1
+   disable
+   exit
+interface 40
+   broadcast-limit 1
+   disable
+   exit
+interface 41
+   broadcast-limit 1
+   disable
+   exit
+interface 42
+   broadcast-limit 1
+   disable
+   exit
+interface 43
+   broadcast-limit 1
+   disable
+   exit
+interface 44
+   broadcast-limit 1
+   disable
+   exit
+interface 45
+   broadcast-limit 1
+   disable
+   exit
+interface 46
+   broadcast-limit 1
+   disable
+   exit
+interface 47
+   broadcast-limit 1
+   disable
+   exit
+interface 48
+   broadcast-limit 1
+   disable
+   exit
+interface 49
+   broadcast-limit 1
+   exit
+interface 50
+   broadcast-limit 1
+   exit
+interface 51
+   broadcast-limit 1
+   disable
+   exit
+interface 52
+   broadcast-limit 1
+   disable
+   exit
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" operator unrestricted
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server contact "ucit 220-5555" location "A10-R2R2"
+snmpv3 group operatorauth user "operator" sec-model ver3
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   ip address 10.31.0.229 255.255.254.0
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-50
+   untagged 51-52
+   no ip address
+   exit
+vlan 999
+   name "unused_ports"
+   untagged 49
+   no ip address
+   exit
+vlan 3752
+   name "OOB-DC-10.31.0/23"
+   untagged 1-48
+   tagged 49-50
+   no ip address
+   ip igmp
+   exit
+spanning-tree
+spanning-tree 1 bpdu-filter bpdu-protection
+spanning-tree 2 bpdu-filter bpdu-protection
+spanning-tree 3 bpdu-filter bpdu-protection
+spanning-tree 4 bpdu-filter bpdu-protection
+spanning-tree 5 bpdu-filter bpdu-protection
+spanning-tree 6 bpdu-filter bpdu-protection
+spanning-tree 7 bpdu-filter bpdu-protection
+spanning-tree 8 bpdu-filter bpdu-protection
+spanning-tree 9 bpdu-filter bpdu-protection
+spanning-tree 10 bpdu-filter bpdu-protection
+spanning-tree 11 bpdu-filter bpdu-protection
+spanning-tree 12 bpdu-filter bpdu-protection
+spanning-tree 13 bpdu-filter bpdu-protection
+spanning-tree 14 bpdu-filter bpdu-protection
+spanning-tree 15 bpdu-filter bpdu-protection
+spanning-tree 16 bpdu-filter bpdu-protection
+spanning-tree 17 bpdu-filter bpdu-protection
+spanning-tree 18 bpdu-filter bpdu-protection
+spanning-tree 19 bpdu-filter bpdu-protection
+spanning-tree 20 bpdu-filter bpdu-protection
+spanning-tree 21 bpdu-filter bpdu-protection
+spanning-tree 22 bpdu-filter bpdu-protection
+spanning-tree 23 bpdu-filter bpdu-protection
+spanning-tree 24 bpdu-filter bpdu-protection
+spanning-tree 25 bpdu-filter bpdu-protection
+spanning-tree 26 bpdu-filter bpdu-protection
+spanning-tree 27 bpdu-filter bpdu-protection
+spanning-tree 28 bpdu-filter bpdu-protection
+spanning-tree 29 bpdu-filter bpdu-protection
+spanning-tree 30 bpdu-filter bpdu-protection
+spanning-tree 31 bpdu-filter bpdu-protection
+spanning-tree 32 bpdu-filter bpdu-protection
+spanning-tree 33 bpdu-filter bpdu-protection
+spanning-tree 34 bpdu-filter bpdu-protection
+spanning-tree 35 bpdu-filter bpdu-protection
+spanning-tree 36 bpdu-filter bpdu-protection
+spanning-tree 37 bpdu-filter bpdu-protection
+spanning-tree 38 bpdu-filter bpdu-protection
+spanning-tree 39 bpdu-filter bpdu-protection
+spanning-tree 40 bpdu-filter bpdu-protection
+spanning-tree 41 bpdu-filter bpdu-protection
+spanning-tree 42 bpdu-filter bpdu-protection
+spanning-tree 43 bpdu-filter bpdu-protection
+spanning-tree 44 bpdu-filter bpdu-protection
+spanning-tree 45 bpdu-filter bpdu-protection
+spanning-tree 46 bpdu-filter bpdu-protection
+spanning-tree 47 bpdu-filter bpdu-protection
+spanning-tree 48 bpdu-filter bpdu-protection
+no spanning-tree 49 auto-edge-port
+no spanning-tree 50 auto-edge-port
+spanning-tree config-name "ucalgary"
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600
+no tftp server
+loop-protect 1-48
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

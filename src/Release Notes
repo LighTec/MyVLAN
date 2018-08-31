@@ -1,0 +1,8 @@
+v0.1: First development release, it can read from a database and display it. No other utilities available.
+v0.2: Table is now editable, and will automatically commit to backend per edit seamlessly.
+v0.3: Refresh button for table, Proper sorting for table, GUI for selecting new files, SQLEntryGraphical class allows
+viewing of individual SQLEntry objects.
+v0.4: Entry conflict resolution GUI created, new file parsing GUI and backend connected.
+v0.5: General Improvements, conflict resolution can create new entries, filter entry functionality. Main Table backend
+has been redone, less hard-coded stuff and better implementation of an ObservableList rather than hard refreshes.
+v1.0: DHCPnetworks parser redone to properly delimit csv files, small varied improvements. First full release.

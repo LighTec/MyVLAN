@@ -1,0 +1,86 @@
+; J9774A Configuration Editor; Created on release #YA.15.12.0007
+; Ver #04:01.ff.37.27:ea
+hostname "MSB019-B1-SW-Terence"
+console baud-rate 9600
+console flow-control none
+console idle-timeout 300
+console idle-timeout serial-usb 300
+mac-age-time 180
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.27.14.1
+ipv6 access-list "drop-all-v6"
+   exit
+interface 1
+   name "UPLINK"
+   no power-over-ethernet
+   exit
+interface 9
+   name "backup"
+   exit
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-10
+   no ip address
+   exit
+vlan 22
+   name "Vlan_22"
+   untagged 8
+   tagged 1
+   no ip address
+   exit
+vlan 254
+   name "vlan_254"
+   no ip address
+   jumbo
+   exit
+vlan 2340
+   name "MSMCZ_10.59.152.0/23"
+   untagged 2-7,9-10
+   tagged 1
+   no ip address
+   exit
+vlan 2714
+   name "MS_CAMPUS_10.27.14.0"
+   tagged 1
+   ip address 10.27.14.174 255.255.255.0
+   exit
+vlan 3285
+   name "MS_VOIP_10.6.106.0/24"
+   tagged 1,7
+   no ip address
+   exit
+vlan 3931
+   name "MS_WLAN"
+   tagged 1
+   no ip address
+   exit
+no tftp server
+no dhcp config-file-update
+password manager
+password operator
+

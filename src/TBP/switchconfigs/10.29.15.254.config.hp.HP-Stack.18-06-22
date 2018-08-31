@@ -1,0 +1,386 @@
+; hpStack Configuration Editor; Created on release #KA.15.18.0007
+; Ver #09:34.6b.fb.ff.fd.ff.ff.3f.ef:7f
+
+stacking
+   member 1 type "J9574A" mac-address 308d99-33d980
+   exit
+hostname "PCAR-01-HSW-3857"
+console baud-rate 9600
+console flow-control none
+console idle-timeout 300
+console idle-timeout serial-usb 300
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server dead-time 5
+radius-server timeout 3
+radius-server retransmit 2
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+telnet-server listen data
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+web-management listen data
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.29.15.1
+ip ssh listen data
+interface 1/1
+   broadcast-limit 10
+   no power-over-ethernet
+   exit
+interface 1/2
+   broadcast-limit 10
+   exit
+interface 1/3
+   broadcast-limit 10
+   exit
+interface 1/4
+   broadcast-limit 10
+   exit
+interface 1/5
+   broadcast-limit 10
+   exit
+interface 1/6
+   broadcast-limit 10
+   exit
+interface 1/7
+   broadcast-limit 10
+   exit
+interface 1/8
+   broadcast-limit 10
+   exit
+interface 1/9
+   broadcast-limit 10
+   exit
+interface 1/10
+   broadcast-limit 10
+   exit
+interface 1/11
+   broadcast-limit 10
+   exit
+interface 1/12
+   broadcast-limit 10
+   exit
+interface 1/13
+   broadcast-limit 10
+   exit
+interface 1/14
+   broadcast-limit 10
+   exit
+interface 1/15
+   broadcast-limit 10
+   exit
+interface 1/16
+   broadcast-limit 10
+   exit
+interface 1/17
+   broadcast-limit 10
+   exit
+interface 1/18
+   broadcast-limit 10
+   exit
+interface 1/19
+   broadcast-limit 10
+   exit
+interface 1/20
+   broadcast-limit 10
+   exit
+interface 1/21
+   broadcast-limit 10
+   exit
+interface 1/22
+   broadcast-limit 10
+   exit
+interface 1/23
+   broadcast-limit 10
+   exit
+interface 1/24
+   broadcast-limit 10
+   exit
+interface 1/25
+   broadcast-limit 10
+   exit
+interface 1/26
+   broadcast-limit 10
+   exit
+interface 1/27
+   broadcast-limit 10
+   exit
+interface 1/28
+   broadcast-limit 10
+   exit
+interface 1/29
+   broadcast-limit 10
+   exit
+interface 1/30
+   broadcast-limit 10
+   disable
+   exit
+interface 1/31
+   broadcast-limit 10
+   disable
+   exit
+interface 1/32
+   broadcast-limit 10
+   disable
+   exit
+interface 1/33
+   broadcast-limit 10
+   disable
+   exit
+interface 1/34
+   broadcast-limit 10
+   disable
+   exit
+interface 1/35
+   broadcast-limit 10
+   disable
+   exit
+interface 1/36
+   broadcast-limit 10
+   disable
+   exit
+interface 1/37
+   broadcast-limit 10
+   disable
+   exit
+interface 1/38
+   broadcast-limit 10
+   disable
+   exit
+interface 1/39
+   broadcast-limit 10
+   disable
+   exit
+interface 1/40
+   broadcast-limit 10
+   disable
+   exit
+interface 1/41
+   broadcast-limit 10
+   disable
+   exit
+interface 1/42
+   broadcast-limit 10
+   disable
+   exit
+interface 1/43
+   broadcast-limit 10
+   disable
+   exit
+interface 1/44
+   broadcast-limit 10
+   disable
+   exit
+interface 1/45
+   broadcast-limit 10
+   disable
+   exit
+interface 1/47
+   broadcast-limit 10
+   name "X47D-10.11.16.254-Fa0/0_ARUBA-Controller"
+   exit
+interface 1/48
+   broadcast-limit 10
+   name "x48U-10.31.2.71-G0/0/2_CISCO-CoreRouter"
+   exit
+interface 1/49
+   broadcast-limit 10
+   name "x49D-10.29.15.252-x10U_ACWA-Lab"
+   exit
+interface 1/50
+   broadcast-limit 10
+   name "x50D-10.29.15.251-x10U_HeaderBuildingA"
+   exit
+interface 1/51
+   broadcast-limit 10
+   name "x51D-10.29.15.250-x10U_HeaderBuildingB"
+   exit
+interface 1/52
+   broadcast-limit 10
+   name "x52D-10.29.15.249-x10U_WasteWaterBuilding"
+   exit
+snmp-server community "public" unrestricted
+snmp-server community "mecyou12" operator unrestricted
+snmp-server listen data
+snmp-server contact "UCIT 220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   disable
+   no ip address
+   member 1
+      ip address dhcp-bootp
+      exit
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1/1-1/52
+   ip address dhcp-bootp
+   exit
+vlan 430
+   name "PC_MCZ1_10.110.0.0/23"
+   tagged 1/48
+   no ip address
+   exit
+vlan 510
+   name "PC_MGMT_10.29.15.0/24"
+   untagged 1/46
+   tagged 1/48-1/52
+   ip address 10.29.15.254 255.255.255.0
+   exit
+vlan 580
+   name "PC_VoIP_10.6.121.0/24"
+   tagged 1/1-1/24,1/48-1/49,1/52
+   no ip address
+   voice
+   exit
+vlan 600
+   name "PC_UMCZ1_10.90.0.0/23"
+   untagged 1/1-1/24,1/26-1/30
+   tagged 1/48-1/49,1/52
+   no ip address
+   exit
+vlan 640
+   name "PC_TPN_136.159.88.80/26"
+   tagged 1/48
+   no ip address
+   exit
+vlan 680
+   name "PC_Wireless_10.10.234.0/24"
+   untagged 1/25
+   tagged 1/47-1/52
+   no ip address
+   exit
+vlan 681
+   name "PC_WirelessUsers1_10.11.17.0/24"
+   tagged 1/47-1/48
+   no ip address
+   exit
+vlan 682
+   name "PC_WirelessUsers2_10.11.18.0/24"
+   tagged 1/47-1/48
+   no ip address
+   exit
+vlan 683
+   name "PC_WirelessUsers3_10.11.19.0/24"
+   tagged 1/47-1/48
+   no ip address
+   exit
+vlan 999
+   name "unused_VLAN"
+   untagged 1/31-1/45
+   no ip address
+   exit
+vlan 2308
+   name "PC-MCZwireless_10.123.3.0/24"
+   tagged 1/47-1/48
+   no ip address
+   exit
+vlan 2309
+   name "PC-MCZwireless_10.123.2.0/24"
+   tagged 1/47-1/48
+   no ip address
+   exit
+vlan 2310
+   name "PC-MCZwireless_10.123.1.0/24"
+   tagged 1/47-1/48
+   no ip address
+   exit
+vlan 2311
+   name "PC-MCZwireless_10.123.0.0/24"
+   tagged 1/47-1/48
+   no ip address
+   exit
+vlan 2389
+   name "PCAR_PRT_10.127.200.0/24"
+   tagged 1/48
+   no ip address
+   exit
+spanning-tree
+spanning-tree 1/1 bpdu-filter bpdu-protection
+spanning-tree 1/2 bpdu-filter bpdu-protection
+spanning-tree 1/3 bpdu-filter bpdu-protection
+spanning-tree 1/4 bpdu-filter bpdu-protection
+spanning-tree 1/5 bpdu-filter bpdu-protection
+spanning-tree 1/6 bpdu-filter bpdu-protection
+spanning-tree 1/7 bpdu-filter bpdu-protection
+spanning-tree 1/8 bpdu-filter bpdu-protection
+spanning-tree 1/9 bpdu-filter bpdu-protection
+spanning-tree 1/10 bpdu-filter bpdu-protection
+spanning-tree 1/11 bpdu-filter bpdu-protection
+spanning-tree 1/12 bpdu-filter bpdu-protection
+spanning-tree 1/13 bpdu-filter bpdu-protection
+spanning-tree 1/14 bpdu-filter bpdu-protection
+spanning-tree 1/15 bpdu-filter bpdu-protection
+spanning-tree 1/16 bpdu-filter bpdu-protection
+spanning-tree 1/17 bpdu-filter bpdu-protection
+spanning-tree 1/18 bpdu-filter bpdu-protection
+spanning-tree 1/19 bpdu-filter bpdu-protection
+spanning-tree 1/20 bpdu-filter bpdu-protection
+spanning-tree 1/21 bpdu-filter bpdu-protection
+spanning-tree 1/22 bpdu-filter bpdu-protection
+spanning-tree 1/23 bpdu-filter bpdu-protection
+spanning-tree 1/24 bpdu-filter bpdu-protection
+spanning-tree 1/25 bpdu-filter bpdu-protection
+spanning-tree 1/26 bpdu-filter bpdu-protection
+spanning-tree 1/27 bpdu-filter bpdu-protection
+spanning-tree 1/28 bpdu-filter bpdu-protection
+spanning-tree 1/29 bpdu-filter bpdu-protection
+spanning-tree 1/30 bpdu-filter bpdu-protection
+spanning-tree 1/31 bpdu-filter bpdu-protection
+spanning-tree 1/32 bpdu-filter bpdu-protection
+spanning-tree 1/33 bpdu-filter bpdu-protection
+spanning-tree 1/34 bpdu-filter bpdu-protection
+spanning-tree 1/35 bpdu-filter bpdu-protection
+spanning-tree 1/36 bpdu-filter bpdu-protection
+spanning-tree 1/37 bpdu-filter bpdu-protection
+spanning-tree 1/38 bpdu-filter bpdu-protection
+spanning-tree 1/39 bpdu-filter bpdu-protection
+spanning-tree 1/40 bpdu-filter bpdu-protection
+spanning-tree 1/41 bpdu-filter bpdu-protection
+spanning-tree 1/42 bpdu-filter bpdu-protection
+spanning-tree 1/43 bpdu-filter bpdu-protection
+spanning-tree 1/44 bpdu-filter bpdu-protection
+spanning-tree 1/45 bpdu-filter bpdu-protection
+spanning-tree 1/46 bpdu-filter bpdu-protection
+spanning-tree 1/49 root-guard
+spanning-tree 1/50 root-guard
+spanning-tree 1/51 root-guard
+spanning-tree 1/52 root-guard
+spanning-tree config-name "ucalgary"
+spanning-tree instance ist 1/48 path-cost 20000
+spanning-tree instance ist 1/49 path-cost 20000
+spanning-tree instance ist 1/50 path-cost 20000
+spanning-tree instance ist 1/51 path-cost 20000
+spanning-tree instance ist 1/52 path-cost 20000
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600 priority 6
+no tftp server
+tftp server listen data
+loop-protect 1/1-1/46
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

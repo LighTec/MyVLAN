@@ -1,0 +1,724 @@
+; hpStack Configuration Editor; Created on release #KA.16.02.0014
+; Ver #0f:01.81.f0.92.34.59.3c.6b.fb.ff.fd.ff.ff.3f.ef:fe
+
+stacking
+   member 1 type "J9574A" mac-address 1458d0-ef70c0
+   member 1 priority 255
+   member 2 type "J9574A" mac-address 3ca82a-47bec0
+   member 2 priority 254
+   member 3 type "J9574A" mac-address 5820b1-c16ac0
+   exit
+hostname "END202V-02-MSW-4386"
+console baud-rate 9600
+console flow-control none
+console idle-timeout 300
+console idle-timeout serial-usb 300
+no rest-interface
+trunk 1/49,3/49 trk1 lacp
+banner motd "**************************************************************************\n* Important Notice:\n* Authorized users only:\n* This computer system (including all related equipment, networks,\n* systems and services) is provided for use only by authorized\n* Individuals with valid and subsisting usernames and passwords\n* issued by University of Calgary and for authorized purposes only.\n* Unauthorized access to or use of this system is strictly prohibited,\n* and may result in criminal, civil and administrative penalties \n* and other adverse action.\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server dead-time 5
+radius-server timeout 3
+radius-server retransmit 2
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+telnet-server listen data
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+web-management listen data
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.28.7.1
+ip ssh listen data
+interface 1/1
+   broadcast-limit 10
+   name "Rm.301_A1"
+   exit
+interface 1/2
+   broadcast-limit 10
+   name "Rm.301_A2"
+   exit
+interface 1/3
+   broadcast-limit 10
+   name "Rm.301_A3"
+   exit
+interface 1/4
+   broadcast-limit 10
+   name "Rm.301_A4"
+   exit
+interface 1/5
+   broadcast-limit 10
+   name "Rm.301_A5"
+   exit
+interface 1/6
+   broadcast-limit 10
+   name "Rm.301_A6"
+   exit
+interface 1/7
+   broadcast-limit 10
+   name "Rm.301_A7"
+   exit
+interface 1/8
+   broadcast-limit 10
+   name "Rm.301_A8"
+   exit
+interface 1/9
+   broadcast-limit 10
+   name "Rm.301_A9"
+   exit
+interface 1/10
+   broadcast-limit 10
+   name "Rm.301_A10"
+   exit
+interface 1/11
+   broadcast-limit 10
+   name "Rm.301_A11"
+   exit
+interface 1/12
+   broadcast-limit 10
+   name "Rm.302_A12"
+   exit
+interface 1/13
+   broadcast-limit 10
+   name "Rm.304_A25"
+   exit
+interface 1/14
+   broadcast-limit 10
+   name "Rm.304_A26"
+   exit
+interface 1/15
+   broadcast-limit 10
+   name "Rm.304_A27"
+   exit
+interface 1/16
+   broadcast-limit 10
+   name "Rm.304_A28"
+   exit
+interface 1/17
+   broadcast-limit 10
+   name "Rm.304_A29"
+   exit
+interface 1/18
+   broadcast-limit 10
+   name "Rm.304_A30"
+   exit
+interface 1/19
+   broadcast-limit 10
+   name "Rm.304_A31"
+   exit
+interface 1/20
+   broadcast-limit 10
+   name "Rm.304_A32"
+   exit
+interface 1/21
+   broadcast-limit 10
+   name "Rm.304_A33"
+   exit
+interface 1/22
+   broadcast-limit 10
+   name "Rm.304_A34"
+   exit
+interface 1/23
+   broadcast-limit 10
+   name "Rm.304_A35"
+   exit
+interface 1/24
+   broadcast-limit 10
+   name "Rm.305_A36"
+   exit
+interface 1/25
+   broadcast-limit 10
+   name "Rm.302_A13"
+   exit
+interface 1/26
+   broadcast-limit 10
+   name "Rm.302_A14"
+   exit
+interface 1/27
+   broadcast-limit 10
+   name "Rm.302_A15"
+   exit
+interface 1/28
+   broadcast-limit 10
+   name "Rm.302_A16"
+   exit
+interface 1/29
+   broadcast-limit 10
+   name "Rm.302_A17"
+   exit
+interface 1/30
+   broadcast-limit 10
+   name "Rm.302_A18"
+   exit
+interface 1/31
+   broadcast-limit 10
+   name "Rm.302_A19"
+   exit
+interface 1/32
+   broadcast-limit 10
+   name "Rm.302_A20"
+   exit
+interface 1/33
+   broadcast-limit 10
+   name "Rm.302Z_A21"
+   exit
+interface 1/34
+   broadcast-limit 10
+   name "Rm.302Z_A22"
+   exit
+interface 1/35
+   broadcast-limit 10
+   name "Rm.305_A23"
+   exit
+interface 1/36
+   broadcast-limit 10
+   name "Rm.305_A24"
+   exit
+interface 1/37
+   broadcast-limit 10
+   name "Rm.305_A37"
+   exit
+interface 1/38
+   broadcast-limit 10
+   name "Rm.305_A38"
+   exit
+interface 1/39
+   broadcast-limit 10
+   name "Rm.305_A39"
+   exit
+interface 1/40
+   broadcast-limit 10
+   name "Rm.305_A40"
+   exit
+interface 1/41
+   broadcast-limit 10
+   name "Rm.305_A41"
+   exit
+interface 1/42
+   broadcast-limit 10
+   name "Rm.305_A42"
+   exit
+interface 1/43
+   broadcast-limit 10
+   name "Rm.305_A43"
+   exit
+interface 1/44
+   broadcast-limit 10
+   name "Rm.305_A44"
+   exit
+interface 1/45
+   broadcast-limit 10
+   name "Rm.305_A45"
+   exit
+interface 1/46
+   broadcast-limit 10
+   name "Rm.305_A46"
+   exit
+interface 1/47
+   broadcast-limit 10
+   name "Rm.305A_A47"
+   exit
+interface 1/48
+   broadcast-limit 10
+   name "1/48D-10.28.7.61-X01U_UPS"
+   exit
+interface 1/49
+   broadcast-limit 40
+   name "TRK1-X1/49U-10.28.7.100-G02D-TRK18_ENG020V"
+   exit
+interface 1/50
+   disable
+   exit
+interface 1/51
+   disable
+   exit
+interface 1/52
+   disable
+   exit
+interface 2/1
+   broadcast-limit 10
+   name "Rm.306_B1"
+   exit
+interface 2/2
+   broadcast-limit 10
+   name "Rm.306_B2"
+   exit
+interface 2/3
+   broadcast-limit 10
+   name "Rm.306_B3"
+   exit
+interface 2/4
+   broadcast-limit 10
+   name "Rm.306_B4"
+   exit
+interface 2/5
+   broadcast-limit 10
+   name "Rm.306_B5"
+   exit
+interface 2/6
+   broadcast-limit 10
+   name "Rm.306_B6"
+   exit
+interface 2/7
+   broadcast-limit 10
+   name "Rm.306_B7"
+   exit
+interface 2/8
+   broadcast-limit 10
+   name "Rm.306_B8"
+   exit
+interface 2/9
+   broadcast-limit 10
+   name "Rm.306_B9"
+   exit
+interface 2/10
+   broadcast-limit 10
+   name "Rm.306_B10"
+   exit
+interface 2/11
+   broadcast-limit 10
+   name "Rm.306_B11"
+   exit
+interface 2/12
+   broadcast-limit 10
+   name "Rm.306_B12"
+   exit
+interface 2/13
+   broadcast-limit 10
+   name "Rm.308_B25"
+   exit
+interface 2/14
+   broadcast-limit 10
+   name "Rm.308_B26"
+   exit
+interface 2/15
+   broadcast-limit 10
+   name "Rm.308_B27"
+   exit
+interface 2/16
+   broadcast-limit 10
+   name "Rm.308_B28"
+   exit
+interface 2/17
+   broadcast-limit 10
+   name "Rm.308_B29"
+   exit
+interface 2/18
+   broadcast-limit 10
+   name "Rm.310_B30"
+   exit
+interface 2/19
+   broadcast-limit 10
+   name "Rm.310_B31"
+   exit
+interface 2/20
+   broadcast-limit 10
+   name "Rm.310_B32"
+   exit
+interface 2/21
+   broadcast-limit 10
+   name "Rm.310_B33"
+   exit
+interface 2/22
+   broadcast-limit 10
+   name "Rm.310_B34"
+   exit
+interface 2/23
+   broadcast-limit 10
+   name "Rm.310_B35"
+   exit
+interface 2/24
+   broadcast-limit 10
+   name "Rm.310_B36"
+   exit
+interface 2/25
+   broadcast-limit 10
+   name "Rm.305A_A48"
+   exit
+interface 2/26
+   broadcast-limit 10
+   name "Rm.306_B13"
+   exit
+interface 2/27
+   broadcast-limit 10
+   name "Rm.306_B14"
+   exit
+interface 2/28
+   broadcast-limit 10
+   name "Rm.308_B15"
+   exit
+interface 2/29
+   broadcast-limit 10
+   name "Rm.308_B16"
+   exit
+interface 2/30
+   broadcast-limit 10
+   name "Rm.308_B17"
+   exit
+interface 2/31
+   broadcast-limit 10
+   name "Rm.308_B18"
+   exit
+interface 2/32
+   broadcast-limit 10
+   name "Rm.308_B19"
+   exit
+interface 2/33
+   broadcast-limit 10
+   name "Rm.308_B20"
+   exit
+interface 2/34
+   broadcast-limit 10
+   name "Rm.308_B21"
+   exit
+interface 2/35
+   broadcast-limit 10
+   name "Rm.308_B22"
+   exit
+interface 2/36
+   broadcast-limit 10
+   name "Rm.308_B23"
+   exit
+interface 2/37
+   broadcast-limit 10
+   name "Rm.308_B24"
+   exit
+interface 2/38
+   broadcast-limit 10
+   name "Rm.310_B37"
+   exit
+interface 2/39
+   broadcast-limit 10
+   name "Rm.310_B38"
+   exit
+interface 2/40
+   broadcast-limit 10
+   name "Rm.311_B39"
+   exit
+interface 2/41
+   broadcast-limit 10
+   name "Rm.311_B40"
+   exit
+interface 2/42
+   broadcast-limit 10
+   name "Rm.311_B41"
+   exit
+interface 2/43
+   broadcast-limit 10
+   name "Rm.311_B42"
+   exit
+interface 2/44
+   broadcast-limit 10
+   name "Rm.311_B43"
+   exit
+interface 2/45
+   broadcast-limit 10
+   name "Rm.311_B44"
+   exit
+interface 2/46
+   broadcast-limit 10
+   name "Rm.311_B45"
+   exit
+interface 2/47
+   broadcast-limit 10
+   name "Rm.311_B46"
+   exit
+interface 2/48
+   broadcast-limit 10
+   name "2/48D-10.28.7.62-X01U_UPS"
+   exit
+interface 2/50
+   disable
+   exit
+interface 2/51
+   disable
+   exit
+interface 2/52
+   disable
+   exit
+interface 3/1
+   broadcast-limit 10
+   name "Rm.311_C1"
+   exit
+interface 3/2
+   broadcast-limit 10
+   name "Rm.311_C2"
+   exit
+interface 3/3
+   broadcast-limit 10
+   name "Rm.311_C3"
+   exit
+interface 3/4
+   broadcast-limit 10
+   name "Rm.311_C4"
+   exit
+interface 3/5
+   broadcast-limit 10
+   name "Rm.311_C5"
+   exit
+interface 3/6
+   broadcast-limit 10
+   name "Rm.311_C6"
+   exit
+interface 3/7
+   broadcast-limit 10
+   name "Rm.311A_C7"
+   exit
+interface 3/8
+   broadcast-limit 10
+   name "Rm.202B_C8"
+   exit
+interface 3/9
+   broadcast-limit 10
+   name "Rm.01Z_END-B1-01_IPCAMERA"
+   exit
+interface 3/10
+   broadcast-limit 10
+   name "Rm.01Z_END-B1-02_IPCAMERA"
+   exit
+interface 3/11
+   broadcast-limit 10
+   name "Rm.101Z_END-01-01_IPCAMERA"
+   exit
+interface 3/12
+   broadcast-limit 10
+   name "Rm.101Z_END-01-02_IPCAMERA"
+   exit
+interface 3/13
+   broadcast-limit 10
+   name "Rm.201Z_END-02-01_IPCAMERA"
+   exit
+interface 3/14
+   broadcast-limit 10
+   name "Rm.201Z_END-02-02_IPCAMERA"
+   exit
+interface 3/15
+   broadcast-limit 10
+   name "Rm.302Z_END-03-01_IPCAMERA"
+   exit
+interface 3/16
+   broadcast-limit 10
+   name "Rm.302Z_END-03-02_IPCAMERA"
+   exit
+interface 3/17
+   broadcast-limit 10
+   exit
+interface 3/18
+   broadcast-limit 10
+   exit
+interface 3/19
+   broadcast-limit 10
+   exit
+interface 3/20
+   broadcast-limit 10
+   exit
+interface 3/21
+   broadcast-limit 10
+   exit
+interface 3/22
+   broadcast-limit 10
+   exit
+interface 3/23
+   broadcast-limit 10
+   exit
+interface 3/24
+   broadcast-limit 10
+   exit
+interface 3/25
+   broadcast-limit 10
+   name "Rm.311_B47"
+   exit
+interface 3/26
+   broadcast-limit 10
+   name "Rm.311_B48"
+   exit
+interface 3/27
+   broadcast-limit 10
+   exit
+interface 3/28
+   broadcast-limit 10
+   exit
+interface 3/29
+   broadcast-limit 10
+   exit
+interface 3/30
+   broadcast-limit 10
+   exit
+interface 3/31
+   broadcast-limit 10
+   exit
+interface 3/32
+   broadcast-limit 10
+   exit
+interface 3/33
+   broadcast-limit 10
+   exit
+interface 3/34
+   broadcast-limit 10
+   exit
+interface 3/35
+   broadcast-limit 10
+   exit
+interface 3/36
+   broadcast-limit 10
+   exit
+interface 3/37
+   broadcast-limit 10
+   exit
+interface 3/38
+   broadcast-limit 10
+   exit
+interface 3/39
+   broadcast-limit 10
+   exit
+interface 3/40
+   broadcast-limit 10
+   exit
+interface 3/41
+   broadcast-limit 10
+   exit
+interface 3/42
+   broadcast-limit 10
+   exit
+interface 3/43
+   broadcast-limit 10
+   exit
+interface 3/44
+   broadcast-limit 10
+   exit
+interface 3/45
+   broadcast-limit 10
+   exit
+interface 3/46
+   broadcast-limit 10
+   exit
+interface 3/47
+   broadcast-limit 10
+   exit
+interface 3/48
+   broadcast-limit 10
+   name "3/48D-10.28.7.60-X01U_UPS"
+   exit
+interface 3/49
+   broadcast-limit 40
+   name "TRK1-3/49U-10.28.7.100-H02D_TRK18_ENG020V"
+   exit
+interface 3/50
+   disable
+   exit
+interface 3/51
+   disable
+   exit
+interface 3/52
+   disable
+   exit
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server listen data
+snmp-server contact "UCIT 220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   disable
+   no ip address
+   member 1
+      ip address dhcp-bootp
+      exit
+   member 2
+      ip address dhcp-bootp
+      exit
+   member 3
+      ip address dhcp-bootp
+      exit
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1/1-1/48,2/1-2/48,3/1-3/16,3/25-3/26,3/48,Trk1
+   untagged 1/50-1/52,2/49-2/52,3/17-3/24,3/27-3/47,3/50-3/52
+   no ip address
+   exit
+vlan 999
+   name "unused_VLAN"
+   no ip address
+   exit
+vlan 1648
+   name "EN_UMCZ1-10.79.128.0/21"
+   untagged 1/2-1/11,1/13-1/23,1/25-1/47,2/2-2/17,2/19-2/39,2/41-2/47,3/1-3/7,3/25-3/26
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2342
+   name "EN_VOIP-10.6.15.0/24_ENG_03"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2463
+   name "EN_IPCA_10.135.76.0/23"
+   untagged 3/9-3/16
+   tagged Trk1
+   no ip address
+   exit
+vlan 2514
+   name "EN_PRT_10.127.76.0/24"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2807
+   name "EN_MGMT-10.28.7.0/24"
+   untagged 1/48,2/48,3/48
+   tagged Trk1
+   ip address 10.28.7.252 255.255.255.0
+   ip igmp
+   exit
+vlan 3021
+   name "EN_WIRELESS-10.10.20.0/22"
+   untagged 1/1,1/12,1/24,2/1,2/18,2/40
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 3579
+   name "EN_1CARD-10.128.28.0/23"
+   untagged 3/8
+   tagged Trk1
+   no ip address
+   exit
+spanning-tree
+no spanning-tree Trk1 auto-edge-port
+spanning-tree Trk1 priority 4
+spanning-tree config-name "ucalgary"
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600 priority 7
+no tftp server
+tftp server listen data
+loop-protect 1/1-1/48,2/1-2/48,3/1-3/48
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

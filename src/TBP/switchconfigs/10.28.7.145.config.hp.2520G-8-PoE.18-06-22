@@ -1,0 +1,152 @@
+; J9298A Configuration Editor; Created on release #J.14.61
+
+hostname "ENA101-1-SW-3653" 
+mac-age-time 180 
+max-vlans 253 
+time timezone -420 
+time daylight-time-rule Continental-US-and-Canada 
+qos dscp-map 000000 priority 0 
+qos dscp-map 001000 priority 1 
+qos dscp-map 010000 priority 2 
+qos dscp-map 011000 priority 3 
+qos dscp-map 100000 priority 4 
+qos dscp-map 101000 priority 5 
+qos dscp-map 110000 priority 6 
+qos dscp-map 111000 priority 7 
+interface 1 
+   name "Crestron/LAN:01" 
+   broadcast-limit 10 
+exit
+interface 2 
+   name "SMART-PC/E:01" 
+   broadcast-limit 10 
+exit
+interface 3 
+   name "Podium/JK1" 
+   broadcast-limit 10 
+exit
+interface 4 
+   broadcast-limit 10 
+exit
+interface 5 
+   disable
+   broadcast-limit 10 
+exit
+interface 6 
+   disable
+   broadcast-limit 10 
+exit
+interface 7 
+   disable
+   broadcast-limit 10 
+exit
+interface 8 
+   disable
+   broadcast-limit 10 
+exit
+interface 9 
+   disable
+   broadcast-limit 10 
+exit
+interface 10 
+   name "X10U-10.28.7.215-X2/22D_ENA_18" 
+   broadcast-limit 10 
+exit
+ip default-gateway 10.28.7.1 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   no untagged 1-10 
+   no ip address 
+   exit 
+vlan 999 
+   name "unused-vlan" 
+   untagged 5-9 
+   no ip address 
+   exit 
+vlan 1648 
+   name "EN_UMCZ1-10.79.128.0/21" 
+   untagged 3 
+   tagged 10 
+   no ip address 
+   ip igmp 
+   exit 
+vlan 2807 
+   name "EN_MGMT-10.28.7.0/24" 
+   ip address 10.28.7.145 255.255.255.0 
+   tagged 10 
+   ip igmp 
+   exit 
+vlan 2927 
+   name "EN_AV-10.144.28.0/23" 
+   untagged 1,4 
+   tagged 10 
+   no ip address 
+   ip igmp 
+   exit 
+vlan 3581 
+   name "EN_LABS-10.146.28.0/23" 
+   untagged 2 
+   tagged 10 
+   no ip address 
+   ip igmp 
+   exit 
+qos type-of-service diff-services 
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+banner motd "**************************************************************************"
+banner motd "* Warning - Private Electronic Device  UofC Authorized users only:      *"
+banner motd "**************************************************************************"
+banner motd "~"
+logging 10.31.0.17
+logging 10.31.1.21
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+no web-management
+web-management ssl
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server contact "UCIT 220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree 1 bpdu-filter bpdu-protection
+spanning-tree 2 bpdu-filter bpdu-protection
+spanning-tree 3 bpdu-filter bpdu-protection
+spanning-tree 4 bpdu-filter bpdu-protection
+spanning-tree 5 bpdu-filter bpdu-protection
+spanning-tree 6 bpdu-filter bpdu-protection
+spanning-tree 7 bpdu-filter bpdu-protection
+spanning-tree 8 bpdu-filter bpdu-protection
+spanning-tree 9 bpdu-filter bpdu-protection
+no spanning-tree 10 auto-edge-port
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree bpdu-protection-timeout 600
+loop-protect 1-9
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+password manager
+password operator
+

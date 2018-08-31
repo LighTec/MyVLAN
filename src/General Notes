@@ -1,0 +1,12 @@
+VLAN:
+>0 = assigned value
+-1 = database default
+-2 = VLAN number parse error
+Netmask:
+>0 = assigned value
+-1 = database default
+-2 = no netmask assigned
+-3 = netmask is /xx or some variant containing letter x
+-4 = netmask parse error
+
+Please refer to SQL APP V7 in notebook for design details

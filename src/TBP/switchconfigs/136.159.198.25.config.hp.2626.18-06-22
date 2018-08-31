@@ -1,0 +1,136 @@
+; J4900B Configuration Editor; Created on release #H.10.83
+
+hostname "OVC10V-1-MSW-588" 
+mac-age-time 180 
+time timezone -420 
+time daylight-time-rule Continental-US-and-Canada 
+console baud-rate 9600 
+console flow-control None 
+console inactivity-timer 5 
+no web-management 
+interface 1 
+   disable
+exit
+interface 2 
+   disable
+exit
+interface 3 
+   disable
+exit
+interface 4 
+   disable
+exit
+interface 5 
+   disable
+exit
+interface 6 
+   disable
+exit
+interface 7 
+   disable
+exit
+interface 8 
+   disable
+exit
+interface 9 
+   disable
+exit
+interface 10 
+   disable
+exit
+interface 11 
+   disable
+exit
+interface 12 
+   disable
+exit
+interface 13 
+   disable
+exit
+interface 14 
+   disable
+exit
+interface 15 
+   disable
+exit
+interface 16 
+   disable
+exit
+interface 17 
+   disable
+exit
+interface 18 
+   disable
+exit
+interface 19 
+   disable
+exit
+interface 20 
+   disable
+exit
+interface 23 
+   disable
+exit
+interface 24 
+   disable
+exit
+interface 25 
+   disable
+exit
+interface 26 
+   speed-duplex 10-full 
+exit
+ip default-gateway 136.159.198.26 
+sntp server 136.159.34.69 
+sntp server 136.159.34.24 
+timesync sntp 
+sntp unicast 
+sntp 60 
+snmp-server community "uofc2009" Operator 
+snmp-server community "mecyou12" Operator 
+snmp-server community "mecyou" Unrestricted 
+snmp-server host 10.31.1.21 "uofc2009" Critical 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   no ip address 
+   no untagged 1-26 
+   exit 
+vlan 2 
+   name "198-SuperNet" 
+   ip address 136.159.198.25 255.255.255.252 
+   tagged 26 
+   exit 
+vlan 3 
+   name "217-SuperNet" 
+   untagged 21-22 
+   no ip address 
+   tagged 26 
+   exit 
+vlan 999 
+   name "Unused_Vlan" 
+   untagged 1-20,23-25 
+   exit 
+ip authorized-managers 136.159.254.0 255.255.255.0 
+ip authorized-managers 10.41.70.0 255.255.255.0 access Operator 
+ip authorized-managers 10.31.0.0 255.255.254.0 
+ip authorized-managers 10.31.4.0 255.255.255.0 
+ip authorized-managers 10.59.152.0 255.255.254.0 
+ip authorized-managers 10.41.68.50 
+ip authorized-managers 10.41.68.58 
+ip authorized-managers 10.41.75.0 255.255.255.0 
+aaa authentication login privilege-mode 
+aaa authentication telnet login radius local 
+aaa authentication telnet enable radius local 
+aaa authentication ssh login radius 
+aaa authentication ssh enable radius 
+radius-server dead-time 5 
+radius-server timeout 3 
+radius-server retransmit 2 
+radius-server host 10.31.1.51 
+radius-server host 10.31.1.52 
+loop-protect 1-22
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+password manager
+password operator
+

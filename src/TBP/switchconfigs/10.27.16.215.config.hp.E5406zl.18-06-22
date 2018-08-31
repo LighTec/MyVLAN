@@ -1,0 +1,182 @@
+; J8697A Configuration Editor; Created on release #K.15.08.0013
+; Ver #02:1b.ef:f6
+hostname "MSB016-B1-SW-3272"
+module 1 type j9546a
+module 2 type j9538a
+module 3 type j9546a
+module 5 type j9538a
+module 6 type j9538a
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+trunk B1-B2 trk1 lacp
+trunk A1,A5 trk2 lacp
+trunk A2,A6 trk3 lacp
+logging 10.31.0.17
+mac-age-time 180
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+web-management ssl
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.254.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.27.16.1
+interface A1
+   name "CAS01"
+   exit
+interface A2
+   name "CAS04"
+   exit
+interface A3
+   name "CAS01"
+   exit
+interface A4
+   disable
+   exit
+interface A5
+   disable
+   exit
+interface A6
+   disable
+   exit
+interface A7
+   disable
+   exit
+interface A8
+   disable
+   exit
+interface B1
+   name "NX01_1/5"
+   exit
+interface B2
+   name "NX02_1/5"
+   exit
+interface C1
+   name "CAS01"
+   exit
+interface C2
+   name "CAS04"
+   exit
+interface C3
+   name "CAS04"
+   exit
+interface C4
+   disable
+   exit
+interface C5
+   disable
+   exit
+interface C6
+   disable
+   exit
+interface C7
+   disable
+   exit
+interface C8
+   disable
+   exit
+snmp-server community "uofc2009" unrestricted
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 136.159.22.228 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.16 community "uof2009" trap-level critical
+snmp-server contact "UCIT 220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree Trk1 priority 4
+spanning-tree Trk2 priority 4
+spanning-tree Trk3 priority 4
+spanning-tree instance 1 vlan 1-1099 2000-4094
+spanning-tree instance 1 Trk1 priority 4
+spanning-tree instance 1 Trk2 priority 4
+spanning-tree instance 1 Trk3 priority 4
+spanning-tree instance 2 vlan 1100-1399
+spanning-tree instance 2 Trk1 priority 4
+spanning-tree instance 2 Trk2 priority 4
+spanning-tree instance 2 Trk3 priority 4
+spanning-tree instance 11 vlan 1700-1799
+spanning-tree instance 11 Trk1 priority 4
+spanning-tree instance 11 Trk2 priority 4
+spanning-tree instance 11 Trk3 priority 4
+spanning-tree instance 12 vlan 1800-1899
+spanning-tree instance 12 Trk1 priority 4
+spanning-tree instance 12 Trk2 priority 4
+spanning-tree instance 12 Trk3 priority 4
+spanning-tree instance 13 vlan 1900-1999
+spanning-tree instance 13 Trk1 priority 4
+spanning-tree instance 13 Trk2 priority 4
+spanning-tree instance 13 Trk3 priority 4
+spanning-tree instance 14 vlan 1400-1499
+spanning-tree instance 14 Trk1 priority 4
+spanning-tree instance 14 Trk2 priority 4
+spanning-tree instance 14 Trk3 priority 4
+spanning-tree instance 15 vlan 1500-1599
+spanning-tree instance 15 Trk1 priority 4
+spanning-tree instance 15 Trk2 priority 4
+spanning-tree instance 15 Trk3 priority 4
+spanning-tree instance 16 vlan 1600-1699
+spanning-tree instance 16 Trk1 priority 4
+spanning-tree instance 16 Trk2 priority 4
+spanning-tree instance 16 Trk3 priority 4
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged A3,C3,Trk1
+   untagged A4,A7-A8,B3-B8,C1-C2,C4-C8,E1-E8,F1-F8,Trk2-Trk3
+   no ip address
+   exit
+vlan 461
+   name "10.45.32.0/24_QA-SLB-DMZ"
+   tagged Trk1
+   no ip address
+   exit
+vlan 462
+   name "10.45.33.0/24_Exch_Pvt"
+   tagged Trk1
+   no ip address
+   exit
+vlan 999
+   name "unused-vlan"
+   untagged Trk1
+   no ip address
+   exit
+vlan 1004
+   name "Drac_192.168.4.0/24"
+   untagged A3,C3
+   tagged Trk1
+   no ip address
+   exit
+vlan 2716
+   name "MS_MGMT_10.27.16.0/24"
+   tagged Trk1
+   ip address 10.27.16.215 255.255.255.0
+   exit
+vlan 2821
+   name "10.47.144.0/24_proglab_msz"
+   tagged Trk1
+   no ip address
+   exit
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

@@ -1,0 +1,256 @@
+; J9452A Configuration Editor; Created on release #K.14.41
+
+hostname "HRICBAB09V-B1-SW-3400" 
+mac-age-time 180 
+time timezone -420 
+time daylight-time-rule Continental-US-and-Canada 
+console baud-rate 9600 
+console flow-control None 
+console inactivity-timer 5 
+module 2 type J94yyA 
+module 3 type J94zzA 
+module 5 type J94wwA 
+module 6 type J94wwA 
+no stack 
+interface 25 
+   disable
+   name "TBD" 
+exit
+interface 27 
+   disable
+   name "TransHost2:Storage" 
+exit
+interface 28 
+   disable
+   name "TransHost2:Server" 
+exit
+interface 29 
+   disable
+   name "Trans-DistSrv:Storage" 
+exit
+interface 30 
+   disable
+   name "TransHost1:Server" 
+exit
+interface 31 
+   disable
+   name "TransHost1:Storage" 
+exit
+interface 32 
+   disable
+   name "Trans-DistSrv:Server" 
+exit
+interface 33 
+   name "TBD" 
+exit
+interface 35 
+   disable
+   name "DictiphoneDb:Server" 
+exit
+interface 38 
+   disable
+   name "DictiphoneApp:Server" 
+exit
+interface 44 
+   disable
+   name "Trans-DistSrv:Drac" 
+exit
+interface 46 
+   disable
+   name "TransHost2:Drac" 
+exit
+interface 47 
+   disable
+exit
+interface 48 
+   name "TransHost1:Drac" 
+exit
+interface 49 
+   disable
+   name "unused" 
+exit
+interface 50 
+   disable
+   name "unused" 
+exit
+interface 51 
+   disable
+   name "unused" 
+exit
+interface 52 
+   disable
+   name "unused" 
+exit
+interface 1 
+   name "x1U-10.31.3.254-B16" 
+   speed-duplex auto-1000 
+exit
+interface 2 
+   name "x2U-FW_3386-x4D" 
+exit
+interface 3 
+   disable
+   name "unused" 
+   speed-duplex auto-1000 
+exit
+interface 4 
+   name "x4U-FW_3387-x4D" 
+exit
+interface 5 
+   disable
+exit
+interface 6 
+   disable
+   name "TransHost2:Client" 
+exit
+interface 8 
+   disable
+   name "TransHost1:Client" 
+exit
+interface 9 
+   disable
+   name "unused" 
+exit
+interface 10 
+   disable
+   name "unused" 
+exit
+interface 11 
+   disable
+   name "unused" 
+exit
+interface 12 
+   disable
+   name "unused" 
+exit
+interface 13 
+   disable
+   name "unused" 
+exit
+interface 14 
+   disable
+   name "unused" 
+exit
+interface 15 
+   disable
+   name "unused" 
+exit
+interface 16 
+   disable
+   name "unused" 
+exit
+interface 17 
+   disable
+   name "unused" 
+exit
+interface 18 
+   disable
+   name "unused" 
+exit
+interface 19 
+   disable
+   name "unused" 
+exit
+interface 20 
+   disable
+   name "unused" 
+exit
+interface 21 
+   disable
+   name "unused" 
+exit
+interface 22 
+   disable
+   name "unused" 
+exit
+interface 23 
+   disable
+   name "unused" 
+exit
+interface 24 
+   disable
+   speed-duplex 10-full 
+exit
+ip default-gateway 10.31.3.1 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   no untagged 1-48,49-50,51-52 
+   no ip address 
+   exit 
+vlan 3107 
+   name "Storage" 
+   untagged 22,33,49 
+   tagged 27 
+   no ip address 
+   exit 
+vlan 3108 
+   name "Server" 
+   tagged 2,4,26,34,36-37,39-43,45 
+   no ip address 
+   exit 
+vlan 3109 
+   name "Client" 
+   tagged 2,4,6-7 
+   no ip address 
+   exit 
+vlan 3603 
+   name "DC_Mgmt" 
+   ip address 10.31.3.250 255.255.255.0 
+   tagged 1,4 
+   exit 
+vlan 3602 
+   name "UCIT_VoIP" 
+   no ip address 
+   exit 
+vlan 999 
+   name "unused_vlan" 
+   untagged 3,5-6,8-21,23-25,27-32,35,38,44,46-48,50,51-52 
+   no ip address 
+   exit 
+banner motd "**************************************************************************"
+banner motd "* Important Notice:                                                      *"
+banner motd "* Authorized users only:                                                 *"
+banner motd "* This computer system (including all related equipment, networks,       *"
+banner motd "* systems and services) is provided for use only by authorized           *"
+banner motd "* individuals with valid and subsisting usernames and passwords          *"
+banner motd "* issued by Unversity of Calgary and for  authorized purposes only.      *"
+banner motd "* Unauthorized access to or use of this system is strictly prohibited,   *"
+banner motd "* and may result in criminal, civil and administrative penalties         *"
+banner motd "* and other adverse action.                                              *"
+banner motd "**************************************************************************"
+banner motd "~"
+logging 10.31.1.17
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69 3
+sntp server priority 2 136.159.34.24 3
+no web-management
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server location "HRIC-DC(BAB09V);Rack5_U40"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   ip address dhcp-bootp
+   exit
+no autorun
+password manager
+password operator
+

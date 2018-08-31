@@ -1,0 +1,118 @@
+; J8697A Configuration Editor; Created on release #K.15.08.0013
+; Ver #02:1b.ef:f6
+hostname "MSC56V-P1-HSW-4073"
+module 5 type j9309a
+module 6 type j9309a
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+trunk E1,F1 trk1 lacp
+trunk E2,F2 trk2 lacp
+banner motd "**************************************************************************\n* Important Notice:\n* Authorized users only:\n* This computer system (including all related equipment, networks,\n* systems and services) is provided for use only by authorized\n* Individuals with valid and subsisting usernames and passwords\n* issued by University of Calgary and for authorized purposes only.\n* Unauthorized access to or use of this system is strictly prohibited,\n* and may result in criminal, civil and administrative penalties \n* and other adverse action.\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+web-management ssl
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.28.23.1
+interface E1
+   broadcast-limit 30
+   name "TRK1-E01U-CN-ENC-Z2-PE-1-Te1/2/9"
+   exit
+interface E2
+   broadcast-limit 40
+   exit
+interface E3
+   broadcast-limit 40
+   disable
+   exit
+interface E4
+   broadcast-limit 40
+   disable
+   exit
+interface F1
+   broadcast-limit 30
+   name "TRK1-F01U-CN-MSC-Z2-PE-2-Te2/2/9"
+   exit
+interface F2
+   broadcast-limit 40
+   exit
+interface F3
+   broadcast-limit 40
+   disable
+   exit
+interface F4
+   broadcast-limit 40
+   disable
+   exit
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server contact "UCIT 220-5555" location "MSC-056V-P1"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree E3 bpdu-filter bpdu-protection
+spanning-tree E4 bpdu-filter bpdu-protection
+spanning-tree F3 bpdu-filter bpdu-protection
+spanning-tree F4 bpdu-filter bpdu-protection
+spanning-tree Trk1 priority 4
+spanning-tree Trk2 priority 4 root-guard
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree bpdu-protection-timeout 600 priority 6
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged E3-E4,F3-F4,Trk1-Trk2
+   no ip address
+   exit
+vlan 999
+   name "MSC_UNUSED_VLAN"
+   untagged E3-E4,F3-F4,Trk1
+   no ip address
+   exit
+vlan 2453
+   name "MSC_IPCAM_10.135.96.0/23"
+   tagged Trk1-Trk2
+   no ip address
+   ip igmp
+   exit
+vlan 2823
+   name "MSC_CAMPUS_10.28.23.0/24"
+   tagged Trk1-Trk2
+   ip address 10.28.23.180 255.255.255.0
+   ip igmp
+   exit
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

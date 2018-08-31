@@ -1,0 +1,400 @@
+; J9574A Configuration Editor; Created on release #KA.16.02.0014
+; Ver #0f:01.81.f0.92.34.59.3c.6b.fb.ff.fd.ff.ff.3f.ef:fe
+
+hostname "A109A-01-SW-733"
+module 1 type j9574y
+module 2 type j9574x
+console baud-rate 9600
+console flow-control none
+console idle-timeout 300
+console idle-timeout serial-usb 300
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by University of Calgary and for authorized purposes only.      *\n* Unauthorized access to or use of this system is strictly prohibited,   *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server dead-time 5
+radius-server timeout 3
+radius-server retransmit 2
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+telnet-server listen data
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+web-management ssl
+web-management listen data
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.25.2.1
+ip ssh listen data
+interface 1
+   broadcast-limit 10
+   exit
+interface 2
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 3
+   broadcast-limit 10
+   name "Rm_130.Jk3_Q3"
+   exit
+interface 4
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 5
+   broadcast-limit 10
+   name "Rm_13F_Dr._Cooper"
+   speed-duplex 10-half
+   exit
+interface 6
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 7
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 8
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 9
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 10
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 11
+   broadcast-limit 10
+   exit
+interface 12
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 13
+   broadcast-limit 10
+   name "Admin_160_DSXPanel"
+   exit
+interface 14
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 15
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 16
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 17
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 18
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 19
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 20
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 21
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 22
+   broadcast-limit 10
+   exit
+interface 23
+   broadcast-limit 10
+   speed-duplex 10-half
+   exit
+interface 24
+   broadcast-limit 10
+   speed-duplex 100-full
+   exit
+interface 25
+   broadcast-limit 40
+   name "X25U-10.25.2.253-X3/37D_A111B"
+   speed-duplex 100-full
+   exit
+interface 26
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 27
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 28
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 29
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 30
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 31
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 32
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 33
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 34
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 35
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 36
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 37
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 38
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 39
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 40
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 41
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 42
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 43
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 44
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 45
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 46
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 47
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 48
+   broadcast-limit 10
+   disable
+   no power-over-ethernet
+   exit
+interface 49
+   broadcast-limit 10
+   disable
+   exit
+interface 50
+   broadcast-limit 10
+   disable
+   exit
+interface 51
+   broadcast-limit 10
+   disable
+   exit
+interface 52
+   broadcast-limit 10
+   disable
+   exit
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server listen data
+snmp-server contact "UCIT_220-5555" location "AD-109A-01"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   disable
+   no ip address
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-52
+   no ip address
+   exit
+vlan 214
+   name "VLAN_214"
+   untagged 1
+   tagged 25
+   no ip address
+   ip igmp
+   exit
+vlan 215
+   name "VLAN_215"
+   untagged 2,4-12,14-24
+   tagged 25
+   no ip address
+   ip igmp
+   exit
+vlan 999
+   name "V999_Unused"
+   untagged 26-52
+   no ip address
+   exit
+vlan 1295
+   name "MCZ_10.109.6"
+   untagged 3
+   tagged 25
+   no ip address
+   ip igmp
+   exit
+vlan 2850
+   name "AD_MGMT"
+   tagged 25
+   ip address 10.25.2.232 255.255.255.0
+   ip igmp
+   exit
+vlan 2862
+   name "1Card-admin_10.128.186.0/23"
+   untagged 13
+   tagged 25
+   no ip address
+   ip igmp
+   exit
+spanning-tree
+spanning-tree 1 bpdu-filter bpdu-protection
+spanning-tree 2 bpdu-filter bpdu-protection
+spanning-tree 3 bpdu-filter bpdu-protection
+spanning-tree 4 bpdu-filter bpdu-protection
+spanning-tree 5 bpdu-filter bpdu-protection
+spanning-tree 6 bpdu-filter bpdu-protection
+spanning-tree 7 bpdu-filter bpdu-protection
+spanning-tree 8 bpdu-filter bpdu-protection
+spanning-tree 9 bpdu-filter bpdu-protection
+spanning-tree 10 bpdu-filter bpdu-protection
+spanning-tree 11 bpdu-filter bpdu-protection
+spanning-tree 12 bpdu-filter bpdu-protection
+spanning-tree 13 bpdu-filter bpdu-protection
+spanning-tree 14 bpdu-filter bpdu-protection
+spanning-tree 15 bpdu-filter bpdu-protection
+spanning-tree 16 bpdu-filter bpdu-protection
+spanning-tree 17 bpdu-filter bpdu-protection
+spanning-tree 18 bpdu-filter bpdu-protection
+spanning-tree 19 bpdu-filter bpdu-protection
+spanning-tree 20 bpdu-filter bpdu-protection
+spanning-tree 21 bpdu-filter bpdu-protection
+spanning-tree 22 bpdu-filter bpdu-protection
+spanning-tree 23 bpdu-filter bpdu-protection
+spanning-tree 24 bpdu-filter bpdu-protection
+no spanning-tree 25 auto-edge-port
+spanning-tree 26 bpdu-filter bpdu-protection
+spanning-tree 27 bpdu-filter bpdu-protection
+spanning-tree 28 bpdu-filter bpdu-protection
+spanning-tree 29 bpdu-filter bpdu-protection
+spanning-tree 30 bpdu-filter bpdu-protection
+spanning-tree 31 bpdu-filter bpdu-protection
+spanning-tree 32 bpdu-filter bpdu-protection
+spanning-tree 33 bpdu-filter bpdu-protection
+spanning-tree 34 bpdu-filter bpdu-protection
+spanning-tree 35 bpdu-filter bpdu-protection
+spanning-tree 36 bpdu-filter bpdu-protection
+spanning-tree 37 bpdu-filter bpdu-protection
+spanning-tree 38 bpdu-filter bpdu-protection
+spanning-tree 39 bpdu-filter bpdu-protection
+spanning-tree 40 bpdu-filter bpdu-protection
+spanning-tree 41 bpdu-filter bpdu-protection
+spanning-tree 42 bpdu-filter bpdu-protection
+spanning-tree 43 bpdu-filter bpdu-protection
+spanning-tree 44 bpdu-filter bpdu-protection
+spanning-tree 45 bpdu-filter bpdu-protection
+spanning-tree 46 bpdu-filter bpdu-protection
+spanning-tree 47 bpdu-filter bpdu-protection
+spanning-tree 48 bpdu-filter bpdu-protection
+spanning-tree 49 bpdu-filter bpdu-protection
+spanning-tree 50 bpdu-filter bpdu-protection
+spanning-tree 51 bpdu-filter bpdu-protection
+spanning-tree 52 bpdu-filter bpdu-protection
+spanning-tree config-name "ucalgary"
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600
+no tftp server
+tftp server listen data
+loop-protect 1-24,26-52
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+device-profile name "default-ap-profile"
+   cos 0
+   exit
+activate provision disable
+password manager
+password operator
+

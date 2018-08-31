@@ -1,0 +1,910 @@
+; J9091A Configuration Editor; Created on release #K.15.08.0013
+; Ver #02:1b.ef:f6
+hostname "DC-MSRDC-8200-ZDR39-2009"
+module 1 type j8705a
+module 2 type j9546a
+module 3 type j8702a
+module 4 type j8702a
+module 5 type j8702a
+module 6 type j8702a
+module 7 type j9546a
+module 8 type j8702a
+module 11 type j9309a
+module 12 type j9309a
+console baud-rate 9600
+console inactivity-timer 5
+trunk K1,L1 trk1 lacp
+trunk C9,D8-D9 trk3 lacp
+trunk A2,E8 trk5 lacp
+trunk E9,F9 trk6 trunk
+trunk E10,F10 trk7 trunk
+trunk E11,F11 trk8 trunk
+trunk E16-E17,F16 trk9 lacp
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this system is strictly prohibited,   *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+power-over-ethernet pre-std-detect
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.25
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+web-management ssl
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.27.17.1
+interface A1
+   name "MSXVM1"
+   exit
+interface A2
+   name "MSXV1"
+   exit
+interface A3
+   name "MSXV1"
+   exit
+interface A4
+   name "MSX2"
+   exit
+interface A5
+   name "MSX2"
+   exit
+interface A6
+   name "MSX2"
+   exit
+interface A7
+   name "phylogenomics-phylo"
+   exit
+interface A8
+   name "phylogenomics-phylo"
+   exit
+interface A9
+   name "phylogenomics-phylo"
+   exit
+interface A10
+   name "test port"
+   exit
+interface A11
+   name "SCI-GEOS2"
+   exit
+interface A12
+   name "SCI-GEOS2"
+   exit
+interface A13
+   name "MSXVM2"
+   exit
+interface A14
+   name "MSXVM3"
+   exit
+interface A15
+   name "SCI-HV04"
+   exit
+interface A16
+   name "spare"
+   exit
+interface A17
+   name "MSX20"
+   exit
+interface A18
+   name "IBM_KVM1"
+   exit
+interface A19
+   name "Dell_tape_drive"
+   exit
+interface A20
+   disable
+   name "spare"
+   exit
+interface A21
+   disable
+   name "spare"
+   exit
+interface A22
+   disable
+   name "spare"
+   exit
+interface A23
+   disable
+   name "spare"
+   exit
+interface A24
+   disable
+   name "spare"
+   exit
+interface B1
+   name "SCI-STOR03"
+   exit
+interface B2
+   disable
+   exit
+interface B3
+   disable
+   exit
+interface B4
+   disable
+   exit
+interface B5
+   disable
+   exit
+interface B6
+   disable
+   exit
+interface B7
+   disable
+   exit
+interface B8
+   disable
+   exit
+interface C1
+   name "Complex-phas"
+   exit
+interface C2
+   name "Kolmogorov-phas"
+   exit
+interface C3
+   name "Onsager-phas"
+   exit
+interface C4
+   name "Ising-phas"
+   exit
+interface C5
+   name "Levy-phas"
+   exit
+interface C6
+   name "Carnot-phas"
+   exit
+interface C7
+   name "Kepler-phas"
+   exit
+interface C8
+   name "Phas-stor01"
+   exit
+interface C9
+   name "Phas-stor01"
+   exit
+interface C10
+   name "raven-ras"
+   exit
+interface C11
+   name "bison-ras"
+   exit
+interface C12
+   name "fox-ras"
+   exit
+interface C13
+   name "power-cyberska"
+   exit
+interface C14
+   disable
+   name "spare"
+   exit
+interface C15
+   name "file2-cyberska"
+   exit
+interface C16
+   name "file-cyberska"
+   exit
+interface C17
+   name "cloudfile-cyberska"
+   exit
+interface C18
+   name "osprey-cyberska"
+   exit
+interface C19
+   name "cloud5-cyberska"
+   exit
+interface C20
+   name "cloud4-cyberska"
+   exit
+interface C21
+   name "cloud3-cyberska"
+   exit
+interface C22
+   name "cloud2-cyberska"
+   exit
+interface C23
+   name "cloud1-cyberska"
+   exit
+interface C24
+   name "hmc"
+   exit
+interface D1
+   name "Complex-phas"
+   exit
+interface D2
+   name "Kolmogorov-phas"
+   exit
+interface D3
+   name "Onsager-phas"
+   exit
+interface D4
+   name "Ising-phas"
+   exit
+interface D5
+   name "Levy-phas"
+   exit
+interface D6
+   name "Carnot-phas"
+   exit
+interface D7
+   name "Kepler-phas"
+   exit
+interface D8
+   name "Phas-stor01"
+   exit
+interface D9
+   name "Phas-stor01"
+   exit
+interface D10
+   name "raven-ras"
+   exit
+interface D11
+   name "bison-ras"
+   exit
+interface D12
+   name "fox-ras"
+   exit
+interface D13
+   name "power-cyberska"
+   exit
+interface D14
+   disable
+   name "spare"
+   exit
+interface D15
+   name "file2-cyberska"
+   exit
+interface D16
+   name "file-cyberska"
+   exit
+interface D17
+   name "cloudfile_cyberska"
+   exit
+interface D18
+   name "osprey-cyberska"
+   exit
+interface D19
+   name "cloud5-cyberska"
+   exit
+interface D20
+   name "cloud4-cyberska"
+   exit
+interface D21
+   name "cloud3-cyberska"
+   exit
+interface D22
+   name "cloud2-cyberska"
+   exit
+interface D23
+   name "cloud1-cyberska"
+   exit
+interface D24
+   name "hmc"
+   exit
+interface E1
+   name "s2"
+   exit
+interface E2
+   name "QIS"
+   exit
+interface E3
+   name "S2"
+   exit
+interface E4
+   name "QIS"
+   exit
+interface E5
+   name "tdomain"
+   exit
+interface E6
+   name "SCI-STORO2"
+   exit
+interface E7
+   name "DROBO-DR-B800"
+   exit
+interface E8
+   name "MSXVM1"
+   exit
+interface E9
+   name "MSXVM2"
+   exit
+interface E10
+   name "MSXVM3"
+   exit
+interface E11
+   name "SCI-HV04"
+   speed-duplex auto-1000
+   exit
+interface E12
+   name "MSXVM2"
+   exit
+interface E13
+   name "SCI-HV04"
+   exit
+interface E14
+   name "SCI-HV05"
+   exit
+interface E15
+   name "SCI-HV05"
+   exit
+interface E16
+   name "SCI-STORO2"
+   exit
+interface E17
+   name "SCI-STORO2"
+   exit
+interface E18
+   name "SCI-HV05"
+   exit
+interface E19
+   name "MSX22"
+   exit
+interface E20
+   name "MSX22"
+   exit
+interface E21
+   name "MSX21"
+   exit
+interface E22
+   name "MSX21"
+   exit
+interface E23
+   name "NTS"
+   exit
+interface E24
+   name "test_port"
+   exit
+interface F1
+   name "CISAC0"
+   exit
+interface F2
+   name "MSX0"
+   exit
+interface F3
+   name "MSX0"
+   exit
+interface F4
+   name "MSX0"
+   exit
+interface F5
+   name "Screen1"
+   exit
+interface F6
+   name "Screen2"
+   exit
+interface F7
+   disable
+   name "spare"
+   exit
+interface F8
+   disable
+   name "spare"
+   exit
+interface F9
+   name "MSXVM2"
+   exit
+interface F10
+   name "MSXVM3"
+   exit
+interface F11
+   name "SCI-HV04"
+   exit
+interface F12
+   name "MSXVM3"
+   exit
+interface F13
+   disable
+   name "spare"
+   exit
+interface F14
+   name "SCI-HV05"
+   exit
+interface F15
+   name "SCI-HV05"
+   exit
+interface F16
+   name "SCI-STORO2"
+   exit
+interface F17
+   name "SCI-STORO2"
+   exit
+interface F18
+   name "SCI-STOR03"
+   exit
+interface F19
+   name "SCI-GEOS2"
+   exit
+interface F20
+   disable
+   name "spare"
+   exit
+interface F21
+   disable
+   name "spare"
+   exit
+interface F22
+   disable
+   name "spare"
+   exit
+interface F23
+   name "spare"
+   exit
+interface F24
+   name "network_test_Port"
+   exit
+interface G1
+   disable
+   exit
+interface G2
+   disable
+   exit
+interface G3
+   disable
+   exit
+interface G4
+   disable
+   exit
+interface G5
+   disable
+   exit
+interface G6
+   disable
+   exit
+interface G7
+   disable
+   exit
+interface G8
+   disable
+   exit
+interface H1
+   name "MSX23"
+   exit
+interface H2
+   name "MSX23"
+   exit
+interface H3
+   name "MSX23"
+   exit
+interface H4
+   name "MSXBACKUP"
+   exit
+interface H5
+   name "MSXBACKUP"
+   exit
+interface H6
+   name "MSXBACKUP"
+   exit
+interface H7
+   name "MSX1"
+   exit
+interface H8
+   name "MSX1"
+   exit
+interface H9
+   name "MSX1"
+   exit
+interface H10
+   name "Telnode1-New"
+   exit
+interface H11
+   name "Telnode2-New"
+   exit
+interface K1
+   name "UK1-NX-9K-10.31.0.113-D1/3"
+   exit
+interface K2
+   disable
+   exit
+interface K3
+   disable
+   exit
+interface K4
+   disable
+   exit
+interface L1
+   name "UL1-NX-9K-10.31.0.114-D1/3"
+   exit
+interface L2
+   disable
+   exit
+interface L3
+   disable
+   exit
+interface L4
+   disable
+   exit
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.1.24 community "mecyou12" trap-level critical
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server contact "UCIT_403_220-5555" location "MSRDC_ZD-R39-U17_HP8212_Research"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree A1 root-guard bpdu-filter bpdu-protection
+spanning-tree A3 root-guard bpdu-filter bpdu-protection
+spanning-tree A4 root-guard bpdu-filter bpdu-protection
+spanning-tree A5 root-guard bpdu-filter bpdu-protection
+spanning-tree A6 root-guard bpdu-filter bpdu-protection
+spanning-tree A7 root-guard bpdu-filter bpdu-protection
+spanning-tree A8 root-guard bpdu-filter bpdu-protection
+spanning-tree A9 root-guard bpdu-filter bpdu-protection
+spanning-tree A10 root-guard bpdu-filter bpdu-protection
+spanning-tree A11 root-guard bpdu-filter bpdu-protection
+spanning-tree A12 root-guard bpdu-filter bpdu-protection
+spanning-tree A13 root-guard bpdu-filter bpdu-protection
+spanning-tree A14 root-guard bpdu-filter bpdu-protection
+spanning-tree A15 root-guard bpdu-filter bpdu-protection
+spanning-tree A16 root-guard bpdu-filter bpdu-protection
+spanning-tree A17 root-guard bpdu-filter bpdu-protection
+spanning-tree A18 root-guard bpdu-filter bpdu-protection
+spanning-tree A19 root-guard bpdu-filter bpdu-protection
+spanning-tree A20 root-guard bpdu-filter bpdu-protection
+spanning-tree A21 root-guard bpdu-filter bpdu-protection
+spanning-tree A22 root-guard bpdu-filter bpdu-protection
+spanning-tree A23 root-guard bpdu-filter bpdu-protection
+spanning-tree A24 root-guard bpdu-filter bpdu-protection
+spanning-tree B1 root-guard bpdu-filter bpdu-protection
+spanning-tree B2 root-guard bpdu-filter bpdu-protection
+spanning-tree B3 root-guard bpdu-filter bpdu-protection
+spanning-tree B4 root-guard bpdu-filter bpdu-protection
+spanning-tree B5 root-guard bpdu-filter bpdu-protection
+spanning-tree B6 root-guard bpdu-filter bpdu-protection
+spanning-tree B7 root-guard bpdu-filter bpdu-protection
+spanning-tree B8 root-guard bpdu-filter bpdu-protection
+spanning-tree C1 root-guard bpdu-filter bpdu-protection
+spanning-tree C2 root-guard bpdu-filter bpdu-protection
+spanning-tree C3 root-guard bpdu-filter bpdu-protection
+spanning-tree C4 root-guard bpdu-filter bpdu-protection
+spanning-tree C5 root-guard bpdu-filter bpdu-protection
+spanning-tree C6 root-guard bpdu-filter bpdu-protection
+spanning-tree C7 root-guard bpdu-filter bpdu-protection
+spanning-tree C8 root-guard bpdu-filter bpdu-protection
+spanning-tree C10 root-guard bpdu-filter bpdu-protection
+spanning-tree C11 root-guard bpdu-filter bpdu-protection
+spanning-tree C12 root-guard bpdu-filter bpdu-protection
+spanning-tree C13 root-guard bpdu-filter bpdu-protection
+spanning-tree C14 root-guard bpdu-filter bpdu-protection
+spanning-tree C15 root-guard bpdu-filter bpdu-protection
+spanning-tree C16 root-guard bpdu-filter bpdu-protection
+spanning-tree C17 root-guard bpdu-filter bpdu-protection
+spanning-tree C18 root-guard bpdu-filter bpdu-protection
+spanning-tree C19 root-guard bpdu-filter bpdu-protection
+spanning-tree C20 root-guard bpdu-filter bpdu-protection
+spanning-tree C21 root-guard bpdu-filter bpdu-protection
+spanning-tree C22 root-guard bpdu-filter bpdu-protection
+spanning-tree C23 root-guard bpdu-filter bpdu-protection
+spanning-tree C24 root-guard bpdu-filter bpdu-protection
+spanning-tree D1 bpdu-filter bpdu-protection
+spanning-tree D2 bpdu-filter bpdu-protection
+spanning-tree D3 bpdu-filter bpdu-protection
+spanning-tree D4 bpdu-filter bpdu-protection
+spanning-tree D5 bpdu-filter bpdu-protection
+spanning-tree D6 bpdu-filter bpdu-protection
+spanning-tree D7 bpdu-filter bpdu-protection
+spanning-tree D10 bpdu-filter bpdu-protection
+spanning-tree D11 bpdu-filter bpdu-protection
+spanning-tree D12 bpdu-filter bpdu-protection
+spanning-tree D13 bpdu-filter bpdu-protection
+spanning-tree D14 bpdu-filter bpdu-protection
+spanning-tree D15 bpdu-filter bpdu-protection
+spanning-tree D16 bpdu-filter bpdu-protection
+spanning-tree D17 bpdu-filter bpdu-protection
+spanning-tree D18 bpdu-filter bpdu-protection
+spanning-tree D19 bpdu-filter bpdu-protection
+spanning-tree D20 bpdu-filter bpdu-protection
+spanning-tree D21 bpdu-filter bpdu-protection
+spanning-tree D22 bpdu-filter bpdu-protection
+spanning-tree D23 bpdu-filter bpdu-protection
+spanning-tree D24 bpdu-filter bpdu-protection
+spanning-tree E1 root-guard bpdu-filter bpdu-protection
+spanning-tree E2 root-guard bpdu-filter bpdu-protection
+spanning-tree E3 root-guard bpdu-filter bpdu-protection
+spanning-tree E4 root-guard bpdu-filter bpdu-protection
+spanning-tree E5 root-guard bpdu-filter bpdu-protection
+spanning-tree E6 root-guard bpdu-filter bpdu-protection
+spanning-tree E7 root-guard bpdu-filter bpdu-protection
+spanning-tree E12 root-guard bpdu-filter bpdu-protection
+spanning-tree E13 root-guard bpdu-filter bpdu-protection
+spanning-tree E14 root-guard bpdu-filter bpdu-protection
+spanning-tree E15 root-guard bpdu-filter bpdu-protection
+spanning-tree E18 root-guard bpdu-filter bpdu-protection
+spanning-tree E19 root-guard bpdu-filter bpdu-protection
+spanning-tree E20 root-guard bpdu-filter bpdu-protection
+spanning-tree E21 root-guard bpdu-filter bpdu-protection
+spanning-tree E22 root-guard bpdu-filter bpdu-protection
+spanning-tree E23 root-guard bpdu-filter bpdu-protection
+spanning-tree E24 root-guard bpdu-filter bpdu-protection
+spanning-tree F1 root-guard bpdu-filter bpdu-protection
+spanning-tree F2 root-guard bpdu-filter bpdu-protection
+spanning-tree F3 root-guard bpdu-filter bpdu-protection
+spanning-tree F4 root-guard bpdu-filter bpdu-protection
+spanning-tree F5 root-guard bpdu-filter bpdu-protection
+spanning-tree F6 root-guard bpdu-filter bpdu-protection
+spanning-tree F7 root-guard bpdu-filter bpdu-protection
+spanning-tree F8 root-guard bpdu-filter bpdu-protection
+spanning-tree F12 root-guard bpdu-filter bpdu-protection
+spanning-tree F13 root-guard bpdu-filter bpdu-protection
+spanning-tree F14 root-guard bpdu-filter bpdu-protection
+spanning-tree F15 root-guard bpdu-filter bpdu-protection
+spanning-tree F17 root-guard bpdu-filter bpdu-protection
+spanning-tree F18 root-guard bpdu-filter bpdu-protection
+spanning-tree F19 root-guard bpdu-filter bpdu-protection
+spanning-tree F20 root-guard bpdu-filter bpdu-protection
+spanning-tree F21 root-guard bpdu-filter bpdu-protection
+spanning-tree F22 root-guard bpdu-filter bpdu-protection
+spanning-tree F23 root-guard bpdu-filter bpdu-protection
+spanning-tree F24 root-guard bpdu-filter bpdu-protection
+spanning-tree K2 root-guard bpdu-filter bpdu-protection
+spanning-tree K3 root-guard bpdu-filter bpdu-protection
+spanning-tree K4 root-guard bpdu-filter bpdu-protection
+spanning-tree L2 root-guard bpdu-filter bpdu-protection
+spanning-tree L4 root-guard bpdu-filter bpdu-protection
+no spanning-tree Trk1 auto-edge-port
+spanning-tree Trk1 priority 4 pvst-filter
+spanning-tree Trk3 priority 4 root-guard bpdu-filter bpdu-protection
+spanning-tree Trk5 priority 4 root-guard bpdu-filter bpdu-protection
+spanning-tree Trk6 priority 4 root-guard bpdu-filter bpdu-protection
+spanning-tree Trk7 priority 4 root-guard bpdu-filter bpdu-protection
+spanning-tree Trk8 priority 4 root-guard bpdu-filter bpdu-protection
+spanning-tree Trk9 priority 4 root-guard bpdu-filter bpdu-protection
+spanning-tree config-name "ucalgary"
+spanning-tree instance ist A1 path-cost 20000
+spanning-tree instance ist A3 path-cost 20000
+spanning-tree instance ist A4 path-cost 20000
+spanning-tree instance ist A5 path-cost 20000
+spanning-tree instance ist A6 path-cost 200000
+spanning-tree instance ist A11 path-cost 20000
+spanning-tree instance ist A12 path-cost 200000
+spanning-tree instance ist A13 path-cost 20000
+spanning-tree instance ist A14 path-cost 20000
+spanning-tree instance ist A15 path-cost 20000
+spanning-tree instance ist A16 path-cost 200000
+spanning-tree instance ist A17 path-cost 20000
+spanning-tree instance ist A18 path-cost 20000
+spanning-tree instance ist A19 path-cost 20000
+spanning-tree instance ist B1 path-cost 2000
+spanning-tree instance ist C1 path-cost 200000
+spanning-tree instance ist C2 path-cost 200000
+spanning-tree instance ist C3 path-cost 20000
+spanning-tree instance ist C4 path-cost 20000
+spanning-tree instance ist C5 path-cost 200000
+spanning-tree instance ist C6 path-cost 20000
+spanning-tree instance ist C7 path-cost 200000
+spanning-tree instance ist C8 path-cost 20000
+spanning-tree instance ist C10 path-cost 200000
+spanning-tree instance ist C11 path-cost 200000
+spanning-tree instance ist C12 path-cost 200000
+spanning-tree instance ist C15 path-cost 200000
+spanning-tree instance ist C16 path-cost 200000
+spanning-tree instance ist C17 path-cost 200000
+spanning-tree instance ist C18 path-cost 200000
+spanning-tree instance ist C19 path-cost 200000
+spanning-tree instance ist C20 path-cost 200000
+spanning-tree instance ist C21 path-cost 200000
+spanning-tree instance ist C22 path-cost 200000
+spanning-tree instance ist C23 path-cost 200000
+spanning-tree instance ist C24 path-cost 200000
+spanning-tree instance ist E1 path-cost 200000
+spanning-tree instance ist E2 path-cost 200000
+spanning-tree instance ist E3 path-cost 20000
+spanning-tree instance ist E4 path-cost 20000
+spanning-tree instance ist E5 path-cost 200000
+spanning-tree instance ist E6 path-cost 20000
+spanning-tree instance ist E7 path-cost 20000
+spanning-tree instance ist E12 path-cost 20000
+spanning-tree instance ist E13 path-cost 20000
+spanning-tree instance ist E14 path-cost 20000
+spanning-tree instance ist E15 path-cost 20000
+spanning-tree instance ist E18 path-cost 20000
+spanning-tree instance ist E19 path-cost 200000
+spanning-tree instance ist E20 path-cost 20000
+spanning-tree instance ist E21 path-cost 200000
+spanning-tree instance ist E22 path-cost 20000
+spanning-tree instance ist E23 path-cost 20000
+spanning-tree instance ist F1 path-cost 200000
+spanning-tree instance ist F2 path-cost 200000
+spanning-tree instance ist F3 path-cost 20000
+spanning-tree instance ist F4 path-cost 20000
+spanning-tree instance ist F5 path-cost 200000
+spanning-tree instance ist F6 path-cost 200000
+spanning-tree instance ist F12 path-cost 20000
+spanning-tree instance ist F14 path-cost 20000
+spanning-tree instance ist F15 path-cost 20000
+spanning-tree instance ist F17 path-cost 20000
+spanning-tree instance ist F18 path-cost 20000
+spanning-tree instance ist Trk3 path-cost 20000
+spanning-tree instance ist Trk5 path-cost 20000
+spanning-tree instance ist Trk6 path-cost 20000
+spanning-tree instance ist Trk7 path-cost 20000
+spanning-tree instance ist Trk8 path-cost 20000
+spanning-tree instance ist Trk9 path-cost 20000
+spanning-tree instance 1 vlan 1-1099 2000-2359 2361-2373 2377-2485 2488-2493 
+spanning-tree instance 1 vlan 2495-2531 2534-2536 2539 2541 2542 2546-2577 
+spanning-tree instance 1 vlan 2579 2583-2608 2610-2621 2623-2648 2651-2703 
+spanning-tree instance 1 vlan 2705-2748 2750-2810 2812 2815 2817-2864 
+spanning-tree instance 1 vlan 2866-3139 3141-3199 3400-3587 3589-3598 
+spanning-tree instance 1 vlan 3600-3880 3889-4094
+spanning-tree instance 1 Trk1 priority 4
+spanning-tree instance 1 Trk3 priority 4
+spanning-tree instance 1 Trk5 priority 4
+spanning-tree instance 1 Trk6 priority 4
+spanning-tree instance 1 Trk7 priority 4
+spanning-tree instance 1 Trk8 priority 4
+spanning-tree instance 1 Trk9 priority 4
+spanning-tree instance 2 vlan 1100-1399
+spanning-tree instance 2 Trk1 priority 4
+spanning-tree instance 2 Trk3 priority 4
+spanning-tree instance 2 Trk5 priority 4
+spanning-tree instance 2 Trk6 priority 4
+spanning-tree instance 2 Trk7 priority 4
+spanning-tree instance 2 Trk8 priority 4
+spanning-tree instance 2 Trk9 priority 4
+spanning-tree instance 3 vlan 2360 2374-2376 2486 2487 2494 2532 2533 
+spanning-tree instance 3 vlan 2537 2538 2540 2543-2545 2578 2580-2582 2609 
+spanning-tree instance 3 vlan 2622 2649 2650 2704 2749 2811 2813 2814 2816 
+spanning-tree instance 3 vlan 2865 3140 3200-3399 3588 3599 3881-3888
+spanning-tree instance 3 Trk1 priority 4
+spanning-tree instance 3 Trk3 priority 4
+spanning-tree instance 3 Trk5 priority 4
+spanning-tree instance 3 Trk6 priority 4
+spanning-tree instance 3 Trk7 priority 4
+spanning-tree instance 3 Trk8 priority 4
+spanning-tree instance 3 Trk9 priority 4
+spanning-tree instance 11 vlan 1700-1799
+spanning-tree instance 11 Trk1 priority 4
+spanning-tree instance 11 Trk3 priority 4
+spanning-tree instance 11 Trk5 priority 4
+spanning-tree instance 11 Trk6 priority 4
+spanning-tree instance 11 Trk7 priority 4
+spanning-tree instance 11 Trk8 priority 4
+spanning-tree instance 11 Trk9 priority 4
+spanning-tree instance 12 vlan 1800-1899
+spanning-tree instance 12 Trk1 priority 4
+spanning-tree instance 12 Trk3 priority 4
+spanning-tree instance 12 Trk5 priority 4
+spanning-tree instance 12 Trk6 priority 4
+spanning-tree instance 12 Trk7 priority 4
+spanning-tree instance 12 Trk8 priority 4
+spanning-tree instance 12 Trk9 priority 4
+spanning-tree instance 13 vlan 1900-1999
+spanning-tree instance 13 Trk1 priority 4
+spanning-tree instance 13 Trk3 priority 4
+spanning-tree instance 13 Trk5 priority 4
+spanning-tree instance 13 Trk6 priority 4
+spanning-tree instance 13 Trk7 priority 4
+spanning-tree instance 13 Trk8 priority 4
+spanning-tree instance 13 Trk9 priority 4
+spanning-tree instance 14 vlan 1400-1499
+spanning-tree instance 14 Trk1 priority 4
+spanning-tree instance 14 Trk3 priority 4
+spanning-tree instance 14 Trk5 priority 4
+spanning-tree instance 14 Trk6 priority 4
+spanning-tree instance 14 Trk7 priority 4
+spanning-tree instance 14 Trk8 priority 4
+spanning-tree instance 14 Trk9 priority 4
+spanning-tree instance 15 vlan 1500-1599
+spanning-tree instance 15 Trk1 priority 4
+spanning-tree instance 15 Trk3 priority 4
+spanning-tree instance 15 Trk5 priority 4
+spanning-tree instance 15 Trk6 priority 4
+spanning-tree instance 15 Trk7 priority 4
+spanning-tree instance 15 Trk8 priority 4
+spanning-tree instance 15 Trk9 priority 4
+spanning-tree instance 16 vlan 1600-1699
+spanning-tree instance 16 Trk1 priority 4
+spanning-tree instance 16 Trk3 priority 4
+spanning-tree instance 16 Trk5 priority 4
+spanning-tree instance 16 Trk6 priority 4
+spanning-tree instance 16 Trk7 priority 4
+spanning-tree instance 16 Trk8 priority 4
+spanning-tree instance 16 Trk9 priority 4
+spanning-tree bpdu-protection-timeout 600 priority 7
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged A1,A3-A24,B1-B8,C1-C8,C10-C24,D1-D7,D10-D24,E1-E7,E12-E15,E18-E24,F1-F8,F12-F15,F17-F24,G1-G8,H1-H11,K2-K4,L2-L4,Trk1,Trk3,Trk5-Trk9
+   untagged H12-H24
+   no ip address
+   exit
+vlan 999
+   name "unused-vlan"
+   untagged A20-A24,B2-B8,C14,D14,F7-F8,F13,F20-F22,G1-G8,K2-K4,L2-L4,Trk1
+   no ip address
+   exit
+vlan 2532
+   name "dc_rcz_stormgt_10.56.196.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2533
+   name "dc_rcz_tsm_10.60.144.0/23"
+   untagged F23
+   tagged Trk1
+   no ip address
+   exit
+vlan 2538
+   name "rcz_vkernel_10.150.14.128/25"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2540
+   name "name rcz_vmotion_10.150.14.0/25"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2545
+   name "dc_msrdc_mgmt_10.27.17.0/24"
+   untagged F24
+   tagged Trk1
+   ip address 10.27.17.254 255.255.255.0
+   exit
+vlan 2561
+   name "rcz_dc_ras_136.159.55.128/25"
+   untagged D10-D13,D15-D23,E24
+   tagged Trk1
+   no ip address
+   exit
+vlan 2562
+   name "rcz_dc_science_10.59.26.0/24"
+   untagged C10-C13,C15-C24,D24
+   tagged Trk1
+   ip address 10.59.20.9 255.255.255.0
+   exit
+vlan 2563
+   name "rcz_dc_science_10.59.18.0/24"
+   untagged C1-C8,E1-E2,E5
+   tagged Trk1
+   no ip address
+   exit
+vlan 2564
+   name "rcz_dc_science_136.159.192.0/25"
+   untagged D1-D7,E3-E4,E6
+   tagged Trk1
+   no ip address
+   exit
+vlan 2580
+   name "dc_rcz_storage_10.156.190.0/24"
+   untagged A4,E7,Trk3
+   tagged A3,B1,E12-E13,E15,F4,F12,F15,F19,H2,H5,H8,Trk1,Trk9
+   no ip address
+   jumbo
+   exit
+vlan 2609
+   name "urcz_136.159.190.0/24"
+   tagged Trk1,Trk8
+   no ip address
+   exit
+vlan 2622
+   name "rcz_10.56.192.0/24"
+   untagged A1,A5-A11,A13-A19,E18-E19,E21,F2,H3,H6,H9-H11
+   tagged A12,E14,E20,E22-E23,F1,F3,F5-F6,F14,F17-F18,H1,H4,H7,Trk1,Trk5-Trk8
+   no ip address
+   exit
+no tftp server
+loop-protect A1,A3-A24,B1-B8,C1-C8,C10-C24,D1-D7,D10-D24,E1-E7,E12-E15,E18-E24,F1-F8,F12-F15,F17-F24,K2-K4,L2-L4,Trk1,Trk3,Trk5-Trk9
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

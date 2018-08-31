@@ -1,0 +1,447 @@
+; J4903A Configuration Editor; Created on release #I.08.71
+
+hostname "HP ProCurve Switch 2824" 
+snmp-server contact "PFSB-1-101" 
+snmp-server location "PF10v" 
+max-vlans 128 
+console inactivity-timer 5 
+interface 1 
+   name "136.159.77.138" 
+exit
+interface 22 
+   name "136.159.77.221" 
+exit
+interface 23 
+   name "136.159.77.225" 
+exit
+ip default-gateway 136.159.77.1 
+no timesync 
+snmp-server community "public" Operator 
+snmp-server community "mecyou12" Operator 
+snmp-server community "zssqpal" Unrestricted 
+snmp-server host 136.159.77.138 "public" 
+snmp-server host 136.159.22.228 "public" Critical 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   no ip address 
+   no untagged 1-24 
+   exit 
+vlan 77 
+   name "VLAN_77" 
+   untagged 1-6,10-11,14-17,19-23 
+   ip address 136.159.77.253 255.255.255.0 
+   tagged 13,24 
+   exit 
+vlan 29 
+   name "VLAN_29" 
+   untagged 7,18 
+   no ip address 
+   tagged 1-2,5-6,13-17,23-24 
+   exit 
+vlan 70 
+   name "vlan_70" 
+   untagged 8,12 
+   ip address 136.159.70.220 255.255.255.0 
+   tagged 1-2,5-6,13-17,20-24 
+   exit 
+vlan 72 
+   name "vlan_72" 
+   untagged 9 
+   tagged 1-2,5-6,13-17,20,23-24 
+   exit 
+vlan 78 
+   name "vlan_78" 
+   tagged 20-24 
+   exit 
+vlan 3429 
+   name "Vlan_3429" 
+   tagged 1-2,5-6,13-17,19-24 
+   exit 
+vlan 223 
+   name "vlan_223" 
+   tagged 13-17,20-24 
+   exit 
+vlan 161 
+   name "vlan 161" 
+   no ip address 
+   tagged 20-24 
+   exit 
+vlan 171 
+   name "vlan171" 
+   no ip address 
+   tagged 20-24 
+   exit 
+vlan 228 
+   name "vlan_228" 
+   tagged 20-24 
+   exit 
+vlan 229 
+   name "vlan_229" 
+   tagged 20-24 
+   exit 
+vlan 3433 
+   name "Vlan_3433" 
+   tagged 21-24 
+   exit 
+vlan 108 
+   name "vlan_108" 
+   forbid 24 
+   tagged 20-23 
+   exit 
+vlan 3349 
+   name "Vlan_3349" 
+   tagged 21-24 
+   exit 
+vlan 3350 
+   name "Vlan_3350" 
+   tagged 21-24 
+   exit 
+vlan 195 
+   name "Vlan_195" 
+   tagged 20-24 
+   exit 
+vlan 3303 
+   name "Vlan_3303" 
+   tagged 21-24 
+   exit 
+vlan 3304 
+   name "Vlan_3304" 
+   tagged 21-22,24 
+   exit 
+vlan 3302 
+   name "Vlan_3302" 
+   tagged 21-24 
+   exit 
+vlan 3305 
+   name "Vlan_3305" 
+   tagged 21-24 
+   exit 
+vlan 3306 
+   name "Vlan_3306" 
+   tagged 21-24 
+   exit 
+vlan 3307 
+   name "Vlan_3307" 
+   tagged 21-24 
+   exit 
+vlan 3308 
+   name "Vlan_3308" 
+   tagged 21-24 
+   exit 
+vlan 3309 
+   name "Vlan_3309" 
+   tagged 21-24 
+   exit 
+vlan 3310 
+   name "Vlan_3310" 
+   tagged 21-24 
+   exit 
+vlan 3311 
+   name "Vlan_3311" 
+   tagged 21-24 
+   exit 
+vlan 3312 
+   name "Vlan_3312" 
+   tagged 21-24 
+   exit 
+vlan 3313 
+   name "Vlan_3313" 
+   tagged 21-24 
+   exit 
+vlan 3314 
+   name "Vlan_3314" 
+   tagged 21-24 
+   exit 
+vlan 3315 
+   name "Vlan_3315" 
+   tagged 21-24 
+   exit 
+vlan 3316 
+   name "Vlan_3316" 
+   tagged 21-24 
+   exit 
+vlan 3317 
+   name "Vlan_3317" 
+   tagged 21-24 
+   exit 
+vlan 3318 
+   name "Vlan_3318" 
+   tagged 21-24 
+   exit 
+vlan 3319 
+   name "Vlan_3319" 
+   tagged 21-24 
+   exit 
+vlan 3320 
+   name "Vlan_3320" 
+   tagged 21-24 
+   exit 
+vlan 3321 
+   name "Vlan_3321" 
+   tagged 21-24 
+   exit 
+vlan 3322 
+   name "Vlan_3322" 
+   tagged 21-24 
+   exit 
+vlan 3323 
+   name "Vlan_3323" 
+   tagged 21-24 
+   exit 
+vlan 3324 
+   name "Vlan_3324" 
+   tagged 21-24 
+   exit 
+vlan 3325 
+   name "Vlan_3325" 
+   tagged 21-24 
+   exit 
+vlan 3326 
+   name "Vlan_3326" 
+   tagged 21-24 
+   exit 
+vlan 3327 
+   name "Vlan_3327" 
+   tagged 21-24 
+   exit 
+vlan 3328 
+   name "Vlan_3328" 
+   tagged 21-24 
+   exit 
+vlan 3329 
+   name "Vlan_3329" 
+   tagged 21-24 
+   exit 
+vlan 3330 
+   name "Vlan_3330" 
+   tagged 21-24 
+   exit 
+vlan 3331 
+   name "Vlan_3331" 
+   tagged 21-24 
+   exit 
+vlan 3332 
+   name "Vlan_3332" 
+   tagged 21-24 
+   exit 
+vlan 3333 
+   name "Vlan_3333" 
+   tagged 21-24 
+   exit 
+vlan 3334 
+   name "Vlan_3334" 
+   tagged 21-24 
+   exit 
+vlan 3335 
+   name "Vlan_3335" 
+   tagged 21-24 
+   exit 
+vlan 3336 
+   name "Vlan_3336" 
+   tagged 21-24 
+   exit 
+vlan 3337 
+   name "Vlan_3337" 
+   tagged 21-24 
+   exit 
+vlan 3338 
+   name "Vlan_3338" 
+   tagged 21-24 
+   exit 
+vlan 3339 
+   name "Vlan_3339" 
+   tagged 21-24 
+   exit 
+vlan 3340 
+   name "Vlan_3340" 
+   tagged 21-24 
+   exit 
+vlan 3341 
+   name "Vlan_3341" 
+   tagged 21-24 
+   exit 
+vlan 3342 
+   name "Vlan_3342" 
+   tagged 21-24 
+   exit 
+vlan 3343 
+   name "Vlan_3343" 
+   tagged 21-24 
+   exit 
+vlan 3344 
+   name "Vlan_3344" 
+   tagged 21-24 
+   exit 
+vlan 3345 
+   name "Vlan_3345" 
+   tagged 21-24 
+   exit 
+vlan 3346 
+   name "Vlan_3346" 
+   tagged 21-24 
+   exit 
+vlan 3347 
+   name "Vlan_3347" 
+   tagged 21-24 
+   exit 
+vlan 3348 
+   name "Vlan_3348" 
+   tagged 21-24 
+   exit 
+vlan 2012 
+   name "Vlan_2012" 
+   tagged 20-24 
+   exit 
+vlan 2013 
+   name "Vlan_2013" 
+   tagged 20-24 
+   exit 
+vlan 2014 
+   name "Vlan_2014" 
+   tagged 20-24 
+   exit 
+vlan 197 
+   name "Vlan_197" 
+   tagged 20-24 
+   exit 
+vlan 131 
+   name "Vlan_131" 
+   tagged 20-24 
+   exit 
+vlan 132 
+   name "Vlan_132" 
+   tagged 20-24 
+   exit 
+vlan 133 
+   name "Vlan_133" 
+   tagged 20-24 
+   exit 
+vlan 134 
+   name "Vlan_134" 
+   tagged 20-24 
+   exit 
+vlan 123 
+   name "Vlan_123" 
+   tagged 20-24 
+   exit 
+vlan 124 
+   name "Vlan_124" 
+   tagged 20-24 
+   exit 
+vlan 127 
+   name "Vlan_127" 
+   tagged 20-24 
+   exit 
+vlan 128 
+   name "Vlan_128" 
+   tagged 20-24 
+   exit 
+vlan 93 
+   name "Vlan_93" 
+   tagged 20-24 
+   exit 
+vlan 49 
+   name "Vlan_49" 
+   tagged 20,23-24 
+   exit 
+vlan 44 
+   name "Vlan_44" 
+   tagged 23-24 
+   exit 
+vlan 45 
+   name "Vlan_45" 
+   tagged 23-24 
+   exit 
+vlan 46 
+   name "Vlan_46" 
+   tagged 23-24 
+   exit 
+vlan 47 
+   name "Vlan_47" 
+   tagged 23-24 
+   exit 
+vlan 48 
+   name "Vlan_48" 
+   tagged 23-24 
+   exit 
+vlan 3428 
+   name "Vlan_3428" 
+   tagged 21-24 
+   exit 
+vlan 3430 
+   name "Vlan_3430" 
+   tagged 21-24 
+   exit 
+vlan 3431 
+   name "Vlan_3431" 
+   tagged 21-24 
+   exit 
+vlan 3432 
+   name "Vlan_3432" 
+   tagged 21-24 
+   exit 
+vlan 3434 
+   name "Vlan_3434" 
+   tagged 21-24 
+   exit 
+vlan 3435 
+   name "Vlan_3435" 
+   tagged 21-24 
+   exit 
+vlan 3436 
+   name "Vlan_3436" 
+   tagged 21-24 
+   exit 
+vlan 3437 
+   name "Vlan_3437" 
+   tagged 21-24 
+   exit 
+vlan 3438 
+   name "Vlan_3438" 
+   tagged 21-24 
+   exit 
+vlan 3439 
+   name "Vlan_3439" 
+   tagged 21-24 
+   exit 
+vlan 3440 
+   name "Vlan_3440" 
+   tagged 21-24 
+   exit 
+vlan 3364 
+   name "vlan_3364" 
+   exit 
+vlan 3362 
+   name "Vlan_3362" 
+   tagged 22,24 
+   exit 
+vlan 3363 
+   name "Vlan_3363" 
+   tagged 22,24 
+   exit 
+vlan 300 
+   name "VLAN300" 
+   ip address 192.168.250.146 255.255.255.0 
+   tagged 24 
+   exit 
+ip authorized-managers 136.159.254.0 255.255.255.0 
+ip authorized-managers 136.159.77.138 
+ip authorized-managers 10.31.0.0 255.255.254.0 
+ip authorized-managers 10.41.70.0 255.255.255.0 
+ip authorized-managers 10.59.152.0 255.255.254.0 
+ip authorized-managers 10.41.68.50 
+ip authorized-managers 10.41.68.58 
+ip authorized-managers 10.41.75.0 255.255.255.0 
+aaa authentication login privilege-mode 
+aaa authentication telnet login radius local 
+aaa authentication telnet enable radius local 
+aaa authentication ssh login radius 
+aaa authentication ssh enable radius 
+radius-server dead-time 5 
+radius-server timeout 3 
+radius-server retransmit 2 
+radius-server host 10.31.1.51 
+radius-server host 10.31.1.52 
+primary-vlan 77 
+password manager
+

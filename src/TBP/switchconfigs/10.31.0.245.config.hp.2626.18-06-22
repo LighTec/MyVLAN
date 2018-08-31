@@ -1,0 +1,55 @@
+; J4900A Configuration Editor; Created on release #H.08.53
+
+hostname "A_FW_OOB" 
+mac-age-time 180 
+time timezone -420 
+time daylight-time-rule Continental-US-and-Canada 
+console baud-rate 9600 
+console flow-control None 
+console inactivity-timer 5 
+interface 1 
+   name "A07-B1-FW-2923/mgmt1" 
+exit
+interface 26 
+   name "X26U_10.31.0.254_A03D" 
+exit
+ip default-gateway 10.31.0.1 
+sntp server 136.159.34.69 
+timesync sntp 
+sntp unicast 
+sntp 60 
+snmp-server community "uofc2009" Unrestricted 
+snmp-server community "mecyou12" Operator 
+snmp-server community "mecyou" Unrestricted 
+snmp-server host 136.159.22.228 "uofc2009" Critical 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   untagged 4-25 
+   no ip address 
+   no untagged 1-3,26 
+   exit 
+vlan 3752 
+   name "10.31.1" 
+   untagged 1-3 
+   ip address 10.31.0.245 255.255.254.0 
+   tagged 26 
+   exit 
+ip authorized-managers 10.41.68.58 255.255.255.255 
+ip authorized-managers 10.41.70.0 255.255.255.0 
+ip authorized-managers 10.31.0.0 255.255.254.0 
+ip authorized-managers 10.59.152.0 255.255.254.0 
+ip authorized-managers 10.41.68.50 255.255.255.255 
+ip authorized-managers 10.41.75.0 255.255.255.0 
+aaa authentication login privilege-mode 
+aaa authentication telnet login radius local 
+aaa authentication telnet enable radius local 
+aaa authentication ssh login radius 
+aaa authentication ssh enable radius 
+radius-server dead-time 5 
+radius-server timeout 3 
+radius-server retransmit 2 
+radius-server host 10.31.1.51 
+radius-server host 10.31.1.52 
+password manager
+password operator
+

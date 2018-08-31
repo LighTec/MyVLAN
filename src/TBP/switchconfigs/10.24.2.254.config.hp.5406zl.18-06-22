@@ -1,0 +1,226 @@
+; J8697A Configuration Editor; Created on release #K.14.47
+
+hostname "HRICBAB09V-B1-ASW-2740" 
+mac-age-time 180 
+time timezone -420 
+time daylight-time-rule Continental-US-and-Canada 
+module 1 type J9309A 
+module 2 type J8705A 
+module 3 type J8702A 
+module 4 type J8702A 
+module 5 type J8705A 
+interface A1 
+   name "UA1-NX-9K-10.31.0.113-D1/4" 
+exit
+interface A2 
+   name "UA2-NX-9K-10.31.0.114-D1/4" 
+exit
+interface B3 
+   disable
+exit
+interface B6 
+   name "HSserver02" 
+exit
+interface B7 
+   name "HSserver03" 
+exit
+interface B8 
+   name "HSserver01" 
+exit
+interface B9 
+   name "RIO" 
+exit
+interface B10 
+   name "RIO" 
+exit
+interface B11 
+   name "BHScv" 
+exit
+interface B12 
+   name "Icarus" 
+exit
+interface B13 
+   name "Caster" 
+exit
+interface B14 
+   name "Pollux" 
+exit
+interface B15 
+   name "RaidDrives" 
+exit
+interface B16 
+   name "RaidDrives" 
+exit
+interface B17 
+   name "TapeDrives" 
+exit
+interface B18 
+   name "HSserver01" 
+exit
+interface B19 
+   name "BHScv" 
+exit
+interface B20 
+   name "Icarus" 
+exit
+interface B23 
+   speed-duplex 1000-full 
+exit
+interface B24 
+   disable
+exit
+trunk A1-A2 Trk1 LACP 
+interface C4 
+   name "AGMEDNET" 
+exit
+interface C5 
+   name "AGMEDNET" 
+exit
+interface C24 
+   name "network_test_Port" 
+exit
+ip default-gateway 10.24.2.1 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   untagged D1-D24,E1-E24 
+   no untagged A3-A4,B1-B24,C1-C24,Trk1 
+   no ip address 
+   exit 
+vlan 2814 
+   name "Research_DC" 
+   untagged B4,C1-C2 
+   tagged Trk1 
+   no ip address 
+   exit 
+vlan 2865 
+   name "UntrustedResearchDC" 
+   untagged C4-C7 
+   tagged Trk1 
+   no ip address 
+   exit 
+vlan 2863 
+   name "umrcz-unusual-hric_10.56.90.1/24" 
+   untagged B6-B7,B9,B13-B20 
+   tagged Trk1 
+   no ip address 
+   exit 
+vlan 2650 
+   name "hric-uncag-dc_136.159.155.160/28" 
+   untagged B8,B10-B12 
+   tagged Trk1 
+   no ip address 
+   exit 
+vlan 2543 
+   name "dc_hric_mgmt_10.24.2.0/24" 
+   untagged C24 
+   ip address 10.24.2.254 255.255.255.0 
+   tagged Trk1 
+   exit 
+vlan 2537 
+   name "hric_rcz_drac_10.60.140.0/24" 
+   untagged C3 
+   tagged Trk1 
+   no ip address 
+   exit 
+vlan 999 
+   name "unused_vlan" 
+   untagged A3-A4,B1-B3,B5,B21-B24,C8-C23 
+   no ip address 
+   exit 
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+banner motd "**************************************************************************"
+banner motd "*                                                                        *"
+banner motd "* Important Notice:                                                      *"
+banner motd "*                                                                        *"
+banner motd "* Authorized users only:                                                 *"
+banner motd "*                                                                        *"
+banner motd "* This computer system (including all related equipment, networks,       *"
+banner motd "* systems and services) is provided for use only by authorized           *"
+banner motd "* individuals with valid and subsisting usernames and passwords          *"
+banner motd "* issued by Unversity of Calgary and for  authorized purposes only.      *"
+banner motd "* Unauthorized access to or use of this system is strictly prohibited,   *"
+banner motd "* and may result in criminal, civil and administrative penalties         *"
+banner motd "* and other adverse action.                                              *"
+banner motd "*                                                                        *"
+banner motd "* Terms and Conditions:                                                  *"
+banner motd "*                                                                        *"
+banner motd "* Access to and use of this system is subject to certain terms and       *"
+banner motd "* conditions contained in various policies issued and amended from time  *"
+banner motd "* to time by University of Calgary, including Acceptable Use of Computing*"
+banner motd "* Resources, Acceptable Use of Internet and E-Mail and Remote Access.    *"
+banner motd "* Access to and use of this system constitutes unconditional acceptance  *"
+banner motd "* of and agreement to each of the applicable policies. If you do not     *"
+banner motd "* accept and agree to each of the applicable policies, you may           *"
+banner motd "* not access or use this system.                                         *"
+banner motd "*                                                                        *"
+banner motd "* Monitoring:                                                            *"
+banner motd "*                                                                        *"
+banner motd "* Use of this system is subject to monitoring at all times for all       *"
+banner motd "* lawful purposes, and is not subject to any expectation of privacy.     *"
+banner motd "* Information collected through monitoring may be used and disclosed     *"
+banner motd "* to third parties (including law enforcement officials).                *"
+banner motd "* Use of this system constitutes consent to such monitoring  and the     *"
+banner motd "* collection, use and disclosure of personal information.                *"
+banner motd "*                                                                        *"
+banner motd "**************************************************************************"
+banner motd "~"
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp server priority 1 136.159.34.69 3
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access manager
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+no ip ssh
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server community "uofc2009" operator
+snmp-server host 136.159.22.228 "uofc2009" critical
+snmp-server contact "UCIT 220-5555" location "HRIC Data Centre BAB09V"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree Trk1 priority 4
+spanning-tree instance 1 vlan 1-1099 2000-2359 2361-2373 2377-2485 2488-2493 
+spanning-tree instance 1 vlan 2495-2531 2534-2536 2539 2541 2542 2546-2577 
+spanning-tree instance 1 vlan 2579 2583-2608 2610-2621 2623-2648 2651-2703 
+spanning-tree instance 1 vlan 2705-2748 2750-2810 2812 2815 2817-2864 
+spanning-tree instance 1 vlan 2866-3139 3141-3199 3400-3587 3589-3598 
+spanning-tree instance 1 vlan 3600-3880 3889-4094
+spanning-tree instance 1 Trk1 priority 4
+spanning-tree instance 2 vlan 1100-1399
+spanning-tree instance 2 Trk1 priority 4
+spanning-tree instance 3 vlan 2360 2374-2376 2486 2487 2494 2532 2533 
+spanning-tree instance 3 vlan 2537 2538 2540 2543-2545 2578 2580-2582 2609 
+spanning-tree instance 3 vlan 2622 2649 2650 2704 2749 2811 2813 2814 2816 
+spanning-tree instance 3 vlan 2865 3140 3200-3399 3588 3599 3881-3888
+spanning-tree instance 3 Trk1 priority 4
+spanning-tree instance 11 vlan 1700-1799
+spanning-tree instance 11 Trk1 priority 4
+spanning-tree instance 12 vlan 1800-1899
+spanning-tree instance 12 Trk1 priority 4
+spanning-tree instance 13 vlan 1900-1999
+spanning-tree instance 13 Trk1 priority 4
+spanning-tree instance 14 vlan 1400-1499
+spanning-tree instance 14 Trk1 priority 4
+spanning-tree instance 15 vlan 1500-1599
+spanning-tree instance 15 Trk1 priority 4
+spanning-tree instance 16 vlan 1600-1699
+spanning-tree instance 16 Trk1 priority 4
+spanning-tree priority 7
+no autorun
+password manager
+password operator
+

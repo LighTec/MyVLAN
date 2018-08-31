@@ -1,0 +1,237 @@
+; hpStack Configuration Editor; Created on release #KA.16.02.0014
+; Ver #0f:01.81.f0.92.34.59.3c.6b.fb.ff.fd.ff.ff.3f.ef:fe
+
+stacking
+   member 1 type "J9573A" mac-address 10604b-38c6c0
+   exit
+hostname "MSC354V-03-MSW-1300"
+console baud-rate 9600
+console flow-control none
+console idle-timeout 300
+console idle-timeout serial-usb 300
+no rest-interface
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by University of Calgary and for authorized purposes only.      *\n* Unauthorized access to or use of this system is strictly prohibited,   *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server dead-time 5
+radius-server timeout 3
+radius-server retransmit 2
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+telnet-server listen data
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+web-management ssl
+web-management listen data
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.28.23.1
+ip ssh listen data
+interface 1/1
+   broadcast-limit 10
+   exit
+interface 1/2
+   broadcast-limit 10
+   exit
+interface 1/3
+   broadcast-limit 10
+   exit
+interface 1/4
+   broadcast-limit 10
+   exit
+interface 1/5
+   broadcast-limit 10
+   exit
+interface 1/6
+   broadcast-limit 10
+   exit
+interface 1/7
+   broadcast-limit 10
+   exit
+interface 1/8
+   broadcast-limit 10
+   exit
+interface 1/9
+   broadcast-limit 10
+   exit
+interface 1/10
+   broadcast-limit 10
+   exit
+interface 1/11
+   broadcast-limit 10
+   exit
+interface 1/12
+   broadcast-limit 10
+   name "MSC-350-Printer"
+   exit
+interface 1/13
+   broadcast-limit 10
+   exit
+interface 1/14
+   broadcast-limit 10
+   exit
+interface 1/15
+   broadcast-limit 10
+   exit
+interface 1/16
+   broadcast-limit 10
+   exit
+interface 1/17
+   broadcast-limit 10
+   exit
+interface 1/18
+   broadcast-limit 10
+   exit
+interface 1/19
+   broadcast-limit 10
+   exit
+interface 1/20
+   broadcast-limit 10
+   exit
+interface 1/21
+   broadcast-limit 10
+   exit
+interface 1/22
+   broadcast-limit 10
+   exit
+interface 1/23
+   broadcast-limit 10
+   name "Rm.353A_JK3Q1_LDL_BAR"
+   exit
+interface 1/24
+   broadcast-limit 10
+   name "Rm.353A_JK2Q2_LDL_BAR"
+   exit
+interface 1/25
+   broadcast-limit 10
+   exit
+interface 1/26
+   broadcast-limit 40
+   name "26u-10.28.23.254-a8d_MSC056V"
+   exit
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server listen data
+snmp-server contact "UCIT_220-5555" location "MSC-354V-03"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   disable
+   no ip address
+   member 1
+      no ip address
+      exit
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1/1-1/26
+   no ip address
+   exit
+vlan 999
+   name "MSC_UNUSED"
+   untagged 1/4,1/8-1/11,1/13-1/22,1/25
+   no ip address
+   exit
+vlan 1447
+   name "MSC_MCZ_10.99.128.0/21"
+   untagged 1/5,1/7
+   tagged 1/26
+   no ip address
+   exit
+vlan 1455
+   name "MSC_UCZ"
+   untagged 1/2,1/6,1/23-1/24
+   tagged 1/26
+   no ip address
+   ip igmp
+   exit
+vlan 2512
+   name "MSC_PRT"
+   untagged 1/12
+   tagged 1/26
+   no ip address
+   ip igmp
+   exit
+vlan 2823
+   name "MSC_MGMT"
+   tagged 1/26
+   ip address 10.28.23.194 255.255.255.0
+   ip igmp
+   exit
+vlan 3091
+   name "MSC_Wireless"
+   untagged 1/1,1/3
+   tagged 1/26
+   no ip address
+   ip igmp
+   exit
+vlan 3232
+   name "MSC_BMS"
+   tagged 1/26
+   no ip address
+   ip igmp
+   exit
+spanning-tree
+spanning-tree 1/1 bpdu-filter bpdu-protection
+spanning-tree 1/2 bpdu-filter bpdu-protection
+spanning-tree 1/3 bpdu-filter bpdu-protection
+spanning-tree 1/4 bpdu-filter bpdu-protection
+spanning-tree 1/5 bpdu-filter bpdu-protection
+spanning-tree 1/6 bpdu-filter bpdu-protection
+spanning-tree 1/7 bpdu-filter bpdu-protection
+spanning-tree 1/8 bpdu-filter bpdu-protection
+spanning-tree 1/9 bpdu-filter bpdu-protection
+spanning-tree 1/10 bpdu-filter bpdu-protection
+spanning-tree 1/11 bpdu-filter bpdu-protection
+spanning-tree 1/12 bpdu-filter bpdu-protection
+spanning-tree 1/13 bpdu-filter bpdu-protection
+spanning-tree 1/14 bpdu-filter bpdu-protection
+spanning-tree 1/15 bpdu-filter bpdu-protection
+spanning-tree 1/16 bpdu-filter bpdu-protection
+spanning-tree 1/17 bpdu-filter bpdu-protection
+spanning-tree 1/18 bpdu-filter bpdu-protection
+spanning-tree 1/19 bpdu-filter bpdu-protection
+spanning-tree 1/20 bpdu-filter bpdu-protection
+spanning-tree 1/21 bpdu-filter bpdu-protection
+spanning-tree 1/22 bpdu-filter bpdu-protection
+spanning-tree 1/23 bpdu-filter bpdu-protection
+spanning-tree 1/24 bpdu-filter bpdu-protection
+spanning-tree 1/25 bpdu-filter bpdu-protection
+no spanning-tree 1/26 auto-edge-port
+spanning-tree 1/26 priority 4
+spanning-tree config-name "ucalgary"
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600 priority 7
+no tftp server
+tftp server listen data
+loop-protect 1/1-1/25
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+device-profile name "default-ap-profile"
+   cos 0
+   exit
+activate provision disable
+password manager
+password operator
+

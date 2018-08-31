@@ -1,0 +1,368 @@
+; J8697A Configuration Editor; Created on release #K.15.08.0013
+; Ver #02:1b.ef:f6
+hostname "TI143-01-HSW-4091"
+module 1 type j8702a
+module 5 type j9538a
+module 6 type j9538a
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+trunk E1,F1 trk1 lacp
+trunk E2,F2 trk2 lacp
+trunk E3,F3 trk3 lacp
+trunk E4,F4 trk4 lacp
+trunk E5,F5 trk5 lacp
+trunk E6,F6 trk6 lacp
+trunk E7,F7 trk7 lacp
+trunk E8,F8 trk8 lacp
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this systeshm is strictly prohibited, *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+web-management ssl
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.26.91.1
+interface A1
+   broadcast-limit 10
+   exit
+interface A2
+   broadcast-limit 10
+   disable
+   exit
+interface A3
+   broadcast-limit 10
+   disable
+   exit
+interface A4
+   broadcast-limit 10
+   disable
+   exit
+interface A5
+   broadcast-limit 10
+   disable
+   exit
+interface A6
+   broadcast-limit 10
+   disable
+   exit
+interface A7
+   broadcast-limit 10
+   disable
+   exit
+interface A8
+   broadcast-limit 10
+   disable
+   exit
+interface A9
+   broadcast-limit 10
+   disable
+   exit
+interface A10
+   broadcast-limit 10
+   disable
+   exit
+interface A11
+   broadcast-limit 10
+   disable
+   exit
+interface A12
+   broadcast-limit 10
+   disable
+   exit
+interface A13
+   broadcast-limit 10
+   disable
+   exit
+interface A14
+   broadcast-limit 10
+   disable
+   exit
+interface A15
+   broadcast-limit 10
+   disable
+   exit
+interface A16
+   broadcast-limit 10
+   disable
+   exit
+interface A17
+   broadcast-limit 10
+   disable
+   exit
+interface A18
+   broadcast-limit 10
+   disable
+   exit
+interface A19
+   broadcast-limit 10
+   disable
+   exit
+interface A20
+   broadcast-limit 10
+   disable
+   exit
+interface A21
+   broadcast-limit 10
+   disable
+   exit
+interface A22
+   broadcast-limit 10
+   disable
+   exit
+interface A23
+   broadcast-limit 10
+   disable
+   exit
+interface A24
+   broadcast-limit 10
+   name "A24D-10.26.91.16-X01U_UPS"
+   exit
+interface E1
+   broadcast-limit 30
+   name "TRK1-E01U-CN-ENC-Z2-PE-1-Te1/1/10"
+   exit
+interface E2
+   broadcast-limit 40
+   name "TRK2-E02D-10.26.91.253-X1/49U-TRK1_TI_M143"
+   exit
+interface E3
+   broadcast-limit 40
+   name "TRK3-E03D-10.26.91.252-X1/49U-TRK1_TI_M143"
+   exit
+interface E4
+   broadcast-limit 40
+   name "TRK4-E04D-10.26.91.251-X1/49U-TRK1_TI_M143"
+   exit
+interface E5
+   broadcast-limit 40
+   name "TRK5-E05D-10.26.91.250-X1/49U-TRK1_TI_12V"
+   exit
+interface E6
+   broadcast-limit 40
+   name "TRK6-E06D-10.26.91.249-X1/49U-TRK1_TI_M143"
+   exit
+interface E7
+   broadcast-limit 40
+   name "TRK7-E07D-10.26.91.248-X1/49U-TRK1_TI_M143"
+   exit
+interface E8
+   broadcast-limit 40
+   name "TRK8-E08D-10.26.91.247-X1/49U-TRK1_TI_M143"
+   exit
+interface F1
+   broadcast-limit 30
+   name "TRK1-F01U-CN-MSC-Z2-PE-2-Te2/1/10"
+   exit
+interface F2
+   broadcast-limit 40
+   name "TRK2-F02D-10.26.91.253-X4/49U-TRK1_TI_M143"
+   exit
+interface F3
+   broadcast-limit 40
+   name "TRK3-F03D-10.26.91.252-X1/50U-TRK1_TI_M143"
+   exit
+interface F4
+   broadcast-limit 40
+   name "TRK4-F04D-10.26.91.251-X4/49U-TRK1_TI_M143"
+   exit
+interface F5
+   broadcast-limit 40
+   name "TRK5-F05D-10.26.91.250-X1/50U-TRK1_TI_12V"
+   exit
+interface F6
+   broadcast-limit 40
+   name "TRK6-F06D-10.26.91.249-X2/49U-TRK1_TI_M143"
+   exit
+interface F7
+   broadcast-limit 40
+   name "TRK7-F07D-10.26.91.248-X2/49U-TRK1_TI_M143"
+   exit
+interface F8
+   broadcast-limit 40
+   name "TRK8-F08D-10.26.91.247-X1/50U-TRK1_TI_M143"
+   exit
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server contact "UCIT 220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree A1 bpdu-filter bpdu-protection
+spanning-tree A2 bpdu-filter bpdu-protection
+spanning-tree A3 bpdu-filter bpdu-protection
+spanning-tree A4 bpdu-filter bpdu-protection
+spanning-tree A5 bpdu-filter bpdu-protection
+spanning-tree A6 bpdu-filter bpdu-protection
+spanning-tree A7 bpdu-filter bpdu-protection
+spanning-tree A8 bpdu-filter bpdu-protection
+spanning-tree A9 bpdu-filter bpdu-protection
+spanning-tree A10 bpdu-filter bpdu-protection
+spanning-tree A11 bpdu-filter bpdu-protection
+spanning-tree A12 bpdu-filter bpdu-protection
+spanning-tree A13 bpdu-filter bpdu-protection
+spanning-tree A14 bpdu-filter bpdu-protection
+spanning-tree A15 bpdu-filter bpdu-protection
+spanning-tree A16 bpdu-filter bpdu-protection
+spanning-tree A17 bpdu-filter bpdu-protection
+spanning-tree A18 bpdu-filter bpdu-protection
+spanning-tree A19 bpdu-filter bpdu-protection
+spanning-tree A20 bpdu-filter bpdu-protection
+spanning-tree A21 bpdu-filter bpdu-protection
+spanning-tree A22 bpdu-filter bpdu-protection
+spanning-tree A23 bpdu-filter bpdu-protection
+spanning-tree A24 bpdu-filter bpdu-protection
+spanning-tree Trk1 priority 4
+spanning-tree Trk2 priority 4 root-guard
+spanning-tree Trk3 priority 4 root-guard
+spanning-tree Trk4 priority 4 root-guard
+spanning-tree Trk5 priority 4 root-guard
+spanning-tree Trk6 priority 4 root-guard
+spanning-tree Trk7 priority 4 root-guard
+spanning-tree Trk8 priority 4 root-guard
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree instance ist Trk1 path-cost 2000
+spanning-tree bpdu-protection-timeout 600 priority 6
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged A1-A24,Trk1-Trk8
+   no ip address
+   exit
+vlan 999
+   name "TI_UNUSED_VLAN"
+   untagged A2-A23,Trk1
+   no ip address
+   exit
+vlan 2279
+   name "TI_IT_Managed_Lab_10.158.98.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2298
+   name "TI_UMCZ_Solstice"
+   tagged Trk1-Trk2,Trk6-Trk7
+   no ip address
+   exit
+vlan 2391
+   name "TI_MGMT_10.26.91.0/24"
+   untagged A24
+   tagged Trk1-Trk8
+   ip address 10.26.91.254 255.255.255.0
+   ip igmp
+   exit
+vlan 2392
+   name "TI_VIDEOCONF_136.159.157.0/28"
+   tagged Trk1,Trk6,Trk8
+   no ip address
+   ip igmp
+   exit
+vlan 2393
+   name "TI_TPZ_136.159.0.0/28"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2394
+   name "TI_AV_10.145.98.0/23"
+   untagged A1
+   tagged Trk1-Trk4,Trk6-Trk8
+   ip address 10.145.98.15 255.255.254.0
+   ip igmp
+   exit
+vlan 2395
+   name "TI_RCZ_10.149.98.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2396
+   name "TI_LABS_10.147.98.0/23"
+   tagged Trk1-Trk4
+   no ip address
+   ip igmp
+   exit
+vlan 2398
+   name "TI_WIRELESS_10.10.236.0/24"
+   tagged Trk1-Trk5
+   no ip address
+   ip igmp
+   exit
+vlan 2399
+   name "TI_VOIP_10.6.131.0/24"
+   tagged Trk1-Trk4
+   no ip address
+   ip igmp
+   exit
+vlan 2401
+   name "TI_MCZ1_10.112.64.0/23"
+   tagged Trk1,Trk4
+   no ip address
+   ip igmp
+   exit
+vlan 2402
+   name "TI_UMCZ1_10.80.64.0/23"
+   tagged Trk1-Trk5
+   no ip address
+   ip igmp
+   exit
+vlan 2415
+   name "TI_1CARD_10.129.98.0/23"
+   tagged Trk1,Trk3
+   no ip address
+   ip igmp
+   exit
+vlan 2434
+   name "TI_BMS_10.133.98.0/23"
+   tagged Trk1,Trk3,Trk5
+   no ip address
+   ip igmp
+   exit
+vlan 2452
+   name "TI_IPCAMERA_10.135.98.0/23"
+   tagged Trk1,Trk3-Trk4
+   no ip address
+   ip igmp
+   exit
+vlan 2500
+   name "TI_PRT_10.127.98.0/23"
+   tagged Trk1,Trk4
+   no ip address
+   ip igmp
+   exit
+loop-protect A1-A24
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

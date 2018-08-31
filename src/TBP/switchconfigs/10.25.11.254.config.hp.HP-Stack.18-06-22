@@ -1,0 +1,398 @@
+; hpStack Configuration Editor; Created on release #KA.15.09.0019
+; Ver #03:01.1f.ef:f2
+
+stacking
+   member 1 type "J9574A" mac-address 40a8f0-d17f80
+   exit
+hostname "CC13V-B1-HSW-399"
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+trunk 1/49-1/50 trk1 lacp
+banner motd "**************************************************************************\n* Important Notice:*\n* Authorized users only:\n* This computer system (including all related equipment, networks,\n* systems and services) is provided for use only by authorized\n* Individuals with valid and subsisting usernames and passwords\n* issued by University of Calgary and for authorized purposes only.\n* Unauthorized access to or use of this system is strictly prohibited,\n* and may result in criminal, civil and administrative penalties \n* and other adverse action.\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+telnet-server listen data
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+web-management listen data
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.25.11.1
+ip ssh listen data
+interface 1/1
+   broadcast-limit 10
+   name "Rm.105_JK.4/Q3"
+   speed-duplex 10-half
+   exit
+interface 1/2
+   broadcast-limit 10
+   name "RM105_JK4_Q4"
+   exit
+interface 1/3
+   broadcast-limit 10
+   name "RM106_JK1_Q4"
+   speed-duplex 10-half
+   exit
+interface 1/4
+   broadcast-limit 10
+   name "RM107_JK1_Q4"
+   exit
+interface 1/5
+   broadcast-limit 10
+   name "RM105_JK2_Q3"
+   exit
+interface 1/6
+   broadcast-limit 10
+   name "Rm.122_JK1Q2"
+   exit
+interface 1/7
+   broadcast-limit 10
+   name "Rm.122_JK1Q3"
+   exit
+interface 1/8
+   broadcast-limit 10
+   exit
+interface 1/9
+   broadcast-limit 10
+   name "DSX"
+   exit
+interface 1/10
+   broadcast-limit 10
+   name "CCC-01-01_IPCAMERA"
+   exit
+interface 1/11
+   broadcast-limit 10
+   name "CCC-01-02_IPCAMERA"
+   exit
+interface 1/12
+   broadcast-limit 10
+   name "Rm.104Z_JK./WAP"
+   exit
+interface 1/13
+   broadcast-limit 10
+   name "Rm.104Z_JK./WAP"
+   exit
+interface 1/14
+   broadcast-limit 10
+   name "Rm.115_JK./WAP"
+   exit
+interface 1/15
+   broadcast-limit 10
+   name "Rm.118_JK./WAP"
+   exit
+interface 1/16
+   broadcast-limit 10
+   name "CCC-EXT-01_IPCAMERA"
+   exit
+interface 1/17
+   broadcast-limit 10
+   name "CCC-EXT-02_IPCAMERA"
+   exit
+interface 1/18
+   broadcast-limit 10
+   name "CCC-EXT-03_IPCAMERA"
+   exit
+interface 1/19
+   broadcast-limit 10
+   name "CCC-EXT-04_IPCAMERA"
+   exit
+interface 1/20
+   broadcast-limit 10
+   name "CCC-EXT-05_IPCAMERA"
+   exit
+interface 1/21
+   broadcast-limit 10
+   exit
+interface 1/22
+   broadcast-limit 10
+   exit
+interface 1/23
+   broadcast-limit 10
+   exit
+interface 1/27
+   disable
+   exit
+interface 1/28
+   disable
+   exit
+interface 1/29
+   disable
+   exit
+interface 1/30
+   disable
+   exit
+interface 1/31
+   disable
+   exit
+interface 1/32
+   disable
+   exit
+interface 1/33
+   disable
+   exit
+interface 1/34
+   disable
+   exit
+interface 1/35
+   disable
+   exit
+interface 1/36
+   disable
+   exit
+interface 1/37
+   disable
+   exit
+interface 1/38
+   disable
+   exit
+interface 1/39
+   disable
+   exit
+interface 1/40
+   disable
+   exit
+interface 1/41
+   disable
+   exit
+interface 1/42
+   disable
+   exit
+interface 1/43
+   disable
+   exit
+interface 1/44
+   disable
+   exit
+interface 1/45
+   disable
+   exit
+interface 1/46
+   disable
+   exit
+interface 1/47
+   disable
+   exit
+interface 1/48
+   broadcast-limit 10
+   name "CCB1-B1-UPS_10.25.11.16"
+   exit
+interface 1/49
+   broadcast-limit 40
+   name "X49U-CN-MSC-Z1-PE-1-Te1/2/17"
+   exit
+interface 1/50
+   broadcast-limit 40
+   name "X50U-CN-ED-Z1-PE-2-Te2/2/17"
+   exit
+snmp-server community "public" unrestricted
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" operator
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server listen data
+snmp-server contact "UCIT 220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   disable
+   no ip address
+   member 1
+      ip address dhcp-bootp
+      exit
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1/1-1/48,Trk1
+   untagged 1/51-1/52
+   no ip address
+   exit
+vlan 999
+   name "CC_UNUSED_VLAN"
+   untagged 1/27-1/47,Trk1
+   no ip address
+   exit
+vlan 1320
+   name "CC_UCZ_10.85.192.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 1321
+   name "CC_UCZ_10.85.200.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 1366
+   name "CC_MCZ_10.100.192.0/23"
+   untagged 1/2-1/8
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 1367
+   name "CC_MCZ_10.100.200.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2282
+   name "CC_IT_Managed_Lab_10.158.28.0/24"
+   tagged Trk1
+   ip address dhcp-bootp
+   exit
+vlan 2455
+   name "CC_IPCA10.135.28/23"
+   untagged 1/10-1/12,1/16-1/26
+   tagged Trk1
+   no ip address
+   exit
+vlan 2503
+   name "CC_PRT_10.127.28.0/24"
+   untagged 1/1
+   tagged Trk1
+   ip address dhcp-bootp
+   exit
+vlan 2511
+   name "CC_CAMPUS_10.25.11.0/24"
+   untagged 1/48
+   tagged Trk1
+   ip address 10.25.11.254 255.255.255.0
+   exit
+vlan 2691
+   name "CC_WLAN_10.10.118.0/24"
+   untagged 1/13-1/15
+   tagged Trk1
+   no ip address
+   exit
+vlan 2906
+   name "CC_AV_10.144.92.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2930
+   name "CC_LAB_10.146.92.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2954
+   name "CC_RCZ_10.148.92.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2976
+   name "CC_1CARD_10.128.92.0/23"
+   untagged 1/9
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2999
+   name "CC_EBB_10.130.92.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 3023
+   name "CC_BMS_10.132.92.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 3051
+   name "CC_IPCAM_10.134.92.0/23"
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+spanning-tree
+spanning-tree 1/1 bpdu-filter bpdu-protection
+spanning-tree 1/2 bpdu-filter bpdu-protection
+spanning-tree 1/3 bpdu-filter bpdu-protection
+spanning-tree 1/4 bpdu-filter bpdu-protection
+spanning-tree 1/5 bpdu-filter bpdu-protection
+spanning-tree 1/6 bpdu-filter bpdu-protection
+spanning-tree 1/7 bpdu-filter bpdu-protection
+spanning-tree 1/8 bpdu-filter bpdu-protection
+spanning-tree 1/9 bpdu-filter bpdu-protection
+spanning-tree 1/10 bpdu-filter bpdu-protection
+spanning-tree 1/11 bpdu-filter bpdu-protection
+spanning-tree 1/12 bpdu-filter bpdu-protection
+spanning-tree 1/13 bpdu-filter bpdu-protection
+spanning-tree 1/14 bpdu-filter bpdu-protection
+spanning-tree 1/15 bpdu-filter bpdu-protection
+spanning-tree 1/16 bpdu-filter bpdu-protection
+spanning-tree 1/17 bpdu-filter bpdu-protection
+spanning-tree 1/18 bpdu-filter bpdu-protection
+spanning-tree 1/19 bpdu-filter bpdu-protection
+spanning-tree 1/20 bpdu-filter bpdu-protection
+spanning-tree 1/21 bpdu-filter bpdu-protection
+spanning-tree 1/22 bpdu-filter bpdu-protection
+spanning-tree 1/23 bpdu-filter bpdu-protection
+spanning-tree 1/24 bpdu-filter bpdu-protection
+spanning-tree 1/25 bpdu-filter bpdu-protection
+spanning-tree 1/26 bpdu-filter bpdu-protection
+spanning-tree 1/27 bpdu-filter bpdu-protection
+spanning-tree 1/28 bpdu-filter bpdu-protection
+spanning-tree 1/29 bpdu-filter bpdu-protection
+spanning-tree 1/30 bpdu-filter bpdu-protection
+spanning-tree 1/31 bpdu-filter bpdu-protection
+spanning-tree 1/32 bpdu-filter bpdu-protection
+spanning-tree 1/33 bpdu-filter bpdu-protection
+spanning-tree 1/34 bpdu-filter bpdu-protection
+spanning-tree 1/35 bpdu-filter bpdu-protection
+spanning-tree 1/36 bpdu-filter bpdu-protection
+spanning-tree 1/37 bpdu-filter bpdu-protection
+spanning-tree 1/38 bpdu-filter bpdu-protection
+spanning-tree 1/39 bpdu-filter bpdu-protection
+spanning-tree 1/40 bpdu-filter bpdu-protection
+spanning-tree 1/41 bpdu-filter bpdu-protection
+spanning-tree 1/42 bpdu-filter bpdu-protection
+spanning-tree 1/43 bpdu-filter bpdu-protection
+spanning-tree 1/44 bpdu-filter bpdu-protection
+spanning-tree 1/45 bpdu-filter bpdu-protection
+spanning-tree 1/46 bpdu-filter bpdu-protection
+spanning-tree 1/47 bpdu-filter bpdu-protection
+spanning-tree 1/48 bpdu-filter bpdu-protection
+no spanning-tree Trk1 auto-edge-port
+spanning-tree Trk1 priority 6
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree instance ist Trk1 path-cost 2000
+spanning-tree priority 6
+tftp server listen data
+loop-protect 1/1-1/48
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

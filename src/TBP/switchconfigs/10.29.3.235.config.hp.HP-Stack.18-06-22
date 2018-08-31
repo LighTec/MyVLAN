@@ -1,0 +1,395 @@
+; hpStack_KB Configuration Editor; Created on release #KB.16.02.0014
+; Ver #0f:01.81.b3.ff.7c.59.fc.7b.ff.ff.fc.ff.ff.3f.ef:4d
+
+stacking
+   member 1 type "JL074A" mac-address 9cdc71-a1bc80
+   member 1 priority 255
+   member 1 flexible-module A type JL083A
+   exit
+hostname "HDL115V-01-MSW-2276"
+console baud-rate 9600
+console flow-control none
+console idle-timeout 300
+console idle-timeout serial-usb 300
+no rest-interface
+trunk 1/A1-1/A2 trk1 lacp
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by University of Calgary and for authorized purposes only.      *\n* Unauthorized access to or use of this system is strictly prohibited,   *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server dead-time 5
+radius-server timeout 3
+radius-server retransmit 2
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+telnet-server listen data
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+web-management ssl
+web-management listen data
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip authorized-managers 10.16.66.0 255.255.255.0 access manager
+ip default-gateway 10.29.3.1
+ip ssh listen data
+interface 1/1
+   broadcast-limit 10
+   name "Rm.103_1__WAP"
+   exit
+interface 1/2
+   broadcast-limit 10
+   name "Rm.105_2__WAP"
+   exit
+interface 1/3
+   broadcast-limit 10
+   name "Rm.105_3__WAP"
+   exit
+interface 1/4
+   broadcast-limit 10
+   name "Rm.102Z_4__WAP"
+   exit
+interface 1/5
+   broadcast-limit 10
+   name "Rm.109_5__WAP"
+   exit
+interface 1/6
+   broadcast-limit 10
+   name "Rm.120V_6__WAP"
+   exit
+interface 1/7
+   broadcast-limit 10
+   name "Rm.124_7__WAP"
+   exit
+interface 1/8
+   broadcast-limit 10
+   name "Rm.202_8__WAP"
+   exit
+interface 1/9
+   broadcast-limit 10
+   name "Rm.105-13_9_1-22_"
+   exit
+interface 1/10
+   broadcast-limit 10
+   name "Rm.105-14_10_1-23_"
+   exit
+interface 1/11
+   broadcast-limit 10
+   name "Rm.105-17_11_2-3_"
+   exit
+interface 1/12
+   broadcast-limit 10
+   name "Rm.105-18_12_2-22_"
+   exit
+interface 1/13
+   broadcast-limit 10
+   name "Rm.124-9_13_3-19_"
+   exit
+interface 1/14
+   broadcast-limit 10
+   name "Rm.104-1_14_1-6_Printer"
+   exit
+interface 1/15
+   broadcast-limit 10
+   name "Rm.121-1_15_3-7_"
+   exit
+interface 1/16
+   broadcast-limit 10
+   name "Rm.103-1_16_1-2_"
+   exit
+interface 1/17
+   broadcast-limit 10
+   name "Rm.105-21_17_2-6_"
+   exit
+interface 1/18
+   broadcast-limit 10
+   name "Rm.105-22_18_2-7_"
+   exit
+interface 1/19
+   broadcast-limit 10
+   name "Rm.201-3_19_4-18_"
+   exit
+interface 1/20
+   broadcast-limit 10
+   name "Rm.105-9_20_1-18_"
+   exit
+interface 1/21
+   broadcast-limit 10
+   name "Rm.105-10_21_1-19_"
+   exit
+interface 1/22
+   broadcast-limit 10
+   name "Rm.105-25_22_2-10_"
+   exit
+interface 1/23
+   broadcast-limit 10
+   exit
+interface 1/24
+   broadcast-limit 10
+   dhcp-snooping trust
+   name "HDL-01-01_IPCAMERA"
+   exit
+interface 1/25
+   broadcast-limit 10
+   name "HDL-01-02_IPCAMERA"
+   exit
+interface 1/26
+   broadcast-limit 10
+   name "NERoof_HDL-EXT-01_IPCAMERA"
+   exit
+interface 1/27
+   broadcast-limit 10
+   exit
+interface 1/28
+   broadcast-limit 10
+   exit
+interface 1/29
+   broadcast-limit 10
+   exit
+interface 1/30
+   broadcast-limit 10
+   name "4-21_BMS"
+   exit
+interface 1/31
+   broadcast-limit 10
+   exit
+interface 1/32
+   broadcast-limit 10
+   exit
+interface 1/33
+   broadcast-limit 10
+   exit
+interface 1/34
+   broadcast-limit 10
+   exit
+interface 1/35
+   broadcast-limit 10
+   exit
+interface 1/36
+   broadcast-limit 10
+   exit
+interface 1/37
+   broadcast-limit 10
+   exit
+interface 1/38
+   broadcast-limit 10
+   exit
+interface 1/39
+   broadcast-limit 10
+   exit
+interface 1/40
+   broadcast-limit 10
+   exit
+interface 1/41
+   broadcast-limit 10
+   exit
+interface 1/42
+   broadcast-limit 10
+   disable
+   exit
+interface 1/43
+   broadcast-limit 10
+   disable
+   exit
+interface 1/44
+   broadcast-limit 10
+   disable
+   exit
+interface 1/45
+   broadcast-limit 10
+   disable
+   exit
+interface 1/46
+   broadcast-limit 10
+   disable
+   exit
+interface 1/47
+   broadcast-limit 10
+   disable
+   exit
+interface 1/48
+   broadcast-limit 10
+   name "HDL115V-01-UPS-4505_10.29.3.14"
+   exit
+interface 1/A1
+   broadcast-limit 40
+   name "Trk1-1/A1u-10.29.3.250-Trk6-c6d-CSB136A"
+   exit
+interface 1/A2
+   broadcast-limit 40
+   name "Trk1-1/A2u-10.29.3.250-Trk6-d6d-CSB136A"
+   exit
+interface 1/A4
+   broadcast-limit 40
+   exit
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server listen data
+snmp-server contact "UCIT_220-5555" location "HDL-115V-01"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   disable
+   no ip address
+   member 1
+      no ip address
+      exit
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1/1-1/48,1/A3-1/A4,Trk1
+   no ip address
+   exit
+vlan 410
+   name "CSB_BMS_10.132.108.0/23"
+   untagged 1/28,1/30-1/31,1/38-1/41
+   tagged 1/A3,Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 430
+   name "CSB_MCZ1_10.101.192.0/21"
+   untagged 1/23
+   tagged 1/A3,Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 481
+   name "CSB_IPCA_10.135.196.0/23"
+   untagged 1/24-1/26,1/34-1/37
+   tagged 1/A3-1/A4,Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 530
+   name "CSB_1CARD_10.128.108.0/23"
+   untagged 1/27
+   tagged 1/A3,Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 680
+   name "CSB_WLAN_10.11.8.0/24"
+   untagged 1/1-1/8
+   tagged 1/A3,Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 999
+   name "CSB_UNUSED_VLAN"
+   untagged 1/42-1/47
+   no ip address
+   exit
+vlan 2032
+   name "CSB_VOIP_10.2.32.0/24"
+   tagged 1/9-1/23,1/32-1/33,1/A3,Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2309
+   name "VLAN2309"
+   no ip address
+   exit
+vlan 2389
+   name "CSB_PRT_10.127.196.0/24"
+   untagged 1/14
+   tagged 1/A3,Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2903
+   name "CSB_CAMPUS_10.29.3.0/24"
+   untagged 1/48
+   tagged 1/A3-1/A4,Trk1
+   ip address 10.29.3.235 255.255.255.0
+   ip igmp
+   exit
+vlan 4071
+   name "CSB_V72000_136.159.21.28/25"
+   untagged 1/9-1/13,1/15-1/22,1/29,1/32-1/33
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+spanning-tree
+spanning-tree 1/1 bpdu-filter bpdu-protection
+spanning-tree 1/2 bpdu-filter bpdu-protection
+spanning-tree 1/3 bpdu-filter bpdu-protection
+spanning-tree 1/4 bpdu-filter bpdu-protection
+spanning-tree 1/5 bpdu-filter bpdu-protection
+spanning-tree 1/6 bpdu-filter bpdu-protection
+spanning-tree 1/7 bpdu-filter bpdu-protection
+spanning-tree 1/8 bpdu-filter bpdu-protection
+spanning-tree 1/9 bpdu-filter bpdu-protection
+spanning-tree 1/10 bpdu-filter bpdu-protection
+spanning-tree 1/11 bpdu-filter bpdu-protection
+spanning-tree 1/12 bpdu-filter bpdu-protection
+spanning-tree 1/13 bpdu-filter bpdu-protection
+spanning-tree 1/14 bpdu-filter bpdu-protection
+spanning-tree 1/15 bpdu-filter bpdu-protection
+spanning-tree 1/16 bpdu-filter bpdu-protection
+spanning-tree 1/17 bpdu-filter bpdu-protection
+spanning-tree 1/18 bpdu-filter bpdu-protection
+spanning-tree 1/19 bpdu-filter bpdu-protection
+spanning-tree 1/20 bpdu-filter bpdu-protection
+spanning-tree 1/21 bpdu-filter bpdu-protection
+spanning-tree 1/22 bpdu-filter bpdu-protection
+spanning-tree 1/23 bpdu-filter bpdu-protection
+spanning-tree 1/24 bpdu-filter bpdu-protection
+spanning-tree 1/25 bpdu-filter bpdu-protection
+spanning-tree 1/26 bpdu-filter bpdu-protection
+spanning-tree 1/27 bpdu-filter bpdu-protection
+spanning-tree 1/28 bpdu-filter bpdu-protection
+spanning-tree 1/29 bpdu-filter bpdu-protection
+spanning-tree 1/30 bpdu-filter bpdu-protection
+spanning-tree 1/31 bpdu-filter bpdu-protection
+spanning-tree 1/32 bpdu-filter bpdu-protection
+spanning-tree 1/33 bpdu-filter bpdu-protection
+spanning-tree 1/34 bpdu-filter bpdu-protection
+spanning-tree 1/35 bpdu-filter bpdu-protection
+spanning-tree 1/36 bpdu-filter bpdu-protection
+spanning-tree 1/37 bpdu-filter bpdu-protection
+spanning-tree 1/38 bpdu-filter bpdu-protection
+spanning-tree 1/39 bpdu-filter bpdu-protection
+spanning-tree 1/40 bpdu-filter bpdu-protection
+spanning-tree 1/41 bpdu-filter bpdu-protection
+spanning-tree 1/42 bpdu-filter bpdu-protection
+spanning-tree 1/43 bpdu-filter bpdu-protection
+spanning-tree 1/44 bpdu-filter bpdu-protection
+spanning-tree 1/45 bpdu-filter bpdu-protection
+spanning-tree 1/46 bpdu-filter bpdu-protection
+spanning-tree 1/47 bpdu-filter bpdu-protection
+spanning-tree 1/48 bpdu-filter bpdu-protection
+spanning-tree 1/A3 root-guard
+spanning-tree 1/A4 root-guard
+no spanning-tree Trk1 auto-edge-port
+spanning-tree Trk1 priority 4
+spanning-tree config-name "ucalgary"
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600 priority 7
+no tftp server
+tftp server listen data
+loop-protect 1/1-1/48,1/A3
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+

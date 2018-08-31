@@ -1,0 +1,82 @@
+; J9298A Configuration Editor; Created on release #J.14.54
+
+hostname "OOTCAB2-SB-SW-3431" 
+mac-age-time 180 
+max-vlans 253 
+time timezone -420 
+time daylight-time-rule Continental-US-and-Canada 
+interface 1 
+   broadcast-limit 10 
+exit
+interface 2 
+   broadcast-limit 10 
+exit
+interface 3 
+   broadcast-limit 10 
+exit
+interface 4 
+   broadcast-limit 10 
+exit
+interface 5 
+   broadcast-limit 10 
+exit
+interface 6 
+   broadcast-limit 10 
+exit
+interface 7 
+   broadcast-limit 10 
+exit
+interface 8 
+   broadcast-limit 10 
+exit
+interface 9 
+   disable
+   broadcast-limit 10 
+exit
+interface 10 
+   name "x10-10.28.15.251-A3D_KNB41V" 
+   broadcast-limit 10 
+exit
+ip default-gateway 10.28.15.1 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   no untagged 1-10 
+   no ip address 
+   exit 
+vlan 2815 
+   name "Mgmt" 
+   ip address 10.28.15.251 255.255.255.0 
+   tagged 10 
+   ip igmp 
+   exit 
+vlan 129 
+   name "VLAN_129" 
+   tagged 10 
+   no ip address 
+   ip igmp 
+   exit 
+vlan 149 
+   name "VLAN_149" 
+   tagged 10 
+   no ip address 
+   ip igmp 
+   exit 
+vlan 1340 
+   name "KN_UMCZ1" 
+   untagged 1-6,9 
+   tagged 10 
+   no ip address 
+   ip igmp 
+   exit 
+vlan 999 
+   name "V999_Unused" 
+   no ip address 
+   exit 
+vlan 2612 
+   name "KNB_TPN_136.159.88.49/28" 
+   untagged 7-8 
+   tagged 10 
+   no ip address 
+   exit 
+qos type-of-service diff-services 
+

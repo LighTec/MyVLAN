@@ -1,0 +1,285 @@
+; J9452A Configuration Editor; Created on release #K.15.08.0013
+; Ver #02:1b.ef:f6
+hostname "MSB029-B1-SW-2659"
+module 2 type j94yya
+module 3 type j94zza
+module 5 type j94wwa
+module 6 type j94wwa
+console baud-rate 9600
+console flow-control none
+trunk 51-52 trk1 lacp
+logging 10.31.1.21
+mac-age-time 180
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+sflow 1 destination 136.159.35.18
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+no stack
+telnet-server listen data
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+web-management listen data
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access manager
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip default-gateway 10.27.16.1
+ip ssh listen data
+interface 1
+   name "ITSORDLESX02"
+   exit
+interface 2
+   name "ITSORDLESX02"
+   exit
+interface 3
+   name "ITSORDLESX02"
+   exit
+interface 4
+   name "ITSONAS224002A-B"
+   exit
+interface 5
+   name "ITSONAS224002A-B"
+   exit
+interface 6
+   name "ITSONAS224002B"
+   exit
+interface 7
+   name "ITSONAS224002B"
+   exit
+interface 8
+   name "ITSONAS224002B"
+   exit
+interface 9
+   name "ITSONAS224002B"
+   exit
+interface 10
+   name "ITSOUCMGORA01"
+   exit
+interface 11
+   name "ITSOUCMGORA01"
+   exit
+interface 12
+   disable
+   exit
+interface 13
+   name "ITERDBPROD32"
+   exit
+interface 14
+   name "ITERDBPROD33"
+   exit
+interface 15
+   disable
+   exit
+interface 16
+   disable
+   exit
+interface 17
+   disable
+   exit
+interface 18
+   disable
+   exit
+interface 19
+   disable
+   exit
+interface 20
+   disable
+   exit
+interface 21
+   disable
+   exit
+interface 22
+   disable
+   exit
+interface 23
+   disable
+   exit
+interface 24
+   disable
+   exit
+interface 25
+   disable
+   exit
+interface 26
+   disable
+   exit
+interface 27
+   disable
+   exit
+interface 28
+   disable
+   exit
+interface 29
+   disable
+   exit
+interface 30
+   disable
+   exit
+interface 31
+   disable
+   exit
+interface 32
+   disable
+   exit
+interface 33
+   disable
+   exit
+interface 34
+   disable
+   exit
+interface 35
+   disable
+   exit
+interface 36
+   disable
+   exit
+interface 37
+   disable
+   exit
+interface 38
+   disable
+   exit
+interface 39
+   disable
+   exit
+interface 40
+   disable
+   exit
+interface 41
+   disable
+   exit
+interface 42
+   disable
+   exit
+interface 43
+   disable
+   exit
+interface 44
+   disable
+   exit
+interface 45
+   disable
+   exit
+interface 46
+   disable
+   exit
+interface 47
+   disable
+   exit
+interface 48
+   disable
+   exit
+interface 49
+   disable
+   exit
+interface 50
+   disable
+   exit
+snmp-server community "uofc2009" unrestricted
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 136.159.230.19 community "uofc2009" trap-level critical
+snmp-server host 10.31.0.17 community "public"
+snmp-server listen data
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+no spanning-tree Trk1 auto-edge-port
+spanning-tree Trk1 priority 4
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree instance 1 vlan 1-1099 2000-4094
+spanning-tree instance 1 Trk1 priority 4
+spanning-tree instance 2 vlan 1100-1399
+spanning-tree instance 2 Trk1 priority 4
+spanning-tree instance 11 vlan 1700-1799
+spanning-tree instance 11 Trk1 priority 4
+spanning-tree instance 12 vlan 1800-1899
+spanning-tree instance 12 Trk1 priority 4
+spanning-tree instance 13 vlan 1900-1999
+spanning-tree instance 13 Trk1 priority 4
+spanning-tree instance 14 vlan 1400-1499
+spanning-tree instance 14 Trk1 priority 4
+spanning-tree instance 15 vlan 1500-1599
+spanning-tree instance 15 Trk1 priority 4
+spanning-tree instance 16 vlan 1600-1699
+spanning-tree instance 16 Trk1 priority 4
+spanning-tree bpdu-protection-timeout 600
+oobm
+   disable
+   ip address dhcp-bootp
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-48,49-50,Trk1
+   no ip address
+   exit
+vlan 999
+   name "unused-vlan"
+   untagged 9,12,15-48,49-50,Trk1
+   no ip address
+   exit
+vlan 2712
+   name "10.58.45.0/24_NFSstorage"
+   untagged 2,4,7
+   tagged Trk1
+   no ip address
+   exit
+vlan 2713
+   name "10.58.44.0/24_iSCSistorage"
+   untagged 3,5,8
+   tagged Trk1
+   no ip address
+   exit
+vlan 2716
+   name "Mgmt"
+   tagged Trk1
+   ip address 10.27.16.225 255.255.255.0
+   exit
+vlan 2737
+   name "10.60.64.0/24_DRAC"
+   untagged 6,11,13-14
+   tagged Trk1
+   no ip address
+   exit
+vlan 2740
+   name "10.60.32.0/22_Mgmt"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2742
+   name "10.60.0.0/22_vmotion"
+   tagged Trk1
+   no ip address
+   exit
+vlan 3627
+   name "10.41.224.0/24_msz-bubble1-HKN"
+   untagged 10
+   tagged 1,Trk1
+   no ip address
+   jumbo
+   exit
+vlan 3643
+   name "136.159.35.0/24_DMZ"
+   tagged 1,Trk1
+   no ip address
+   exit
+tftp server listen data
+loop-protect 1-48,49-50
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

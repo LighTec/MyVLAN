@@ -1,0 +1,463 @@
+; J8697A Configuration Editor; Created on release #K.15.12.0015
+; Ver #05:18.41.ff.3f.ef:73
+hostname "MSB016-B1-SW-3884"
+module 1 type j8702a
+module 2 type j8702a
+module 3 type j9546a
+module 4 type j9546a
+module 5 type j9538a
+module 6 type j9538a
+console baud-rate 9600
+console flow-control none
+console idle-timeout 300
+console idle-timeout serial-usb 300
+trunk E1,F1 trk1 lacp
+trunk A7,B7 trk3 lacp
+trunk E8,F8 trk4 lacp
+banner motd "**************************************************************************\n* Important Notice:\n* Authorized users only:\n* This computer system (including all related equipment, networks,\n* systems and services) is provided for use only by authorized\n* Individuals with valid and subsisting usernames and passwords\n* issued by University of Calgary and for authorized purposes only.\n* Unauthorized access to or use of this system is strictly prohibited,\n* and may result in criminal, civil and administrative penalties \n* and other adverse action.\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+web-management ssl
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.27.17.1
+interface A1
+   name "WEBPAXB_Storage"
+   exit
+interface A2
+   name "ITFOMFESSRV01-drac"
+   exit
+interface A3
+   name "ITFOMSASRV01-drac"
+   exit
+interface A4
+   name "ITPAABOVE"
+   exit
+interface A5
+   name "ITPAABOVE"
+   exit
+interface A7
+   name "ARISTA-DCS-7050S-52L"
+   exit
+interface A8
+   name "phas_sirius_V3700"
+   exit
+interface A9
+   name "phas_IBM-chassis"
+   exit
+interface A10
+   name "mgt-storage-V8"
+   exit
+interface A11
+   name "mgt-storage-V7"
+   exit
+interface A12
+   name "mgt-storage-V9"
+   exit
+interface A13
+   name "RLM-CIPAC-S01"
+   exit
+interface A14
+   name "RLM-CIPAC-S02"
+   exit
+interface A15
+   name "itbioyeaman"
+   exit
+interface A16
+   name "itbioyeaman"
+   exit
+interface A17
+   name "ITBIOYEAMAN_DRAC"
+   exit
+interface A18
+   name "ITBIOYEAMAN"
+   exit
+interface A19
+   name "itbioyeaman02"
+   exit
+interface A20
+   name "itbioyeaman02"
+   exit
+interface A21
+   name "Ferguson"
+   exit
+interface A22
+   disable
+   exit
+interface A23
+   disable
+   exit
+interface A24
+   name "A24D_MSRDC-B1-ZDR43-SW-POC_U48"
+   exit
+interface B2
+   name "itbioyeaman"
+   exit
+interface B3
+   name "ITCMSPACSPROD01"
+   exit
+interface B4
+   name "itbioyeaman02"
+   exit
+interface B5
+   disable
+   exit
+interface B6
+   disable
+   exit
+interface B7
+   name "ARISTA-DCS-7050S-52R"
+   exit
+interface B8
+   disable
+   exit
+interface B9
+   disable
+   exit
+interface B10
+   name "XENBASE_Srv_Backup"
+   exit
+interface B11
+   name "XENBASE_Srv_Backup"
+   exit
+interface B12
+   name "XENBASE_Tape"
+   exit
+interface B13
+   disable
+   exit
+interface B14
+   disable
+   exit
+interface B15
+   disable
+   exit
+interface B16
+   disable
+   exit
+interface B17
+   disable
+   exit
+interface B18
+   disable
+   exit
+interface B19
+   disable
+   exit
+interface B20
+   disable
+   exit
+interface B21
+   disable
+   exit
+interface B22
+   disable
+   exit
+interface B23
+   disable
+   exit
+interface B24
+   name "test"
+   exit
+interface C1
+   name "ITFOMFESSRV01-public"
+   exit
+interface C2
+   name "ITFOMFESSRV01-storage"
+   exit
+interface C3
+   name "ITFOMSASRV01-public"
+   exit
+interface C4
+   name "ITCMSPACSPROD01"
+   exit
+interface C5
+   name "FERGUSON"
+   exit
+interface C6
+   name "ITArtsStor02"
+   exit
+interface C7
+   name "ITArtsESXI01"
+   exit
+interface C8
+   name "ITArtsESXI01"
+   exit
+interface D1
+   name "ITArtsESXI02"
+   exit
+interface D2
+   name "TRI15"
+   exit
+interface D3
+   name "ITArtsESXI02"
+   exit
+interface D4
+   name "ITCMSPACSPROD01"
+   exit
+interface D5
+   name "ITArtsESXI03"
+   exit
+interface D6
+   name "ITArtsESXI03"
+   exit
+interface D7
+   name "ITARTSSTO01"
+   exit
+interface D8
+   name "TRI14"
+   exit
+interface E1
+   name "UE1-NX-9K-10.31.0.113-D1/1"
+   exit
+interface E2
+   disable
+   exit
+interface E3
+   disable
+   exit
+interface E4
+   disable
+   exit
+interface E5
+   disable
+   exit
+interface E6
+   disable
+   exit
+interface E7
+   disable
+   exit
+interface E8
+   name "phas_IBM-chassis"
+   exit
+interface F1
+   name "UF1-NX-9K-10.31.0.114-D1/1"
+   exit
+interface F2
+   disable
+   exit
+interface F3
+   disable
+   exit
+interface F4
+   disable
+   exit
+interface F5
+   disable
+   exit
+interface F6
+   disable
+   exit
+interface F7
+   disable
+   exit
+interface F8
+   name "phas_IBM-chassis"
+   exit
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server contact "UCIT 220-5555" location "MSRDC Zone D R18 U9-12"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged A1-A6,A8-A24,B1-B6,B8-B24,C1-C8,D1-D8,E2-E7,F2-F7,Trk1,Trk4
+   untagged Trk3
+   no ip address
+   exit
+vlan 999
+   name "unused_ports_sw_vlan"
+   untagged A22-A23,B5-B6,B8-B9,B13-B23,D2,D8,E2-E7,F2-F7,Trk1
+   no ip address
+   exit
+vlan 2097
+   name "POC-VXLAN"
+   tagged A24
+   no ip address
+   exit
+vlan 2374
+   name "rczit-dc-vmotion_10.59.98.0/24"
+   tagged A24,Trk1
+   no ip address
+   exit
+vlan 2375
+   name "rczit-dc-vsecurity_10.59.97.0/24"
+   tagged A24,Trk1
+   no ip address
+   exit
+vlan 2376
+   name "rczit-dc-vmgmt_10.59.96.0/24"
+   tagged A24,Trk1
+   no ip address
+   exit
+vlan 2486
+   name "rcz_phas_136.159.142.0/25"
+   tagged Trk1,Trk4
+   no ip address
+   exit
+vlan 2487
+   name "rcz_phas_10.56.191.0/24"
+   untagged A8-A9,B1
+   tagged Trk1,Trk4
+   no ip address
+   exit
+vlan 2494
+   name "tpn_moodle_136.159.193.0/25"
+   tagged Trk1,Trk3
+   no ip address
+   exit
+vlan 2532
+   name "rcz_dc_stormgt_10.56.196.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2533
+   name "rcz_dc_tsm_10.60.144.0/23"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2538
+   name "rcz_dc_vkernel_10.150.14.128/25"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2540
+   name "rcz_dc_vmotion_10.150.14.0/25"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2545
+   name "rcz_msrdc_mgmt_10.27.17.0/24"
+   tagged A24,Trk1
+   ip address 10.27.17.252 255.255.255.0
+   exit
+vlan 2578
+   name "RDC_LBS_10.146.188.0/24"
+   untagged A6,A10-A12
+   tagged C7,D1-D2,D5,D8,Trk1
+   no ip address
+   exit
+vlan 2580
+   name "rcz_dc_storage_10.156.190.0/24"
+   untagged B24,C6,C8,D3,D6-D7
+   tagged A1,A24,C2,Trk1
+   no ip address
+   jumbo
+   exit
+vlan 2609
+   name "rcz_dc_136.159.190.0/24"
+   untagged A21,C3,C5
+   tagged A5,A24,C7,D1-D2,D5,D8,Trk1
+   no ip address
+   exit
+vlan 2622
+   name "rcz_dc_10.56.192.0/24"
+   untagged A13-A14,A16,C1
+   tagged A18,A20-A21,A24,C4-C5,D4,Trk1
+   no ip address
+   exit
+vlan 2649
+   name "rcz_dc_10.56.160.2/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2704
+   name "rcz_msrdc_drac_10.60.80.0/24"
+   untagged A2-A4,A15,A17,A19,B3,B10
+   tagged A24,Trk1
+   no ip address
+   exit
+vlan 2733
+   name "TSM-10.60.136.0"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2749
+   name "rcz_dc_priresearch_10.56.128/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2811
+   name "rcz_dc_public_136.159.155.96/28"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2813
+   name "rcz_dc_136.159.155.128/27"
+   untagged B12
+   tagged Trk1
+   no ip address
+   exit
+vlan 2814
+   name "rcz_dc_public_136.159.155.112/28"
+   untagged B11
+   tagged Trk1
+   no ip address
+   exit
+vlan 2816
+   name "rcz_dc_public_136.159.155.80/28"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2865
+   name "rcz_dc_136.159.155.66/28"
+   tagged Trk1
+   no ip address
+   exit
+vlan 3204
+   name "rcz-tsm-10.59.124.0/24"
+   untagged B2,B4
+   tagged Trk1
+   no ip address
+   exit
+vlan 3887
+   name "rcz-iscsi-1_10.156.189.0/24"
+   tagged C4,D4,Trk1
+   no ip address
+   exit
+vlan 3888
+   name "rcz-iscsi-2_10.156.188.0/24"
+   tagged C4,D4,Trk1
+   no ip address
+   exit
+spanning-tree Trk1 priority 4
+spanning-tree Trk3 priority 4
+spanning-tree Trk4 priority 4
+no tftp server
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

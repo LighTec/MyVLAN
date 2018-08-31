@@ -1,0 +1,290 @@
+; J9452A Configuration Editor; Created on release #K.15.08.0013
+; Ver #02:1b.ef:f6
+hostname "MSB029-B1-SW-2643"
+module 2 type j94yya
+module 3 type j94zza
+module 5 type j94wwa
+module 6 type j94wwa
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+trunk 51-52 trk1 lacp
+mac-age-time 180
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+sflow 1 destination 136.159.35.18
+sflow 1 polling 1-48,49-50,Trk1 60
+sflow 1 sampling 1-48,49-50,Trk1 500
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+no stack
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access manager
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.27.16.1
+interface 1
+   name "ITADSSBBTDB01"
+   exit
+interface 2
+   name "ITADSSBBTDBQA01"
+   exit
+interface 3
+   name "ITADSSBBTDB01"
+   exit
+interface 4
+   name "ITADSSBBTDBQA01"
+   exit
+interface 5
+   name "ITADSSBBTDB01"
+   exit
+interface 6
+   name "ITADSSBBTDBQA01"
+   exit
+interface 7
+   name "ITADSSBBT01"
+   exit
+interface 8
+   name "ITADSSBTQA01"
+   exit
+interface 9
+   name "ITSOUME5"
+   exit
+interface 10
+   name "ITSOUME3"
+   exit
+interface 11
+   name "ITSOUME0"
+   exit
+interface 12
+   name "ITSOUME1"
+   exit
+interface 13
+   name "ITSOUME4"
+   exit
+interface 14
+   disable
+   name "ESXER4"
+   exit
+interface 15
+   disable
+   name "ESXER4"
+   exit
+interface 16
+   name "SECURID9"
+   exit
+interface 17
+   name "SECURID9"
+   exit
+interface 18
+   name "SECURID8"
+   exit
+interface 21
+   name "ITSOLNXADM02"
+   exit
+interface 25
+   name "MPPES1AESX1_DRAC"
+   exit
+interface 26
+   name "MPPES1AESX1_iDMZ"
+   exit
+interface 27
+   name "MPPES1AESX1_DMZ-vMotion"
+   exit
+snmp-server community "uofc2009" unrestricted
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 136.159.230.19 community "" trap-level critical
+snmp-server host 10.31.0.17 community ""
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree 1 bpdu-filter bpdu-protection
+spanning-tree 2 bpdu-filter bpdu-protection
+spanning-tree 3 bpdu-filter bpdu-protection
+spanning-tree 4 bpdu-filter bpdu-protection
+spanning-tree 5 bpdu-filter bpdu-protection
+spanning-tree 6 bpdu-filter bpdu-protection
+spanning-tree 7 bpdu-filter bpdu-protection
+spanning-tree 8 bpdu-filter bpdu-protection
+spanning-tree 9 bpdu-filter bpdu-protection
+spanning-tree 10 bpdu-filter bpdu-protection
+spanning-tree 11 bpdu-filter bpdu-protection
+spanning-tree 12 bpdu-filter bpdu-protection
+spanning-tree 13 bpdu-filter bpdu-protection
+spanning-tree 14 bpdu-filter bpdu-protection
+spanning-tree 15 bpdu-filter bpdu-protection
+spanning-tree 16 bpdu-filter bpdu-protection
+spanning-tree 17 bpdu-filter bpdu-protection
+spanning-tree 18 bpdu-filter bpdu-protection
+spanning-tree 19 bpdu-filter bpdu-protection
+spanning-tree 20 bpdu-filter bpdu-protection
+spanning-tree 21 bpdu-filter bpdu-protection
+spanning-tree 22 bpdu-filter bpdu-protection
+spanning-tree 23 bpdu-filter bpdu-protection
+spanning-tree 24 bpdu-filter bpdu-protection
+spanning-tree 25 bpdu-filter bpdu-protection
+spanning-tree 26 bpdu-filter bpdu-protection
+spanning-tree 27 bpdu-filter bpdu-protection
+spanning-tree 28 bpdu-filter bpdu-protection
+spanning-tree 29 bpdu-filter bpdu-protection
+spanning-tree 30 bpdu-filter bpdu-protection
+spanning-tree 31 bpdu-filter bpdu-protection
+spanning-tree 32 bpdu-filter bpdu-protection
+spanning-tree 33 bpdu-filter bpdu-protection
+spanning-tree 34 bpdu-filter bpdu-protection
+spanning-tree 35 bpdu-filter bpdu-protection
+spanning-tree 36 bpdu-filter bpdu-protection
+spanning-tree 37 bpdu-filter bpdu-protection
+spanning-tree 38 bpdu-filter bpdu-protection
+spanning-tree 39 bpdu-filter bpdu-protection
+spanning-tree 40 bpdu-filter bpdu-protection
+spanning-tree 41 bpdu-filter bpdu-protection
+spanning-tree 42 bpdu-filter bpdu-protection
+spanning-tree 43 bpdu-filter bpdu-protection
+spanning-tree 44 bpdu-filter bpdu-protection
+spanning-tree 45 bpdu-filter bpdu-protection
+spanning-tree 46 bpdu-filter bpdu-protection
+spanning-tree 47 bpdu-filter bpdu-protection
+spanning-tree 48 bpdu-filter bpdu-protection
+spanning-tree 49 bpdu-filter bpdu-protection
+spanning-tree 50 bpdu-filter bpdu-protection
+no spanning-tree Trk1 auto-edge-port
+spanning-tree Trk1 priority 4
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree instance 1 vlan 1-1099 2000-4094
+spanning-tree instance 1 Trk1 priority 4
+spanning-tree instance 2 vlan 1100-1399
+spanning-tree instance 2 Trk1 priority 4
+spanning-tree instance 11 vlan 1700-1799
+spanning-tree instance 11 Trk1 priority 4
+spanning-tree instance 12 vlan 1800-1899
+spanning-tree instance 12 Trk1 priority 4
+spanning-tree instance 13 vlan 1900-1999
+spanning-tree instance 13 Trk1 priority 4
+spanning-tree instance 14 vlan 1400-1499
+spanning-tree instance 14 Trk1 priority 4
+spanning-tree instance 15 vlan 1500-1599
+spanning-tree instance 15 Trk1 priority 4
+spanning-tree instance 16 vlan 1600-1699
+spanning-tree instance 16 Trk1 priority 4
+spanning-tree bpdu-protection-timeout 600
+oobm
+   ip address dhcp-bootp
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-18,21,24-27,46-48,Trk1
+   untagged 19-20,22-23,28-45,49-50
+   no ip address
+   exit
+vlan 999
+   name "unused-vlan"
+   untagged 14-15,Trk1
+   no ip address
+   exit
+vlan 1004
+   name "Drac"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2100
+   name "iDMZ_10.41.88.0/24"
+   tagged 26-27,Trk1
+   no ip address
+   exit
+vlan 2708
+   name "MSproj-QA-MSZ_10.46.129.0/24"
+   tagged 46,Trk1
+   no ip address
+   exit
+vlan 2716
+   name "Mgmt"
+   untagged 47-48
+   tagged Trk1
+   ip address 10.27.16.241 255.255.255.0
+   exit
+vlan 2733
+   name "TSM_10.60.136.0/22"
+   tagged 3-4,46,Trk1
+   no ip address
+   exit
+vlan 2734
+   name "10.60.128.0/22"
+   untagged 24
+   tagged Trk1
+   no ip address
+   exit
+vlan 2737
+   name "DRAC_10.60.64.0/22"
+   untagged 1-2,17,21,25
+   tagged Trk1
+   no ip address
+   exit
+vlan 2761
+   name "VLAN2761"
+   tagged 26-27,Trk1
+   no ip address
+   exit
+vlan 2762
+   name "DMZ-vMotion_10.56.120.0/24"
+   tagged 26-27,Trk1
+   no ip address
+   exit
+vlan 2822
+   name "VLAN2822"
+   tagged 26-27,Trk1
+   no ip address
+   exit
+vlan 2826
+   name "10.41.76.0/27_semitrusted-idmz"
+   tagged 46,Trk1
+   no ip address
+   jumbo
+   exit
+vlan 2828
+   name "10.41.140.0/24_trusted-msz"
+   tagged 46,Trk1
+   no ip address
+   exit
+vlan 3083
+   name "idmz_10.41.65.0/24"
+   tagged 46,Trk1
+   no ip address
+   exit
+vlan 3643
+   name "136.159.35.0/24"
+   untagged 9-13
+   tagged 7-8,46,Trk1
+   no ip address
+   exit
+vlan 3667
+   name "10.41.129.0/18"
+   untagged 16,18
+   tagged 5-6,46,Trk1
+   no ip address
+   exit
+loop-protect 1-48,49-50
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

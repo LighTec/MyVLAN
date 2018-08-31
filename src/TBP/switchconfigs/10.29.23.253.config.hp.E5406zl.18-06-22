@@ -1,0 +1,667 @@
+; J8697A Configuration Editor; Created on release #K.15.08.0013
+; Ver #02:1b.ef:f6
+hostname "DTCB08-B1-HSW-2433"
+module 1 type j8705a
+module 2 type j8706a
+module 5 type j8706a
+module 6 type j9537a
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+trunk A21,B21 trk2 lacp
+trunk E3,F3 trk3 lacp
+trunk E4,F4 trk4 lacp
+trunk E5,F5 trk5 lacp
+trunk E6,F6 trk6 lacp
+trunk E7,F7 trk7 lacp
+trunk E8,F8 trk8 lacp
+trunk A22,B22 trk9 lacp
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this systeshm is strictly prohibited, *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.14
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+power-over-ethernet pre-std-detect
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.29.23.1
+interface A1
+   broadcast-limit 40
+   name "A1D-10.29.23.220-Gi0/0/0_AN-DTC-WC-1"
+   exit
+interface A2
+   broadcast-limit 10
+   disable
+   exit
+interface A3
+   broadcast-limit 10
+   disable
+   exit
+interface A4
+   broadcast-limit 10
+   disable
+   exit
+interface A5
+   broadcast-limit 10
+   disable
+   exit
+interface A6
+   broadcast-limit 10
+   disable
+   exit
+interface A7
+   broadcast-limit 10
+   disable
+   exit
+interface A8
+   broadcast-limit 40
+   name "A8D-10.6.1.20-ETH:00_Mediatrix"
+   speed-duplex 100-full
+   exit
+interface A9
+   broadcast-limit 10
+   name "Supermicro_TestBox_Eth1"
+   exit
+interface A10
+   broadcast-limit 40
+   name "Supermicro_TestBox_Eth0"
+   exit
+interface A11
+   broadcast-limit 40
+   exit
+interface A12
+   broadcast-limit 10
+   disable
+   exit
+interface A13
+   broadcast-limit 10
+   disable
+   exit
+interface A14
+   broadcast-limit 10
+   disable
+   exit
+interface A15
+   broadcast-limit 10
+   disable
+   exit
+interface A16
+   broadcast-limit 10
+   disable
+   exit
+interface A17
+   broadcast-limit 10
+   disable
+   exit
+interface A18
+   broadcast-limit 10
+   disable
+   exit
+interface A19
+   broadcast-limit 10
+   disable
+   exit
+interface A20
+   broadcast-limit 40
+   name "A20U-10.31.2.41-GE0/0/2_ASR-Router"
+   exit
+interface A21
+   broadcast-limit 40
+   name "A21D-10.29.23.221-x1/49U_DTC130"
+   exit
+interface A22
+   broadcast-limit 40
+   name "A22D-10.29.23.250-x1/A1U_DTC216"
+   exit
+interface A23
+   broadcast-limit 10
+   disable
+   exit
+interface A24
+   broadcast-limit 10
+   disable
+   exit
+interface B1
+   broadcast-limit 40
+   disable
+   name "B1D-10.29.23.250-x24U_DTC-216B"
+   speed-duplex 1000-full
+   exit
+interface B2
+   broadcast-limit 10
+   disable
+   speed-duplex 1000-full
+   exit
+interface B3
+   broadcast-limit 40
+   disable
+   name "B3D-10.29.23.244-x24U_DTC-216B"
+   speed-duplex 1000-full
+   exit
+interface B4
+   broadcast-limit 10
+   disable
+   speed-duplex 1000-full
+   exit
+interface B5
+   broadcast-limit 10
+   disable
+   speed-duplex 1000-full
+   exit
+interface B6
+   broadcast-limit 10
+   disable
+   speed-duplex 1000-full
+   exit
+interface B7
+   broadcast-limit 10
+   disable
+   speed-duplex 1000-full
+   exit
+interface B8
+   broadcast-limit 10
+   disable
+   exit
+interface B9
+   broadcast-limit 40
+   speed-duplex 1000-full
+   exit
+interface B10
+   broadcast-limit 10
+   disable
+   exit
+interface B11
+   broadcast-limit 10
+   disable
+   exit
+interface B12
+   broadcast-limit 10
+   disable
+   exit
+interface B13
+   broadcast-limit 10
+   disable
+   exit
+interface B14
+   broadcast-limit 10
+   disable
+   exit
+interface B15
+   broadcast-limit 10
+   disable
+   exit
+interface B16
+   broadcast-limit 10
+   disable
+   exit
+interface B17
+   broadcast-limit 10
+   disable
+   exit
+interface B18
+   broadcast-limit 10
+   disable
+   exit
+interface B19
+   broadcast-limit 10
+   disable
+   exit
+interface B20
+   broadcast-limit 10
+   disable
+   exit
+interface B21
+   broadcast-limit 40
+   name "B21D-10.29.23.221-x2/49U_DTC130"
+   exit
+interface B22
+   broadcast-limit 40
+   name "B22D-10.29.23.250-x1/A2U_DTC216"
+   exit
+interface B23
+   broadcast-limit 10
+   disable
+   exit
+interface B24
+   broadcast-limit 10
+   name "ArubaController_Eth:00"
+   exit
+interface E1
+   broadcast-limit 40
+   disable
+   exit
+interface E2
+   broadcast-limit 40
+   disable
+   exit
+interface E3
+   broadcast-limit 40
+   name "TRK3-e3d-10.29.23.251-1/49U-TRK1-DTC216B"
+   exit
+interface E4
+   broadcast-limit 40
+   name "TRK4-e4d-10.29.23.249-1/49U-TRK1-DTC310A"
+   exit
+interface E5
+   broadcast-limit 40
+   name "TRK5-e5d-10.29.23.248-1/49U-TRK1-DTC410A"
+   exit
+interface E6
+   broadcast-limit 40
+   name "TRK6-e6d-10.29.23.247-1/49U-TRK1-DTC510A"
+   exit
+interface E7
+   broadcast-limit 40
+   name "TRK7-e7d-10.29.23.246-1/49U-TRK1-DTC610A"
+   exit
+interface E8
+   broadcast-limit 40
+   name "TRK8-e8d-10.29.23.252-1/49U-TRK1-DTC08"
+   exit
+interface E9
+   broadcast-limit 40
+   disable
+   exit
+interface E10
+   broadcast-limit 40
+   disable
+   exit
+interface E11
+   broadcast-limit 40
+   disable
+   exit
+interface E12
+   broadcast-limit 40
+   disable
+   exit
+interface E13
+   broadcast-limit 40
+   disable
+   exit
+interface E14
+   broadcast-limit 40
+   disable
+   exit
+interface E15
+   broadcast-limit 40
+   disable
+   exit
+interface E16
+   broadcast-limit 40
+   disable
+   exit
+interface E17
+   broadcast-limit 40
+   disable
+   exit
+interface E18
+   broadcast-limit 40
+   disable
+   exit
+interface E19
+   broadcast-limit 40
+   disable
+   exit
+interface E20
+   broadcast-limit 40
+   disable
+   exit
+interface E21
+   broadcast-limit 40
+   disable
+   exit
+interface E22
+   broadcast-limit 40
+   disable
+   exit
+interface E23
+   broadcast-limit 40
+   disable
+   exit
+interface E24
+   broadcast-limit 40
+   disable
+   exit
+interface F1
+   broadcast-limit 40
+   disable
+   exit
+interface F2
+   broadcast-limit 40
+   disable
+   exit
+interface F3
+   broadcast-limit 40
+   name "TRK3-f3d-10.29.23.251-1/50U-TRK1-DTC216B"
+   exit
+interface F4
+   broadcast-limit 40
+   name "TRK4-f4d-10.29.23.249-1/50U-TRK1-DTC310A"
+   exit
+interface F5
+   broadcast-limit 40
+   name "TRK5-f5d-10.29.23.248-1/50U-TRK1-DTC410A"
+   exit
+interface F6
+   broadcast-limit 40
+   name "TRK6-f6d-10.29.23.247-1/50U-TRK1-DTC510A"
+   exit
+interface F7
+   broadcast-limit 40
+   name "TRK7-f7d-10.29.23.246-1/50U-TRK1-DTC610A"
+   exit
+interface F8
+   broadcast-limit 40
+   name "TRK8-f8d-10.29.23.252-1/50U-TRK1-DTC08"
+   exit
+interface F9
+   broadcast-limit 40
+   disable
+   exit
+interface F10
+   broadcast-limit 40
+   disable
+   exit
+interface F11
+   broadcast-limit 40
+   disable
+   exit
+interface F12
+   broadcast-limit 40
+   disable
+   exit
+interface F13
+   broadcast-limit 40
+   disable
+   exit
+interface F14
+   broadcast-limit 40
+   disable
+   exit
+interface F15
+   broadcast-limit 40
+   disable
+   exit
+interface F16
+   broadcast-limit 40
+   disable
+   exit
+interface F17
+   broadcast-limit 40
+   disable
+   exit
+interface F18
+   broadcast-limit 40
+   disable
+   exit
+interface F19
+   broadcast-limit 40
+   disable
+   exit
+interface F20
+   broadcast-limit 40
+   disable
+   exit
+interface F21
+   broadcast-limit 40
+   disable
+   exit
+interface F22
+   broadcast-limit 40
+   disable
+   exit
+interface F23
+   broadcast-limit 40
+   disable
+   exit
+interface F24
+   broadcast-limit 40
+   disable
+   exit
+snmp-server community "uofc2009" unrestricted
+snmp-server community "mecyou12"
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server contact "UCIT_220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree Trk2 priority 4 root-guard
+spanning-tree Trk3 priority 4 root-guard
+spanning-tree Trk4 priority 4 root-guard
+spanning-tree Trk5 priority 4 root-guard
+spanning-tree Trk6 priority 4 root-guard
+spanning-tree Trk7 priority 4 root-guard
+spanning-tree Trk8 priority 4 root-guard
+spanning-tree Trk9 priority 4 root-guard
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree instance ist Trk2 path-cost 20000
+spanning-tree instance ist Trk3 path-cost 20000
+spanning-tree instance ist Trk4 path-cost 20000
+spanning-tree instance ist Trk5 path-cost 20000
+spanning-tree instance ist Trk6 path-cost 20000
+spanning-tree instance ist Trk7 path-cost 20000
+spanning-tree instance ist Trk8 path-cost 20000
+spanning-tree instance ist Trk9 path-cost 20000
+spanning-tree priority 6
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged A1-A20,A23-A24,B1-B20,B23-B24,E1-E2,E9-E24,F1-F2,F9-F24,Trk2-Trk9
+   no ip address
+   exit
+vlan 300
+   name "DSX_Security"
+   tagged B1,B3,Trk3,Trk9
+   no ip address
+   ip igmp
+   exit
+vlan 400
+   name "AV_10.144.0.0/23"
+   tagged A10,A20,Trk2-Trk7,Trk9
+   no ip address
+   ip igmp
+   exit
+vlan 480
+   name "DTC-IPCAM_10.135.194.0/23"
+   tagged A20,Trk2-Trk9
+   no ip address
+   exit
+vlan 680
+   name "VLAN680"
+   tagged A1,A20,B1,B3,Trk2-Trk9
+   no ip address
+   ip igmp
+   exit
+vlan 681
+   name "VLAN681"
+   tagged A1,A20
+   no ip address
+   ip igmp
+   exit
+vlan 682
+   name "VLAN682"
+   tagged A1,A20
+   no ip address
+   ip igmp
+   exit
+vlan 683
+   name "VLAN683"
+   tagged A1,A20
+   no ip address
+   ip igmp
+   exit
+vlan 999
+   name "unused-vlan"
+   untagged A2-A7,A12-A19,A23-A24,B2,B4-B8,B10-B20,B23,E1-E2,E9-E24,F1-F2,F9-F24
+   no ip address
+   exit
+vlan 1303
+   name "MCZ1_10.108.0/21"
+   untagged A10
+   tagged A20,B1,B3,Trk2-Trk9
+   no ip address
+   ip igmp
+   exit
+vlan 1304
+   name "MCZ2_10.108.8/21"
+   tagged A10
+   no ip address
+   ip igmp
+   exit
+vlan 1877
+   name "IP_Camera"
+   tagged A10,B1,B3,Trk2-Trk9
+   ip address 10.72.216.254 255.255.255.0
+   ip igmp
+   exit
+vlan 1888
+   name "MCZ(being_retired)"
+   tagged A10,A20,Trk6-Trk7
+   no ip address
+   ip igmp
+   exit
+vlan 1904
+   name "UCZ1_10.72.0/21"
+   tagged A10,A20,B1,B3,Trk2-Trk7,Trk9
+   no ip address
+   ip igmp
+   exit
+vlan 2291
+   name "VLAN2291"
+   tagged B1,B3,Trk2-Trk7,Trk9
+   no ip address
+   exit
+vlan 2295
+   name "IT_Managed_Lab_WAN_DTC"
+   tagged A20,B1,B3,Trk2-Trk7,Trk9
+   no ip address
+   exit
+vlan 2308
+   name "DTC-MCZwireless-10.123.11.0/24"
+   tagged A1,A20
+   no ip address
+   exit
+vlan 2309
+   name "DTC-MCZwireless-10.123.10.0/24"
+   tagged A1,A20
+   no ip address
+   exit
+vlan 2310
+   name "DTC-MCZwireless-10.123.9.0/24"
+   tagged A1,A20
+   no ip address
+   exit
+vlan 2311
+   name "DTC-MCZwireless-10.123.8.0/24"
+   tagged A1,A20
+   no ip address
+   exit
+vlan 2389
+   name "DTC_PRT_10.127.194.0/24"
+   tagged A20,B1,B3,Trk3-Trk4,Trk6-Trk7,Trk9
+   no ip address
+   exit
+vlan 3520
+   name "Wireless_Users"
+   tagged A10,A20,B1,B24,Trk9
+   no ip address
+   ip igmp
+   exit
+vlan 3521
+   name "Wireless_Users2"
+   tagged A10,A20,B1,B24,Trk9
+   no ip address
+   ip igmp
+   exit
+vlan 3522
+   name "Wireless_Users3"
+   tagged A10,A20,B1,B24,Trk9
+   no ip address
+   ip igmp
+   exit
+vlan 3527
+   name "VLAN3527"
+   tagged Trk4
+   no ip address
+   ip igmp
+   exit
+vlan 3556
+   name "DTC_VC_136.159.53.16/28"
+   tagged A10,A20,B1,B3,Trk3-Trk4,Trk6-Trk7
+   no ip address
+   ip igmp
+   exit
+vlan 3560
+   name "DTC_EBB_10.130.0.0/23"
+   tagged A10,A20,B1,B3,Trk3-Trk7,Trk9
+   no ip address
+   ip igmp
+   exit
+vlan 3561
+   name "1CARD"
+   tagged A10,A20,B3,Trk3,Trk6-Trk7
+   no ip address
+   ip igmp
+   exit
+vlan 3601
+   name "bookstore-downtown"
+   tagged A10,A20,B3,Trk3
+   no ip address
+   ip igmp
+   exit
+vlan 3680
+   name "DTC_VoIP"
+   tagged A8,A10,A20,B1,B3,Trk2-Trk7,Trk9
+   no ip address
+   ip igmp
+   exit
+vlan 3692
+   name "FW_Transit"
+   tagged A10
+   no ip address
+   ip igmp
+   exit
+vlan 3827
+   name "DTC_MGMT"
+   untagged A9,A11,B24
+   tagged A1,A10,A20,B1,B3,B9,Trk2-Trk9
+   ip address 10.29.23.253 255.255.255.0
+   ip igmp
+   exit
+vlan 3828
+   name "DTC_Transit"
+   tagged A10,B1,Trk9
+   no ip address
+   ip igmp
+   exit
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

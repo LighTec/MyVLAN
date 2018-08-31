@@ -1,0 +1,70 @@
+; J4903A Configuration Editor; Created on release #I.08.55
+
+hostname "KNB101D-1-MSW-3422" 
+snmp-server contact "UCIT_220-5555" 
+snmp-server location "KN B101D" 
+mac-age-time 180 
+max-vlans 253 
+time timezone -420 
+time daylight-time-rule Continental-US-and-Canada 
+cdp run 
+qos-passthrough-mode 
+console baud-rate 9600 
+console flow-control None 
+console inactivity-timer 5 
+interface 9 
+   speed-duplex 100-full 
+exit
+interface 22 
+   speed-duplex 100-full 
+exit
+ip default-gateway 136.159.130.34 
+sntp server 136.159.130.3 
+sntp server 136.159.34.69 
+timesync sntp 
+sntp unicast 
+sntp 60 
+logging 136.159.254.138 
+logging 10.31.1.14 
+snmp-server community "public" Operator 
+snmp-server community "mecyou12" Operator 
+snmp-server community "otzqpal" Unrestricted 
+snmp-server community "uofc2009" Unrestricted 
+snmp-server community "mecyou" Unrestricted 
+snmp-server host 136.159.22.228 "public" Critical 
+snmp-server host 10.31.1.16 "uofc2009" Critical 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   untagged 1-24 
+   ip address 136.159.130.250 255.255.255.0 
+   exit 
+fault-finder bad-driver sensitivity high 
+fault-finder bad-transceiver sensitivity high 
+fault-finder bad-cable sensitivity high 
+fault-finder too-long-cable sensitivity high 
+fault-finder over-bandwidth sensitivity high 
+fault-finder broadcast-storm sensitivity high 
+fault-finder loss-of-link sensitivity high 
+ip authorized-managers 136.159.254.0 255.255.255.0 
+ip authorized-managers 10.41.70.0 255.255.255.0 access Operator 
+ip authorized-managers 10.31.0.0 255.255.254.0 
+ip authorized-managers 10.31.4.0 255.255.255.0 
+ip authorized-managers 10.59.152.0 255.255.254.0 
+ip authorized-managers 10.41.68.50 255.255.255.255 
+ip authorized-managers 10.41.68.58 255.255.255.255 
+ip authorized-managers 10.41.75.0 255.255.255.0 
+no stack 
+aaa authentication login privilege-mode 
+aaa authentication telnet login radius local 
+aaa authentication telnet enable radius local 
+aaa authentication ssh login radius 
+aaa authentication ssh enable radius 
+radius-server dead-time 5 
+radius-server timeout 3 
+radius-server retransmit 2 
+radius-server host 10.31.1.51 
+radius-server host 10.31.1.52 
+ip ssh version 1-or-2
+password manager
+password operator
+

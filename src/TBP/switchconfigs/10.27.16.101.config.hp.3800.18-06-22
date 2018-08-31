@@ -1,0 +1,301 @@
+; J9574A Configuration Editor; Created on release #KA.16.02.0014
+; Ver #0f:01.81.f0.92.34.59.3c.6b.fb.ff.fd.ff.ff.3f.ef:fe
+
+hostname "A10E-B1-MSW-4367"
+module 1 type j9574y
+module 2 type j9574x
+console baud-rate 9600
+console flow-control none
+console idle-timeout 300
+console idle-timeout serial-usb 300
+trunk 49-50 trk1 lacp
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this systeshm is strictly prohibited, *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server dead-time 5
+radius-server timeout 3
+radius-server retransmit 2
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access manager
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip default-gateway 10.27.16.1
+interface 1
+   name "x1d-10.1.177.46-E:1u_Perle-SMDI"
+   exit
+interface 2
+   disable
+   exit
+interface 3
+   disable
+   exit
+interface 4
+   disable
+   exit
+interface 5
+   disable
+   exit
+interface 6
+   disable
+   exit
+interface 7
+   disable
+   exit
+interface 8
+   disable
+   exit
+interface 9
+   disable
+   exit
+interface 10
+   disable
+   exit
+interface 11
+   disable
+   exit
+interface 12
+   disable
+   exit
+interface 13
+   disable
+   exit
+interface 14
+   disable
+   exit
+interface 15
+   disable
+   exit
+interface 16
+   disable
+   exit
+interface 17
+   disable
+   exit
+interface 18
+   disable
+   exit
+interface 19
+   disable
+   exit
+interface 20
+   disable
+   exit
+interface 21
+   disable
+   exit
+interface 22
+   disable
+   exit
+interface 23
+   disable
+   exit
+interface 24
+   disable
+   exit
+interface 25
+   disable
+   exit
+interface 26
+   disable
+   exit
+interface 27
+   disable
+   exit
+interface 28
+   disable
+   exit
+interface 29
+   disable
+   exit
+interface 30
+   disable
+   exit
+interface 31
+   disable
+   exit
+interface 32
+   disable
+   exit
+interface 33
+   disable
+   exit
+interface 34
+   disable
+   exit
+interface 35
+   disable
+   exit
+interface 36
+   disable
+   exit
+interface 37
+   name "VoIP_Test-Ports"
+   exit
+interface 38
+   name "VoIP_Test-Ports"
+   exit
+interface 39
+   name "VoIP_Test-Ports"
+   exit
+interface 40
+   name "VoIP_Test-Ports"
+   exit
+interface 41
+   name "VoIP_Test-Ports"
+   exit
+interface 42
+   name "VoIP_Test-Ports"
+   exit
+interface 43
+   name "VoIP_Test-Ports"
+   exit
+interface 44
+   name "VoIP_Test-Ports"
+   exit
+interface 45
+   name "VoIP_Test-Ports"
+   exit
+interface 46
+   name "VoIP_Test-Ports"
+   exit
+interface 47
+   name "VoIP_Test-Ports"
+   exit
+interface 48
+   name "VoIP_Test-Ports"
+   exit
+interface 49
+   name "x49u-10.31.0.81-E1/7_DC-MSPDC-N5K-Z1-01"
+   exit
+interface 50
+   name "x50u-10.31.0.82-E1/7_DC-MSPDC-N5K-Z1-02"
+   exit
+interface 51
+   disable
+   exit
+interface 52
+   disable
+   exit
+snmp-server community "uofc2009" operator unrestricted
+snmp-server community "mecyou12" operator unrestricted
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server contact "UCIT 220-5555" location "Admin 10C Rack 3"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   no ip address
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-48,Trk1
+   untagged 51-52
+   no ip address
+   exit
+vlan 999
+   name "unused-vlan"
+   untagged 2-36,Trk1
+   no ip address
+   exit
+vlan 2489
+   name "VoIP-Svr_Mgmt_10.1.254.0/24"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2493
+   name "VoIP-Client_Test_10.6.127.0/28"
+   tagged 37-48,Trk1
+   no ip address
+   exit
+vlan 2645
+   name "ADMIN_VOIP_SERVER_10.1.177.0/24"
+   untagged 1
+   tagged Trk1
+   no ip address
+   ip igmp
+   exit
+vlan 2716
+   name "MSPDC_Mgmt"
+   tagged Trk1
+   ip address 10.27.16.101 255.255.255.0
+   exit
+spanning-tree 1 bpdu-filter bpdu-protection
+spanning-tree 2 bpdu-filter bpdu-protection
+spanning-tree 3 bpdu-filter bpdu-protection
+spanning-tree 4 bpdu-filter bpdu-protection
+spanning-tree 5 bpdu-filter bpdu-protection
+spanning-tree 6 bpdu-filter bpdu-protection
+spanning-tree 7 bpdu-filter bpdu-protection
+spanning-tree 8 bpdu-filter bpdu-protection
+spanning-tree 9 bpdu-filter bpdu-protection
+spanning-tree 10 bpdu-filter bpdu-protection
+spanning-tree 11 bpdu-filter bpdu-protection
+spanning-tree 12 bpdu-filter bpdu-protection
+spanning-tree 13 bpdu-filter bpdu-protection
+spanning-tree 14 bpdu-filter bpdu-protection
+spanning-tree 15 bpdu-filter bpdu-protection
+spanning-tree 16 bpdu-filter bpdu-protection
+spanning-tree 17 bpdu-filter bpdu-protection
+spanning-tree 18 bpdu-filter bpdu-protection
+spanning-tree 19 bpdu-filter bpdu-protection
+spanning-tree 20 bpdu-filter bpdu-protection
+spanning-tree 21 bpdu-filter bpdu-protection
+spanning-tree 22 bpdu-filter bpdu-protection
+spanning-tree 23 bpdu-filter bpdu-protection
+spanning-tree 24 bpdu-filter bpdu-protection
+spanning-tree 25 bpdu-filter bpdu-protection
+spanning-tree 26 bpdu-filter bpdu-protection
+spanning-tree 27 bpdu-filter bpdu-protection
+spanning-tree 28 bpdu-filter bpdu-protection
+spanning-tree 29 bpdu-filter bpdu-protection
+spanning-tree 30 bpdu-filter bpdu-protection
+spanning-tree 31 bpdu-filter bpdu-protection
+spanning-tree 32 bpdu-filter bpdu-protection
+spanning-tree 33 bpdu-filter bpdu-protection
+spanning-tree 34 bpdu-filter bpdu-protection
+spanning-tree 35 bpdu-filter bpdu-protection
+spanning-tree 36 bpdu-filter bpdu-protection
+spanning-tree 37 bpdu-filter bpdu-protection
+spanning-tree 38 bpdu-filter bpdu-protection
+spanning-tree 39 bpdu-filter bpdu-protection
+spanning-tree 40 bpdu-filter bpdu-protection
+spanning-tree 41 bpdu-filter bpdu-protection
+spanning-tree 42 bpdu-filter bpdu-protection
+spanning-tree 43 bpdu-filter bpdu-protection
+spanning-tree 44 bpdu-filter bpdu-protection
+spanning-tree 45 bpdu-filter bpdu-protection
+spanning-tree 46 bpdu-filter bpdu-protection
+spanning-tree 47 bpdu-filter bpdu-protection
+spanning-tree 48 bpdu-filter bpdu-protection
+no spanning-tree Trk1 auto-edge-port
+spanning-tree Trk1 priority 4
+spanning-tree config-name "ucalgary"
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600 priority 7
+no tftp server
+loop-protect 1-48
+loop-protect trap loop-detected
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+device-profile name "default-ap-profile"
+   cos 0
+   exit
+activate provision disable
+password manager
+password operator
+

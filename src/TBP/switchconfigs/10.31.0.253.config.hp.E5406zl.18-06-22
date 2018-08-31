@@ -1,0 +1,494 @@
+; J8697A Configuration Editor; Created on release #K.15.08.0013
+; Ver #02:1b.ef:f6
+hostname "OOB-HA-SW-01[A10C-B1-HSW-3265]"
+module 1 type j8706a
+module 2 type j8705a
+module 4 type j8702a
+module 5 type j8706a
+console inactivity-timer 5
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this system is strictly prohibited,   *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.1.17
+logging 10.31.1.18
+logging 10.31.1.21
+power-over-ethernet pre-std-detect
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+sflow 1 destination 10.31.0.8
+sflow 1 polling A1-A24,B1-B24,D1-D24,E1-E24 60
+sflow 1 sampling A1-A24,B1-B24,D1-D24,E1-E24 500
+timesync sntp
+sntp unicast
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access operator access-method snmp
+ip default-gateway 10.31.0.1
+interface A1
+   broadcast-limit 10
+   name "CN-HA-Z9-PE-2_G2/9/1"
+   exit
+interface A2
+   broadcast-limit 10
+   disable
+   exit
+interface A3
+   broadcast-limit 10
+   name "OOB-MS-SW-01_A3"
+   exit
+interface A4
+   broadcast-limit 10
+   name "OOB-MSPDC-SW-Z1-01_26"
+   exit
+interface A5
+   broadcast-limit 10
+   name "OOB-ED-SW-01_26"
+   exit
+interface A6
+   broadcast-limit 10
+   name "OOB-MSC-SW-01_26"
+   exit
+interface A7
+   broadcast-limit 10
+   name "OOB-ENC-SW-01_26"
+   exit
+interface A8
+   broadcast-limit 10
+   name "OOB-HSC-SW-01_26"
+   exit
+interface A9
+   broadcast-limit 10
+   name "OOB-HRIC-SW-01_26"
+   exit
+interface A10
+   broadcast-limit 10
+   name "OOB-CCIT-SW-01_26"
+   exit
+interface A11
+   broadcast-limit 10
+   disable
+   name "OOB-ADMIN-SW-01_26"
+   exit
+interface A12
+   broadcast-limit 10
+   disable
+   exit
+interface A13
+   broadcast-limit 10
+   disable
+   exit
+interface A14
+   broadcast-limit 10
+   disable
+   exit
+interface A15
+   broadcast-limit 10
+   name "OOB-MSPDC-SW-Z1R4-02_26"
+   exit
+interface A16
+   broadcast-limit 10
+   exit
+interface A17
+   broadcast-limit 10
+   exit
+interface A18
+   broadcast-limit 10
+   disable
+   exit
+interface A19
+   broadcast-limit 10
+   disable
+   exit
+interface A20
+   broadcast-limit 10
+   disable
+   exit
+interface A21
+   broadcast-limit 10
+   disable
+   exit
+interface A22
+   broadcast-limit 10
+   disable
+   exit
+interface A23
+   broadcast-limit 10
+   disable
+   exit
+interface A24
+   broadcast-limit 10
+   disable
+   exit
+interface B1
+   broadcast-limit 10
+   exit
+interface B2
+   broadcast-limit 10
+   exit
+interface B3
+   broadcast-limit 10
+   name "to SLB2_mgmt_10.31.0.175"
+   exit
+interface B4
+   broadcast-limit 10
+   disable
+   exit
+interface B5
+   broadcast-limit 10
+   exit
+interface B6
+   broadcast-limit 10
+   exit
+interface B7
+   broadcast-limit 10
+   exit
+interface B8
+   broadcast-limit 10
+   exit
+interface B9
+   broadcast-limit 10
+   name "DC-HA-SLB-2"
+   exit
+interface B10
+   broadcast-limit 10
+   exit
+interface B11
+   broadcast-limit 10
+   exit
+interface B12
+   broadcast-limit 10
+   exit
+interface B13
+   broadcast-limit 10
+   exit
+interface B14
+   broadcast-limit 10
+   exit
+interface B15
+   broadcast-limit 10
+   exit
+interface B16
+   broadcast-limit 10
+   exit
+interface B17
+   broadcast-limit 10
+   exit
+interface B18
+   broadcast-limit 10
+   exit
+interface B19
+   broadcast-limit 10
+   exit
+interface B20
+   broadcast-limit 10
+   exit
+interface B21
+   broadcast-limit 10
+   exit
+interface B22
+   broadcast-limit 10
+   disable
+   exit
+interface B23
+   broadcast-limit 10
+   disable
+   exit
+interface B24
+   broadcast-limit 10
+   disable
+   exit
+interface D3
+   name "D3D-10.31.0.240-SW1-OOBM_AdminBay:01"
+   exit
+interface D4
+   disable
+   name "D4D-10.31.0.240-SW2-OOBM_AdminBay:01"
+   exit
+interface D6
+   name "FG-OOB-HA-Wan2"
+   exit
+interface D8
+   name "HA-VOIP-FIREWALL"
+   exit
+interface D9
+   name "ITSOANCP3"
+   exit
+interface D11
+   disable
+   exit
+interface D12
+   disable
+   exit
+interface D13
+   disable
+   exit
+interface D14
+   disable
+   exit
+interface D15
+   disable
+   exit
+interface D16
+   disable
+   exit
+interface D17
+   disable
+   exit
+interface D18
+   disable
+   exit
+interface D19
+   disable
+   exit
+interface D20
+   disable
+   exit
+interface D21
+   disable
+   exit
+interface D22
+   disable
+   exit
+interface D23
+   disable
+   exit
+interface D24
+   disable
+   exit
+interface E1
+   broadcast-limit 10
+   disable
+   exit
+interface E2
+   broadcast-limit 10
+   disable
+   exit
+interface E3
+   broadcast-limit 10
+   disable
+   exit
+interface E4
+   broadcast-limit 10
+   disable
+   exit
+interface E5
+   broadcast-limit 10
+   disable
+   exit
+interface E6
+   broadcast-limit 10
+   disable
+   exit
+interface E7
+   broadcast-limit 10
+   disable
+   exit
+interface E8
+   broadcast-limit 10
+   disable
+   exit
+interface E9
+   broadcast-limit 10
+   disable
+   exit
+interface E10
+   broadcast-limit 10
+   disable
+   exit
+interface E11
+   broadcast-limit 10
+   disable
+   exit
+interface E12
+   broadcast-limit 10
+   disable
+   exit
+interface E13
+   broadcast-limit 10
+   disable
+   exit
+interface E14
+   broadcast-limit 10
+   disable
+   exit
+interface E15
+   broadcast-limit 10
+   disable
+   exit
+interface E16
+   broadcast-limit 10
+   disable
+   exit
+interface E17
+   broadcast-limit 10
+   exit
+interface E18
+   broadcast-limit 10
+   disable
+   exit
+interface E19
+   broadcast-limit 10
+   disable
+   exit
+interface E20
+   broadcast-limit 10
+   disable
+   exit
+interface E21
+   broadcast-limit 10
+   disable
+   exit
+interface E22
+   broadcast-limit 10
+   disable
+   exit
+interface E23
+   broadcast-limit 10
+   disable
+   exit
+interface E24
+   broadcast-limit 10
+   disable
+   exit
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server response-source dst-ip-of-request
+snmp-server contact "UCIT 220-5555" location "Admin"
+no snmpv3 enable
+snmpv3 enable
+snmpv3 restricted-access
+snmpv3 group managerpriv user "readv3" sec-model ver3
+snmpv3 group managerpriv user "manager" sec-model ver3
+snmpv3 group operatorauth user "operator" sec-model ver3
+snmpv3 user "manager"
+snmpv3 user "operator"
+snmpv3 user "readv3"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication web login radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree A1 bpdu-filter bpdu-protection
+spanning-tree A2 bpdu-filter bpdu-protection
+spanning-tree A4 root-guard
+spanning-tree A5 root-guard
+spanning-tree A6 root-guard
+spanning-tree A7 root-guard
+spanning-tree A8 root-guard
+spanning-tree A9 root-guard
+spanning-tree A10 root-guard
+spanning-tree A11 root-guard
+spanning-tree A12 root-guard
+spanning-tree A13 root-guard
+spanning-tree A14 root-guard
+spanning-tree A15 root-guard
+spanning-tree A16 root-guard
+spanning-tree A17 root-guard
+spanning-tree A18 root-guard
+spanning-tree A19 root-guard
+spanning-tree A20 root-guard
+spanning-tree A21 root-guard
+spanning-tree A22 root-guard
+spanning-tree A23 root-guard
+spanning-tree A24 root-guard
+spanning-tree B1 bpdu-filter bpdu-protection
+spanning-tree B2 bpdu-filter bpdu-protection
+spanning-tree B3 bpdu-filter bpdu-protection
+spanning-tree B4 bpdu-filter bpdu-protection
+spanning-tree B5 bpdu-filter bpdu-protection
+spanning-tree B6 bpdu-filter bpdu-protection
+spanning-tree B7 bpdu-filter bpdu-protection
+spanning-tree B8 bpdu-filter bpdu-protection
+spanning-tree B9 bpdu-filter bpdu-protection
+spanning-tree B10 bpdu-filter bpdu-protection
+spanning-tree B11 bpdu-filter bpdu-protection
+spanning-tree B12 bpdu-filter bpdu-protection
+spanning-tree B13 bpdu-filter bpdu-protection
+spanning-tree B14 bpdu-filter bpdu-protection
+spanning-tree B15 bpdu-filter bpdu-protection
+spanning-tree B16 bpdu-filter bpdu-protection
+spanning-tree B17 bpdu-filter bpdu-protection
+spanning-tree B18 bpdu-filter bpdu-protection
+spanning-tree B19 bpdu-filter bpdu-protection
+spanning-tree B20 bpdu-filter bpdu-protection
+spanning-tree B21 bpdu-filter bpdu-protection
+spanning-tree B22 bpdu-filter bpdu-protection
+spanning-tree B23 bpdu-filter bpdu-protection
+spanning-tree B24 bpdu-filter bpdu-protection
+spanning-tree E1 bpdu-filter bpdu-protection
+spanning-tree E2 bpdu-filter bpdu-protection
+spanning-tree E3 bpdu-filter bpdu-protection
+spanning-tree E4 bpdu-filter bpdu-protection
+spanning-tree E5 bpdu-filter bpdu-protection
+spanning-tree E6 bpdu-filter bpdu-protection
+spanning-tree E7 bpdu-filter bpdu-protection
+spanning-tree E8 bpdu-filter bpdu-protection
+spanning-tree E9 bpdu-filter bpdu-protection
+spanning-tree E10 bpdu-filter bpdu-protection
+spanning-tree E11 bpdu-filter bpdu-protection
+spanning-tree E12 bpdu-filter bpdu-protection
+spanning-tree E13 bpdu-filter bpdu-protection
+spanning-tree E14 bpdu-filter bpdu-protection
+spanning-tree E15 bpdu-filter bpdu-protection
+spanning-tree E16 bpdu-filter bpdu-protection
+spanning-tree E17 bpdu-filter bpdu-protection
+spanning-tree E18 bpdu-filter bpdu-protection
+spanning-tree E19 bpdu-filter bpdu-protection
+spanning-tree E20 bpdu-filter bpdu-protection
+spanning-tree E21 bpdu-filter bpdu-protection
+spanning-tree E22 bpdu-filter bpdu-protection
+spanning-tree E23 bpdu-filter bpdu-protection
+spanning-tree E24 bpdu-filter bpdu-protection
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree instance 1 vlan 1-1099 2000-4094
+spanning-tree instance 2 vlan 1100-1399
+spanning-tree instance 11 vlan 1700-1799
+spanning-tree instance 12 vlan 1800-1899
+spanning-tree instance 13 vlan 1900-1999
+spanning-tree instance 14 vlan 1400-1499
+spanning-tree instance 15 vlan 1500-1599
+spanning-tree instance 16 vlan 1600-1699
+spanning-tree bpdu-protection-timeout 600 priority 7
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged A1-A24,B1-B24,D1-D24,E1-E24
+   no ip address
+   exit
+vlan 999
+   name "bit-bucket"
+   untagged A2,A12-A14,A16,A18-A24,B21-B24,D11-D24,E1-E24
+   no ip address
+   exit
+vlan 3752
+   name "OOB-DC-10.31.0/23"
+   untagged A1,B1-B20,D1-D10
+   tagged A3-A11,A15,A17
+   ip address 10.31.0.253 255.255.254.0
+   ip igmp
+   exit
+loop-protect A1-A2,B1-B24,E1-E24
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

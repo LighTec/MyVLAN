@@ -1,0 +1,163 @@
+; J9574A Configuration Editor; Created on release #KA.15.18.0007
+; Ver #09:34.6b.fb.ff.fd.ff.ff.3f.ef:7f
+
+hostname "MSB029-B1-SW-2965"
+module 1 type j9574y
+module 2 type j9574x
+console baud-rate 9600
+console flow-control none
+console idle-timeout 300
+console idle-timeout serial-usb 300
+banner motd "**************************************************************************\n* Important Notice:\n* Authorized users only:\n* This computer system (including all related equipment, networks,\n* systems and services) is provided for use only by authorized\n* Individuals with valid and subsisting usernames and passwords\n* issued by University of Calgary and for authorized purposes only.\n* Unauthorized access to or use of this system is strictly prohibited,\n* and may result in criminal, civil and administrative penalties \n* and other adverse action.\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+max-vlans 253
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server dead-time 5
+radius-server timeout 3
+radius-server retransmit 2
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+telnet-server listen data
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+no web-management
+web-management listen data
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.27.16.1
+ip ssh listen data
+snmp-server community "mecyou12" operator
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server listen data
+snmp-server contact "UCIT 220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   disable
+   no ip address
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-52
+   no ip address
+   exit
+vlan 100
+   name "Private"
+   untagged 17-32,36-44
+   no ip address
+   exit
+vlan 999
+   name "V999_Unused"
+   untagged 45-47,49-52
+   no ip address
+   exit
+vlan 2716
+   name "MSPDC_MGMT"
+   tagged 48
+   ip address 10.27.16.200 255.255.255.0
+   exit
+vlan 3586
+   name "DC_Monitor"
+   untagged 1-16,33-35
+   tagged 48
+   no ip address
+   exit
+spanning-tree
+spanning-tree 1 root-guard bpdu-filter bpdu-protection
+spanning-tree 2 root-guard bpdu-filter bpdu-protection
+spanning-tree 3 root-guard bpdu-filter bpdu-protection
+spanning-tree 4 root-guard bpdu-filter bpdu-protection
+spanning-tree 5 root-guard bpdu-filter bpdu-protection
+spanning-tree 6 root-guard bpdu-filter bpdu-protection
+spanning-tree 7 root-guard bpdu-filter bpdu-protection
+spanning-tree 8 root-guard bpdu-filter bpdu-protection
+spanning-tree 9 root-guard bpdu-filter bpdu-protection
+spanning-tree 10 root-guard bpdu-filter bpdu-protection
+spanning-tree 11 root-guard bpdu-filter bpdu-protection
+spanning-tree 12 root-guard bpdu-filter bpdu-protection
+spanning-tree 13 root-guard bpdu-filter bpdu-protection
+spanning-tree 14 root-guard bpdu-filter bpdu-protection
+spanning-tree 15 root-guard bpdu-filter bpdu-protection
+spanning-tree 16 root-guard bpdu-filter bpdu-protection
+spanning-tree 17 root-guard bpdu-filter bpdu-protection
+spanning-tree 18 root-guard bpdu-filter bpdu-protection
+spanning-tree 19 root-guard bpdu-filter bpdu-protection
+spanning-tree 20 root-guard bpdu-filter bpdu-protection
+spanning-tree 21 root-guard bpdu-filter bpdu-protection
+spanning-tree 22 root-guard bpdu-filter bpdu-protection
+spanning-tree 23 root-guard bpdu-filter bpdu-protection
+spanning-tree 24 root-guard bpdu-filter bpdu-protection
+spanning-tree 25 root-guard bpdu-filter bpdu-protection
+spanning-tree 26 root-guard bpdu-filter bpdu-protection
+spanning-tree 27 root-guard bpdu-filter bpdu-protection
+spanning-tree 28 root-guard bpdu-filter bpdu-protection
+spanning-tree 29 root-guard bpdu-filter bpdu-protection
+spanning-tree 30 root-guard bpdu-filter bpdu-protection
+spanning-tree 31 root-guard bpdu-filter bpdu-protection
+spanning-tree 32 root-guard bpdu-filter bpdu-protection
+spanning-tree 33 root-guard bpdu-filter bpdu-protection
+spanning-tree 34 root-guard bpdu-filter bpdu-protection
+spanning-tree 35 root-guard bpdu-filter bpdu-protection
+spanning-tree 36 root-guard bpdu-filter bpdu-protection
+spanning-tree 37 root-guard bpdu-filter bpdu-protection
+spanning-tree 38 root-guard bpdu-filter bpdu-protection
+spanning-tree 39 root-guard bpdu-filter bpdu-protection
+spanning-tree 40 root-guard bpdu-filter bpdu-protection
+spanning-tree 41 root-guard bpdu-filter bpdu-protection
+spanning-tree 42 root-guard bpdu-filter bpdu-protection
+spanning-tree 43 root-guard bpdu-filter bpdu-protection
+spanning-tree 44 root-guard bpdu-filter bpdu-protection
+spanning-tree 45 root-guard bpdu-filter bpdu-protection
+spanning-tree 46 root-guard bpdu-filter bpdu-protection
+spanning-tree 47 root-guard bpdu-filter bpdu-protection
+no spanning-tree 48 auto-edge-port
+spanning-tree 49 root-guard bpdu-filter bpdu-protection
+spanning-tree 50 root-guard bpdu-filter bpdu-protection
+spanning-tree 51 root-guard bpdu-filter bpdu-protection
+spanning-tree 52 root-guard bpdu-filter bpdu-protection
+spanning-tree config-name "ucalgary"
+spanning-tree instance 1 vlan 1-1099 2000-2359 2361-2373 2377-2485 2488-2493 
+spanning-tree instance 1 vlan 2495-2531 2534-2536 2539 2541 2542 2546-2577 
+spanning-tree instance 1 vlan 2579 2583-2608 2610-2621 2623-2648 2651-2703 
+spanning-tree instance 1 vlan 2705-2748 2750-2810 2812 2815 2817-2864 
+spanning-tree instance 1 vlan 2866-3139 3141-3199 3400-3587 3589-3598 
+spanning-tree instance 1 vlan 3600-3880 3889-4094
+spanning-tree instance 2 vlan 1100-1399
+spanning-tree instance 3 vlan 2360 2374-2376 2486 2487 2494 2532 2533 
+spanning-tree instance 3 vlan 2537 2538 2540 2543-2545 2578 2580-2582 2609 
+spanning-tree instance 3 vlan 2622 2649 2650 2704 2749 2811 2813 2814 2816 
+spanning-tree instance 3 vlan 2865 3140 3200-3399 3588 3599 3881-3888
+spanning-tree instance 11 vlan 1700-1799
+spanning-tree instance 12 vlan 1800-1899
+spanning-tree instance 13 vlan 1900-1999
+spanning-tree instance 14 vlan 1400-1499
+spanning-tree instance 15 vlan 1500-1599
+spanning-tree instance 16 vlan 1600-1699
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600 priority 9
+no tftp server
+tftp server listen data
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+

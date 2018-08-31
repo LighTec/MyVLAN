@@ -1,0 +1,156 @@
+; J9774A Configuration Editor; Created on release #YA.15.14.0007
+; Ver #05:18.63.ff.37.27:91
+hostname "MFH3340-03-SW-3839"
+console baud-rate 9600
+console flow-control none
+console idle-timeout 300
+console idle-timeout serial-usb 300
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this systeshm is strictly prohibited, *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+mac-age-time 180
+power-over-ethernet pre-std-detect ports 1-8
+qos dscp-map 000000 priority 0
+qos dscp-map 001000 priority 1
+qos dscp-map 010000 priority 2
+qos dscp-map 011000 priority 3
+qos dscp-map 100000 priority 4
+qos dscp-map 101000 priority 5
+qos dscp-map 110000 priority 6
+qos dscp-map 111000 priority 7
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.25.39.1
+interface 1
+   name "Crestron"
+   rate-limit bcast in percent 10
+   exit
+interface 2
+   name "PodiumPC"
+   rate-limit bcast in percent 10
+   exit
+interface 3
+   name "PodiumLaptop"
+   rate-limit bcast in percent 10
+   exit
+interface 4
+   name "WirelessMIC"
+   rate-limit bcast in percent 10
+   exit
+interface 5
+   name "SonyBluRay"
+   rate-limit bcast in percent 10
+   exit
+interface 6
+   name "AudioProcessor"
+   rate-limit bcast in percent 10
+   exit
+interface 7
+   disable
+   rate-limit bcast in percent 10
+   exit
+interface 8
+   disable
+   rate-limit bcast in percent 10
+   exit
+interface 9
+   disable
+   rate-limit bcast in percent 10
+   exit
+interface 10
+   name "x10U-10.25.39.218-x9D_MFH3361v"
+   rate-limit bcast in percent 10
+   exit
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-10
+   no ip address
+   exit
+vlan 999
+   name "unused-vlan"
+   untagged 7-9
+   no ip address
+   exit
+vlan 1342
+   name "MFHunmanageclient1"
+   untagged 3
+   tagged 10
+   no ip address
+   ip igmp
+   exit
+vlan 2289
+   name "MFH_IT_Managed_Lab"
+   tagged 10
+   no ip address
+   exit
+vlan 2539
+   name "MFH_MGMT"
+   tagged 10
+   ip address 10.25.39.208 255.255.255.0
+   exit
+vlan 2917
+   name "audiovisual-MFH"
+   untagged 1,4-6
+   tagged 10
+   no ip address
+   ip igmp
+   exit
+vlan 2941
+   name "labs-MFH"
+   untagged 2
+   tagged 10
+   no ip address
+   ip igmp
+   exit
+spanning-tree
+spanning-tree 1 bpdu-filter bpdu-protection
+spanning-tree 2 bpdu-filter bpdu-protection
+spanning-tree 3 bpdu-filter bpdu-protection
+spanning-tree 4 bpdu-filter bpdu-protection
+spanning-tree 5 bpdu-filter bpdu-protection
+spanning-tree 6 bpdu-filter bpdu-protection
+spanning-tree 7 bpdu-filter bpdu-protection
+spanning-tree 8 bpdu-filter bpdu-protection
+spanning-tree 9 bpdu-filter bpdu-protection
+no spanning-tree 10 auto-edge-port
+spanning-tree config-name "ucalgary"
+spanning-tree trap errant-bpdu
+spanning-tree bpdu-protection-timeout 600
+no tftp server
+loop-protect 1-9
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

@@ -1,0 +1,206 @@
+; J9573A Configuration Editor; Created on release #KA.15.03.3015
+; Ver #01:00:01
+
+hostname "SSB018A-B1-SW-1521" 
+mac-age-time 180 
+max-vlans 253 
+time timezone -420 
+time daylight-time-rule Continental-US-and-Canada 
+module 1 type J9573x 
+interface 1 
+   broadcast-limit 10 
+exit
+interface 2 
+   broadcast-limit 10 
+exit
+interface 3 
+   broadcast-limit 10 
+exit
+interface 4 
+   broadcast-limit 10 
+exit
+interface 5 
+   broadcast-limit 10 
+exit
+interface 6 
+   broadcast-limit 10 
+exit
+interface 7 
+   broadcast-limit 10 
+exit
+interface 8 
+   broadcast-limit 10 
+exit
+interface 9 
+   broadcast-limit 10 
+   speed-duplex auto-100 
+exit
+interface 10 
+   broadcast-limit 10 
+exit
+interface 11 
+   broadcast-limit 10 
+exit
+interface 12 
+   broadcast-limit 10 
+exit
+interface 13 
+   broadcast-limit 10 
+exit
+interface 14 
+   broadcast-limit 10 
+exit
+interface 15 
+   broadcast-limit 10 
+exit
+interface 16 
+   broadcast-limit 10 
+exit
+interface 17 
+   broadcast-limit 10 
+exit
+interface 18 
+   broadcast-limit 10 
+exit
+interface 19 
+   broadcast-limit 10 
+exit
+interface 20 
+   broadcast-limit 10 
+exit
+interface 21 
+   broadcast-limit 10 
+exit
+interface 22 
+   broadcast-limit 10 
+exit
+interface 23 
+   broadcast-limit 10 
+exit
+interface 24 
+   name "x24U-136.159.142.253-x47D" 
+   broadcast-limit 40 
+   speed-duplex auto-1000 
+exit
+interface 25 
+   disable
+   broadcast-limit 10 
+exit
+interface 26 
+   disable
+   broadcast-limit 10 
+exit
+ip default-gateway 10.27.39.1 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   no untagged 1-26 
+   no ip address 
+   exit 
+vlan 2739 
+   name "SS_Mgmt" 
+   ip address 10.27.39.157 255.255.255.0 
+   tagged 24 
+   ip igmp 
+   exit 
+vlan 999 
+   name "unused-vlan" 
+   untagged 25-26 
+   no ip address 
+   exit 
+vlan 2948 
+   name "SS_LABS-10.146.164.0/23" 
+   untagged 24 
+   no ip address 
+   ip igmp 
+   exit 
+vlan 1402 
+   name "SS_MCZ" 
+   untagged 9 
+   tagged 24 
+   no ip address 
+   ip igmp 
+   exit 
+vlan 2282 
+   name "SS_IT_MANAGED_LAB_10.158.92.0/24" 
+   untagged 1-8,10-23 
+   tagged 24 
+   no ip address 
+   ip igmp 
+   exit 
+qos type-of-service diff-services 
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this system is strictly prohibited,   *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.0.17
+logging 10.31.1.21
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+no web-management
+web-management ssl
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+snmp-server community "uofc2009" unrestricted
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.0.17 community "uofc2009" trap-level critical
+snmp-server host 10.31.1.21 community "uofc2009" trap-level critical
+snmp-server contact "UCIT_220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree 1 bpdu-filter bpdu-protection
+spanning-tree 2 bpdu-filter bpdu-protection
+spanning-tree 3 bpdu-filter bpdu-protection
+spanning-tree 4 bpdu-filter bpdu-protection
+spanning-tree 5 bpdu-filter bpdu-protection
+spanning-tree 6 bpdu-filter bpdu-protection
+spanning-tree 7 bpdu-filter bpdu-protection
+spanning-tree 8 bpdu-filter bpdu-protection
+spanning-tree 9 bpdu-filter bpdu-protection
+spanning-tree 10 bpdu-filter bpdu-protection
+spanning-tree 11 bpdu-filter bpdu-protection
+spanning-tree 12 bpdu-filter bpdu-protection
+spanning-tree 13 bpdu-filter bpdu-protection
+spanning-tree 14 bpdu-filter bpdu-protection
+spanning-tree 15 bpdu-filter bpdu-protection
+spanning-tree 16 bpdu-filter bpdu-protection
+spanning-tree 17 bpdu-filter bpdu-protection
+spanning-tree 18 bpdu-filter bpdu-protection
+spanning-tree 19 bpdu-filter bpdu-protection
+spanning-tree 20 bpdu-filter bpdu-protection
+spanning-tree 21 bpdu-filter bpdu-protection
+spanning-tree 22 bpdu-filter bpdu-protection
+spanning-tree 23 bpdu-filter bpdu-protection
+no spanning-tree 24 auto-edge-port
+spanning-tree 25 bpdu-filter bpdu-protection
+spanning-tree 26 bpdu-filter bpdu-protection
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree bpdu-protection-timeout 600
+oobm
+   no ip address
+   exit
+loop-protect 1-23,25-26
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

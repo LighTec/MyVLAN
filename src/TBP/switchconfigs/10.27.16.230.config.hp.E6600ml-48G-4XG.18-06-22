@@ -1,0 +1,314 @@
+; J9452A Configuration Editor; Created on release #K.15.08.0013
+; Ver #02:1b.ef:f6
+hostname "MSB029-B1-SW-2654"
+module 2 type j94yya
+module 3 type j94zza
+module 5 type j94wwa
+module 6 type j94wwa
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+trunk 51-52 trk1 lacp
+mac-age-time 180
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+sflow 1 destination 136.159.35.18
+sflow 1 polling 1-48,49-50,Trk1 60
+sflow 1 sampling 1-48,49-50,Trk1 500
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+no stack
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access manager
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.27.16.1
+interface 1
+   name "qa"
+   exit
+interface 2
+   name "qa"
+   exit
+interface 3
+   name "qa"
+   exit
+interface 4
+   name "qa"
+   exit
+interface 5
+   name "qa"
+   exit
+interface 6
+   name "qa"
+   exit
+interface 7
+   name "qa"
+   exit
+interface 8
+   name "qa"
+   exit
+interface 9
+   name "qa"
+   exit
+interface 10
+   name "qa"
+   exit
+interface 11
+   name "qa"
+   exit
+interface 12
+   name "qa"
+   exit
+interface 13
+   name "qa"
+   exit
+interface 14
+   name "qa"
+   exit
+interface 15
+   name "qa"
+   exit
+interface 16
+   name "qa"
+   exit
+interface 51
+   name "MS_NX01_10/13"
+   exit
+interface 52
+   name "MS_NX02_10/13"
+   exit
+snmp-server community "uofc2009" unrestricted
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 136.159.230.19 community "" trap-level critical
+snmp-server host 10.31.0.17 community ""
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree 1 bpdu-filter bpdu-protection
+spanning-tree 2 bpdu-filter bpdu-protection
+spanning-tree 3 bpdu-filter bpdu-protection
+spanning-tree 4 bpdu-filter bpdu-protection
+spanning-tree 5 bpdu-filter bpdu-protection
+spanning-tree 6 bpdu-filter bpdu-protection
+spanning-tree 7 bpdu-filter bpdu-protection
+spanning-tree 8 bpdu-filter bpdu-protection
+spanning-tree 9 bpdu-filter bpdu-protection
+spanning-tree 10 bpdu-filter bpdu-protection
+spanning-tree 11 bpdu-filter bpdu-protection
+spanning-tree 12 bpdu-filter bpdu-protection
+spanning-tree 13 bpdu-filter bpdu-protection
+spanning-tree 14 bpdu-filter bpdu-protection
+spanning-tree 15 bpdu-filter bpdu-protection
+spanning-tree 16 bpdu-filter bpdu-protection
+spanning-tree 17 bpdu-filter bpdu-protection
+spanning-tree 18 bpdu-filter bpdu-protection
+spanning-tree 19 bpdu-filter bpdu-protection
+spanning-tree 20 bpdu-filter bpdu-protection
+spanning-tree 21 bpdu-filter bpdu-protection
+spanning-tree 22 bpdu-filter bpdu-protection
+spanning-tree 23 bpdu-filter bpdu-protection
+spanning-tree 24 bpdu-filter bpdu-protection
+spanning-tree 25 bpdu-filter bpdu-protection
+spanning-tree 26 bpdu-filter bpdu-protection
+spanning-tree 27 bpdu-filter bpdu-protection
+spanning-tree 28 bpdu-filter bpdu-protection
+spanning-tree 29 bpdu-filter bpdu-protection
+spanning-tree 30 bpdu-filter bpdu-protection
+spanning-tree 31 bpdu-filter bpdu-protection
+spanning-tree 32 bpdu-filter bpdu-protection
+spanning-tree 33 bpdu-filter bpdu-protection
+spanning-tree 34 bpdu-filter bpdu-protection
+spanning-tree 35 bpdu-filter bpdu-protection
+spanning-tree 36 bpdu-filter bpdu-protection
+spanning-tree 37 bpdu-filter bpdu-protection
+spanning-tree 38 bpdu-filter bpdu-protection
+spanning-tree 39 bpdu-filter bpdu-protection
+spanning-tree 40 bpdu-filter bpdu-protection
+spanning-tree 41 bpdu-filter bpdu-protection
+spanning-tree 42 bpdu-filter bpdu-protection
+spanning-tree 43 bpdu-filter bpdu-protection
+spanning-tree 44 bpdu-filter bpdu-protection
+spanning-tree 45 bpdu-filter bpdu-protection
+spanning-tree 46 bpdu-filter bpdu-protection
+spanning-tree 47 bpdu-filter bpdu-protection
+spanning-tree 48 bpdu-filter bpdu-protection
+spanning-tree 49 bpdu-filter bpdu-protection
+spanning-tree 50 bpdu-filter bpdu-protection
+no spanning-tree Trk1 auto-edge-port
+spanning-tree Trk1 priority 4
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree instance 1 vlan 1-1099 2000-4094
+spanning-tree instance 1 Trk1 priority 4
+spanning-tree instance 2 vlan 1100-1399
+spanning-tree instance 2 Trk1 priority 4
+spanning-tree instance 11 vlan 1700-1799
+spanning-tree instance 11 Trk1 priority 4
+spanning-tree instance 12 vlan 1800-1899
+spanning-tree instance 12 Trk1 priority 4
+spanning-tree instance 13 vlan 1900-1999
+spanning-tree instance 13 Trk1 priority 4
+spanning-tree instance 14 vlan 1400-1499
+spanning-tree instance 14 Trk1 priority 4
+spanning-tree instance 15 vlan 1500-1599
+spanning-tree instance 15 Trk1 priority 4
+spanning-tree instance 16 vlan 1600-1699
+spanning-tree instance 16 Trk1 priority 4
+spanning-tree bpdu-protection-timeout 600
+oobm
+   ip address dhcp-bootp
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-48,Trk1
+   untagged 49-50
+   no ip address
+   exit
+vlan 999
+   name "unused-vlan"
+   untagged Trk1
+   no ip address
+   exit
+vlan 1004
+   name "Drac"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2527
+   name "F5TEST-HA_10.163.0.0/16"
+   tagged 1-48,Trk1
+   no ip address
+   exit
+vlan 2528
+   name "F5TEST-INTERNAL_10.162.0.0/16"
+   tagged 1-48,Trk1
+   no ip address
+   exit
+vlan 2529
+   name "F5TEST-EXTERNAL_10.161.0.0/16"
+   tagged 1-48,Trk1
+   no ip address
+   exit
+vlan 2530
+   name "F5TEST-MGMT_10.160.0.0/16"
+   tagged 1-48,Trk1
+   no ip address
+   exit
+vlan 2716
+   name "Mgmt"
+   tagged Trk1
+   ip address 10.27.16.230 255.255.255.0
+   exit
+vlan 2747
+   name "10.58.41/24_copellent-microsoft"
+   tagged 1-48,Trk1
+   no ip address
+   exit
+vlan 2748
+   name "10.58.40/24_copellent-microsoft"
+   tagged 1-48,Trk1
+   no ip address
+   exit
+vlan 2866
+   name "wendy_test_10.56.72.0/24"
+   tagged 1-48,Trk1
+   no ip address
+   jumbo
+   exit
+vlan 2867
+   name "wendy_test_10.56.73.0/24"
+   tagged 1-48,Trk1
+   no ip address
+   jumbo
+   exit
+vlan 2868
+   name "wendy_test_10.56.74.0/24"
+   tagged 1-48,Trk1
+   no ip address
+   jumbo
+   exit
+vlan 2869
+   name "wendy_test_10.56.75.0/24"
+   tagged 1-48,Trk1
+   no ip address
+   jumbo
+   exit
+vlan 3102
+   name "MSZ_10.47.128.0/24"
+   tagged 1-48,Trk1
+   no ip address
+   exit
+vlan 3103
+   name "idmz_10.47.64.0/24"
+   tagged 1-48,Trk1
+   no ip address
+   exit
+vlan 3104
+   name "DMZ_10.47.1.0/24"
+   tagged 1-48,Trk1
+   no ip address
+   exit
+vlan 3400
+   name "public_private"
+   tagged Trk1
+   no ip address
+   exit
+vlan 3416
+   name "internal_dmz"
+   tagged Trk1
+   no ip address
+   exit
+vlan 3448
+   name "secure_server"
+   tagged Trk1
+   no ip address
+   exit
+vlan 3667
+   name "10.41.128/18"
+   tagged Trk1
+   no ip address
+   exit
+vlan 3668
+   name "10.41.64/18"
+   tagged Trk1
+   no ip address
+   exit
+vlan 3669
+   name "10.41.0/18"
+   tagged Trk1
+   no ip address
+   exit
+vlan 3901
+   name "10.16.1_Kernel"
+   tagged Trk1
+   no ip address
+   exit
+vlan 3902
+   name "10.16.2_VMotion"
+   tagged Trk1
+   no ip address
+   exit
+loop-protect 1-48,49-50
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

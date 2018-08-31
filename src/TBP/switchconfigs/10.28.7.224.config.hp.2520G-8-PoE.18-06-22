@@ -1,0 +1,96 @@
+; J9298A Configuration Editor; Created on release #J.14.54
+
+hostname "ENA233-2-SW-3077" 
+mac-age-time 180 
+max-vlans 253 
+time timezone -420 
+time daylight-time-rule Continental-US-and-Canada 
+interface 1 
+   name "Crestron/LAN:01" 
+exit
+interface 2 
+   name "SMART-PC/E:01" 
+exit
+interface 3 
+   name "Podium/JK1" 
+exit
+interface 4 
+   disable
+exit
+interface 5 
+   disable
+exit
+interface 6 
+   disable
+exit
+interface 7 
+   disable
+exit
+interface 8 
+   disable
+exit
+interface 9 
+   disable
+exit
+ip default-gateway 10.28.7.1 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   untagged 4-9 
+   no untagged 1-3,10 
+   no ip address 
+   exit 
+vlan 2927 
+   name "audiovisual-ENC_10.144.28.0/23" 
+   untagged 1 
+   tagged 10 
+   no ip address 
+   exit 
+vlan 3581 
+   name "LABS-eng_10.146.28.0/23" 
+   untagged 2 
+   tagged 10 
+   no ip address 
+   exit 
+vlan 1648 
+   name "ENGunmanageclient1_10.79.128/21" 
+   untagged 3 
+   tagged 10 
+   no ip address 
+   exit 
+vlan 2807 
+   name "ENGmanagment_10.28.7.0/24" 
+   ip address 10.28.7.224 255.255.255.0 
+   tagged 10 
+   exit 
+console baud-rate 9600
+console flow-control none
+logging 10.31.1.14
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+snmp-server community "uofc2009" unrestricted
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 10.31.0.17 community "public"
+snmp-server contact "UCIT_220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+loop-protect 1-9
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+

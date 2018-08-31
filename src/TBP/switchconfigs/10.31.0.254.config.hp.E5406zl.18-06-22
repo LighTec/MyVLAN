@@ -1,0 +1,520 @@
+; J8697A Configuration Editor; Created on release #K.15.08.0013
+; Ver #02:1b.ef:f6
+hostname "OOB-MS-SW-01[MSB016-B1-HSW-2924]"
+module 1 type j9537a
+module 2 type j9534a
+module 3 type j8702a
+module 4 type j8702a
+module 5 type j8702a
+module 6 type j8702a
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+banner motd "**************************************************************************\n* Important Notice:                                                      *\n* Authorized users only:                                                 *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this system is strictly prohibited,   *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n**************************************************************************\n"
+logging 10.31.1.17
+logging 10.31.1.18
+logging 10.31.1.21
+mac-age-time 180
+qos type-of-service diff-services
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+sflow 1 destination 136.159.35.18
+sflow 1 polling A1-A24,B1-B24,D1-D24 60
+sflow 1 sampling A1-A24,B1-B24,D1-D24 500
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access manager
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.31.0.1
+interface A1
+   broadcast-limit 10
+   name "CN-MS-Z9-PE-1_G1/9/1"
+   exit
+interface A2
+   broadcast-limit 10
+   disable
+   exit
+interface A3
+   broadcast-limit 10
+   name "OOB-HA-SW-01_A3"
+   exit
+interface A4
+   broadcast-limit 10
+   name "OOB-MSPDC-SW-Z1-01_25"
+   exit
+interface A5
+   broadcast-limit 10
+   name "OOB-ED-SW-01_25"
+   exit
+interface A6
+   broadcast-limit 10
+   name "OOB-MSC-SW-01_25"
+   exit
+interface A7
+   broadcast-limit 10
+   name "OOB-ENC-SW-01_25"
+   exit
+interface A8
+   broadcast-limit 10
+   name "OOB-HSC-SW-01_25"
+   exit
+interface A9
+   broadcast-limit 10
+   name "OOB-HRIC-SW-01_25"
+   exit
+interface A10
+   broadcast-limit 10
+   name "OOB-CCIT-SW-01_25"
+   exit
+interface A11
+   broadcast-limit 10
+   name "OOB-ADMIN-SW-01_25"
+   exit
+interface A12
+   broadcast-limit 10
+   name "OOB-EEEL-018V-SW-01_P-49"
+   exit
+interface A13
+   broadcast-limit 10
+   exit
+interface A14
+   broadcast-limit 10
+   name "OOB-TEMP-MSPDC-Z4R11U35"
+   exit
+interface A15
+   broadcast-limit 10
+   name "OOB-MSPDC-SW-Z1R4-02_25"
+   exit
+interface A16
+   broadcast-limit 10
+   exit
+interface A17
+   broadcast-limit 10
+   exit
+interface A18
+   broadcast-limit 10
+   disable
+   exit
+interface A19
+   broadcast-limit 10
+   disable
+   exit
+interface A20
+   broadcast-limit 10
+   disable
+   exit
+interface A21
+   broadcast-limit 10
+   disable
+   exit
+interface A22
+   broadcast-limit 10
+   disable
+   exit
+interface A23
+   broadcast-limit 10
+   disable
+   exit
+interface A24
+   broadcast-limit 10
+   disable
+   exit
+interface B1
+   broadcast-limit 10
+   name "MSB016-B1-FW-2922/Mgmt01"
+   exit
+interface B2
+   broadcast-limit 10
+   exit
+interface B3
+   broadcast-limit 10
+   name "ISE_Temp"
+   exit
+interface B4
+   broadcast-limit 10
+   exit
+interface B5
+   broadcast-limit 10
+   name "Fortigate_1000A_R1R2_1_Port_9"
+   exit
+interface B6
+   broadcast-limit 10
+   name "Fortigate_1000A_R1R2_2_Port_10"
+   exit
+interface B7
+   broadcast-limit 10
+   name "ladi-vmware-server"
+   exit
+interface B8
+   broadcast-limit 10
+   name "speedtest"
+   exit
+interface B9
+   broadcast-limit 10
+   name "ipam-master2-HA"
+   exit
+interface B10
+   broadcast-limit 10
+   name "ipam-master2-LAN1"
+   exit
+interface B11
+   broadcast-limit 10
+   name "Netmri1-mgmt"
+   exit
+interface B12
+   broadcast-limit 10
+   exit
+interface B13
+   broadcast-limit 10
+   name "MSB016-B1-FW-2973/06"
+   exit
+interface B14
+   broadcast-limit 10
+   name "MSB016-B1-FW-2974/06"
+   exit
+interface B15
+   broadcast-limit 10
+   name "MSB016-B1-FW-2996"
+   exit
+interface B16
+   broadcast-limit 10
+   name "MSB016-B1-FW-2997"
+   exit
+interface B17
+   broadcast-limit 10
+   name "MS-reflector"
+   exit
+interface B18
+   broadcast-limit 10
+   name "DC-SLB-MICROSOFT-3-TEMP"
+   exit
+interface B19
+   broadcast-limit 10
+   name "WAN-MS-RT-1"
+   exit
+interface B20
+   broadcast-limit 10
+   exit
+interface B21
+   broadcast-limit 10
+   disable
+   exit
+interface B22
+   broadcast-limit 10
+   name "CN-MS-Z0-PE-1_G1/9/1"
+   exit
+interface B23
+   broadcast-limit 10
+   disable
+   exit
+interface B24
+   broadcast-limit 10
+   exit
+interface C1
+   name "xc1D-10.31.0.70-x1u"
+   exit
+interface C2
+   name "MS-CPMS-Term-serv-10.31.0.163"
+   exit
+interface C5
+   name "NX-MS-CMP_Card5_mgmt"
+   exit
+interface C7
+   name "NX-MS-CARD6_mgmt"
+   exit
+interface C8
+   name "Fortimanager-10.31.0.169"
+   exit
+interface C9
+   name "Fortianalizer-10.31.0.170"
+   exit
+interface C10
+   name "NX-MS-CMP_Card6_mgmt"
+   exit
+interface C11
+   name "Fortianalizer-10.31.0.172"
+   exit
+interface C12
+   name "Fortimanager-10.31.0.173"
+   exit
+interface C13
+   name "SLB1-MGMT-10.31.0.175"
+   exit
+interface C14
+   name "Netdisco_10.31.1.11"
+   exit
+interface C24
+   name "ZoneJ-Rack20-Test-Rack"
+   exit
+interface D1
+   broadcast-limit 10
+   exit
+interface D2
+   broadcast-limit 10
+   disable
+   exit
+interface D3
+   broadcast-limit 10
+   name "ITNEAWMS2"
+   exit
+interface D4
+   broadcast-limit 10
+   name "FW-500D-MS-VOIP"
+   exit
+interface D5
+   broadcast-limit 10
+   exit
+interface D6
+   broadcast-limit 10
+   name "Fortinet-FW-MS"
+   exit
+interface D7
+   broadcast-limit 10
+   name "ITNEAWMS1"
+   exit
+interface D8
+   broadcast-limit 10
+   name "ITSOANCP1"
+   exit
+interface D9
+   broadcast-limit 10
+   name "Airwave_ITNEAWMS3"
+   exit
+interface D10
+   broadcast-limit 10
+   exit
+interface D11
+   broadcast-limit 10
+   name "ITSOANCP2"
+   exit
+interface D12
+   broadcast-limit 10
+   name "TMP OOB to HP8212ZDR45 G23"
+   exit
+interface D13
+   broadcast-limit 10
+   name "palo_alto_test"
+   exit
+interface D14
+   broadcast-limit 10
+   name "arista_test_switch"
+   exit
+interface D15
+   broadcast-limit 10
+   name "HA-MS-SW-01"
+   exit
+interface D16
+   broadcast-limit 10
+   exit
+interface D17
+   broadcast-limit 10
+   exit
+interface D18
+   broadcast-limit 10
+   exit
+interface D19
+   broadcast-limit 10
+   exit
+interface D20
+   broadcast-limit 10
+   exit
+interface D21
+   broadcast-limit 10
+   name "ibm_test_switch_R2R1_FibreRoom"
+   exit
+interface D22
+   broadcast-limit 10
+   exit
+interface D23
+   broadcast-limit 10
+   exit
+interface D24
+   broadcast-limit 10
+   name "ASR1002_temp"
+   exit
+interface E2
+   name "to 10.31.0.115-mgmt"
+   exit
+interface E4
+   name "DC_MSRDC-FW-DMZ-02_10.31.0.177"
+   exit
+interface E5
+   name "DC_MSRDC-FW-UNMANAGE-02_10.31.0.183"
+   exit
+interface E6
+   name "DC_MSRDC-FW-RESEARCH-02_10.31.0.180"
+   exit
+interface E7
+   name "DC_MSRDC-FW-CORPORATE-02_10.31.0.186"
+   exit
+interface E8
+   name "DC_MSRDC-FW-C3850_ZHR3R1-02_10.31.0.189"
+   exit
+interface E9
+   name "DC_MSRDC-FW-HPSW1_ZHR3R1-02_10.31.0.193"
+   exit
+interface E10
+   name "DC_MSRDC-FW-HPSW2_ZHR3R1-02_10.31.0.195"
+   exit
+interface E24
+   name "hp5700-test"
+   exit
+snmp-server community "uofc2009" unrestricted
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 136.159.22.228 community "uoc2009" trap-level critical
+snmp-server contact "UCIT 220-5555" location "MS FiberRoom"
+no snmpv3 enable
+snmpv3 enable
+snmpv3 restricted-access
+snmpv3 group managerpriv user "manager" sec-model ver3
+snmpv3 group operatorauth user "operator" sec-model ver3
+snmpv3 user "initial"
+snmpv3 user "manager"
+snmpv3 user "operator"
+aaa accounting exec start-stop radius
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication web login radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree A1 bpdu-filter bpdu-protection
+spanning-tree A2 bpdu-filter bpdu-protection
+no spanning-tree A3 auto-edge-port
+spanning-tree A3 root-guard
+no spanning-tree A4 auto-edge-port
+spanning-tree A4 root-guard
+no spanning-tree A5 auto-edge-port
+spanning-tree A5 root-guard
+no spanning-tree A6 auto-edge-port
+spanning-tree A6 root-guard
+no spanning-tree A7 auto-edge-port
+spanning-tree A7 root-guard
+no spanning-tree A8 auto-edge-port
+spanning-tree A8 root-guard
+no spanning-tree A9 auto-edge-port
+spanning-tree A9 root-guard
+no spanning-tree A10 auto-edge-port
+spanning-tree A10 root-guard
+no spanning-tree A11 auto-edge-port
+spanning-tree A11 root-guard
+no spanning-tree A12 auto-edge-port
+spanning-tree A12 root-guard
+no spanning-tree A13 auto-edge-port
+spanning-tree A13 root-guard
+no spanning-tree A14 auto-edge-port
+spanning-tree A14 root-guard
+no spanning-tree A15 auto-edge-port
+spanning-tree A15 root-guard
+no spanning-tree A16 auto-edge-port
+spanning-tree A16 root-guard
+no spanning-tree A17 auto-edge-port
+spanning-tree A17 root-guard
+no spanning-tree A18 auto-edge-port
+spanning-tree A18 root-guard
+no spanning-tree A19 auto-edge-port
+spanning-tree A19 root-guard
+no spanning-tree A20 auto-edge-port
+spanning-tree A20 root-guard
+no spanning-tree A21 auto-edge-port
+spanning-tree A21 root-guard
+no spanning-tree A22 auto-edge-port
+spanning-tree A22 root-guard
+no spanning-tree A23 auto-edge-port
+spanning-tree A23 root-guard
+no spanning-tree A24 auto-edge-port
+spanning-tree A24 root-guard
+spanning-tree B1 bpdu-filter bpdu-protection
+spanning-tree B2 bpdu-filter bpdu-protection
+spanning-tree B3 bpdu-filter bpdu-protection
+spanning-tree B4 bpdu-filter bpdu-protection
+spanning-tree B5 bpdu-filter bpdu-protection
+spanning-tree B6 bpdu-filter bpdu-protection
+spanning-tree B7 bpdu-filter bpdu-protection
+spanning-tree B8 bpdu-filter bpdu-protection
+spanning-tree B9 bpdu-filter bpdu-protection
+spanning-tree B10 bpdu-filter bpdu-protection
+spanning-tree B11 bpdu-filter bpdu-protection
+spanning-tree B12 bpdu-filter bpdu-protection
+spanning-tree B13 bpdu-filter bpdu-protection
+spanning-tree B14 bpdu-filter bpdu-protection
+spanning-tree B15 bpdu-filter bpdu-protection
+spanning-tree B16 bpdu-filter bpdu-protection
+spanning-tree B17 bpdu-filter bpdu-protection
+spanning-tree B18 bpdu-filter bpdu-protection
+spanning-tree B19 bpdu-filter bpdu-protection
+spanning-tree B20 bpdu-filter bpdu-protection
+spanning-tree B21 bpdu-filter bpdu-protection
+spanning-tree B22 bpdu-filter bpdu-protection
+spanning-tree B23 bpdu-filter bpdu-protection
+spanning-tree B24 bpdu-filter bpdu-protection
+spanning-tree D1 bpdu-filter bpdu-protection
+spanning-tree D2 bpdu-filter bpdu-protection
+spanning-tree D3 bpdu-filter bpdu-protection
+spanning-tree D4 bpdu-filter bpdu-protection
+spanning-tree D5 bpdu-filter bpdu-protection
+spanning-tree D6 bpdu-filter bpdu-protection
+spanning-tree D7 bpdu-filter bpdu-protection
+spanning-tree D8 bpdu-filter bpdu-protection
+spanning-tree D9 bpdu-filter bpdu-protection
+spanning-tree D10 bpdu-filter bpdu-protection
+spanning-tree D11 bpdu-filter bpdu-protection
+spanning-tree D12 bpdu-filter bpdu-protection
+spanning-tree D13 bpdu-filter bpdu-protection
+spanning-tree D14 bpdu-filter bpdu-protection
+spanning-tree D15 bpdu-filter bpdu-protection
+spanning-tree D16 bpdu-filter bpdu-protection
+spanning-tree D17 bpdu-filter bpdu-protection
+spanning-tree D18 bpdu-filter bpdu-protection
+spanning-tree D19 bpdu-filter bpdu-protection
+spanning-tree D20 bpdu-filter bpdu-protection
+spanning-tree D21 bpdu-filter bpdu-protection
+spanning-tree D22 bpdu-filter bpdu-protection
+spanning-tree D23 bpdu-filter bpdu-protection
+spanning-tree D24 bpdu-filter bpdu-protection
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree bpdu-protection-timeout 600 priority 6
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged A1-A24,B1-B24,C1-C24,D1-D24,E1-E12,E24
+   untagged E13-E23,F1-F24
+   no ip address
+   exit
+vlan 999
+   name "vlan_999"
+   untagged A2,A14,A16-A24
+   no ip address
+   exit
+vlan 3752
+   name "10.31.1"
+   untagged A1,B1-B24,C1-C24,D1-D24,E1-E12,E24
+   tagged A3-A17
+   ip address 10.31.0.254 255.255.254.0
+   ip igmp
+   exit
+primary-vlan 999
+loop-protect A1-A2,B1-B24,D1-D24
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

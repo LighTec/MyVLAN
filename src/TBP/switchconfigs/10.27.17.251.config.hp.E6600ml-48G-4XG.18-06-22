@@ -1,0 +1,339 @@
+; J9452A Configuration Editor; Created on release #K.15.08.0013
+; Ver #02:1b.ef:f6
+hostname "MSRDC-ZDR27-SW-3829"
+module 2 type j94yya
+module 3 type j94zza
+module 5 type j94wwa
+module 6 type j94wwa
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+trunk 49-50 trk1 lacp
+banner motd "**************************************************************************\n*                                                                        *\n* Important Notice:                                                      *\n*                                                                        *\n* Authorized users only:                                                 *\n*                                                                        *\n* This computer system (including all related equipment, networks,       *\n* systems and services) is provided for use only by authorized           *\n* individuals with valid and subsisting usernames and passwords          *\n* issued by Unversity of Calgary and for  authorized purposes only.      *\n* Unauthorized access to or use of this system is strictly prohibited,   *\n* and may result in criminal, civil and administrative penalties         *\n* and other adverse action.                                              *\n*                                                                        *\n* Terms and Conditions:                                                  *\n*                                                                        *\n* Access to and use of this system is subject to certain terms and       *\n* conditions contained in various policies issued and amended from time  *\n* to time by University of Calgary, including Acceptable Use of Computing*\n* Resources, Acceptable Use of Internet and E-Mail and Remote Access.    *\n* Access to and use of this system constitutes unconditional acceptance  *\n* of and agreement to each of the applicable policies. If you do not     *\n* accept and agree to each of the applicable policies, you may           *\n* not access or use this system.                                         *\n*                                                                        *\n* Monitoring:                                                            *\n*                                                                        *\n* Use of this system is subject to monitoring at all times for all       *\n* lawful purposes, and is not subject to any expectation of privacy.     *\n* Information collected through monitoring may be used and disclosed     *\n* to third parties (including law enforcement officials).                *\n* Use of this system constitutes consent to such monitoring  and the     *\n* collection, use and disclosure of personal information.                *\n*                                                                        *\n**************************************************************************\n"
+mac-age-time 180
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+no stack
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access manager
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.27.17.1
+interface 1
+   name "V6-1"
+   exit
+interface 2
+   name "V6-2"
+   exit
+interface 3
+   name "V7-1"
+   exit
+interface 4
+   name "V7-2"
+   exit
+interface 5
+   name "V5-1"
+   exit
+interface 6
+   name "V5-1"
+   exit
+interface 7
+   name "TRI14"
+   exit
+interface 8
+   name "TRI15"
+   exit
+interface 9
+   name "V0-1"
+   exit
+interface 10
+   name "V0-2"
+   exit
+interface 11
+   name "V3-1"
+   exit
+interface 12
+   name "V3-2"
+   exit
+interface 13
+   name "TRI13"
+   exit
+interface 14
+   name "TRI13"
+   exit
+interface 15
+   name "ITArtsESXI01"
+   exit
+interface 16
+   name "ITArtsESXI02"
+   exit
+interface 17
+   name "ITArtsESXI03"
+   exit
+interface 18
+   name "TRI1"
+   exit
+interface 19
+   name "TRI13"
+   exit
+interface 22
+   disable
+   exit
+interface 23
+   disable
+   exit
+interface 24
+   disable
+   exit
+interface 25
+   name "V7-2"
+   exit
+interface 26
+   disable
+   exit
+interface 27
+   disable
+   exit
+interface 28
+   disable
+   exit
+interface 29
+   disable
+   exit
+interface 30
+   disable
+   exit
+interface 31
+   disable
+   exit
+interface 32
+   disable
+   exit
+interface 33
+   disable
+   exit
+interface 34
+   disable
+   exit
+interface 35
+   disable
+   exit
+interface 36
+   disable
+   exit
+interface 37
+   disable
+   exit
+interface 38
+   disable
+   exit
+interface 39
+   disable
+   exit
+interface 40
+   disable
+   exit
+interface 41
+   disable
+   exit
+interface 42
+   disable
+   exit
+interface 43
+   disable
+   exit
+interface 44
+   disable
+   exit
+interface 45
+   disable
+   exit
+interface 46
+   disable
+   exit
+interface 47
+   disable
+   exit
+interface 48
+   disable
+   name "MSB016-B1-SW-3026 P C24 MGT"
+   exit
+interface 49
+   name "X49-Nexus-01-D1/6"
+   exit
+interface 50
+   name "X50-Nexus-02-D1/6"
+   exit
+interface 51
+   disable
+   exit
+interface 52
+   disable
+   exit
+snmp-server community "uofc2009" unrestricted
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 136.159.230.19 community "uofc2009" trap-level critical
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree 1 root-guard bpdu-filter bpdu-protection
+spanning-tree 2 root-guard bpdu-filter bpdu-protection
+spanning-tree 3 root-guard bpdu-filter bpdu-protection
+spanning-tree 4 root-guard bpdu-filter bpdu-protection
+spanning-tree 5 root-guard bpdu-filter bpdu-protection
+spanning-tree 6 root-guard bpdu-filter bpdu-protection
+spanning-tree 7 root-guard bpdu-filter bpdu-protection
+spanning-tree 8 root-guard bpdu-filter bpdu-protection
+spanning-tree 9 root-guard bpdu-filter bpdu-protection
+spanning-tree 10 root-guard bpdu-filter bpdu-protection
+spanning-tree 11 root-guard bpdu-filter bpdu-protection
+spanning-tree 12 root-guard bpdu-filter bpdu-protection
+spanning-tree 13 root-guard bpdu-filter bpdu-protection
+spanning-tree 14 root-guard bpdu-filter bpdu-protection
+spanning-tree 15 root-guard bpdu-filter bpdu-protection
+spanning-tree 16 root-guard bpdu-filter bpdu-protection
+spanning-tree 17 root-guard bpdu-filter bpdu-protection
+spanning-tree 18 root-guard bpdu-filter bpdu-protection
+spanning-tree 19 root-guard bpdu-filter bpdu-protection
+spanning-tree 20 root-guard bpdu-filter bpdu-protection
+spanning-tree 21 root-guard bpdu-filter bpdu-protection
+spanning-tree 22 root-guard bpdu-filter bpdu-protection
+spanning-tree 23 root-guard bpdu-filter bpdu-protection
+spanning-tree 24 root-guard bpdu-filter bpdu-protection
+spanning-tree 25 root-guard bpdu-filter bpdu-protection
+spanning-tree 26 root-guard bpdu-filter bpdu-protection
+spanning-tree 27 root-guard bpdu-filter bpdu-protection
+spanning-tree 28 root-guard bpdu-filter bpdu-protection
+spanning-tree 29 root-guard bpdu-filter bpdu-protection
+spanning-tree 30 root-guard bpdu-filter bpdu-protection
+spanning-tree 31 root-guard bpdu-filter bpdu-protection
+spanning-tree 32 root-guard bpdu-filter bpdu-protection
+spanning-tree 33 root-guard bpdu-filter bpdu-protection
+spanning-tree 34 root-guard bpdu-filter bpdu-protection
+spanning-tree 35 root-guard bpdu-filter bpdu-protection
+spanning-tree 36 root-guard bpdu-filter bpdu-protection
+spanning-tree 37 root-guard bpdu-filter bpdu-protection
+spanning-tree 38 root-guard bpdu-filter bpdu-protection
+spanning-tree 39 root-guard bpdu-filter bpdu-protection
+spanning-tree 40 root-guard bpdu-filter bpdu-protection
+spanning-tree 41 root-guard bpdu-filter bpdu-protection
+spanning-tree 42 root-guard bpdu-filter bpdu-protection
+spanning-tree 43 root-guard bpdu-filter bpdu-protection
+spanning-tree 44 root-guard bpdu-filter bpdu-protection
+spanning-tree 45 root-guard bpdu-filter bpdu-protection
+spanning-tree 46 root-guard bpdu-filter bpdu-protection
+spanning-tree 47 root-guard bpdu-filter bpdu-protection
+spanning-tree 48 root-guard bpdu-filter bpdu-protection
+spanning-tree 51 root-guard bpdu-filter bpdu-protection
+spanning-tree 52 root-guard bpdu-filter bpdu-protection
+no spanning-tree Trk1 auto-edge-port
+spanning-tree Trk1 priority 4
+spanning-tree config-name "ucalgary"
+spanning-tree instance ist 1 path-cost 20000
+spanning-tree instance ist 2 path-cost 20000
+spanning-tree instance ist 3 path-cost 20000
+spanning-tree instance ist 4 path-cost 20000
+spanning-tree instance ist 5 path-cost 20000
+spanning-tree instance ist 6 path-cost 20000
+spanning-tree instance ist 7 path-cost 20000
+spanning-tree instance ist 8 path-cost 20000
+spanning-tree instance ist 9 path-cost 20000
+spanning-tree instance ist 10 path-cost 20000
+spanning-tree instance ist 11 path-cost 20000
+spanning-tree instance ist 12 path-cost 20000
+spanning-tree instance ist 13 path-cost 20000
+spanning-tree instance ist 14 path-cost 20000
+spanning-tree instance ist 15 path-cost 20000
+spanning-tree instance ist 16 path-cost 20000
+spanning-tree instance ist 17 path-cost 20000
+spanning-tree instance ist 18 path-cost 20000
+spanning-tree instance ist 19 path-cost 20000
+spanning-tree instance ist 20 path-cost 20000
+spanning-tree instance ist 21 path-cost 20000
+spanning-tree instance ist 25 path-cost 20000
+spanning-tree instance 1 vlan 1-1099 2000-2359 2361-2373 2377-2485 2488-2493 
+spanning-tree instance 1 vlan 2495-2531 2534-2536 2539 2541 2542 2546-2577 
+spanning-tree instance 1 vlan 2579 2583-2608 2610-2621 2623-2648 2651-2703 
+spanning-tree instance 1 vlan 2705-2748 2750-2810 2812 2815 2817-2864 
+spanning-tree instance 1 vlan 2866-3139 3141-3199 3400-3587 3589-3598 
+spanning-tree instance 1 vlan 3600-3880 3889-4094
+spanning-tree instance 1 Trk1 priority 4
+spanning-tree instance 2 vlan 1100-1399
+spanning-tree instance 2 Trk1 priority 4
+spanning-tree instance 3 vlan 2360 2374-2376 2486 2487 2494 2532 2533 
+spanning-tree instance 3 vlan 2537 2538 2540 2543-2545 2578 2580-2582 2609 
+spanning-tree instance 3 vlan 2622 2649 2650 2704 2749 2811 2813 2814 2816 
+spanning-tree instance 3 vlan 2865 3140 3200-3399 3588 3599 3881-3888
+spanning-tree instance 3 Trk1 priority 4
+spanning-tree instance 11 vlan 1700-1799
+spanning-tree instance 11 Trk1 priority 4
+spanning-tree instance 12 vlan 1800-1899
+spanning-tree instance 12 Trk1 priority 4
+spanning-tree instance 13 vlan 1900-1999
+spanning-tree instance 13 Trk1 priority 4
+spanning-tree instance 14 vlan 1400-1499
+spanning-tree instance 14 Trk1 priority 4
+spanning-tree instance 15 vlan 1500-1599
+spanning-tree instance 15 Trk1 priority 4
+spanning-tree instance 16 vlan 1600-1699
+spanning-tree instance 16 Trk1 priority 4
+spanning-tree bpdu-protection-timeout 600 priority 7
+oobm
+   ip address dhcp-bootp
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-48,51-52,Trk1
+   no ip address
+   exit
+vlan 999
+   name "unused_vlan"
+   untagged 22-24,26-48,51-52,Trk1
+   no ip address
+   exit
+vlan 2545
+   name "dc_msrdc_mgmt_10.27.17.0/24"
+   tagged 48,Trk1
+   ip address 10.27.17.251 255.255.255.0
+   exit
+vlan 2578
+   name "labs_research_dc1_10.146."
+   tagged 13,Trk1
+   no ip address
+   exit
+vlan 2580
+   name "rcz_dc_storage_10.156.190.0/24"
+   untagged 1-21,25
+   tagged Trk1
+   ip address 10.156.190.9 255.255.255.0
+   exit
+vlan 2609
+   name "rcz_research_136.159.190.0/24"
+   tagged 13,Trk1
+   no ip address
+   exit
+loop-protect 1-48,51-52,Trk1
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+

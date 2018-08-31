@@ -1,0 +1,355 @@
+; J8697A Configuration Editor; Created on release #K.14.47
+
+hostname "MS016-B1-ASW-2087" 
+mac-age-time 180 
+max-vlans 512 
+time timezone -420 
+time daylight-time-rule Continental-US-and-Canada 
+module 1 type J8707A 
+module 3 type J8702A 
+module 4 type J8706A 
+module 5 type J8702A 
+interface C1 
+   disable
+exit
+interface C3 
+   name "xC3d-10.27.16.200-x50u" 
+exit
+interface C12 
+   disable
+exit
+interface C13 
+   disable
+exit
+interface C14 
+   disable
+exit
+interface C15 
+   disable
+exit
+interface C16 
+   name "Sisri" 
+   speed-duplex 100-full 
+exit
+interface C17 
+   name "Sisri" 
+exit
+interface C18 
+   name "LIBBAK_136.159.26.26" 
+   speed-duplex auto-100 
+exit
+interface C19 
+   speed-duplex auto-1000 
+exit
+interface C20 
+   disable
+exit
+interface C21 
+   disable
+exit
+interface C22 
+   name "Firewall" 
+exit
+interface D1 
+   speed-duplex 100-full 
+exit
+interface D5 
+   speed-duplex 1000-full 
+exit
+interface A1 
+   name "A1U-10.31.0.87-1/9-Po109-MS5K" 
+exit
+interface A2 
+   name "A2U-10.31.0.88-1/9-Po109-HA5K" 
+exit
+trunk A1-A2 Trk1 LACP 
+interface E1 
+   name "xE1d-10.27.16.187-x26u" 
+exit
+interface E2 
+   name "MSRDC-UPS-1PW" 
+exit
+interface E3 
+   name "MSRDC-UPS-2PW" 
+exit
+interface E4 
+   name "Exinda.ucalgary.ca" 
+exit
+interface E5 
+   name "Akamia_server" 
+exit
+interface E6 
+   name "FG1000A_u23/24" 
+exit
+interface E7 
+   name "FG1000A_u25/26" 
+exit
+interface E8 
+   disable
+exit
+interface E10 
+   disable
+exit
+interface E11 
+   disable
+exit
+interface E12 
+   disable
+exit
+interface E14 
+   disable
+exit
+interface E15 
+   disable
+exit
+interface E16 
+   disable
+exit
+interface E17 
+   disable
+exit
+interface E18 
+   name "ZoneJR16_H205.21" 
+exit
+interface E19 
+   name "ZoneJR16_H205.22" 
+exit
+interface E20 
+   name "ZoneJR16_CX3/40" 
+exit
+interface E21 
+   name "ZoneJR16_CX3/40" 
+exit
+ip default-gateway 10.27.16.1 
+vlan 1 
+   name "DEFAULT_VLAN" 
+   no untagged A3-A4,C1-C24,D1-D24,E1-E24,Trk1 
+   no ip address 
+   exit 
+vlan 24 
+   name "public-dmz" 
+   untagged C16,C18-C19 
+   tagged C22,Trk1 
+   no ip address 
+   exit 
+vlan 2716 
+   name "MSPDC_Management" 
+   ip address 10.27.16.186 255.255.254.0 
+   tagged C3,E1,Trk1 
+   exit 
+vlan 3586 
+   name "MIZ_DCMonitor_MS" 
+   untagged E2-E3 
+   tagged C3,E1,Trk1 
+   no ip address 
+   exit 
+vlan 3297 
+   name "136.159.222.240/28_akamai-server" 
+   untagged E5-E7 
+   tagged Trk1 
+   no ip address 
+   exit 
+vlan 3084 
+   name "idmz-7_10.253.64.0/24" 
+   untagged C17 
+   tagged Trk1 
+   no ip address 
+   exit 
+vlan 2889 
+   name "10.58.8.0/24_cdx-storage-zone" 
+   untagged E18-E21 
+   tagged Trk1 
+   no ip address 
+   exit 
+vlan 2815 
+   name "KN_Mgmt_10.28.15.0/24" 
+   tagged D23,Trk1 
+   no ip address 
+   exit 
+vlan 999 
+   name "unused_vlan" 
+   untagged A3-A4,C1-C2,C4-C15,C20-C21,C23-C24,D1-D24,E4,E8-E17,E22-E24,Trk1 
+   no ip address 
+   exit 
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+banner motd "**************************************************************************"
+banner motd "*                                                                        *"
+banner motd "* Important Notice:                                                      *"
+banner motd "*                                                                        *"
+banner motd "* Authorized users only:                                                 *"
+banner motd "*                                                                        *"
+banner motd "* This computer system (including all related equipment, networks,       *"
+banner motd "* systems and services) is provided for use only by authorized           *"
+banner motd "* individuals with valid and subsisting usernames and passwords          *"
+banner motd "* issued by Unversity of Calgary and for  authorized purposes only.      *"
+banner motd "* Unauthorized access to or use of this system is strictly prohibited,   *"
+banner motd "* and may result in criminal, civil and administrative penalties         *"
+banner motd "* and other adverse action.                                              *"
+banner motd "*                                                                        *"
+banner motd "* Terms and Conditions:                                                  *"
+banner motd "*                                                                        *"
+banner motd "* Access to and use of this system is subject to certain terms and       *"
+banner motd "* conditions contained in various policies issued and amended from time  *"
+banner motd "* to time by University of Calgary, including Acceptable Use of Computing*"
+banner motd "* Resources, Acceptable Use of Internet and E-Mail and Remote Access.    *"
+banner motd "* Access to and use of this system constitutes unconditional acceptance  *"
+banner motd "* of and agreement to each of the applicable policies. If you do not     *"
+banner motd "* accept and agree to each of the applicable policies, you may           *"
+banner motd "* not access or use this system.                                         *"
+banner motd "*                                                                        *"
+banner motd "* Monitoring:                                                            *"
+banner motd "*                                                                        *"
+banner motd "* Use of this system is subject to monitoring at all times for all       *"
+banner motd "* lawful purposes, and is not subject to any expectation of privacy.     *"
+banner motd "* Information collected through monitoring may be used and disclosed     *"
+banner motd "* to third parties (including law enforcement officials).                *"
+banner motd "* Use of this system constitutes consent to such monitoring  and the     *"
+banner motd "* collection, use and disclosure of personal information.                *"
+banner motd "*                                                                        *"
+banner motd "**************************************************************************"
+banner motd "~"
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+sflow 1 destination 136.159.35.18
+sflow 1 polling A3-A4,C1-C24,D1-D24,E1-E24,Trk1 60
+sflow 1 sampling A3-A4,C1-C24,D1-D24,E1-E24,Trk1 500
+sflow 2 destination 136.159.254.45
+sflow 2 polling D13-D14,D18 30
+sflow 2 sampling D13-D14,D18 512
+sntp server priority 1 136.159.34.69 3
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access manager
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+no ip ssh
+snmp-server community "uofc2009" unrestricted
+snmp-server community "mecyou" unrestricted
+snmp-server community "mecyou12" operator unrestricted
+snmp-server host 136.159.22.228 "public" critical
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree
+spanning-tree A3 bpdu-filter bpdu-protection
+spanning-tree A4 bpdu-filter bpdu-protection
+spanning-tree C1 bpdu-filter bpdu-protection
+spanning-tree C2 bpdu-filter bpdu-protection
+no spanning-tree C3 auto-edge-port
+spanning-tree C3 root-guard
+spanning-tree C4 bpdu-filter bpdu-protection
+spanning-tree C5 bpdu-filter bpdu-protection
+spanning-tree C6 bpdu-filter bpdu-protection
+spanning-tree C7 bpdu-filter bpdu-protection
+spanning-tree C8 bpdu-filter bpdu-protection
+spanning-tree C9 bpdu-filter bpdu-protection
+spanning-tree C10 bpdu-filter bpdu-protection
+spanning-tree C11 bpdu-filter bpdu-protection
+spanning-tree C12 bpdu-filter bpdu-protection
+spanning-tree C13 bpdu-filter bpdu-protection
+spanning-tree C14 bpdu-filter bpdu-protection
+spanning-tree C15 bpdu-filter bpdu-protection
+spanning-tree C16 bpdu-filter bpdu-protection
+spanning-tree C17 bpdu-filter bpdu-protection
+spanning-tree C18 bpdu-filter bpdu-protection
+spanning-tree C19 bpdu-filter bpdu-protection
+spanning-tree C20 bpdu-filter bpdu-protection
+spanning-tree C21 bpdu-filter bpdu-protection
+spanning-tree C22 bpdu-filter bpdu-protection
+spanning-tree C23 bpdu-filter bpdu-protection
+spanning-tree C24 bpdu-filter bpdu-protection
+spanning-tree D1 bpdu-filter bpdu-protection
+spanning-tree D2 bpdu-filter bpdu-protection
+spanning-tree D3 bpdu-filter bpdu-protection
+spanning-tree D4 bpdu-filter bpdu-protection
+spanning-tree D5 bpdu-filter bpdu-protection
+spanning-tree D6 bpdu-filter bpdu-protection
+spanning-tree D7 bpdu-filter bpdu-protection
+spanning-tree D8 bpdu-filter bpdu-protection
+spanning-tree D9 bpdu-filter bpdu-protection
+spanning-tree D10 bpdu-filter bpdu-protection
+spanning-tree D11 bpdu-filter bpdu-protection
+spanning-tree D12 bpdu-filter bpdu-protection
+spanning-tree D13 bpdu-filter bpdu-protection
+spanning-tree D14 bpdu-filter bpdu-protection
+spanning-tree D15 bpdu-filter bpdu-protection
+spanning-tree D16 bpdu-filter bpdu-protection
+spanning-tree D17 bpdu-filter bpdu-protection
+spanning-tree D18 bpdu-filter bpdu-protection
+spanning-tree D19 bpdu-filter bpdu-protection
+spanning-tree D20 bpdu-filter bpdu-protection
+spanning-tree D21 bpdu-filter bpdu-protection
+spanning-tree D22 bpdu-filter bpdu-protection
+spanning-tree D23 bpdu-filter bpdu-protection
+spanning-tree D24 bpdu-filter bpdu-protection
+no spanning-tree E1 auto-edge-port
+spanning-tree E1 root-guard
+spanning-tree E2 bpdu-filter bpdu-protection
+spanning-tree E3 bpdu-filter bpdu-protection
+spanning-tree E4 bpdu-filter bpdu-protection
+spanning-tree E5 bpdu-filter bpdu-protection
+spanning-tree E6 bpdu-filter bpdu-protection
+spanning-tree E7 bpdu-filter bpdu-protection
+spanning-tree E8 bpdu-filter bpdu-protection
+spanning-tree E9 bpdu-filter bpdu-protection
+spanning-tree E10 bpdu-filter bpdu-protection
+spanning-tree E11 bpdu-filter bpdu-protection
+spanning-tree E12 bpdu-filter bpdu-protection
+spanning-tree E13 bpdu-filter bpdu-protection
+spanning-tree E14 bpdu-filter bpdu-protection
+spanning-tree E15 bpdu-filter bpdu-protection
+spanning-tree E16 bpdu-filter bpdu-protection
+spanning-tree E17 bpdu-filter bpdu-protection
+spanning-tree E18 bpdu-filter bpdu-protection
+spanning-tree E19 bpdu-filter bpdu-protection
+spanning-tree E20 bpdu-filter bpdu-protection
+spanning-tree E21 bpdu-filter bpdu-protection
+spanning-tree E22 bpdu-filter bpdu-protection
+spanning-tree E23 bpdu-filter bpdu-protection
+spanning-tree E24 bpdu-filter bpdu-protection
+no spanning-tree Trk1 auto-edge-port
+spanning-tree Trk1 priority 4
+spanning-tree trap errant-bpdu
+spanning-tree config-name "ucalgary"
+spanning-tree instance 1 vlan 1-1099 2000-2359 2361-2373 2377-2485 2488-2493 
+spanning-tree instance 1 vlan 2495-2531 2534-2536 2539 2541 2542 2546-2577 
+spanning-tree instance 1 vlan 2579 2583-2608 2610-2621 2623-2648 2651-2703 
+spanning-tree instance 1 vlan 2705-2748 2750-2810 2812 2815 2817-2864 
+spanning-tree instance 1 vlan 2866-3139 3141-3199 3400-3587 3589-3598 
+spanning-tree instance 1 vlan 3600-3880 3889-4094
+spanning-tree instance 1 Trk1 priority 4
+spanning-tree instance 2 vlan 1100-1399
+spanning-tree instance 2 Trk1 priority 4
+spanning-tree instance 3 vlan 2360 2374-2376 2486 2487 2494 2532 2533 
+spanning-tree instance 3 vlan 2537 2538 2540 2543-2545 2578 2580-2582 2609 
+spanning-tree instance 3 vlan 2622 2649 2650 2704 2749 2811 2813 2814 2816 
+spanning-tree instance 3 vlan 2865 3140 3200-3399 3588 3599 3881-3888
+spanning-tree instance 3 Trk1 priority 4
+spanning-tree instance 11 vlan 1700-1799
+spanning-tree instance 11 Trk1 priority 4
+spanning-tree instance 12 vlan 1800-1899
+spanning-tree instance 12 Trk1 priority 4
+spanning-tree instance 13 vlan 1900-1999
+spanning-tree instance 13 Trk1 priority 4
+spanning-tree instance 14 vlan 1400-1499
+spanning-tree instance 14 Trk1 priority 4
+spanning-tree instance 15 vlan 1500-1599
+spanning-tree instance 15 Trk1 priority 4
+spanning-tree instance 16 vlan 1600-1699
+spanning-tree instance 16 Trk1 priority 4
+spanning-tree bpdu-protection-timeout 600
+loop-protect A3-A4,C1-C24,D1-D24,E1-E24,Trk1
+loop-protect trap loop-detected
+loop-protect disable-timer 600
+no autorun
+password manager
+password operator
+

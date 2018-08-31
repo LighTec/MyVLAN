@@ -1,0 +1,220 @@
+; J9574A Configuration Editor; Created on release #KA.15.09.0019
+; Ver #03:01.1f.ef:f2
+
+hostname "MSRDC-B1-ZDR43-SW-POC"
+module 1 type j9574y
+module 2 type j9574x
+console inactivity-timer 5
+mac-age-time 180
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.254.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.27.17.1
+interface 1
+   name "ITRCSPOCHOST1"
+   exit
+interface 2
+   name "ITRCSPOCHOST2"
+   exit
+interface 3
+   name "ITRCSPOCHOST3"
+   exit
+interface 6
+   name "ITRCSPOCHOST4"
+   exit
+interface 7
+   name "ITRCSPOCHOST5"
+   exit
+interface 8
+   name "ITRCSPOCHOST6"
+   exit
+interface 9
+   name "ITRCSPOCHOST6"
+   exit
+interface 13
+   name "ITRCSPOCHOST1"
+   exit
+interface 14
+   name "ITRCSPOCHOST1"
+   exit
+interface 15
+   name "ITRCSPOCHOST1"
+   exit
+interface 16
+   name "ITRCSPOCHOST1"
+   exit
+interface 17
+   name "ITRCSPOCHOST2"
+   exit
+interface 18
+   name "ITRCSPOCHOST2"
+   exit
+interface 19
+   name "ITRCSPOCHOST2"
+   exit
+interface 20
+   name "ITRCSPOCHOST2"
+   exit
+interface 21
+   name "ITRCSPOCHOST3"
+   exit
+interface 22
+   name "ITRCSPOCHOST3"
+   exit
+interface 23
+   name "ITRCSPOCHOST3"
+   exit
+interface 24
+   name "ITRCSPOCHOST3"
+   exit
+interface 25
+   name "ITRCSPOCHOST4"
+   exit
+interface 26
+   name "ITRCSPOCHOST4"
+   exit
+interface 27
+   name "ITRCSPOCHOST4"
+   exit
+interface 28
+   name "ITRCSPOCHOST4"
+   exit
+interface 29
+   name "ITRCSPOCHOST5"
+   exit
+interface 30
+   name "ITRCSPOCHOST5"
+   exit
+interface 31
+   name "ITRCSPOCHOST5"
+   exit
+interface 32
+   name "ITRCSPOCHOST5"
+   exit
+interface 33
+   name "ITRCSPOCHOST6"
+   exit
+interface 34
+   name "ITRCSPOCHOST6"
+   exit
+interface 35
+   name "ITRCSPOCHOST6"
+   exit
+interface 36
+   name "ITRCSPOCHOST6"
+   exit
+interface 37
+   name "ITRCSPOCHOST6"
+   exit
+interface 38
+   name "ITRCSPOCHOST6"
+   exit
+interface 39
+   name "ITRCSPOCHOST6"
+   exit
+interface 40
+   name "ITRCSPOCHOST6"
+   exit
+interface 48
+   name "x-connect to 10.27.17.252 p-a24"
+   exit
+interface 50
+   name "D50x-10.27.17.249_X1/49U"
+   exit
+interface 51
+   name "D51x-10.27.17.248_X1/49U"
+   exit
+snmp-server community "public" unrestricted
+snmp-server community "uofc2009" operator
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" operator
+snmp-server contact "UCIT 220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+oobm
+   ip address dhcp-bootp
+   exit
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged 1-48,50-51
+   untagged 49,52
+   ip address dhcp-bootp
+   exit
+vlan 999
+   name "unused ports"
+   no ip address
+   exit
+vlan 2097
+   name "POC-VXLAN-10.21.0.0/18"
+   tagged 13-48,50-51
+   no ip address
+   exit
+vlan 2374
+   name "rcit-dc-vmotion_10.59.98.0/24"
+   tagged 13-40,43-48,50-51
+   ip address 10.59.98.6 255.255.255.0
+   exit
+vlan 2375
+   name "rcit-dc-vsecurity_10.59.97.0/24"
+   tagged 13-40,43-48,50-51
+   no ip address
+   exit
+vlan 2376
+   name "rcit-dc-vmgmt_10.59.96.0/24"
+   tagged 13-40,43-48,50-51
+   no ip address
+   exit
+vlan 2545
+   name "rcz-msrdc-sw-mgmt_10.27.17.0/24"
+   tagged 48,50-51
+   ip address 10.27.17.250 255.255.255.0
+   exit
+vlan 2580
+   name "rcz-dc-storage_10.156.190.0/24"
+   untagged 41-42
+   tagged 13-40,43-48,50-51
+   no ip address
+   jumbo
+   exit
+vlan 2609
+   name "rcz-dc-public_136.159.190.0/24"
+   tagged 13-40,43-48,50-51
+   no ip address
+   exit
+vlan 2622
+   name "rcz-dc-private_10.56.192.0/24"
+   tagged 13-40,43-48,50-51
+   ip address 10.56.192.6 255.255.255.0
+   exit
+vlan 2704
+   name "msrdc-drac_10.60.80.0/24"
+   untagged 1-12
+   tagged 48,50-51
+   no ip address
+   exit
+loop-protect 1-52
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+

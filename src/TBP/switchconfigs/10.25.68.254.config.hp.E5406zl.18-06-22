@@ -1,0 +1,235 @@
+; J8697A Configuration Editor; Created on release #K.15.08.0013
+; Ver #02:1b.ef:f6
+hostname "TFDL353-03-HSW-2955"
+module 1 type j9309a
+module 2 type j9309a
+module 3 type j8702a
+module 4 type j8702a
+module 5 type j8705a
+console baud-rate 9600
+console flow-control none
+console inactivity-timer 5
+trunk A1,B1,E23 trk1 lacp
+logging 10.31.1.14
+mac-age-time 180
+max-vlans 253
+power-over-ethernet pre-std-detect
+radius-server host 10.31.1.51
+radius-server host 10.31.1.52
+radius-server timeout 3
+radius-server retransmit 2
+radius-server dead-time 5
+timesync sntp
+sntp unicast
+sntp 60
+sntp server priority 1 136.159.34.69
+sntp server priority 2 136.159.34.24
+time daylight-time-rule continental-us-and-canada
+time timezone -420
+ip authorized-managers 136.159.254.0 255.255.255.0 access manager
+ip authorized-managers 10.41.70.0 255.255.255.0 access operator
+ip authorized-managers 10.31.0.0 255.255.254.0 access manager
+ip authorized-managers 10.31.4.0 255.255.255.0 access manager
+ip authorized-managers 10.59.152.0 255.255.254.0 access manager
+ip authorized-managers 10.41.68.50 255.255.255.255 access manager
+ip authorized-managers 10.41.68.58 255.255.255.255 access manager
+ip authorized-managers 10.41.75.0 255.255.255.0 access manager
+ip default-gateway 10.25.68.1
+interface A1
+   name "CN-MSPDC-N7K-01-E1/19"
+   exit
+interface B1
+   name "CN-HA-N7K-02-E1/19"
+   exit
+interface C19
+   name "EMI-Server_DRAC"
+   exit
+interface C20
+   name "EMI-Server_vMotion"
+   exit
+interface C21
+   name "EMI-Server_iDMZ"
+   exit
+interface D1
+   name "ESX_Moss"
+   exit
+interface D2
+   name "ESX_Trenneman"
+   exit
+interface D3
+   name "OJSSRV3"
+   exit
+interface D4
+   name "OJSSRV3"
+   exit
+interface D5
+   name "ESX_Barber"
+   exit
+interface D6
+   name "TFDL-TB-SVR"
+   exit
+interface D7
+   name "Jupiter"
+   exit
+interface D8
+   name "OJSSRV3"
+   exit
+interface D9
+   name "OJSSRV3"
+   exit
+interface D10
+   name "OJSSRV3"
+   exit
+interface D12
+   name "D12D-10.25.67.83-x1U_Rack7-UPS1"
+   exit
+interface D20
+   name "TRENNEMAN"
+   exit
+interface D21
+   name "Moss"
+   exit
+interface D22
+   name "Barber"
+   exit
+interface D23
+   disable
+   exit
+interface D24
+   disable
+   exit
+interface E18
+   name "Trenneman"
+   exit
+interface E19
+   name "Moss"
+   exit
+interface E20
+   name "Barber"
+   exit
+interface E21
+   disable
+   name "spare"
+   exit
+interface E22
+   disable
+   name "spare"
+   exit
+snmp-server community "uofc2009" unrestricted
+snmp-server community "mecyou12" operator
+snmp-server community "mecyou" unrestricted
+snmp-server host 136.159.22.228 community "uofc2009" trap-level critical
+snmp-server host 10.31.0.17 community "public"
+snmp-server host 10.31.1.16 community "uofc2009" trap-level critical
+snmp-server contact "UCIT_220-5555"
+aaa authentication login privilege-mode
+aaa authentication telnet login radius local
+aaa authentication telnet enable radius local
+aaa authentication ssh login radius
+aaa authentication ssh enable radius
+spanning-tree Trk1 priority 4
+vlan 1
+   name "DEFAULT_VLAN"
+   no untagged C19-C21,D1-D9,D11-D22,E18-E20,Trk1
+   untagged A2-A4,B2-B4,C1-C18,C22-C24,D10,D23-D24,E1-E17,E21-E22,E24
+   no ip address
+   exit
+vlan 24
+   name "public-dmz"
+   untagged D7
+   tagged D1-D2,D5,D20-D22,E18-E20,Trk1
+   no ip address
+   exit
+vlan 1004
+   name "drac"
+   tagged Trk1
+   no ip address
+   exit
+vlan 2100
+   name "idmz_10.41.88.0/24"
+   tagged C21,D1-D2,D10,D19-D23,E18-E20,Trk1
+   no ip address
+   exit
+vlan 2567
+   name "Mgmt"
+   untagged D8-D9
+   tagged Trk1
+   ip address 10.25.67.109 255.255.255.0
+   exit
+vlan 2568
+   name "tfdl_DC_mgmt_10.25.68/24"
+   untagged D11-D12
+   tagged Trk1
+   ip address 10.25.68.254 255.255.255.0
+   exit
+vlan 2672
+   name "VLAN2672"
+   tagged D21,D23,E18-E20
+   no ip address
+   exit
+vlan 2719
+   name "DRAC-TFDL_10.60.72.0/22"
+   untagged C19,D3,D13-D18
+   tagged Trk1
+   no ip address
+   exit
+vlan 2761
+   name "Kernel_10.56.121.0/24"
+   untagged D4
+   tagged D1-D2,D5,D8,D20-D22,E18-E20,Trk1
+   no ip address
+   exit
+vlan 2762
+   name "VMotiron_10.56.120.0/24"
+   tagged C20,D1-D2,D5,D9,D20-D22,Trk1
+   no ip address
+   exit
+vlan 2822
+   name "dmz_136.159.200.0/24"
+   untagged D19
+   tagged D1-D2,D5,D10,D20-D22,E18-E20,Trk1
+   no ip address
+   exit
+vlan 3132
+   name "136.159.20.0/27_DMZ"
+   tagged Trk1
+   no ip address
+   exit
+vlan 3135
+   name "10.41.131.0/24_trusted_mgd_srv"
+   tagged Trk1
+   no ip address
+   exit
+vlan 3137
+   name "10.41.128.0/24_trusted_mgd_srv"
+   untagged D6
+   tagged D1-D2,D5,D20-D22,E18-E20,Trk1
+   no ip address
+   exit
+vlan 3400
+   name "public-dmz-private"
+   tagged Trk1
+   no ip address
+   exit
+vlan 3416
+   name "internal-dmz"
+   tagged Trk1
+   no ip address
+   exit
+vlan 3448
+   name "secure-server"
+   tagged Trk1
+   no ip address
+   exit
+vlan 3667
+   name "managed-secure-server"
+   tagged Trk1
+   no ip address
+   exit
+no tftp server
+no autorun
+no dhcp config-file-update
+no dhcp image-file-update
+password manager
+password operator
+
