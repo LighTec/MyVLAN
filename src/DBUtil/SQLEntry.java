@@ -441,7 +441,6 @@ public class SQLEntry{
     }
 
     public boolean equalsIgnoreID(SQLEntry sqlEntry) {
-        if (this == sqlEntry) return true;
         if (sqlEntry == null) return false;
         boolean nme = getName().equals(sqlEntry.getName());
         boolean ownr = getOwner().equals(sqlEntry.getOwner());

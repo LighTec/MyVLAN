@@ -2,6 +2,7 @@ package DBUtil;
 
 import Controller.Main;
 import DBUtil.Comparators.IPaddrSort;
+import GUI.MainWindow;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -191,6 +192,12 @@ public class SQLWriter {
      * @param entries
      */
     public void deleteAllEntries(ArrayList<SQLEntry> entries){
+        System.out.println("Items to be deleted: " + entries.size());
+        try{
+            Thread.sleep(3000);
+        }catch (InterruptedException e) {
+            System.err.println("Interrupt error in main loop!");
+        }
         this.connect();
         ArrayList<SQLEntry> fixedEntries = new ArrayList<>();
         for(SQLEntry e : entries){

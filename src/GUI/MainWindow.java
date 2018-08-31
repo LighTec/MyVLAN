@@ -21,6 +21,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import org.controlsfx.control.Notifications;
@@ -28,6 +30,7 @@ import org.controlsfx.control.ToggleSwitch;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -321,6 +324,8 @@ public class MainWindow extends Application {
         });
 
         Label filterLabel = new Label("Filter:");
+        filterLabel.setFont(Font.font("Arial", 21));
+        filterLabel.setTextAlignment(TextAlignment.RIGHT);
 
         //create combo box (aka dropdown menu) and text field for filtering results
         this.columnFilterCombo = new ComboBox<>(FXCollections.observableArrayList(DatabaseTags.getTagArray()));
@@ -340,6 +345,8 @@ public class MainWindow extends Application {
     private HBox BottomRow() {
 
         HBox botRow = new HBox();
+        botRow.setPadding(new Insets(0, 10, 0, 10));
+        botRow.setSpacing(50);
 
         Button BulkDelBtn = new Button("Delete Via File");
         BulkDelBtn.setOnAction(event -> {
@@ -376,7 +383,40 @@ public class MainWindow extends Application {
             }
         });
 
-        botRow.getChildren().addAll(BulkDelBtn, compareCsvBtn); // commented out test button
+        // WARNING: THIS DOES NOT WORK. DO NOT ENABLE!
+        Button deleteIdenticalsBtn = new Button("Delete Identical Entries");
+        deleteIdenticalsBtn.setOnAction(event -> {
+            ArrayList<SQLEntry> toBeDeleted = new ArrayList<>();
+            this.dbr.sortQuery(DatabaseTags.getTagArray()[2]);
+            ArrayList<SQLEntry> entriesDB = this.dbr.getSQLEntries();
+            System.out.println("######################################################");
+            for(int i = 0; i < entriesDB.size() - 1; i++){
+                boolean hasIdentical = false;
+                SQLEntry entryA = entriesDB.get(i);
+                ArrayList<SQLEntry> listB = new ArrayList<>();
+                // get all entries not iterated over yet
+                listB.addAll(entriesDB.subList(i + 1, entriesDB.size() - 1));
+                for(SQLEntry entryB : listB){
+                    if(entryA.equalsIgnoreID(entryB) && !toBeDeleted.contains(entryB)){
+                        if(!entryA.getId().equals(entryB.getId()) && !toBeDeleted.contains(entryA)) {
+                            hasIdentical = true;
+                            System.out.println("Deleting entry:      " + entryB);
+                            System.out.println("Because it matches:  " + entryA);
+                            toBeDeleted.add(entryB);
+                            entriesDB.remove(entryB);
+                        }
+                    }
+                }
+                if(hasIdentical){
+                    System.out.println("######################################################");
+                }
+            }
+            System.out.println("######################################################");
+            this.dbw.deleteAllEntries(toBeDeleted);
+            this.refreshTableList();
+        });
+
+        botRow.getChildren().addAll(BulkDelBtn, compareCsvBtn/*, deleteIdenticalsBtn*/); // commented out test button
         return botRow;
     }
 
