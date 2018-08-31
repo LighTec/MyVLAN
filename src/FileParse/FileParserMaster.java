@@ -1,6 +1,7 @@
 package FileParse;
 
 import DBUtil.SQLEntry;
+import org.controlsfx.control.Notifications;
 
 import java.io.File;
 import java.io.IOException;
@@ -108,12 +109,16 @@ public class FileParserMaster {
     public ArrayList<SQLEntry> parseGeneric(File f, String parserString){
         System.out.println(parserString);
         if(parserString.equals(this.PARSE_STRINGS[0])){
+            Notifications.create().title("Parsing file!").text("Parsing with DHCP parser.").showInformation();
             return parseDHCPFile(f);
         }else if(parserString.equals(this.PARSE_STRINGS[1])){
+            Notifications.create().title("Parsing file!").text("Parsing with VLAN router config parser.").showInformation();
             return parseRouterVlanNetworkFile(f);
         }else if(parserString.equals(this.PARSE_STRINGS[2])){
+            Notifications.create().title("Parsing file!").text("Parsing with switch config parser.").showInformation();
             return parseSwitchConfigFile(f);
         }else if(parserString.equals(this.PARSE_STRINGS[3])){
+            Notifications.create().title("Parsing file!").text("Parsing with vlan tag txt parser.").showInformation();
             return parseVLANTagsOtherFile(f);
         }else{
             System.err.println("parserString not found.");

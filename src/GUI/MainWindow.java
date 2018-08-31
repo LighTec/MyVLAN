@@ -376,7 +376,7 @@ public class MainWindow extends Application {
             }
         });
 
-        botRow.getChildren().addAll(testBtn, compareCSV);
+        botRow.getChildren().addAll(/*testBtn, */compareCSV); // commented out test button
         return botRow;
     }
 
